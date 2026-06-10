@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stories — Letters and tales from the Circle | Momni</title>
+<meta name="description" content="Stories from the Momni Circle: the relaunch letter, letters to the first mamas, and how real mothers found their Momnis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#6D58A4; --purple-deep:#4A3880; --teal:#0D878F; --teal-deep:#0A6B72;
+  --algae:#92E2C1; --lavender:#F5F0FE; --teal-soft:#E1F7F2; --clay:#D9C0A3;
+  --ink:#2B2233; --muted:#6B6477; --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid #EEE9F9;z-index:50}
+.nav-inner{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;color:var(--purple);letter-spacing:-0.02em}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:var(--lavender);display:flex;align-items:center;justify-content:center;font-size:20px}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:15px;font-weight:500;color:var(--ink)}
+.nav-links a:hover{color:var(--purple)}
+.cta-btn{background:var(--teal);color:white;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px;transition:background 0.15s}
+.cta-btn:hover{background:var(--teal-deep)}
+.hero{background:linear-gradient(180deg,var(--lavender) 0%,#FFFFFF 100%);padding:80px 0 48px;text-align:center}
+.hero h1{font-size:48px;font-weight:800;letter-spacing:-0.03em;line-height:1.12;max-width:760px;margin:0 auto 16px}
+.hero h1 em{font-style:normal;color:var(--purple)}
+.hero p.sub{font-size:19px;color:var(--muted);max-width:600px;margin:0 auto}
+.section{padding:64px 0}
+.feature{background:var(--purple);color:white;border-radius:24px;padding:56px 48px;display:grid;grid-template-columns:1fr;gap:8px}
+.feature .tag{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--algae);font-family:'Montserrat',sans-serif}
+.feature h2{font-size:34px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin:8px 0 6px;color:white}
+.feature .script{font-size:24px;color:var(--algae)}
+.feature blockquote{font-size:17px;color:rgba(255,255,255,0.88);max-width:680px;margin:18px 0 8px;border-left:3px solid var(--algae);padding-left:20px;font-style:italic}
+.feature .byline{font-size:14px;color:rgba(255,255,255,0.65);margin-top:8px}
+.read-more{display:inline-block;margin-top:20px;background:var(--algae);color:#0B4A36;font-weight:600;padding:12px 28px;border-radius:100px;font-size:15px}
+.read-more:hover{filter:brightness(0.95)}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:24px}
+.post{border:1.5px solid #EEE9F9;border-radius:18px;padding:28px;transition:all 0.18s}
+.post:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 12px 28px rgba(109,88,164,0.12)}
+.post .tag{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);font-family:'Montserrat',sans-serif}
+.post h3{font-size:20px;font-weight:700;margin:8px 0 8px}
+.post p{font-size:15px;color:var(--muted)}
+.post .soon{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--purple);background:var(--lavender);padding:5px 14px;border-radius:100px}
+.newsletter{background:var(--teal-soft);border-radius:24px;padding:48px;text-align:center}
+.newsletter h2{font-size:28px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px}
+.newsletter p{font-size:16px;color:var(--muted);max-width:520px;margin:0 auto 24px}
+.newsletter form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.newsletter input{padding:13px 20px;border-radius:100px;border:1.5px solid #C9DEDC;font-size:15px;font-family:'Albert Sans',sans-serif;min-width:280px;outline-color:var(--teal)}
+.newsletter button{background:var(--teal);color:white;border:none;font-weight:600;padding:13px 28px;border-radius:100px;font-size:15px;cursor:pointer;font-family:'Albert Sans',sans-serif}
+.newsletter button:hover{background:var(--teal-deep)}
+.newsletter .fine{font-size:13px;color:var(--muted);margin-top:14px}
+footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-grid h4{font-family:'Montserrat',sans-serif;color:white;font-size:14px;font-weight:700;margin-bottom:14px}
+.foot-grid a{display:block;margin-bottom:9px;color:rgba(255,255,255,0.7)}
+.foot-grid a:hover{color:var(--algae)}
+.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
+@media(max-width:820px){.hero h1{font-size:34px}.nav-links{display:none}.foot-grid{grid-template-columns:1fr 1fr}.feature{padding:36px 28px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="logo"><img src="../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
+    <div class="nav-links">
+      <a href="../find-care/right-now/index.html">Find Care</a>
+      <a href="../become-a-momni/index.html">Become a Momni</a>
+      <a href="../circles/index.html">Circles</a>
+      <a href="../our-story/index.html">Our Story</a>
+      <a href="https://momnifoundation.org">Foundation</a>
+      <a href="index.html">Stories</a>
+    </div>
+    <a href="../waitlist/index.html" class="cta-btn">Join the Circle</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Stories from <em>the Circle.</em></h1>
+    <p class="sub">Letters, tales, and true things from the mamas of Momni — told the way we tell everything: honestly.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-bottom:32px">
+  <div class="wrap">
+    <article class="feature">
+      <span class="tag">The relaunch letter · From Karmel</span>
+      <h2>Your pin is still on the map.</h2>
+      <span class="script">A letter to every mama who ever circled up — and every mama about to.</span>
+      <blockquote>
+        "I kept the map. Through every quiet year, I kept it. Fourteen thousand pins, each one a mother who opened her door or knocked on one. People asked me why I didn't take it down. Because you don't take down a lighthouse just because it's foggy, that's why. Mamas — the fog is lifting. Momni is back, and this time it belongs to no one but us…"
+      </blockquote>
+      <div class="byline">Karmel Larson · Founder of Momni · Provo, Utah</div>
+      <a class="read-more" href="#">Read the whole letter →</a>
+    </article>
+
+    <div class="post-grid">
+      <article class="post">
+        <span class="tag">Coming soon</span>
+        <h3>A letter to the first mamas</h3>
+        <p>To the 26,000 who built this before anyone believed in it — the ones whose pins never left the map. This one's for you, and it starts with thank you.</p>
+        <span class="soon">Upcoming</span>
+      </article>
+      <article class="post">
+        <span class="tag">Coming soon</span>
+        <h3>How a Night Shift nurse found her Momni</h3>
+        <p>She works 7pm to 7am saving other people's babies. This is the story of the mama around the corner whose home became her own babies' second bedroom.</p>
+        <span class="soon">Upcoming</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="newsletter">
+      <span class="script" style="font-size:26px;color:var(--teal)">Letters from the Circle</span>
+      <h2>Get the stories first.</h2>
+      <p>One letter a month, written like a letter — new stories, new Circles, and the occasional middle-of-the-night thought from Karmel. No noise, ever.</p>
+      <form onsubmit="event.preventDefault();this.outerHTML='<p style=&quot;font-size:17px;font-weight:600;color:var(--teal-deep)&quot;>You\'re in the Circle. Watch your inbox, mama. 💌</p>'">
+        <input type="email" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit">Circle me in</button>
+      </form>
+      <p class="fine">Unsubscribe anytime. We'd rather you stay because you want to.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="color:white;margin-bottom:14px"><span class="logo-mark" style="background:white;padding:4px"><img src="../assets/momni-icon-color.png" alt="" style="width:30px;height:auto;display:block"></span>momni</div>
+        <p>Mom-to-mom caresharing.<br>Circle up. Link together.</p>
+      </div>
+      <div>
+        <h4>Find care</h4>
+        <a href="../find-care/right-now/index.html">Right Now</a>
+        <a href="../find-care/date-night/index.html">Date Night</a>
+        <a href="../find-care/my-regulars/index.html">My Regulars</a>
+        <a href="../find-care/night-shift/index.html">Night Shift</a>
+        <a href="../find-care/find-a-daycare/index.html">Find a Daycare</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="../become-a-momni/index.html">Become a Momni</a>
+        <a href="../circles/index.html">Circles</a>
+        <a href="index.html">Stories</a>
+        <a href="../our-story/index.html">Our Story</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../terms/index.html">Terms of Service</a>
+        <a href="../privacy/index.html">Privacy</a>
+        <a href="../community-guidelines/index.html">Community Guidelines</a>
+        <a href="../contact/index.html">Contact</a>
+      </div>
+    </div>
+    <div class="disclosure">
+      Momni is a community platform. Momni does not employ, supervise, or make any representation about any member. Each member is solely responsible for choosing care arrangements, exactly as they would when finding a friend in the neighborhood. Care payments are made directly between members; Momni never processes care payments.<br><br>
+      momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation (momnifoundation.org) is a separate 501(c)(3) nonprofit organization. One brand, two entities, separate finances.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

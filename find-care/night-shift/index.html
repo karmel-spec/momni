@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overnight childcare for nurses &amp; night shift workers | Momni</title>
+<meta name="description" content="Overnight childcare for nurses, CNAs, and night-working mamas. Your babies sleep in a mother's home nearby while you work the night shift — morning pickup, mom-to-mom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#6D58A4; --purple-deep:#4A3880; --teal:#0D878F; --teal-deep:#0A6B72;
+  --algae:#92E2C1; --lavender:#F5F0FE; --teal-soft:#E1F7F2; --clay:#D9C0A3;
+  --ink:#2B2233; --muted:#6B6477; --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3,.display{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid #EEE9F9;z-index:50}
+.nav-inner{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;color:var(--purple);letter-spacing:-0.02em}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:var(--lavender);display:flex;align-items:center;justify-content:center;font-size:20px}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:15px;font-weight:500;color:var(--ink)}
+.nav-links a:hover{color:var(--purple)}
+.cta-btn{background:var(--teal);color:white;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px;transition:background 0.15s}
+.cta-btn:hover{background:var(--teal-deep)}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--lavender) 0%,#FFFFFF 100%);padding:88px 0 64px;text-align:center}
+.hero h1{font-size:50px;font-weight:800;letter-spacing:-0.03em;line-height:1.12;max-width:840px;margin:0 auto 20px;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--purple)}
+.hero p.sub{font-size:20px;color:var(--muted);max-width:680px;margin:0 auto 14px}
+.hero .script{font-size:28px;color:var(--teal);margin-bottom:32px;display:block}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--purple);color:white;font-weight:600;padding:15px 34px;border-radius:100px;font-size:17px;transition:all 0.15s}
+.btn-primary:hover{background:var(--purple-deep)}
+.btn-secondary{background:var(--algae);color:#0B4A36;font-weight:600;padding:15px 34px;border-radius:100px;font-size:17px;transition:all 0.15s}
+.btn-secondary:hover{filter:brightness(0.95)}
+.hero-note{font-size:14px;color:var(--muted);margin-top:18px}
+
+/* Sections */
+.section{padding:72px 0}
+.section-label{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.section h2{font-size:36px;font-weight:800;letter-spacing:-0.02em;margin-bottom:10px}
+.section .lede{font-size:18px;color:var(--muted);max-width:660px;margin-bottom:40px}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.step{border:1.5px solid #EEE9F9;border-radius:18px;padding:28px}
+.step .num{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:white;background:var(--purple);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.step h3{font-size:19px;font-weight:700;margin-bottom:6px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* Night band */
+.night-band{background:var(--purple);color:white;padding:80px 0;text-align:center}
+.night-band h2{font-size:38px;font-weight:800;letter-spacing:-0.02em;margin-bottom:14px}
+.night-band .script{font-size:30px;color:var(--algae);display:block;margin-bottom:10px}
+.night-band p{font-size:18px;color:rgba(255,255,255,0.85);max-width:660px;margin:0 auto 28px}
+.night-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:36px 0;text-align:left}
+.ncard{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:18px;padding:24px}
+.ncard h3{font-size:17px;font-weight:700;color:var(--algae);margin-bottom:6px}
+.ncard p{font-size:15px;color:rgba(255,255,255,0.85);margin:0;max-width:none}
+
+/* Story */
+.story{background:var(--lavender)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story-grid p{font-size:17px;color:var(--ink);margin-bottom:16px}
+.elephant-card{background:white;border-radius:24px;padding:48px;text-align:center;box-shadow:0 16px 40px rgba(109,88,164,0.1)}
+.elephant-card .big{font-size:88px;line-height:1}
+.elephant-card .script{font-size:26px;color:var(--purple);margin-top:14px;display:block}
+
+/* FAQ */
+.faq-list{max-width:760px}
+.faq-list details{border:1.5px solid #EEE9F9;border-radius:16px;padding:20px 24px;margin-bottom:14px}
+.faq-list summary{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:700;cursor:pointer;color:var(--ink)}
+.faq-list p{font-size:15px;color:var(--muted);margin-top:12px}
+
+/* Final CTA */
+.final-cta{background:var(--teal-soft);text-align:center}
+.final-cta .script{font-size:30px;color:var(--teal);display:block;margin-bottom:10px}
+.final-cta h2{margin-bottom:14px}
+.final-cta p{font-size:18px;color:var(--muted);max-width:600px;margin:0 auto 28px}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-grid h4{font-family:'Montserrat',sans-serif;color:white;font-size:14px;font-weight:700;margin-bottom:14px}
+.foot-grid a{display:block;margin-bottom:9px;color:rgba(255,255,255,0.7)}
+.foot-grid a:hover{color:var(--algae)}
+.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
+
+@media(max-width:820px){
+  .hero h1{font-size:36px}
+  .nav-links{display:none}
+  .story-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="../../index.html" class="logo"><img src="../../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
+    <div class="nav-links">
+      <a href="../index.html">Find Care</a>
+      <a href="../../become-a-momni/index.html">Become a Momni</a>
+      <a href="../../circles/index.html">Circles</a>
+      <a href="../../our-story/index.html">Our Story</a>
+      <a href="https://momnifoundation.org">Foundation</a>
+      <a href="../../stories/index.html">Stories</a>
+    </div>
+    <a href="../../waitlist/index.html" class="cta-btn">Join the Circle</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Overnight childcare for the mamas who <em>work while the world sleeps</em>.</h1>
+    <p class="sub">Nurses. CNAs. Hospital techs. Hotel, warehouse, and dispatch mamas. Your kids sleep tucked in at a mother's home nearby — and you pick up warm, fed, and happy in the morning.</p>
+    <span class="script">Your babies sleep; you save lives.</span>
+    <div class="hero-ctas">
+      <a href="../../waitlist/index.html" class="btn-primary">Find overnight care near you</a>
+      <a href="../../become-a-momni/index.html" class="btn-secondary">Become a Momni</a>
+    </div>
+    <p class="hero-note">Your Momni keeps every penny of her care income. Momni never takes a cut.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-label">How it works</div>
+    <h2>Three steps before your shift starts.</h2>
+    <p class="lede">Daycares close at six. Your shift starts at seven. Momni was built for exactly this gap — overnight care in a real mother's home, on your schedule.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Find a night-owl Momni</h3>
+        <p>Search mamas near you (or near the hospital) who host overnights. Read what other mothers have shared, message her, meet her with the kids before your first shift.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Drop off before work</h3>
+        <p>Jammies on, teeth brushed, blankie packed. She does the bedtime story in her home while you clock in. Many night-shift mamas book the same rotation every week.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Morning pickup, your way</h3>
+        <p>Scoop them up after handoff report — or arrange a late pickup so you can sleep first. You two set the rhythm. Pay her directly, mom to mom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="night-band">
+  <div class="wrap">
+    <span class="script">While you're on the floor, she's holding it down.</span>
+    <h2>Built for the 7-to-7 life.</h2>
+    <p>You spend the night caring for everyone else's families. A Momni spends it caring for yours — bedtime, midnight wake-ups, breakfast, the works. This isn't a babysitter staying late. It's a mother, in her home, doing what mothers do.</p>
+    <div class="night-cards">
+      <div class="ncard">
+        <h3>Three 12s a week</h3>
+        <p>Book your whole rotation at once. Same Momni every Tuesday, Thursday, Saturday night — your kids' second bedtime routine.</p>
+      </div>
+      <div class="ncard">
+        <h3>Real sleep for them</h3>
+        <p>Actual beds, actual bedtime, a calm house. Your kids wake up rested in a home, not a facility.</p>
+      </div>
+      <div class="ncard">
+        <h3>Real sleep for you</h3>
+        <p>Post-shift sleep is sacred. Arrange a noon pickup and come get them after you've slept like a human being.</p>
+      </div>
+    </div>
+    <a href="../../waitlist/index.html" class="btn-secondary" style="display:inline-block;margin-top:8px">Search night-owl Momnis</a>
+  </div>
+</section>
+
+<section class="section story">
+  <div class="wrap story-grid">
+    <div>
+      <div class="section-label">A story from the Circle</div>
+      <h2>Dani works the ER. Bree works the bedtime.</h2>
+      <p>Dani is a single mama and an ER nurse on three twelves a week. For two years she pieced nights together — her mom one week, a teenager the next, a panicked group text the week after that.</p>
+      <p>Then she found Bree, a Momni eight minutes from the hospital whose own kids are early sleepers. Now Dani drops her boys off at 6:15 with their pillows and their dinosaur pajamas. Bree sends one photo around 8:30 — two sleeping boys — and Dani works her whole shift without checking her phone in a panic.</p>
+      <p>Morning pickup smells like pancakes. "She's not my backup plan anymore," Dani says. "She's my person."</p>
+      <a href="../../waitlist/index.html" class="btn-primary" style="display:inline-block;margin-top:8px">Find your Bree</a>
+    </div>
+    <div class="elephant-card">
+      <img src="../../assets/momni-icon-color.png" alt="The Momni elephant" style="width:120px;height:auto;display:block;margin:0 auto">
+      <span class="script">"I care for patients all night because she cares for mine."</span>
+      <p style="font-size:14px;color:var(--muted);margin-top:12px">A night-shift nurse in the Circle</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-label">Questions mamas ask</div>
+    <h2>The honest answers, sister to sister.</h2>
+    <div class="faq-list">
+      <details>
+        <summary>How can I trust someone with my kids overnight?</summary>
+        <p>The same way you'd come to trust a friend: meet her first, ask everything, see her home, start with one night, and decide for yourself. Momni is a community, not a childcare company — we don't vet, screen, or endorse anyone, and we won't pretend otherwise. What the Circle does is share openly: mamas post reviews from other mothers, and any background check a mama has purchased herself and chosen to display lives right on her profile. You choose your Momni. Always.</p>
+      </details>
+      <details>
+        <summary>Where do my kids actually sleep?</summary>
+        <p>In your Momni's home — a real mother's house with real beds (or the pack-and-play and blankie you bring). You'll see the sleeping setup when you meet her, and you two work out the bedtime details together, mama to mama.</p>
+      </details>
+      <details>
+        <summary>I work three 12s a week. Can I book a recurring overnight schedule?</summary>
+        <p>Yes — that's exactly what most night-shift mamas do. Book your rotation as a repeating schedule so the same Momni has your nights every week. Same house, same routine, kids who walk in like they live there.</p>
+      </details>
+      <details>
+        <summary>What does overnight care cost, and how do I pay?</summary>
+        <p>You and your Momni agree on the rate together — overnight rates are between the two of you, and they're often far gentler than agency or facility pricing. Payment goes directly from you to her, mom to mom. Momni never touches care payments and never takes a percentage.</p>
+      </details>
+      <details>
+        <summary>What if I get held over after my shift?</summary>
+        <p>She's a mother — she knows. Mandatory overtime, a code at change of shift, a charting pile-up: text her and the kids have breakfast and cartoons until you get there. Build the what-ifs into your plan together up front, and the chaos stops being chaos.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section final-cta">
+  <div class="wrap">
+    <span class="script">You take care of everyone. Let a mama take care of you.</span>
+    <h2>Find overnight care before your next shift.</h2>
+    <p>There's a Momni near you — maybe near the hospital — whose porch light is on for your babies tonight.</p>
+    <a href="../../waitlist/index.html" class="btn-primary">Find care near you</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="color:white;margin-bottom:14px"><span class="logo-mark" style="background:white;padding:4px"><img src="../../assets/momni-icon-color.png" alt="" style="width:30px;height:auto;display:block"></span>momni</div>
+        <p>Mom-to-mom caresharing.<br>Circle up. Link together.</p>
+      </div>
+      <div>
+        <h4>Find care</h4>
+        <a href="../right-now/index.html">Right Now</a>
+        <a href="../date-night/index.html">Date Night</a>
+        <a href="../my-regulars/index.html">My Regulars</a>
+        <a href="index.html">Night Shift</a>
+        <a href="../find-a-daycare/index.html">Find a Daycare</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="../../become-a-momni/index.html">Become a Momni</a>
+        <a href="../../circles/index.html">Circles</a>
+        <a href="../../stories/index.html">Stories</a>
+        <a href="../../our-story/index.html">Our Story</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../../terms/index.html">Terms of Service</a>
+        <a href="../../privacy/index.html">Privacy</a>
+        <a href="../../community-guidelines/index.html">Community Guidelines</a>
+        <a href="../../contact/index.html">Contact</a>
+      </div>
+    </div>
+    <div class="disclosure">
+      Momni is a community platform. Momni does not employ, supervise, or make any representation about any member. Each member is solely responsible for choosing care arrangements, exactly as they would when finding a friend in the neighborhood. Care payments are made directly between members; Momni never processes care payments.<br><br>
+      momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation (momnifoundation.org) is a separate 501(c)(3) nonprofit organization. One brand, two entities, separate finances.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

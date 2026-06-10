@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Last-minute childcare near you — today | Momni</title>
+<meta name="description" content="Sitter cancelled? Need same-day childcare right now? Find a mama near you who's available today on Momni — mom-to-mom caresharing, in her real home, in your real neighborhood.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#6D58A4; --purple-deep:#4A3880; --teal:#0D878F; --teal-deep:#0A6B72;
+  --algae:#92E2C1; --lavender:#F5F0FE; --teal-soft:#E1F7F2; --clay:#D9C0A3;
+  --ink:#2B2233; --muted:#6B6477; --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3,.display{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid #EEE9F9;z-index:50}
+.nav-inner{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;color:var(--purple);letter-spacing:-0.02em}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:var(--lavender);display:flex;align-items:center;justify-content:center;font-size:20px}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:15px;font-weight:500;color:var(--ink)}
+.nav-links a:hover{color:var(--purple)}
+.cta-btn{background:var(--teal);color:white;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px;transition:background 0.15s}
+.cta-btn:hover{background:var(--teal-deep)}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--lavender) 0%,#FFFFFF 100%);padding:88px 0 64px;text-align:center}
+.hero h1{font-size:54px;font-weight:800;letter-spacing:-0.03em;line-height:1.12;max-width:820px;margin:0 auto 20px;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--purple)}
+.hero p.sub{font-size:20px;color:var(--muted);max-width:640px;margin:0 auto 14px}
+.hero .script{font-size:28px;color:var(--teal);margin-bottom:32px;display:block}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--purple);color:white;font-weight:600;padding:15px 34px;border-radius:100px;font-size:17px;transition:all 0.15s}
+.btn-primary:hover{background:var(--purple-deep)}
+.btn-secondary{background:var(--algae);color:#0B4A36;font-weight:600;padding:15px 34px;border-radius:100px;font-size:17px;transition:all 0.15s}
+.btn-secondary:hover{filter:brightness(0.95)}
+.hero-note{font-size:14px;color:var(--muted);margin-top:18px}
+
+/* Sections */
+.section{padding:72px 0}
+.section-label{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.section h2{font-size:36px;font-weight:800;letter-spacing:-0.02em;margin-bottom:10px}
+.section .lede{font-size:18px;color:var(--muted);max-width:640px;margin-bottom:40px}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.step{border:1.5px solid #EEE9F9;border-radius:18px;padding:28px}
+.step .num{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:white;background:var(--purple);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.step h3{font-size:19px;font-weight:700;margin-bottom:6px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* Story */
+.story{background:var(--lavender)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story-grid p{font-size:17px;color:var(--ink);margin-bottom:16px}
+.story-card{background:white;border-radius:24px;padding:48px;text-align:center;box-shadow:0 16px 40px rgba(109,88,164,0.1)}
+.story-card .big{font-size:88px;line-height:1}
+.story-card .script{font-size:26px;color:var(--purple);margin-top:14px;display:block}
+
+/* FAQ */
+.faq details{border:1.5px solid #EEE9F9;border-radius:16px;padding:20px 24px;margin-bottom:14px}
+.faq details[open]{border-color:var(--purple)}
+.faq summary{font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;cursor:pointer;color:var(--ink)}
+.faq details p{font-size:15px;color:var(--muted);margin-top:12px}
+
+/* CTA band */
+.cta-band{background:var(--purple);color:white;padding:80px 0;text-align:center}
+.cta-band h2{font-size:38px;font-weight:800;letter-spacing:-0.02em;margin-bottom:14px}
+.cta-band .script{font-size:30px;color:var(--algae);display:block;margin-bottom:10px}
+.cta-band p{font-size:18px;color:rgba(255,255,255,0.85);max-width:620px;margin:0 auto 28px}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-grid h4{font-family:'Montserrat',sans-serif;color:white;font-size:14px;font-weight:700;margin-bottom:14px}
+.foot-grid a{display:block;margin-bottom:9px;color:rgba(255,255,255,0.7)}
+.foot-grid a:hover{color:var(--algae)}
+.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
+
+@media(max-width:820px){
+  .hero h1{font-size:36px}
+  .nav-links{display:none}
+  .story-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="../../index.html" class="logo"><img src="../../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
+    <div class="nav-links">
+      <a href="../index.html">Find Care</a>
+      <a href="../../become-a-momni/index.html">Become a Momni</a>
+      <a href="../../circles/index.html">Circles</a>
+      <a href="../../our-story/index.html">Our Story</a>
+      <a href="https://momnifoundation.org">Foundation</a>
+      <a href="../../stories/index.html">Stories</a>
+    </div>
+    <a href="../../waitlist/index.html" class="cta-btn">Join the Circle</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>The sitter cancelled. The meeting didn't. <em>A mama near you is up too.</em></h1>
+    <p class="sub">It's 7am, school is closed, your shift starts in two hours, and your group chat has gone quiet. Momni shows you the mothers in your neighborhood who can take your kids today — this very hour.</p>
+    <span class="script">You're not stuck. You're surrounded.</span>
+    <div class="hero-ctas">
+      <a href="../../waitlist/index.html" class="btn-primary">Search Momnis available today</a>
+      <a href="../../become-a-momni/index.html" class="btn-secondary">Become a Momni</a>
+    </div>
+    <p class="hero-note">You pay your Momni directly, mom to mom. Momni never takes a cut.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-label">How it works</div>
+    <h2>From 7am panic to drop-off before 9.</h2>
+    <p class="lede">Three steps. No waitlists, no agencies, no interviews scheduled for next Thursday. Just mothers who are home today.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Search Momnis available today</h3>
+        <p>Open the map and see which mamas near you have marked themselves available right now. Real mothers, real homes, walking distance to a few miles away.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Meet her in the app</h3>
+        <p>Read her profile, see what other mamas have shared, message her, ask every question on your mind. You choose her — the way you'd choose a friend.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Drop off, pay her directly</h3>
+        <p>Bring the kids, the snacks, the blankie. You pay her directly, mom to mom — she keeps every penny, and Momni never touches the money.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section story">
+  <div class="wrap story-grid">
+    <div>
+      <div class="section-label">Mama to mama</div>
+      <h2>We've all had the 7am morning.</h2>
+      <p>The text comes in at 6:48: "So sorry, I'm sick, I can't come today." And you stand in the kitchen in one shoe doing the math — the meeting you can't move, the partner who's already gone, the mom who lives four states away.</p>
+      <p>Here's what Karmel learned from 26,000 mothers: the help was never far away. She was three streets over the whole time — a mama with cheerios on the floor and room on the couch, who knows exactly what 6:48am feels like because she's lived it too.</p>
+      <p>Momni just makes her findable. The rest is what mothers have always done for each other.</p>
+      <a href="../../waitlist/index.html" class="btn-primary" style="display:inline-block;margin-top:8px">Find a mama near you today</a>
+    </div>
+    <div class="story-card">
+      <div class="big">⚡</div>
+      <span class="script">"She was three streets over the whole time."</span>
+      <p style="font-size:14px;color:var(--muted);margin-top:12px">Mothers circling up for each other — the heart of <em>Circle Up</em> by founder Karmel Larson</p>
+    </div>
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="wrap">
+    <div class="section-label">Questions mamas ask</div>
+    <h2>Fair questions. Honest answers.</h2>
+    <p class="lede">You're trusting another mother with your babies. Ask us anything — and then ask her everything.</p>
+    <details>
+      <summary>How fast can I actually find care?</summary>
+      <p>As fast as a mama near you says yes. The Right Now search shows only Momnis who've marked themselves available today, so you're not messaging into the void. Many mamas hear back within minutes — but it depends on who's circled up in your neighborhood.</p>
+    </details>
+    <details>
+      <summary>Does Momni screen hosts?</summary>
+      <p>No — and we're upfront about that. Momni is a community, not a childcare company. We don't employ, supervise, or make representations about any member. You choose your Momni: you read her profile, you ask the questions, you make the call — exactly like choosing a trusted friend in the neighborhood. Mamas share reviews from other mothers, and any background check a mama has purchased herself and chosen to display lives right on her profile.</p>
+    </details>
+    <details>
+      <summary>How much does same-day care cost?</summary>
+      <p>Whatever you and your Momni agree on. Each mama sets her own rate, and you pay her directly — cash, Venmo, however you two decide. Momni never processes care payments and never takes a percentage. She keeps every penny.</p>
+    </details>
+    <details>
+      <summary>Can I meet her before I drop off?</summary>
+      <p>Please do. Message her in the app, video chat, swing by for five minutes at drop-off and look around. Any good Momni expects your questions — she asks the same ones when she needs care for her own kids.</p>
+    </details>
+    <details>
+      <summary>What if I need her again next week?</summary>
+      <p>That's the best part. Today's emergency mama often becomes your regular. Save her to your Links and check out <a href="../my-regulars/index.html" style="color:var(--teal);font-weight:600">My Regulars</a> for standing weekly care.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <span class="script">Right now means right now.</span>
+    <h2>A mama near you is already up.</h2>
+    <p>Coffee's on, toys are out, and she has room on the couch for yours. Open the map and see who's available today.</p>
+    <a href="../../waitlist/index.html" class="btn-secondary" style="display:inline-block">Search Momnis available today</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="color:white;margin-bottom:14px"><span class="logo-mark" style="background:white;padding:4px"><img src="../../assets/momni-icon-color.png" alt="" style="width:30px;height:auto;display:block"></span>momni</div>
+        <p>Mom-to-mom caresharing.<br>Circle up. Link together.</p>
+      </div>
+      <div>
+        <h4>Find care</h4>
+        <a href="index.html">Right Now</a>
+        <a href="../date-night/index.html">Date Night</a>
+        <a href="../my-regulars/index.html">My Regulars</a>
+        <a href="../night-shift/index.html">Night Shift</a>
+        <a href="../find-a-daycare/index.html">Find a Daycare</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="../../become-a-momni/index.html">Become a Momni</a>
+        <a href="../../circles/index.html">Circles</a>
+        <a href="../../stories/index.html">Stories</a>
+        <a href="../../our-story/index.html">Our Story</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../../terms/index.html">Terms of Service</a>
+        <a href="../../privacy/index.html">Privacy</a>
+        <a href="../../community-guidelines/index.html">Community Guidelines</a>
+        <a href="../../contact/index.html">Contact</a>
+      </div>
+    </div>
+    <div class="disclosure">
+      Momni is a community platform. Momni does not employ, supervise, or make any representation about any member. Each member is solely responsible for choosing care arrangements, exactly as they would when finding a friend in the neighborhood. Care payments are made directly between members; Momni never processes care payments.<br><br>
+      momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation (momnifoundation.org) is a separate 501(c)(3) nonprofit organization. One brand, two entities, separate finances.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

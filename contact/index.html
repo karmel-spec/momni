@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Momni</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#6D58A4;--teal:#0D878F;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--ink:#2B2233;--muted:#6B6477}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);line-height:1.7}
+h1,h3{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px solid #EEE9F9;z-index:50}
+.nav-inner{display:flex;align-items:center;height:68px;max-width:1120px;margin:0 auto;padding:0 24px}
+.cta-btn{background:var(--teal);color:white;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px;margin-left:auto}
+.hero{background:linear-gradient(180deg,var(--lavender),#fff);padding:64px 0 40px;text-align:center}
+h1{font-size:38px;font-weight:800}
+.hero .script{font-size:26px;color:var(--teal);display:block;margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:40px 0}
+.card{background:var(--teal-soft);border-radius:16px;padding:24px}
+.card.purple{background:var(--lavender)}
+.card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.card p{font-size:14px;color:var(--muted)}
+.card a{color:var(--teal);font-weight:600;font-size:14px}
+form{background:white;border:1.5px solid #EEE9F9;border-radius:18px;padding:28px;margin-bottom:56px}
+label{font-size:14px;font-weight:600;display:block;margin:14px 0 6px}
+input,textarea{width:100%;padding:11px 14px;border:1.5px solid #E5E0F0;border-radius:10px;font-family:inherit;font-size:15px}
+button{background:var(--purple);color:white;font-weight:600;border:none;padding:13px 30px;border-radius:100px;font-size:16px;margin-top:18px;cursor:pointer}
+footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-size:13px;line-height:1.7}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="../index.html"><img src="../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:44px;display:block"></a><a href="../waitlist/index.html" class="cta-btn">Join the Circle</a></div></nav>
+<header class="hero"><div class="wrap"><h1>Talk to us, mama.</h1><span class="script">A real answer, every time.</span></div></header>
+<div class="wrap">
+  <div class="cards">
+    <div class="card"><h3>MomniGPT concierge</h3><p>Coming with the app — the fastest answer, day or night.</p><a href="../waitlist/index.html">Join the waitlist →</a></div>
+    <div class="card purple"><h3>Email</h3><p>For anything that needs a human hand.</p><a href="mailto:hello@momni.com">hello@momni.com</a></div>
+    <div class="card"><h3>Press &amp; partnerships</h3><p>Working on a story, or want to bring Momni to your community?</p><a href="mailto:hello@momni.com">Say hello →</a></div>
+  </div>
+  <form onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-size:18px;font-weight:600;color:#0D878F\'>Got it, mama — we will be in touch soon. 💜</p>'">
+    <label>Your name</label><input type="text" placeholder="First name is plenty">
+    <label>Email</label><input type="email" placeholder="you@example.com">
+    <label>What's on your mind?</label><textarea rows="5" placeholder="Tell us anything…"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</div>
+<footer><div class="wrap">Momni is a community platform. Members make their own care decisions. momni.com and app.momni.com are operated by Momni, Inc.; the Momni Foundation is a separate 501(c)(3). One brand, two entities, separate finances.</div></footer>
+</body>
+</html>

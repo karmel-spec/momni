@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Circle — the Momni 2.0 waitlist | Momni</title>
+<meta name="description" content="Momni is coming back. Join the waitlist and be among the first mamas when the Circle lights up again.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#6D58A4;--purple-deep:#4A3880;--teal:#0D878F;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--clay:#D9C0A3;--ink:#2B2233;--muted:#6B6477}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);line-height:1.7;background:linear-gradient(180deg,var(--lavender),#fff 420px)}
+h1,h3{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+nav{background:rgba(255,255,255,0.96);border-bottom:1px solid #EEE9F9}
+.nav-inner{display:flex;align-items:center;height:68px;max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap{max-width:620px;margin:0 auto;padding:0 24px}
+.hero{text-align:center;padding:64px 0 32px}
+h1{font-size:40px;font-weight:800;letter-spacing:-0.02em;line-height:1.15}
+.hero .script{font-size:28px;color:var(--teal);display:block;margin:12px 0 4px}
+.hero p{font-size:18px;color:var(--muted);margin-top:10px}
+form{background:white;border:1.5px solid #EEE9F9;border-radius:20px;padding:32px;margin:24px 0 16px;box-shadow:0 16px 40px rgba(109,88,164,0.08)}
+label{font-size:14px;font-weight:600;display:block;margin:16px 0 6px}
+input,select{width:100%;padding:12px 14px;border:1.5px solid #E5E0F0;border-radius:10px;font-family:inherit;font-size:15px;background:white}
+.roles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:6px}
+.roles label{margin:0;font-weight:500;border:1.5px solid #E5E0F0;border-radius:10px;padding:11px 8px;text-align:center;cursor:pointer;font-size:14px}
+.roles input{display:none}
+.roles input:checked+span{color:var(--purple);font-weight:700}
+.roles label:has(input:checked){border-color:var(--purple);background:var(--lavender)}
+button{width:100%;background:var(--purple);color:white;font-weight:700;border:none;padding:15px;border-radius:100px;font-size:17px;margin-top:22px;cursor:pointer;font-family:'Montserrat',sans-serif}
+button:hover{background:var(--purple-deep)}
+.first-mama{background:var(--teal-soft);border-radius:12px;padding:14px 16px;font-size:14px;margin-top:16px}
+.note{text-align:center;font-size:13px;color:var(--muted);padding-bottom:48px}
+footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-size:13px;line-height:1.7}
+footer .wrap{max-width:1120px}
+@media(max-width:640px){h1{font-size:30px}.roles{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="../index.html"><img src="../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:44px;display:block"></a></div></nav>
+<header class="hero">
+  <div class="wrap">
+    <h1>The Circle is lighting up again.</h1>
+    <span class="script">Your pin is still on the map. Come light it up.</span>
+    <p>Momni 2.0 is almost here — mom-to-mom caresharing, rebuilt and mama-led. Join the waitlist and be among the first when your neighborhood opens.</p>
+  </div>
+</header>
+<div class="wrap">
+  <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html">
+    <input type="hidden" name="form-name" value="waitlist">
+    <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+    <label for="name">Your name</label>
+    <input type="text" id="name" name="name" placeholder="First name is plenty" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+    <label for="zip">ZIP code</label>
+    <input type="text" id="zip" name="zip" placeholder="So we know where to light up next" required>
+    <label>I want to…</label>
+    <div class="roles">
+      <label><input type="radio" name="role" value="find-care" required><span>Find care</span></label>
+      <label><input type="radio" name="role" value="host"><span>Be a Momni</span></label>
+      <label><input type="radio" name="role" value="both"><span>Both</span></label>
+    </div>
+    <div class="first-mama">
+      <label style="display:flex;gap:10px;align-items:flex-start;margin:0;font-weight:500;font-size:14px;cursor:pointer">
+        <input type="checkbox" name="first_mama" value="yes" style="width:auto;margin-top:3px">
+        <span>I was a Momni 1.0 mama — my pin is already on the map 💜</span>
+      </label>
+    </div>
+    <button type="submit">Join the Circle</button>
+  </form>
+  <p class="note">No spam, ever — just the relaunch letter and your neighborhood's opening day. Momni is a community platform; members make their own care decisions.</p>
+</div>
+<footer><div class="wrap">momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation is a separate 501(c)(3). One brand, two entities, separate finances.</div></footer>
+</body>
+</html>

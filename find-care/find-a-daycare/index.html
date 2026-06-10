@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find a licensed daycare near you | Momni</title>
+<meta name="description" content="A neutral directory of licensed daycare providers near you, built from public state licensing records. Momni doesn't vet or endorse any provider — this is public information, organized for mamas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#6D58A4; --purple-deep:#4A3880; --teal:#0D878F; --teal-deep:#0A6B72;
+  --algae:#92E2C1; --lavender:#F5F0FE; --teal-soft:#E1F7F2; --clay:#D9C0A3;
+  --ink:#2B2233; --muted:#6B6477; --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3,.display{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid #EEE9F9;z-index:50}
+.nav-inner{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;color:var(--purple);letter-spacing:-0.02em}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:var(--lavender);display:flex;align-items:center;justify-content:center;font-size:20px}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:15px;font-weight:500;color:var(--ink)}
+.nav-links a:hover{color:var(--purple)}
+.cta-btn{background:var(--teal);color:white;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px;transition:background 0.15s}
+.cta-btn:hover{background:var(--teal-deep)}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--lavender) 0%,#FFFFFF 100%);padding:88px 0 64px;text-align:center}
+.hero h1{font-size:50px;font-weight:800;letter-spacing:-0.03em;line-height:1.12;max-width:820px;margin:0 auto 20px;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--purple)}
+.hero p.sub{font-size:20px;color:var(--muted);max-width:680px;margin:0 auto 14px}
+.hero .script{font-size:28px;color:var(--teal);margin-bottom:32px;display:block}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--purple);color:white;font-weight:600;padding:15px 34px;border-radius:100px;font-size:17px;transition:all 0.15s}
+.btn-primary:hover{background:var(--purple-deep)}
+.btn-secondary{background:var(--algae);color:#0B4A36;font-weight:600;padding:15px 34px;border-radius:100px;font-size:17px;transition:all 0.15s}
+.btn-secondary:hover{filter:brightness(0.95)}
+.hero-note{font-size:14px;color:var(--muted);margin-top:18px}
+
+/* Framing banner */
+.framing{background:var(--teal-soft);border-radius:18px;padding:24px 28px;max-width:760px;margin:36px auto 0;font-size:16px;color:var(--teal-deep);font-weight:600}
+
+/* Sections */
+.section{padding:72px 0}
+.section-label{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.section h2{font-size:36px;font-weight:800;letter-spacing:-0.02em;margin-bottom:10px}
+.section .lede{font-size:18px;color:var(--muted);max-width:640px;margin-bottom:40px}
+
+/* Directory mockup */
+.directory{background:var(--lavender)}
+.search-mock{background:white;border-radius:18px;padding:18px;display:flex;gap:12px;flex-wrap:wrap;box-shadow:0 12px 28px rgba(109,88,164,0.1);margin-bottom:14px}
+.search-mock input{flex:1;min-width:220px;border:1.5px solid #EEE9F9;border-radius:100px;padding:13px 22px;font-family:'Albert Sans',sans-serif;font-size:16px;color:var(--ink)}
+.search-mock input:focus{outline:none;border-color:var(--purple)}
+.search-mock .search-btn{background:var(--teal);color:white;font-weight:600;border:none;padding:13px 30px;border-radius:100px;font-size:16px;cursor:pointer;font-family:'Albert Sans',sans-serif}
+.sample-tag{display:inline-block;background:var(--clay);color:#5C4326;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:18px}
+.provider-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.pcard-dir{background:white;border:1.5px solid #EEE9F9;border-radius:18px;padding:26px}
+.pcard-dir h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.pcard-dir .dist{font-size:14px;color:var(--teal);font-weight:600;margin-bottom:12px}
+.pcard-dir dl{font-size:14px;color:var(--muted)}
+.pcard-dir dt{font-weight:600;color:var(--ink);margin-top:8px}
+.dir-note{font-size:14px;color:var(--muted);margin-top:20px;max-width:680px}
+
+/* Checklist */
+.checklist{counter-reset:q}
+.checklist li{list-style:none;background:var(--teal-soft);border-radius:16px;padding:20px 24px 20px 64px;margin-bottom:12px;position:relative;font-size:16px;max-width:780px}
+.checklist li::before{counter-increment:q;content:counter(q);position:absolute;left:20px;top:18px;width:30px;height:30px;border-radius:50%;background:var(--teal);color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.checklist li strong{display:block;font-family:'Montserrat',sans-serif}
+
+/* Licensing two-col */
+.lic-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.lic-card{border-radius:18px;padding:28px}
+.lic-card.does{background:var(--teal-soft)}
+.lic-card.doesnt{background:var(--lavender)}
+.lic-card h3{font-size:18px;font-weight:700;margin-bottom:12px}
+.lic-card.does h3{color:var(--teal-deep)}
+.lic-card.doesnt h3{color:var(--purple-deep)}
+.lic-card ul{padding-left:20px;font-size:15px;color:var(--ink)}
+.lic-card li{margin-bottom:8px}
+
+/* Cross-link */
+.crosslink{background:var(--purple);color:white;text-align:center}
+.crosslink h2{color:white}
+.crosslink .script{font-size:30px;color:var(--algae);display:block;margin-bottom:10px}
+.crosslink p{font-size:18px;color:rgba(255,255,255,0.85);max-width:620px;margin:0 auto 32px}
+.chip-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.chip{background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.3);color:white;font-weight:600;font-size:15px;padding:10px 22px;border-radius:100px;transition:all 0.15s}
+.chip:hover{background:white;color:var(--purple)}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-grid h4{font-family:'Montserrat',sans-serif;color:white;font-size:14px;font-weight:700;margin-bottom:14px}
+.foot-grid a{display:block;margin-bottom:9px;color:rgba(255,255,255,0.7)}
+.foot-grid a:hover{color:var(--algae)}
+.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
+
+@media(max-width:820px){
+  .hero h1{font-size:36px}
+  .nav-links{display:none}
+  .lic-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="../../index.html" class="logo"><img src="../../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
+    <div class="nav-links">
+      <a href="../index.html">Find Care</a>
+      <a href="../../become-a-momni/index.html">Become a Momni</a>
+      <a href="../../circles/index.html">Circles</a>
+      <a href="../../our-story/index.html">Our Story</a>
+      <a href="https://momnifoundation.org">Foundation</a>
+      <a href="../../stories/index.html">Stories</a>
+    </div>
+    <a href="../../waitlist/index.html" class="cta-btn">Join the Circle</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Find a <em>licensed daycare</em> near you.</h1>
+    <p class="sub">Sometimes the right answer for your family is full-time, licensed care — and Momni helps you find that too. One place to look, whatever kind of care your week needs.</p>
+    <span class="script">One-stop shop. Zero pressure.</span>
+    <div class="hero-ctas">
+      <a href="../../waitlist/index.html" class="btn-primary">Browse the directory</a>
+      <a href="../index.html" class="btn-secondary">See all care options</a>
+    </div>
+    <div class="framing">Momni doesn't vet or endorse any provider — this is public state licensing data, organized for mamas.</div>
+  </div>
+</header>
+
+<section class="section directory">
+  <div class="wrap">
+    <div class="section-label">The directory</div>
+    <h2>Licensed providers, from public state records.</h2>
+    <p class="lede">Every state publishes its licensed childcare providers. We gather that public information and organize it so you can actually use it — by distance, license type, and capacity. Here's what it looks like:</p>
+    <div class="search-mock">
+      <input type="text" placeholder="Enter your ZIP code or city…" aria-label="ZIP code or city">
+      <button class="search-btn" type="button">Search daycares</button>
+    </div>
+    <span class="sample-tag">Sample data — for illustration only</span>
+    <div class="provider-cards">
+      <div class="pcard-dir">
+        <h3>Sunny Sprouts Learning Center</h3>
+        <div class="dist">0.8 miles away</div>
+        <dl>
+          <dt>License number</dt><dd>UT-CC-000000 (sample)</dd>
+          <dt>License type</dt><dd>Licensed Child Care Center</dd>
+          <dt>Licensed capacity</dt><dd>48 children</dd>
+        </dl>
+      </div>
+      <div class="pcard-dir">
+        <h3>Maple Hollow Family Child Care</h3>
+        <div class="dist">1.4 miles away</div>
+        <dl>
+          <dt>License number</dt><dd>UT-FCC-000000 (sample)</dd>
+          <dt>License type</dt><dd>Licensed Family Child Care</dd>
+          <dt>Licensed capacity</dt><dd>8 children</dd>
+        </dl>
+      </div>
+      <div class="pcard-dir">
+        <h3>Little Wonders Preschool &amp; Daycare</h3>
+        <div class="dist">2.1 miles away</div>
+        <dl>
+          <dt>License number</dt><dd>UT-CC-000001 (sample)</dd>
+          <dt>License type</dt><dd>Licensed Child Care Center</dd>
+          <dt>Licensed capacity</dt><dd>64 children</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="dir-note">These cards are placeholders showing the format. The live directory in the app pulls from your state's public licensing records. Momni simply organizes the public record — every decision about a provider is yours, and we recommend confirming details directly with the provider and your state's licensing office.</p>
+    <a href="../../waitlist/index.html" class="btn-primary" style="display:inline-block;margin-top:28px">Open the live directory</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-label">Mom to mom</div>
+    <h2>Questions to ask any provider.</h2>
+    <p class="lede">A license tells you a provider exists in the state's records. The visit tells you the rest. Here are the questions experienced mamas ask — bring this list with you.</p>
+    <ol class="checklist">
+      <li><strong>What are your ratios?</strong> How many children per adult, by age group — and what happens when a staff member calls in sick?</li>
+      <li><strong>Can I see your current license and most recent inspection report?</strong> A confident provider will show you both without blinking.</li>
+      <li><strong>Who exactly will be with my child?</strong> Names, training, how long they've been there, and how often staff turn over.</li>
+      <li><strong>Can I drop in unannounced?</strong> Open-door policies matter. If visits require advance notice, ask why.</li>
+      <li><strong>What does a typical day look like?</strong> Naps, meals, outside time, screens. Does the rhythm match your child's?</li>
+      <li><strong>How do you handle discipline and big feelings?</strong> Listen for an actual philosophy, not just "we redirect."</li>
+      <li><strong>What's your illness and medication policy?</strong> When are kids sent home, and who can give medicine?</li>
+      <li><strong>How will you communicate with me?</strong> Daily updates, photos, an app, a clipboard — and how fast do they reach you when something's wrong?</li>
+      <li><strong>What's your emergency plan?</strong> Allergies, injuries, evacuations, pickup authorization — who's trained in CPR and first aid?</li>
+      <li><strong>What are the real costs and terms?</strong> Registration fees, late-pickup fees, vacation weeks, notice periods. Get it in writing.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-label">Know the record</div>
+    <h2>What a state license does — and doesn't — tell you.</h2>
+    <p class="lede">A license is a useful starting point, not a finish line. Here's what's actually in the public record.</p>
+    <div class="lic-grid">
+      <div class="lic-card does">
+        <h3>A license generally tells you…</h3>
+        <ul>
+          <li>The provider is registered with the state and subject to its rules.</li>
+          <li>The maximum number of children the state allows in their care.</li>
+          <li>That the state conducts inspections — and most states publish inspection and violation history online.</li>
+          <li>Which category of care it is (center, family child care home, preschool, etc.).</li>
+        </ul>
+      </div>
+      <div class="lic-card doesnt">
+        <h3>A license doesn't tell you…</h3>
+        <ul>
+          <li>Whether the care is warm, attentive, or right for your child.</li>
+          <li>Who will actually be in the room with your little one day to day.</li>
+          <li>How the provider handles a hard afternoon, a picky eater, or a kid who misses mama.</li>
+          <li>Anything about quality beyond minimum standards — the state checks floors and ratios, not hugs.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:24px;font-size:15px;color:var(--muted);max-width:680px">That's why the visit, the questions above, and your own gut matter most. Check your state's licensing website for inspection reports, and trust yourself — nobody knows your child like you do.</p>
+  </div>
+</section>
+
+<section class="section crosslink">
+  <div class="wrap">
+    <span class="script">Or maybe you don't need a daycare at all.</span>
+    <h2>Need flexible or occasional care instead? That's what the Circle is for.</h2>
+    <p>Full-time licensed care is one answer. A mama around the corner — for right now, for date night, for every Monday morning — is another. Momni gives you both in one place.</p>
+    <div class="chip-row">
+      <a class="chip" href="../right-now/">⚡ Right Now</a>
+      <a class="chip" href="../date-night/">🌙 Date Night</a>
+      <a class="chip" href="../my-regulars/">🔁 My Regulars</a>
+      <a class="chip" href="../night-shift/">🌃 Night Shift</a>
+      <a class="chip" href="../weekend-getaway/">🧳 Weekend Getaway</a>
+      <a class="chip" href="../extended-trip/">✈️ Extended Trip</a>
+    </div>
+    <a href="../../waitlist/index.html" class="btn-secondary" style="display:inline-block">Join the Circle</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="color:white;margin-bottom:14px"><span class="logo-mark" style="background:white;padding:4px"><img src="../../assets/momni-icon-color.png" alt="" style="width:30px;height:auto;display:block"></span>momni</div>
+        <p>Mom-to-mom caresharing.<br>Circle up. Link together.</p>
+      </div>
+      <div>
+        <h4>Find care</h4>
+        <a href="../right-now/">Right Now</a>
+        <a href="../date-night/">Date Night</a>
+        <a href="../my-regulars/">My Regulars</a>
+        <a href="../night-shift/">Night Shift</a>
+        <a href="./">Find a Daycare</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="../../become-a-momni/">Become a Momni</a>
+        <a href="../../circles/">Circles</a>
+        <a href="../../stories/">Stories</a>
+        <a href="../../our-story/">Our Story</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../../terms/">Terms of Service</a>
+        <a href="../../privacy/">Privacy</a>
+        <a href="../../community-guidelines/">Community Guidelines</a>
+        <a href="../../contact/">Contact</a>
+      </div>
+    </div>
+    <div class="disclosure">
+      Momni is a community platform. Momni does not employ, supervise, or make any representation about any member. Each member is solely responsible for choosing care arrangements, exactly as they would when finding a friend in the neighborhood. Care payments are made directly between members; Momni never processes care payments.<br><br>
+      momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation (momnifoundation.org) is a separate 501(c)(3) nonprofit organization. One brand, two entities, separate finances.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

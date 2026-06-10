@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekend childcare for a getaway | Momni</title>
+<meta name="description" content="Two days away, together. Weekend childcare from a mama nearby — your kids have a two-night sleepover in a real home while you and your person finally get away.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#6D58A4; --purple-deep:#4A3880; --teal:#0D878F; --teal-deep:#0A6B72;
+  --algae:#92E2C1; --lavender:#F5F0FE; --teal-soft:#E1F7F2; --clay:#D9C0A3;
+  --ink:#2B2233; --muted:#6B6477; --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3,.display{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid #EEE9F9;z-index:50}
+.nav-inner{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;color:var(--purple);letter-spacing:-0.02em}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:var(--lavender);display:flex;align-items:center;justify-content:center;font-size:20px}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:15px;font-weight:500;color:var(--ink)}
+.nav-links a:hover{color:var(--purple)}
+.cta-btn{background:var(--teal);color:white;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px;transition:background 0.15s}
+.cta-btn:hover{background:var(--teal-deep)}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--lavender) 0%,#FFFFFF 100%);padding:88px 0 64px;text-align:center}
+.hero h1{font-size:50px;font-weight:800;letter-spacing:-0.03em;line-height:1.12;max-width:820px;margin:0 auto 20px;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--purple)}
+.hero p.sub{font-size:20px;color:var(--muted);max-width:640px;margin:0 auto 14px}
+.hero .script{font-size:28px;color:var(--teal);margin-bottom:32px;display:block}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--purple);color:white;font-weight:600;padding:15px 34px;border-radius:100px;font-size:17px;transition:all 0.15s}
+.btn-primary:hover{background:var(--purple-deep)}
+.btn-secondary{background:var(--algae);color:#0B4A36;font-weight:600;padding:15px 34px;border-radius:100px;font-size:17px;transition:all 0.15s}
+.btn-secondary:hover{filter:brightness(0.95)}
+.hero-note{font-size:14px;color:var(--muted);margin-top:18px}
+
+/* Sections */
+.section{padding:72px 0}
+.section-label{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.section h2{font-size:36px;font-weight:800;letter-spacing:-0.02em;margin-bottom:10px}
+.section .lede{font-size:18px;color:var(--muted);max-width:640px;margin-bottom:40px}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.step{background:var(--teal-soft);border-radius:18px;padding:28px}
+.step .num{font-family:'Montserrat',sans-serif;font-size:34px;font-weight:800;color:var(--teal);margin-bottom:10px}
+.step h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.step p{font-size:15px;color:var(--ink)}
+.step.purple{background:var(--lavender)}
+.step.purple .num{color:var(--purple)}
+
+/* Story */
+.story{background:var(--lavender)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story-grid p{font-size:17px;color:var(--ink);margin-bottom:16px}
+.story-card{background:white;border-radius:24px;padding:48px;text-align:center;box-shadow:0 16px 40px rgba(109,88,164,0.1)}
+.story-card .big{font-size:88px;line-height:1}
+.story-card .script{font-size:26px;color:var(--purple);margin-top:14px;display:block}
+
+/* FAQ */
+.faq-item{border:1.5px solid #EEE9F9;border-radius:18px;padding:26px;margin-bottom:14px}
+.faq-item h3{font-size:18px;font-weight:700;margin-bottom:8px;color:var(--purple-deep)}
+.faq-item p{font-size:15.5px;color:var(--ink)}
+
+/* Final CTA */
+.cta-band{background:var(--purple);color:white;padding:80px 0;text-align:center}
+.cta-band h2{font-size:38px;font-weight:800;letter-spacing:-0.02em;margin-bottom:14px}
+.cta-band .script{font-size:30px;color:var(--algae);display:block;margin-bottom:10px}
+.cta-band p{font-size:18px;color:rgba(255,255,255,0.85);max-width:620px;margin:0 auto 28px}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-grid h4{font-family:'Montserrat',sans-serif;color:white;font-size:14px;font-weight:700;margin-bottom:14px}
+.foot-grid a{display:block;margin-bottom:9px;color:rgba(255,255,255,0.7)}
+.foot-grid a:hover{color:var(--algae)}
+.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
+
+@media(max-width:820px){
+  .hero h1{font-size:34px}
+  .nav-links{display:none}
+  .story-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="../../index.html" class="logo"><img src="../../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
+    <div class="nav-links">
+      <a href="../index.html">Find Care</a>
+      <a href="../../become-a-momni/index.html">Become a Momni</a>
+      <a href="../../circles/index.html">Circles</a>
+      <a href="../../our-story/index.html">Our Story</a>
+      <a href="https://momnifoundation.org">Foundation</a>
+      <a href="../../stories/index.html">Stories</a>
+    </div>
+    <a href="../../waitlist/index.html" class="cta-btn">Join the Circle</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Two days away, together. <em>The kids have a sleepover.</em></h1>
+    <p class="sub">When did you two last wake up without anyone climbing on you? A weekend getaway is possible — your kids spend two happy nights with a mama nearby, in her real home, with her real family.</p>
+    <span class="script">Go. We've got the babies.</span>
+    <div class="hero-ctas">
+      <a href="../../waitlist/index.html" class="btn-primary">Find a Momni for your weekend</a>
+      <a href="../../become-a-momni/index.html" class="btn-secondary">Become a Momni</a>
+    </div>
+    <p class="hero-note">Your Momni keeps every penny of her care income. Momni never takes a cut.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-label">How it works</div>
+    <h2>Three steps between you and that little inn upstate.</h2>
+    <p class="lede">No agencies, no institutions. Just a mama in your neighborhood whose kids would love a weekend of new playmates.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Find a Momni</h3>
+        <p>Open the map and browse mamas near you who host weekend stays. Read their profiles, their reviews from other mothers, and what they've chosen to share about their home and family.</p>
+      </div>
+      <div class="step purple">
+        <div class="num">2</div>
+        <h3>Meet before the weekend</h3>
+        <p>Visit her home with your kids before you book the trip. Let the kids find the toy bin. Ask every question on your list. You choose her — the way you'd choose a trusted friend.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Drop off and go</h3>
+        <p>Backpacks, blankies, the bedtime routine written on a card. Two days of pancakes and pillow forts for them; two days of quiet mornings for you. Photo updates whenever you want them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section story">
+  <div class="wrap story-grid">
+    <div>
+      <div class="section-label">A weekend that actually happened</div>
+      <h2>"We sat at dinner and finished a sentence."</h2>
+      <p>Anna and Dave hadn't been away together since their oldest was born — six years. Every plan dissolved the same way: grandma's back, the sitter's prom, the guilt.</p>
+      <p>Then Anna met Marisol, a Momni twelve minutes from her house, at a park meetup. Their kids built a stick fort together. Two weekends later, Anna's three were having a sleepover at Marisol's — movie night, Saturday pancakes, a backyard campout in the playroom.</p>
+      <p>Anna and Dave drove two hours to a bed and breakfast, slept until eight, and remembered what their own conversation sounded like. The kids cried on Sunday — because they had to leave Marisol's.</p>
+      <a href="../../stories/index.html" class="btn-primary" style="display:inline-block;margin-top:8px">Read more mama stories</a>
+    </div>
+    <div class="story-card">
+      <div class="big">🧳</div>
+      <span class="script">"The kids asked when they could go back."</span>
+      <p style="font-size:14px;color:var(--muted);margin-top:12px">Weekend care happens in a mother's real home — siblings, snacks, bedtime stories and all.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-label">Questions mamas ask</div>
+    <h2>Everything you'd ask a friend, answered straight.</h2>
+    <div style="max-width:760px">
+      <div class="faq-item">
+        <h3>How do I know I can trust a Momni with an overnight stay?</h3>
+        <p>The same way you'd come to trust a friend: you meet her. Momni is a community, not a childcare company — we don't choose your Momni for you, and we never will. You visit her home, meet her family, ask your questions, and decide. Mamas share reviews from other mothers on their profiles, along with any background check they purchased themselves and chose to display. The choice is always, entirely yours.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Will I hear from her over the weekend?</h3>
+        <p>As much as you want. Most mamas agree on a rhythm at the meet-up — photos at breakfast and bedtime, a goodnight video call, or radio silence so you can truly unplug. You set it together before you go.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What does a weekend cost, and who do I pay?</h3>
+        <p>You and your Momni agree on her rate directly — every neighborhood and every arrangement is different. Payment goes straight from you to her, mom to mom. Momni never touches care payments and never takes a percentage. She keeps every penny.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if my kids have never slept away from home?</h3>
+        <p>That's what the meet-beforehand visit is for — and many mamas do a practice afternoon or a single trial night first. Kids settle fastest in a real home with a real mother, other kids, and a normal family rhythm. Bring the blankie, write down the routine, and let her mother them.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What about naps, allergies, and the bedtime routine?</h3>
+        <p>You hand her the whole playbook at drop-off — meals, meds, allergies, the exact order of stories and songs. She's a mom. She knows the bedtime routine is sacred, because hers is too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <span class="script">When did you two last wake up slowly?</span>
+    <h2>Book the room. We'll circle up around the kids.</h2>
+    <p>There's a mama near you whose kids would love a weekend sleepover with yours. Go find her — then go find each other again.</p>
+    <a href="../../waitlist/index.html" class="btn-secondary" style="display:inline-block">Find a Momni near you</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="color:white;margin-bottom:14px"><span class="logo-mark" style="background:white;padding:4px"><img src="../../assets/momni-icon-color.png" alt="" style="width:30px;height:auto;display:block"></span>momni</div>
+        <p>Mom-to-mom caresharing.<br>Circle up. Link together.</p>
+      </div>
+      <div>
+        <h4>Find care</h4>
+        <a href="../right-now/index.html">Right Now</a>
+        <a href="../date-night/index.html">Date Night</a>
+        <a href="../my-regulars/index.html">My Regulars</a>
+        <a href="../night-shift/index.html">Night Shift</a>
+        <a href="../find-a-daycare/index.html">Find a Daycare</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="../../become-a-momni/index.html">Become a Momni</a>
+        <a href="../../circles/index.html">Circles</a>
+        <a href="../../stories/index.html">Stories</a>
+        <a href="../../our-story/index.html">Our Story</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../../terms/index.html">Terms of Service</a>
+        <a href="../../privacy/index.html">Privacy</a>
+        <a href="../../community-guidelines/index.html">Community Guidelines</a>
+        <a href="../../contact/index.html">Contact</a>
+      </div>
+    </div>
+    <div class="disclosure">
+      Momni is a community platform. Momni does not employ, supervise, or make any representation about any member. Each member is solely responsible for choosing care arrangements, exactly as they would when finding a friend in the neighborhood. Care payments are made directly between members; Momni never processes care payments.<br><br>
+      momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation (momnifoundation.org) is a separate 501(c)(3) nonprofit organization. One brand, two entities, separate finances.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

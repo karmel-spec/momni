@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Movement Map | Momni</title>
-<meta name="description" content="The Momni Movement Map — 14,212 first mamas circled up across all 50 states in Momni 1.0. Now the Circle relights, and this time it's global. Put your pin on the map.">
+<meta name="description" content="The Momni Movement Map — 17,011 first mamas placed from Momni 1.0 records across all 50 states. Now the Circle relights, and this time it's global. Put your pin on the map.">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
@@ -49,13 +49,13 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://momni.com/map/">
 <meta property="og:title" content="The Movement Map | Momni">
-<meta property="og:description" content="14,212 first mamas circled up across all 50 states. Now the Circle relights — and this time it's global. Put your pin on the map.">
+<meta property="og:description" content="17,011 first mamas placed from 1.0 records across all 50 states. Now the Circle relights — and this time it's global. Put your pin on the map.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://momni.com/map/">
 <meta property="og:image" content="https://momni.com/assets/photos/girl-red-balloon-beach.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Movement Map | Momni">
-<meta name="twitter:description" content="14,212 first mamas circled up across all 50 states. Now the Circle relights — and this time it's global. Put your pin on the map.">
+<meta name="twitter:description" content="17,011 first mamas placed from 1.0 records across all 50 states. Now the Circle relights — and this time it's global. Put your pin on the map.">
 <meta name="twitter:image" content="https://momni.com/assets/photos/girl-red-balloon-beach.jpg">
 </head>
 <body>
@@ -80,8 +80,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
     <div class="counters" style="align-items:center">
       <div class="counter">
         <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C99F72;margin-bottom:4px">Momni 1.0 · The First Mamas</div>
-        <div class="num" style="color:#C99F72">14,212</div>
-        <div class="lbl">circled up 2017–2020, in all 50 states</div>
+        <div class="num" style="color:#C99F72">17,011</div>
+        <div class="lbl">first mamas placed from 1.0 records — across all 50 states</div>
       </div>
       <div style="font-family:'Caveat',cursive;font-size:54px;color:#6D58A4;line-height:1">+</div>
       <div class="counter">
@@ -92,7 +92,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
       <div style="font-family:'Caveat',cursive;font-size:54px;color:#6D58A4;line-height:1">=</div>
       <div class="counter">
         <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6D58A4;margin-bottom:4px">One Circle</div>
-        <div class="num" style="color:#6D58A4">14,499</div>
+        <div class="num" style="color:#6D58A4">17,298</div>
         <div class="lbl">mamas strong — nobody starts over here</div>
       </div>
     </div>
@@ -197,15 +197,22 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_M
 function radiusFor(count){ return 4 + Math.sqrt(count) * 0.9; }
 
 // Individual anonymous 1.0 pins — city-level only, jittered, no names ever
-var canvas = L.canvas();
+var cv = L.canvas({padding: 0.5});
+var legacyPopup = L.popup();
 fetch('legacy-pins.json').then(function(r){ return r.json(); }).then(function(pins){
+  var layer = L.layerGroup();
   pins.forEach(function(p){
     L.circleMarker([p.lat, p.lng], {
-      renderer: canvas, radius: 3,
+      renderer: cv, radius: p.precision === 'zip' ? 3 : 2.5,
       color: '#C99F72', fillColor: '#C99F72',
       fillOpacity: 0.55, weight: 1
-    }).addTo(map).bindPopup('A first mama of Momni 1.0 &mdash; anonymous until she reclaims her pin');
+    }).on('click', function(e){
+      legacyPopup.setLatLng(e.latlng)
+        .setContent('A first mama of Momni 1.0 &mdash; anonymous until she reclaims her pin')
+        .openOn(map);
+    }).addTo(layer);
   });
+  layer.addTo(map);
 });
 
 L.circleMarker([40.27, -111.68], {

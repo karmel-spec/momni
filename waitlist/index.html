@@ -94,14 +94,17 @@ footer .wrap{max-width:1120px}
 </div>
 <footer><div class="wrap">momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation is a separate 501(c)(3). One brand, two entities, separate finances.</div></footer>
 <script>
-document.querySelector('form[name=waitlist]').addEventListener('submit',function(){
+document.querySelector('form[name=waitlist]').addEventListener('submit',function(e){
+if(['localhost','127.0.0.1'].includes(location.hostname)){e.preventDefault();saveChoices();location.href='thanks.html';return;}
+saveChoices();});
+function saveChoices(){
 try{localStorage.setItem('momniInterests',JSON.stringify({
 volunteer:!!document.querySelector('[name=interest_volunteer]:checked'),
 start_circle:!!document.querySelector('[name=interest_start_circle]:checked'),
 join_circle:!!document.querySelector('[name=interest_join_circle]:checked'),
 support:!!document.querySelector('[name=interest_support_vision]:checked'),
 host:(document.querySelector('[name=role]:checked')||{}).value!=='find-care'
-}));}catch(e){}});
+}));}catch(e){}}
 </script>
 </body>
 </html>

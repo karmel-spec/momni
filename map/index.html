@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Movement Map | Momni</title>
+<meta name="description" content="The Momni Movement Map — 14,212 first mamas circled up across all 50 states in Momni 1.0. Now the Circle relights, and this time it's global. Put your pin on the map.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{--purple:#6D58A4;--purple-deep:#4A3880;--teal:#0D878F;--teal-deep:#0A6B72;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--clay:#C99F72;--clay-soft:#D9C0A3;--ink:#2B2233;--muted:#6B6477}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);line-height:1.7}
+h1,h2,h3{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px solid #EEE9F9;z-index:1100}
+.nav-inner{display:flex;align-items:center;height:68px;max-width:1120px;margin:0 auto;padding:0 24px}
+.cta-btn{background:var(--teal);color:white;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px;margin-left:auto}
+.hero{background:linear-gradient(180deg,var(--lavender),#fff);padding:64px 0 40px;text-align:center}
+.hero h1{font-size:40px;font-weight:800;letter-spacing:-0.02em;margin-bottom:10px}
+.hero .script{font-size:27px;color:var(--teal);display:block;margin-bottom:12px}
+.hero p{font-size:18px;color:var(--muted);max-width:680px;margin:0 auto}
+.counters{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;margin-top:30px}
+.counter .num{font-family:'Montserrat',sans-serif;font-size:30px;font-weight:800;color:var(--purple)}
+.counter .lbl{font-size:14px;color:var(--muted)}
+.map-shell{position:relative}
+#map{height:540px;width:100%;background:var(--lavender)}
+.legend{position:absolute;bottom:18px;left:18px;z-index:1000;background:rgba(255,255,255,0.95);border:1px solid #EEE9F9;border-radius:14px;padding:14px 18px;font-size:13px;line-height:1.9;max-width:300px;box-shadow:0 4px 18px rgba(43,34,51,0.12)}
+.legend .dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.legend em{display:block;color:var(--muted);font-style:normal;font-size:12px;margin-top:6px;line-height:1.5}
+.section{padding:56px 0}
+.section h2{font-size:30px;font-weight:800;text-align:center;margin-bottom:30px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{border:1.5px solid #EEE9F9;border-radius:18px;padding:26px}
+.card .icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px}
+.card h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.card p{font-size:15px;color:var(--muted)}
+.cta-band{background:var(--purple);color:white;padding:72px 0;text-align:center}
+.cta-band .script{font-size:28px;color:var(--algae);display:block;margin-bottom:10px}
+.cta-band h2{font-size:34px;font-weight:800;margin-bottom:24px}
+.cta-band a{display:inline-block;background:var(--algae);color:var(--ink);font-weight:700;padding:15px 36px;border-radius:100px;font-size:17px}
+footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-size:13px;line-height:1.7}
+@media(max-width:820px){.hero h1{font-size:30px}#map{height:420px}}
+</style>
+
+<!-- SEO -->
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://momni.com/map/">
+<meta property="og:title" content="The Movement Map | Momni">
+<meta property="og:description" content="14,212 first mamas circled up across all 50 states. Now the Circle relights — and this time it's global. Put your pin on the map.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://momni.com/map/">
+<meta property="og:image" content="https://momni.com/assets/photos/girl-red-balloon-beach.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Movement Map | Momni">
+<meta name="twitter:description" content="14,212 first mamas circled up across all 50 states. Now the Circle relights — and this time it's global. Put your pin on the map.">
+<meta name="twitter:image" content="https://momni.com/assets/photos/girl-red-balloon-beach.jpg">
+</head>
+<body>
+<nav><div class="nav-inner"><a href="../index.html"><img src="../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:44px;display:block"></a><a href="../waitlist/index.html" class="cta-btn">Join the Circle</a></div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="script">Your pin is still on the map. Come light it up.</span>
+    <h1>The Movement Map</h1>
+    <p>The first mamas of Momni 1.0 circled up in all 50 states — playgroups, night shifts, date nights, whole neighborhoods of mothers carrying each other. Now the Circle relights. And this time, it's global.</p>
+    <div class="counters">
+      <div class="counter"><div class="num">14,212</div><div class="lbl">First mamas on the map</div></div>
+      <div class="counter"><div class="num">287</div><div class="lbl">Lit up again — and counting</div></div>
+      <div class="counter"><div class="num">The whole world</div><div class="lbl">Countries waiting</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="map-shell">
+  <div id="map"></div>
+  <div class="legend">
+    <div><span class="dot" style="background:var(--clay)"></span><strong>The First Mamas</strong> — Momni 1.0, anonymized city-level</div>
+    <div><span class="dot" style="background:var(--teal)"></span><strong>Circled up now</strong> — Momni 2.0</div>
+    <em>Every dot is anonymous until a mama claims her own pin.</em>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <h2>How the world lights up</h2>
+    <div class="cards">
+      <div class="card"><div class="icon" style="background:#F6EDDF">📍</div>
+        <h3>Claim your pin</h3>
+        <p>Were you one of the first mamas of Momni 1.0? Your city's glow on this map includes you. Join the waitlist and check the first-mama box — and your dot lights teal again.</p></div>
+      <div class="card"><div class="icon" style="background:var(--teal-soft)">🏙️</div>
+        <h3>Bring Momni to your city</h3>
+        <p>Every waitlist ZIP becomes a pin, and pins become launch data. When a city clusters, a Circle launches. Your signup is literally how Momni decides where to go next.</p></div>
+      <div class="card"><div class="icon" style="background:var(--lavender)">🌍</div>
+        <h3>No borders this time</h3>
+        <p>Because Momni 2.0 is a community platform — mamas choosing mamas, paying each other directly — the Circle can grow anywhere mothers are, in any country, from day one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <span class="script">The map remembers. The Circle returns.</span>
+    <h2>Put your pin on the map</h2>
+    <a href="../waitlist/index.html">Put your pin on the map →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Momni is a community platform. Members make their own care decisions. Map dots are anonymized, city-level counts — no member locations are shown.<br><br>
+    momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation is a separate 501(c)(3). One brand, two entities, separate finances.
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var map = L.map('map', {worldCopyJump: true, minZoom: 2}).setView([25, 0], 2);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 18
+}).addTo(map);
+
+var firstMamaCities = [
+  ['Salt Lake City', 40.76, -111.89, 420],
+  ['Houston', 29.76, -95.37, 267],
+  ['Dallas', 32.78, -96.80, 198],
+  ['Atlanta', 33.75, -84.39, 154],
+  ['Phoenix', 33.45, -112.07, 96],
+  ['Boise', 43.62, -116.20, 52],
+  ['St. George', 37.10, -113.57, 61],
+  ['New York City', 40.71, -74.01, 38],
+  ['Los Angeles', 34.05, -118.24, 36],
+  ['Chicago', 41.88, -87.63, 33],
+  ['Seattle', 47.61, -122.33, 31],
+  ['Denver', 39.74, -104.99, 29],
+  ['Miami', 25.76, -80.19, 27],
+  ['Nashville', 36.16, -86.78, 26],
+  ['Portland', 45.52, -122.68, 24],
+  ['Minneapolis', 44.98, -93.27, 22],
+  ['Boston', 42.36, -71.06, 20]
+];
+
+function radiusFor(count){ return 4 + Math.sqrt(count) * 0.9; }
+
+firstMamaCities.forEach(function(c){
+  L.circleMarker([c[1], c[2]], {
+    radius: radiusFor(c[3]),
+    color: '#C99F72', fillColor: '#C99F72',
+    fillOpacity: 0.55, weight: 1.5, opacity: 0.9
+  }).addTo(map).bindPopup('<strong>' + c[0] + '</strong><br>' + c[3] + ' first mamas circled up here. Know one? Invite her back.');
+});
+
+L.circleMarker([40.27, -111.68], {
+  radius: radiusFor(287),
+  color: '#0D878F', fillColor: '#0D878F',
+  fillOpacity: 0.65, weight: 2, opacity: 1
+}).addTo(map).bindPopup('<strong>Circled up now — Momni 2.0</strong><br>Utah County, the first relight.');
+</script>
+</body>
+</html>

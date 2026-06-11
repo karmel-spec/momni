@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stories — The Magazine | Momni</title>
+<meta name="description" content="Stories from the mamas of Momni — letters, Crisis Watch, Grand-Momnis, and Circle stories.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#6D58A4;--purple-deep:#4A3880;--teal:#0D878F;--teal-deep:#0A6B72;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--clay:#D9C0A3;--ink:#2B2233;--muted:#6B6477}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);line-height:1.7;background:#FBFAFE}
+h1,h2,h3{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.design-banner{background:var(--algae);color:var(--ink);text-align:center;font-size:14px;font-weight:600;padding:9px}
+nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px solid #EEE9F9;z-index:60}
+.nav-inner{display:flex;align-items:center;height:68px;max-width:1120px;margin:0 auto;padding:0 24px}
+.cta-btn{background:var(--teal);color:white;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px;margin-left:auto}
+.head{text-align:center;padding:50px 0 26px}
+.head .script{font-size:28px;color:var(--teal)}
+.head h1{font-size:42px;font-weight:800;letter-spacing:-0.02em}
+.hero-strip{position:relative;display:block;border-radius:26px;overflow:hidden;margin:14px 0 30px;height:380px}
+.hero-strip img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-strip .overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(43,34,51,0.85));display:flex;flex-direction:column;justify-content:flex-end;padding:34px;color:white}
+.hero-strip .chip{align-self:flex-start}
+.hero-strip h2{font-size:32px;font-weight:800;margin:10px 0 6px}
+.hero-strip p{max-width:560px;color:rgba(255,255,255,0.85)}
+.hero-strip .pull{font-size:26px;color:var(--algae)}
+.chip{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;padding:5px 14px;border-radius:100px}
+.c-letters{background:var(--lavender);color:var(--purple)}
+.c-crisis{background:var(--teal-soft);color:var(--teal-deep)}
+.c-grand{background:#F7EEDF;color:#8A6B3F}
+.c-circle{background:#E7F9F0;color:#1E7A55}
+.filters{position:sticky;top:68px;z-index:55;background:rgba(251,250,254,0.96);padding:14px 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;border-bottom:1px solid #EEE9F9;margin-bottom:30px}
+.filter{border:1.5px solid #D8D2E4;background:white;color:var(--muted);font-family:inherit;font-size:14px;font-weight:600;padding:8px 20px;border-radius:100px;cursor:pointer;transition:all .15s}
+.filter.active{background:var(--purple);border-color:var(--purple);color:white}
+.grid{column-count:3;column-gap:22px}
+.card{break-inside:avoid;display:block;background:white;border:1.5px solid #EEE9F9;border-radius:20px;overflow:hidden;margin-bottom:22px;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(109,88,164,0.16)}
+.card img{width:100%;display:block}
+.card .body{padding:20px 22px 24px}
+.card h3{font-size:19px;font-weight:700;margin:10px 0 6px}
+.card p{font-size:14px;color:var(--muted)}
+.card .date{display:block;font-size:12px;color:var(--muted);font-weight:600;margin-top:12px}
+.card.hidden{display:none}
+.newscard{break-inside:avoid;background:linear-gradient(135deg,var(--purple),var(--purple-deep));color:white;border-radius:20px;padding:30px;margin-bottom:22px}
+.newscard .script{font-size:26px;color:var(--algae)}
+.newscard h3{font-size:20px;font-weight:800;margin:4px 0 8px}
+.newscard p{font-size:14px;color:rgba(255,255,255,0.85);margin-bottom:16px}
+.newscard input{width:100%;border:none;border-radius:100px;padding:12px 20px;font-size:14px;font-family:inherit;margin-bottom:10px}
+.newscard button{width:100%;background:var(--algae);color:var(--ink);border:none;font-weight:700;font-size:14px;padding:12px;border-radius:100px;cursor:pointer;font-family:inherit}
+footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-size:13px;line-height:1.7;margin-top:50px}
+@media(max-width:980px){.grid{column-count:2}}
+@media(max-width:640px){.grid{column-count:1}.head h1{font-size:30px}.hero-strip{height:300px}.hero-strip h2{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="design-banner">Design option B — "The Magazine" — pick your favorite, mama 📌</div>
+<nav><div class="nav-inner"><a href="../index.html"><img src="../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:44px;display:block"></a><a href="../waitlist/index.html" class="cta-btn">Join the Circle</a></div></nav>
+
+<div class="wrap">
+  <header class="head">
+    <span class="script">Stories from the mamas of Momni</span>
+    <h1>The Momni Stories</h1>
+  </header>
+
+  <a class="hero-strip" href="your-pin-is-still-on-the-map/index.html">
+    <img src="../assets/photos/mama-lifting-toddler-sky.jpg" alt="A mama lifting her toddler to the sky">
+    <div class="overlay">
+      <span class="chip c-letters">Letters · Featured</span>
+      <h2>Your pin is still on the map</h2>
+      <p class="pull script">"Come light it up."</p>
+      <p>The relaunch letter from Karmel — where Momni 2.0 begins. →</p>
+    </div>
+  </a>
+
+  <div class="filters" id="filters">
+    <button class="filter active" data-cat="all">All stories</button>
+    <button class="filter" data-cat="letters">Letters</button>
+    <button class="filter" data-cat="crisis">Crisis Watch</button>
+    <button class="filter" data-cat="grand">Grand-Momnis</button>
+    <button class="filter" data-cat="circle">Circle Stories</button>
+  </div>
+
+  <main class="grid" id="grid">
+    <a class="card" data-cat="letters" href="the-relaunch-plan/index.html">
+      <img src="../assets/photos/baking-with-kids.jpg" alt="Baking with the kids">
+      <div class="body"><span class="chip c-letters">Letters</span><h3>How we're relaunching Momni</h3><p>No investors, no employees, no office — one founder, the Circle, and a plan small enough to actually happen.</p><span class="date">June 2026</span></div>
+    </a>
+    <a class="card" data-cat="crisis" href="crisis-watch-1/index.html">
+      <img src="../assets/photos/mama-holding-baby-girl.jpg" alt="A mama holding her baby girl">
+      <div class="body"><span class="chip c-crisis">Crisis Watch</span><h3>Crisis Watch, week 1</h3><p>When a mama in the Circle hits a wall, the Circle shows up. The first weekly dispatch.</p><span class="date">June 2026</span></div>
+    </a>
+    <div class="newscard">
+      <span class="script">Psst, mama —</span>
+      <h3>Get the stories in your inbox</h3>
+      <p>One letter at a time, only when there's something worth saying.</p>
+      <input type="email" placeholder="you@example.com" aria-label="Email"><button onclick="location.href='../waitlist/index.html'">Sign me up</button>
+    </div>
+    <a class="card" data-cat="letters" href="momni-1-vs-2/index.html">
+      <img src="../assets/photos/girl-red-balloon-beach.jpg" alt="A girl with a red balloon on the beach">
+      <div class="body"><span class="chip c-letters">Letters</span><h3>Momni 1.0 vs Momni 2.0</h3><p>What we kept, what we let go of, and why hosting is still — and always — free.</p><span class="date">June 2026</span></div>
+    </a>
+    <a class="card" data-cat="grand" href="grandma-karmie/index.html">
+      <img src="../assets/photos/girl-hula-hoop.jpg" alt="A girl playing with a hula hoop">
+      <div class="body"><span class="chip c-grand">Grand-Momnis</span><h3>From Mama to Grand-MamaKarmel</h3><p>Karmel on becoming Grandma Karmie — and what grandmothers bring to the Circle.</p><span class="date">June 2026</span></div>
+    </a>
+    <a class="card" data-cat="letters" href="your-pin-is-still-on-the-map/index.html">
+      <img src="../assets/photos/laughing-baby-on-rug.jpg" alt="A laughing baby on a rug">
+      <div class="body"><span class="chip c-letters">Letters</span><h3>Your pin is still on the map</h3><p>The relaunch letter. Twenty-six thousand pins went dark in 2020. This is the letter asking you to come light yours back up.</p><span class="date">June 2026</span></div>
+    </a>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    Momni is a community platform. Members make their own care decisions.<br><br>
+    momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation is a separate 501(c)(3). One brand, two entities, separate finances.
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.filter').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter').forEach(function(b){b.classList.remove('active')});
+    btn.classList.add('active');
+    var cat=btn.dataset.cat;
+    document.querySelectorAll('.card').forEach(function(c){
+      c.classList.toggle('hidden',cat!=='all'&&c.dataset.cat!==cat);
+    });
+  });
+});
+</script>
+</body>
+</html>

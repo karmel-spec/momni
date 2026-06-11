@@ -24,8 +24,11 @@ form{background:white;border:1.5px solid #EEE9F9;border-radius:20px;padding:32px
 label{font-size:14px;font-weight:600;display:block;margin:16px 0 6px}
 input,select{width:100%;padding:12px 14px;border:1.5px solid #E5E0F0;border-radius:10px;font-family:inherit;font-size:15px;background:white}
 .roles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:6px}
-.roles label{margin:0;font-weight:500;border:1.5px solid #E5E0F0;border-radius:10px;padding:11px 8px;text-align:center;cursor:pointer;font-size:14px}
-.roles input{display:none}
+.roles label{margin:0;font-weight:500;border:1.5px solid #E5E0F0;border-radius:10px;padding:11px 8px;text-align:center;cursor:pointer;font-size:14px;position:relative}
+.roles input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;left:50%;bottom:0}
+.roles.err label{border-color:#C2455F;background:#FDF0F2}
+.field-err{display:none;color:#C2455F;font-size:13.5px;font-weight:600;margin-top:6px}
+.field-err.on{display:block}
 .roles input:checked+span{color:var(--purple);font-weight:700}
 .roles label:has(input:checked){border-color:var(--purple);background:var(--lavender)}
 button{width:100%;background:var(--purple);color:white;font-weight:700;border:none;padding:15px;border-radius:100px;font-size:17px;margin-top:22px;cursor:pointer;font-family:'Montserrat',sans-serif}
@@ -89,7 +92,7 @@ footer .wrap{max-width:1120px}
     <div class="wrap mh-top-inner">
       <a href="../press/index.html">Press</a>
       <a href="../partnerships/index.html">Partnerships</a>
-      <a href="https://momnifoundation.org">Foundation</a>
+      <a href="https://momnifoundation-878.netlify.app">Foundation</a>
       <a href="../crisis/index.html">The Crisis</a>
       <a href="../volunteer/index.html">Volunteer</a>
       <a href="mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni">Beta feedback</a>
@@ -111,7 +114,7 @@ footer .wrap{max-width:1120px}
         <a href="../our-story/index.html">Our Story</a>
         <a href="../stories/index.html">Stories</a>
       </nav>
-      <a href="../waitlist/index.html" class="mh-cta">Join the Circle</a>
+      <a href="https://app.momni.com" class="mh-cta">Join the Circle</a>
       <button class="mh-burger" id="mh-burger" aria-label="Menu" aria-expanded="false">☰</button>
     </div>
   </div>
@@ -126,11 +129,11 @@ footer .wrap{max-width:1120px}
     <div class="mh-mobile-div"></div>
     <a href="../press/index.html">Press</a>
     <a href="../partnerships/index.html">Partnerships</a>
-    <a href="https://momnifoundation.org">Foundation</a>
+    <a href="https://momnifoundation-878.netlify.app">Foundation</a>
     <a href="../crisis/index.html">The Crisis</a>
     <a href="../volunteer/index.html">Volunteer</a>
     <a href="mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni">Beta feedback</a>
-    <a href="../waitlist/index.html" class="mh-cta" style="margin-top:10px;display:inline-block">Join the Circle</a>
+    <a href="https://app.momni.com" class="mh-cta" style="margin-top:10px;display:inline-block">Join the Circle</a>
   </div>
 </header>
 <script>
@@ -159,12 +162,13 @@ footer .wrap{max-width:1120px}
     <input type="email" id="email" name="email" placeholder="you@example.com" required>
     <label for="zip">ZIP code</label>
     <input type="text" id="zip" name="zip" placeholder="So we know where to light up next" required>
-    <label>I want to…</label>
-    <div class="roles">
-      <label><input type="radio" name="role" value="find-care" required><span>Find care</span></label>
+    <label>I want to… <span style="font-weight:400;color:var(--muted)">(pick one)</span></label>
+    <div class="roles" id="role-group">
+      <label><input type="radio" name="role" value="find-care"><span>Find care</span></label>
       <label><input type="radio" name="role" value="host"><span>Be a Momni</span></label>
       <label><input type="radio" name="role" value="both"><span>Both</span></label>
     </div>
+    <p class="field-err" id="role-err">Pick one here, mama — we need this one. 💜</p>
     <label>I'd also love to… <span style="font-weight:400;color:var(--muted)">(pick any)</span></label>
     <div class="roles" style="grid-template-columns:1fr 1fr">
       <label><input type="checkbox" name="interest_join_circle" value="yes"><span>Join a Circle</span></label>
@@ -173,10 +177,11 @@ footer .wrap{max-width:1120px}
       <label><input type="checkbox" name="interest_volunteer" value="yes"><span>Volunteer</span></label>
     </div>
     <label>Which mama are you? <span style="font-weight:400;color:var(--muted)">(pick one)</span></label>
-    <div class="roles" style="grid-template-columns:1fr 1fr">
-      <label><input type="radio" name="mama_status" value="first-mama" required><span>I was a Momni 1.0 mama — my pin is on the map 💜</span></label>
+    <div class="roles" id="mama-group" style="grid-template-columns:1fr 1fr">
+      <label><input type="radio" name="mama_status" value="first-mama"><span>I was a Momni 1.0 mama — my pin is on the map 💜</span></label>
       <label><input type="radio" name="mama_status" value="new-mama"><span>I'm new and excited! ✨</span></label>
     </div>
+    <p class="field-err" id="mama-err">Pick one here, mama — we need this one. 💜</p>
     <button type="submit">Join the Circle</button>
   </form>
   <p class="note">No spam, ever — just the relaunch letter and your neighborhood's opening day. Momni is a community platform; members make their own care decisions.</p>
@@ -203,7 +208,7 @@ footer .wrap{max-width:1120px}
     <a href="../volunteer/index.html">Volunteer</a>
     <a href="../partnerships/index.html">Partnerships</a>
     <a href="../map/index.html">Map</a>
-    <a href="../waitlist/index.html">Join the Circle</a>
+    <a href="https://app.momni.com">Join the Circle</a>
   </div>
   <div>
     <h4>Stories</h4>
@@ -223,12 +228,31 @@ footer .wrap{max-width:1120px}
     <a href="../terms/index.html">Terms of Service</a>
     <a href="../privacy/index.html">Privacy</a>
     <a href="../community-guidelines/index.html">Community Guidelines</a>
-    <a href="https://momnifoundation.org">Foundation</a>
+    <a href="https://momnifoundation-878.netlify.app">Foundation</a>
   </div>
 </div>
 <div style="border-top:1px solid rgba(255,255,255,0.15);padding-top:24px">momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation is a separate 501(c)(3). One brand, two entities, separate finances.</div></div></footer>
 <script>
+function validateRequired(){
+  var ok=true, first=null;
+  [['role','role-group','role-err'],['mama_status','mama-group','mama-err']].forEach(function(g){
+    var grp=document.getElementById(g[1]), err=document.getElementById(g[2]);
+    if(!document.querySelector('[name='+g[0]+']:checked')){ grp.classList.add('err'); err.classList.add('on'); ok=false; if(!first)first=grp; }
+    else { grp.classList.remove('err'); err.classList.remove('on'); }
+  });
+  if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
+  return ok;
+}
+document.querySelectorAll('[name=role],[name=mama_status]').forEach(function(r){
+  r.addEventListener('change',function(){
+    var grp=this.closest('.roles'); if(!grp) return;
+    grp.classList.remove('err');
+    var err=grp.nextElementSibling;
+    if(err&&err.classList.contains('field-err')) err.classList.remove('on');
+  });
+});
 document.querySelector('form[name=waitlist]').addEventListener('submit',function(e){
+if(!validateRequired()){e.preventDefault();return;}
 if(['localhost','127.0.0.1'].includes(location.hostname)){e.preventDefault();saveChoices();location.href='thanks.html';return;}
 saveChoices();});
 function saveChoices(){

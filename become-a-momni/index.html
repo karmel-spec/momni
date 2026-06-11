@@ -124,7 +124,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
       "name": "How do Links work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Link is what we call a new care connection made through Momni. When a mama books you for the first time, she purchases a Link for $1 (sold in bundles) — that tiny dollar is how Momni keeps the lights on without ever touching your care income. After you're Linked, all your future arrangements together are between the two of you. Hosts never pay for Links."
+        "text": "A Link is what we call a booking made through Momni. Each time a mama books you — not just the first time — she pays $1 for that Link (sold in bundles). That tiny dollar per booking is the only thing Momni ever charges, and it's how we keep the lights on without ever touching your care income. The care payment itself is always between the two of you, paid directly to you. Hosts never pay for Links — only the mama booking does."
       }
     }
   ]
@@ -133,6 +133,9 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
 <style>
 /* Two-row header (option E — Ribbon Classic) */
 .mh{position:sticky;top:0;z-index:50}
+/* mh-fix: header spans full width; neutralize leftover generic nav{} rule on .mh-links */
+.mh .wrap{max-width:1120px}
+.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
 .mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}
 .mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}
 .mh-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500;position:static;background:none;border-bottom:0;backdrop-filter:none}
@@ -350,7 +353,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
       </details>
       <details>
         <summary>How do Links work?</summary>
-        <p>A Link is what we call a new care connection made through Momni. When a mama books you for the first time, she purchases a Link for $1 (sold in bundles) — that tiny dollar is how Momni keeps the lights on without ever touching your care income. After you're Linked, all your future arrangements together are between the two of you. Hosts never pay for Links.</p>
+        <p>A Link is what we call a booking made through Momni. Each time a mama books you — not just the first time — she pays $1 for that Link (sold in bundles). That tiny dollar per booking is the only thing Momni ever charges, and it's how we keep the lights on without ever touching your care income. The care payment itself is always between the two of you, paid directly to you. Hosts never pay for Links — only the mama booking does.</p>
       </details>
     </div>
     <div style="text-align:center;margin-top:48px">

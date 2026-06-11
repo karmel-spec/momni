@@ -101,6 +101,9 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
 
 /* Two-row header (option F — Soft Royal) */
 .mh{position:sticky;top:0;z-index:50}
+/* mh-fix: header spans full width; neutralize leftover generic nav{} rule on .mh-links */
+.mh .wrap{max-width:1120px}
+.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
 .mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}
 .mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}
 .mh-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500;position:static;background:none;border-bottom:0;backdrop-filter:none}

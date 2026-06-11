@@ -65,6 +65,9 @@ footer .wrap{max-width:1120px}
 <style>
 /* Two-row header (option E — Ribbon Classic) */
 .mh{position:sticky;top:0;z-index:50}
+/* mh-fix: header spans full width; neutralize leftover generic nav{} rule on .mh-links */
+.mh .wrap{max-width:1120px}
+.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
 .mh .wrap{max-width:1120px}
 .mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}
 .mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}
@@ -194,7 +197,7 @@ footer .wrap{max-width:1120px}
 
     <div class="entry">
       <span class="date">Coming soon</span>
-      <div><h3>It started as childcare. It became a friendship.</h3><p>A Circle story about the swap that outlived the schedule — two families, five years, and a standing Sunday dinner.</p><span class="soon">Coming soon</span></div>
+      <div><h3>It started as childcare. It became a friendship.</h3><p>A Circle story about the booking that outlived the schedule — two families, five years, and a standing Sunday dinner.</p><span class="soon">Coming soon</span></div>
     </div>
   </section>
 </main>

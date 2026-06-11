@@ -80,6 +80,9 @@ footer .wrap{max-width:1120px}
 <style>
 /* Two-row header (option E — Ribbon Classic) */
 .mh{position:sticky;top:0;z-index:50}
+/* mh-fix: header spans full width; neutralize leftover generic nav{} rule on .mh-links */
+.mh .wrap{max-width:1120px}
+.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
 .mh .wrap{max-width:1120px}
 .mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}
 .mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}

@@ -48,5 +48,33 @@ if(i.join_circle&&!i.start_circle)out+=card('You want to join a Circle','See the
 if(i.support)out+=card('You want to support the vision','The mission lives at the <a href="https://momnifoundation.org" style="color:#0D878F;font-weight:600">Momni Foundation</a> — and the <a href="../shop/index.html" style="color:#0D878F;font-weight:600">Momni Shop</a> opens its shelves soon.');
 document.getElementById('next-steps').innerHTML=out;}catch(e){}
 </script>
+
+<!-- momni-lang-picker -->
+<style>.goog-te-banner-frame,.skiptranslate{display:none!important}body{top:0!important}
+#momni-lang{border:1.5px solid #E5E0F0;border-radius:100px;padding:6px 12px;font:inherit;font-size:14px;color:inherit;background:#fff;cursor:pointer}</style>
+<div id="google_translate_element" style="display:none"></div>
+<script>
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element')}
+(function(){
+  var sel=document.getElementById('momni-lang');
+  if(!sel)return;
+  var m=document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
+  if(m)sel.value=decodeURIComponent(m[1]);
+  sel.addEventListener('change',function(){
+    var code=sel.value,host=location.hostname;
+    if(code==='en'){
+      document.cookie='googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie='googtrans=;path=/;domain='+host+';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie='googtrans=;path=/;domain=.'+host+';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    }else{
+      document.cookie='googtrans=/en/'+code+';path=/';
+      document.cookie='googtrans=/en/'+code+';path=/;domain='+host;
+      document.cookie='googtrans=/en/'+code+';path=/;domain=.'+host;
+    }
+    location.reload();
+  });
+})();
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

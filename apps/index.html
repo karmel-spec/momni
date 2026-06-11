@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Momni Boards — apps by Momni, $1 a month in the Circle | Momni</title>
+<meta name="description" content="The Momni Boards: a coming family of apps by Momni — ChoreBoard, Motherboard, GrandBoard and more. Planned at $3.99–$7.99/mo on the App Store, $1 a month for Circle Up members, every Board included with Momni+.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#6D58A4;--purple-deep:#4A3880;--teal:#0D878F;--teal-deep:#0A6B72;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--ink:#2B2233;--muted:#6B6477}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);line-height:1.6}
+h1,h2,h3{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.hero{background:linear-gradient(180deg,var(--lavender),#fff);padding:72px 0 40px;text-align:center}
+.hero h1{font-size:42px;font-weight:800;letter-spacing:-0.02em;margin-bottom:10px}
+.hero .script{font-size:28px;color:var(--teal);display:block;margin-bottom:12px}
+.hero p{font-size:18px;color:var(--muted);max-width:660px;margin:0 auto}
+.promise{background:var(--purple);color:white;text-align:center;padding:18px;font-size:16px;font-weight:600}
+.promise .script{color:var(--algae);font-size:22px;margin-right:8px}
+.section{padding:56px 0}
+.section h2{font-size:28px;font-weight:800;margin-bottom:8px}
+.section .lede{font-size:16px;color:var(--muted);max-width:640px;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.app{border:1.5px solid #EEE9F9;border-radius:18px;padding:22px;transition:all .18s;display:flex;flex-direction:column}
+.app:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 12px 28px rgba(109,88,164,0.12)}
+.app-icon{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:14px}
+.app h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.app .by{font-size:12px;font-weight:600;color:var(--purple);margin-bottom:8px}
+.app p{font-size:14px;color:var(--muted);margin-bottom:14px;flex:1}
+.prices{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.store-price{font-size:13px;color:var(--muted);text-decoration:line-through}
+.circle-price{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--teal);font-size:17px}
+.circle-price small{font-weight:600;font-size:12px;color:var(--muted)}
+.chip{display:inline-block;font-size:11px;font-weight:700;padding:3px 11px;border-radius:100px;margin-bottom:10px;width:fit-content}
+.chip-first{background:var(--algae);color:#0B4A36}
+.chip-soon{background:var(--teal-soft);color:var(--teal-deep)}
+.how{background:var(--lavender);border-radius:24px;padding:40px 36px}
+.how h2{font-size:26px;font-weight:800;margin-bottom:20px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+.step .n{font-family:'Caveat',cursive;font-size:34px;color:var(--purple);line-height:1}
+.step h3{font-size:16px;margin:6px 0 4px}
+.step p{font-size:14px;color:var(--muted)}
+.powered{display:flex;align-items:center;gap:28px;background:white;border:1.5px solid #EEE9F9;border-radius:24px;padding:36px}
+.powered img{height:72px}
+.powered h2{font-size:22px;margin-bottom:8px}
+.powered p{font-size:15px;color:var(--muted)}
+.vote{background:var(--teal-soft);border-radius:24px;padding:36px;text-align:center;margin-top:48px}
+.vote h2{font-size:24px;margin-bottom:8px}
+.vote p{font-size:15px;color:var(--muted);max-width:560px;margin:0 auto 16px}
+.vote a{display:inline-block;background:var(--algae);color:#0B4A36;font-weight:600;padding:13px 30px;border-radius:100px}
+footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-size:13px;line-height:1.7;margin-top:56px}
+@media(max-width:820px){.hero h1{font-size:32px}.powered{flex-direction:column;text-align:center}}
+</style>
+
+<!-- SEO -->
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://momni.com/apps/">
+<meta property="og:title" content="The Momni Boards — apps by Momni, $1 a month in the Circle | Momni">
+<meta property="og:description" content="ChoreBoard, Motherboard, GrandBoard and more — a coming family of apps by Momni. Planned at $3.99–$7.99/mo on the App Store, $1 a month for Circle Up members, all included with Momni+.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://momni.com/apps/">
+<meta property="og:image" content="https://momni.com/assets/photos/mama-lifting-toddler-sky.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Momni Boards — apps by Momni, $1 a month in the Circle | Momni">
+<meta name="twitter:description" content="ChoreBoard, Motherboard, GrandBoard and more — coming soon. Planned at $3.99–$7.99/mo on the App Store, $1 a month for Circle Up members, all included with Momni+.">
+<meta name="twitter:image" content="https://momni.com/assets/photos/mama-lifting-toddler-sky.jpg">
+<style>
+/* Two-row header (option E — Ribbon Classic) */
+.mh{position:sticky;top:0;z-index:50}
+.mh .wrap{max-width:1120px}
+.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
+.mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}
+.mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}
+.mh-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500;position:static;background:none;border-bottom:0;backdrop-filter:none}
+.mh-burger{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;margin-left:auto}
+.mh-mobile{display:none}
+.mh-mobile.open{display:block;padding:14px 24px 20px}
+.mh-mobile a{display:block;padding:9px 0;color:#fff;font-size:16px;font-weight:500}
+.mh-mobile-div{border-top:1px solid rgba(255,255,255,0.25);margin:10px 0}
+#momni-lang{border:none;border-radius:100px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
+@media(max-width:960px){
+  .mh-top-inner a,.mh-links,.mh-main-inner>.mh-cta,.mh-tag{display:none}
+  .mh-burger{display:block}
+  .mh-top-inner{justify-content:flex-end}
+}
+.mh-top{background:#4A3880}
+.mh-top-inner a{color:rgba(255,255,255,0.8)} .mh-top-inner a:hover{color:#fff}
+.mh-main{background:#6D58A4}
+.mh-links a{color:#fff} .mh-links a:hover{color:#92E2C1}
+.mh-cta{background:#92E2C1;color:#0B4A36;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px}
+.mh-cta:hover{filter:brightness(0.95)}
+.mh-mobile{background:#6D58A4}
+#momni-lang{background:rgba(255,255,255,0.12);color:#fff}
+#momni-lang option{color:#2B2233}
+</style>
+</head>
+<body>
+
+<header class="mh" id="mh">
+  <div class="mh-top">
+    <div class="wrap mh-top-inner">
+      <a href="../press/index.html">Press</a>
+      <a href="../partnerships/index.html">Partnerships</a>
+      <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+      <a href="../crisis/index.html">The Crisis</a>
+      <a href="../volunteer/index.html">Volunteer</a>
+      <a href="mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni">Beta feedback</a>
+      <select id="momni-lang" aria-label="Language" title="Language">
+        <option value="en">🌍 English</option><option value="es">Español</option><option value="pt">Português</option><option value="fr">Français</option><option value="ar">العربية</option><option value="hi">हिन्दी</option><option value="zh-CN">中文</option><option value="tl">Filipino</option><option value="vi">Tiếng Việt</option><option value="sw">Kiswahili</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="id">Bahasa Indonesia</option>
+      </select>
+    </div>
+  </div>
+  <div class="mh-main">
+    <div class="wrap mh-main-inner">
+      <a href="../index.html" class="mh-logo"><img src="../assets/momni-logo-white-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
+      <nav class="mh-links">
+        <a href="../find-care/index.html">Find Care</a>
+        <a href="../become-a-momni/index.html">Become a Momni</a>
+        <a href="../circles/index.html">Circles</a>
+        <a href="../shop/index.html">Shop</a>
+        <a href="../apps/index.html">Apps</a>
+        <a href="../map/index.html">Map</a>
+        <a href="../our-story/index.html">Our Story</a>
+        <a href="../stories/index.html">Stories</a>
+      </nav>
+      <a href="https://app.momni.com" class="mh-cta">Join the Circle</a>
+      <button class="mh-burger" id="mh-burger" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="mh-mobile" id="mh-mobile">
+    <a href="../find-care/index.html">Find Care</a>
+    <a href="../become-a-momni/index.html">Become a Momni</a>
+    <a href="../circles/index.html">Circles</a>
+    <a href="../shop/index.html">Shop</a>
+    <a href="../apps/index.html">Apps</a>
+    <a href="../map/index.html">Map</a>
+    <a href="../our-story/index.html">Our Story</a>
+    <a href="../stories/index.html">Stories</a>
+    <div class="mh-mobile-div"></div>
+    <a href="../press/index.html">Press</a>
+    <a href="../partnerships/index.html">Partnerships</a>
+    <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+    <a href="../crisis/index.html">The Crisis</a>
+    <a href="../volunteer/index.html">Volunteer</a>
+    <a href="mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni">Beta feedback</a>
+    <a href="https://app.momni.com" class="mh-cta" style="margin-top:10px;display:inline-block">Join the Circle</a>
+  </div>
+</header>
+<script>
+(function(){
+  var b=document.getElementById('mh-burger'),m=document.getElementById('mh-mobile');
+  b.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    b.setAttribute('aria-expanded',open);
+  });
+})();
+</script>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="script">Introducing the Momni Boards</span>
+    <h1>Apps by Momni</h1>
+    <p>Little tools for the big job of raising a family — chores, meal plans, date nights, grandma&rsquo;s stories. The first Boards are almost here on the App Store. When they land, anyone can download them free — and Circle Up members get every single Board for a dollar a month, with Momni+ including them all.</p>
+  </div>
+</header>
+
+<div class="promise"><span class="script">The Momni math —</span> Circle Up is $1. A Link is $1. Momni Gives is $1. And every Board? Also $1.</div>
+
+<section class="section">
+  <div class="wrap">
+    <h2>The Momni Boards</h2>
+    <p class="lede">Built for moms, grandmas, and families — each one carries the elephant. App Store pricing is for everyone; member pricing belongs to Circle Up members and up. The first two Boards are almost here; the rest get built in the order the Circle votes.</p>
+    <div class="grid">
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#6D58A4,#9B86CF)">🧹</div>
+        <span class="chip chip-first">Almost here</span>
+        <h3>ChoreBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>The family chore board that makes the work a team sport — everyone sees the list, everyone gets a win.</p>
+        <div class="prices"><span class="store-price">$3.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#0D878F,#4FB3BA)">🗂️</div>
+        <span class="chip chip-first">Almost here</span>
+        <h3>Motherboard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>Productivity built around a mom&rsquo;s real day — not a corporate one. Lists, loads of laundry, and life, finally in one place.</p>
+        <div class="prices"><span class="store-price">$7.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#B58FD9,#6D58A4)">👵</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>GrandBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>Grandma&rsquo;s command center — her days, her people, and her connections to the family, all within reach.</p>
+        <div class="prices"><span class="store-price">$7.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#A14D8E,#D9737A)">🕯️</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>LegacyBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>Legacy storytelling — record her life stories, her recipes, and the family history in her own voice, and keep them forever.</p>
+        <div class="prices"><span class="store-price">$4.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#E8A87C,#D9737A)">🍲</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>MealBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>Meal plans, grocery lists, and meal trains — so when a mama has a baby or a hard week, dinner just shows up.</p>
+        <div class="prices"><span class="store-price">$4.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#D9737A,#A14D8E)">💜</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>DateBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>The date-night planner. Pick the place, set the budget, count it down — and <a href="../find-care/date-night/index.html" style="color:var(--teal);font-weight:600">book your Momni</a> for the kids.</p>
+        <div class="prices"><span class="store-price">$3.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#92E2C1,#0D878F)">🤰</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>BumpBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>Pregnancy for the whole village — bump updates, the registry, and the meal train queued up for the day baby comes home.</p>
+        <div class="prices"><span class="store-price">$4.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#F5C26B,#E8A87C)">🖼️</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>FridgeBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>The family fridge door, digital — photos, kid art, and the week&rsquo;s schedule, shared privately with the grandparents. No social media required.</p>
+        <div class="prices"><span class="store-price">$4.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#4A3880,#6D58A4)">🫶</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>CareBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>For the sandwich years — siblings coordinating appointments, medications, and visits for aging parents, without the group-text chaos.</p>
+        <div class="prices"><span class="store-price">$7.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#D9737A,#F5C26B)">🎁</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>GiftBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>Wishlists, sizes, and secret santas the whole family can actually find — grandparent-proof by design.</p>
+        <div class="prices"><span class="store-price">$3.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#0D878F,#92E2C1)">🧳</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>PackBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>Family trip prep without the 2am &ldquo;did we pack the…&rdquo; — lists by kid, by trip, by season. Pairs nicely with a <a href="../find-care/weekend-getaway/index.html" style="color:var(--teal);font-weight:600">weekend getaway</a>.</p>
+        <div class="prices"><span class="store-price">$3.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#6D58A4,#0D878F)">📚</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>LearnBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>The homeschool and co-op planner — lessons, field trips, and shared teaching days across your Circle.</p>
+        <div class="prices"><span class="store-price">$7.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#92E2C1,#F5C26B)">🐷</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>PiggyBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>Chores become allowance becomes savings goals — little money habits that grow up with your kids. A natural teammate for ChoreBoard.</p>
+        <div class="prices"><span class="store-price">$3.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+      <div class="app">
+        <div class="app-icon" style="background:linear-gradient(135deg,#A14D8E,#4A3880)">🧸</div>
+        <span class="chip chip-soon">On the drawing board</span>
+        <h3>StoryBoard</h3>
+        <div class="by">Powered by Momni</div>
+        <p>The baby book that actually gets kept — childhood stories, milestones, and memorabilia, organized and digitized on one timeline per kid.</p>
+        <div class="prices"><span class="store-price">$4.99/mo App Store</span><span class="circle-price">$1<small>/mo in the Circle</small></span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="how">
+      <h2>How member pricing works</h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Download free</h3><p>When a Board launches, it&rsquo;ll be free to try from the App Store, for anyone.</p></div>
+        <div class="step"><div class="n">2</div><h3>Tap &ldquo;Sign in with Momni&rdquo;</h3><p>One Momni account works across every Board — the same one you use in the Circle.</p></div>
+        <div class="step"><div class="n">3</div><h3>The price drops to $1</h3><p>Circle Up members keep any Board for $1/mo (or $10/yr), billed through your Momni account in one place. Not a member yet? The App Store price applies.</p></div>
+        <div class="step"><div class="n">4</div><h3>Momni+ gets them all</h3><p>Momni+ ($4.99/mo or $49/yr) includes every Board we make — no per-app charge, ever. And your Momni Gives $1 works across Boards too.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="powered">
+      <img src="../assets/momni-icon-color.png" alt="Momni elephant">
+      <div>
+        <h2>What &ldquo;Powered by Momni&rdquo; means</h2>
+        <p>Every Board carries the elephant. Each one is built by the same small team, with the same belief: mothering is better done together. And every Board is a little doorway — someone finds ChoreBoard in the App Store, and on the other side of it, a whole Circle is waiting. Read the story behind the Boards <a href="../stories/the-momni-boards/index.html" style="color:var(--teal);font-weight:600">from Karmel&rsquo;s desk</a>.</p>
+      </div>
+    </div>
+    <div class="vote">
+      <h2>Which Board should we build next?</h2>
+      <p>ChoreBoard and Motherboard are almost here. The rest get built in the order the Circle asks for them — tell us which one your family needs.</p>
+      <a href="mailto:developer@momni.com?subject=Build%20this%20Board%20next%20—%20The%20Momni%20Boards">Cast your vote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+<!-- momni-footer-index -->
+<div class="mfi">
+<style>.mfi{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px;font-size:13px}.mfi h4{font-family:'Montserrat',sans-serif;color:#fff;font-size:13px;font-weight:700;margin-bottom:12px}.mfi a{display:block;margin-bottom:8px;color:rgba(255,255,255,0.55);text-decoration:none}.mfi a:hover{color:#92E2C1}@media(max-width:680px){.mfi{grid-template-columns:1fr 1fr}}</style>
+  <div>
+    <h4>Find care</h4>
+    <a href="../find-care/index.html">Find Care overview</a>
+    <a href="../find-care/right-now/index.html">Right Now</a>
+    <a href="../find-care/date-night/index.html">Date Night</a>
+    <a href="../find-care/my-regulars/index.html">My Regulars</a>
+    <a href="../find-care/night-shift/index.html">Night Shift</a>
+    <a href="../find-care/weekend-getaway/index.html">Weekend Getaway</a>
+    <a href="../find-care/extended-trip/index.html">Extended Trip</a>
+    <a href="../find-care/find-a-daycare/index.html">Find a Daycare</a>
+  </div>
+  <div>
+    <h4>Community</h4>
+    <a href="../become-a-momni/index.html">Become a Momni</a>
+    <a href="../circles/index.html">Circles</a>
+    <a href="../volunteer/index.html">Volunteer</a>
+    <a href="../partnerships/index.html">Partnerships</a>
+    <a href="../map/index.html">Map</a>
+    <a href="../apps/index.html">Apps by Momni</a>
+    <a href="https://app.momni.com">Join the Circle</a>
+  </div>
+  <div>
+    <h4>Stories</h4>
+    <a href="../stories/index.html">Stories</a>
+    <a href="../stories/karmels-desk/index.html">Karmel&rsquo;s Desk</a>
+    <a href="../stories/circle-stories/index.html">Circle Stories</a>
+    <a href="../stories/crisis-watch/index.html">Crisis Watch</a>
+    <a href="../podcast/index.html">Podcast</a>
+    <a href="../crisis/index.html">The Crisis</a>
+  </div>
+  <div>
+    <h4>About</h4>
+    <a href="../our-story/index.html">Our Story</a>
+    <a href="../press/index.html">Press</a>
+    <a href="../shop/index.html">Shop</a>
+    <a href="../contact/index.html">Contact</a>
+    <a href="../terms/index.html">Terms of Service</a>
+    <a href="../privacy/index.html">Privacy</a>
+    <a href="../community-guidelines/index.html">Community Guidelines</a>
+    <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+  </div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.15);padding-top:24px">
+    The Momni Boards (Apps by Momni) are built and operated by Momni, Inc. App Store pricing and availability are set per app; member pricing requires Circle Up membership or above, billed through your Momni account. The Momni Foundation (momnifoundation.org) is a separate 501(c)(3) nonprofit organization — one brand, two entities, separate finances.<br><br>
+    Momni is a community platform. Members make their own care decisions. Care payments are made directly between members.</div>
+  </div>
+</footer>
+
+</body>
+</html>

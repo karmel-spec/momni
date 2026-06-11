@@ -81,11 +81,10 @@ footer .wrap{max-width:1120px}
       <label><input type="checkbox" name="interest_support_vision" value="yes"><span>Support the Momni vision</span></label>
       <label><input type="checkbox" name="interest_volunteer" value="yes"><span>Volunteer</span></label>
     </div>
-    <div class="first-mama">
-      <label style="display:flex;gap:10px;align-items:flex-start;margin:0;font-weight:500;font-size:14px;cursor:pointer">
-        <input type="checkbox" name="first_mama" value="yes" style="width:auto;margin-top:3px">
-        <span>I was a Momni 1.0 mama — my pin is already on the map 💜</span>
-      </label>
+    <label>Which mama are you? <span style="font-weight:400;color:var(--muted)">(pick one)</span></label>
+    <div class="roles" style="grid-template-columns:1fr 1fr">
+      <label><input type="radio" name="mama_status" value="first-mama" required><span>I was a Momni 1.0 mama — my pin is on the map 💜</span></label>
+      <label><input type="radio" name="mama_status" value="new-mama"><span>I'm new and excited! ✨</span></label>
     </div>
     <button type="submit">Join the Circle</button>
   </form>

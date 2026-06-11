@@ -92,8 +92,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 <div class="map-shell">
   <div id="map"></div>
   <div class="legend">
-    <div><span class="dot" style="background:var(--clay)"></span><strong>The First Mamas</strong> — Momni 1.0, anonymized city-level</div>
-    <div><span class="dot" style="background:var(--teal)"></span><strong>Circled up now</strong> — Momni 2.0</div>
+    <div><span class="dot" style="background:var(--clay)"></span><strong>The First Mamas &mdash; Momni 1.0</strong><br><span style="margin-left:20px;color:var(--muted)">Each 1.0 pin is anonymous until re-claimed</span></div>
+    <div><span class="dot" style="background:var(--teal)"></span><strong>Circling Up Now</strong><br><span style="margin-left:20px;color:var(--muted)">Reactivated &amp; New Momnis for 2.0</span></div>
     <em>Every dot is anonymous until a mama claims her own pin.</em>
   </div>
 </div>
@@ -138,34 +138,18 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 18
 }).addTo(map);
 
-var firstMamaCities = [
-  ['Salt Lake City', 40.76, -111.89, 420],
-  ['Houston', 29.76, -95.37, 267],
-  ['Dallas', 32.78, -96.80, 198],
-  ['Atlanta', 33.75, -84.39, 154],
-  ['Phoenix', 33.45, -112.07, 96],
-  ['Boise', 43.62, -116.20, 52],
-  ['St. George', 37.10, -113.57, 61],
-  ['New York City', 40.71, -74.01, 38],
-  ['Los Angeles', 34.05, -118.24, 36],
-  ['Chicago', 41.88, -87.63, 33],
-  ['Seattle', 47.61, -122.33, 31],
-  ['Denver', 39.74, -104.99, 29],
-  ['Miami', 25.76, -80.19, 27],
-  ['Nashville', 36.16, -86.78, 26],
-  ['Portland', 45.52, -122.68, 24],
-  ['Minneapolis', 44.98, -93.27, 22],
-  ['Boston', 42.36, -71.06, 20]
-];
-
 function radiusFor(count){ return 4 + Math.sqrt(count) * 0.9; }
 
-firstMamaCities.forEach(function(c){
-  L.circleMarker([c[1], c[2]], {
-    radius: radiusFor(c[3]),
-    color: '#C99F72', fillColor: '#C99F72',
-    fillOpacity: 0.55, weight: 1.5, opacity: 0.9
-  }).addTo(map).bindPopup('<strong>' + c[0] + '</strong><br>' + c[3] + ' first mamas circled up here. Know one? Invite her back.');
+// Individual anonymous 1.0 pins — city-level only, jittered, no names ever
+var canvas = L.canvas();
+fetch('legacy-pins.json').then(function(r){ return r.json(); }).then(function(pins){
+  pins.forEach(function(p){
+    L.circleMarker([p.lat, p.lng], {
+      renderer: canvas, radius: 3,
+      color: '#C99F72', fillColor: '#C99F72',
+      fillOpacity: 0.55, weight: 1
+    }).addTo(map).bindPopup('A first mama of Momni 1.0 &mdash; anonymous until she reclaims her pin');
+  });
 });
 
 L.circleMarker([40.27, -111.68], {

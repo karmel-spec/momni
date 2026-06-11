@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share Momni — invite the moms you know | Momni</title>
+<meta name="description" content="Help relight the Circle. Copy-and-paste posts, ready-to-send texts and emails, and a Circle Up profile frame to spread the word about the Momni relaunch to first mamas and new moms alike.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#6D58A4;--purple-deep:#4A3880;--teal:#0D878F;--teal-deep:#0A6B72;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--ink:#2B2233;--muted:#6B6477;--clay:#D9C0A3}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);line-height:1.6}
+h1,h2,h3{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.hero{background:linear-gradient(180deg,var(--lavender),#fff);padding:64px 0 36px;text-align:center}
+.hero .script{font-size:27px;color:var(--teal);display:block;margin-bottom:10px}
+.hero h1{font-size:38px;font-weight:800;letter-spacing:-0.02em;margin-bottom:10px}
+.hero p{font-size:17px;color:var(--muted);max-width:600px;margin:0 auto}
+.section{padding:40px 0}
+.section h2{font-size:24px;font-weight:800;margin-bottom:6px}
+.section .lede{font-size:15px;color:var(--muted);margin-bottom:22px;max-width:640px}
+/* quick share buttons */
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.sbtn{display:inline-flex;align-items:center;gap:9px;border-radius:100px;padding:13px 22px;font-weight:600;font-size:15px;cursor:pointer;border:none;font-family:inherit}
+.sbtn.text{background:var(--algae);color:#0B4A36}
+.sbtn.email{background:var(--teal);color:#fff}
+.sbtn.copy{background:var(--purple);color:#fff}
+.sbtn.fb{background:#3b5998;color:#fff}
+.sbtn:hover{filter:brightness(.96)}
+/* post cards */
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.post{border:1.5px solid #EEE9F9;border-radius:18px;padding:20px;display:flex;flex-direction:column}
+.post .tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--purple);margin-bottom:8px}
+.post .body{font-size:14.5px;color:#42394f;white-space:pre-wrap;flex:1;background:var(--lavender);border-radius:12px;padding:14px;margin-bottom:12px}
+.post .copy-btn{align-self:flex-start;background:var(--purple);color:#fff;border:none;border-radius:100px;padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.post .copy-btn.done{background:var(--teal)}
+/* profile ring tool */
+.ring-tool{display:grid;grid-template-columns:300px 1fr;gap:32px;align-items:start;background:var(--lavender);border-radius:24px;padding:32px}
+.ring-stage{display:flex;flex-direction:column;align-items:center;gap:14px}
+#ring-canvas{width:280px;height:280px;border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(43,34,51,.10)}
+.ring-controls label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+.ring-controls input[type=file]{font:inherit;font-size:13px}
+.ring-controls .opt{display:inline-flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.ring-controls .opt button{border:1.5px solid #D9CEF0;background:#fff;border-radius:100px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;color:var(--purple-deep)}
+.ring-controls .opt button.on{background:var(--purple);color:#fff;border-color:var(--purple)}
+.ring-controls .dl{display:inline-block;margin-top:18px;background:var(--algae);color:#0B4A36;font-weight:700;border-radius:100px;padding:12px 26px;border:none;font-size:15px;cursor:pointer;font-family:inherit}
+.note{font-size:12.5px;color:var(--muted);margin-top:10px}
+footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-size:13px;line-height:1.7;margin-top:48px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 22px;border-radius:100px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:99}
+.toast.show{opacity:1}
+@media(max-width:720px){.ring-tool{grid-template-columns:1fr}.hero h1{font-size:30px}}
+</style>
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://momni.com/share/">
+<meta property="og:title" content="Share Momni — invite the moms you know">
+<meta property="og:description" content="Copy-and-paste posts, ready texts and emails, and a Circle Up profile frame to help relight the Circle.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://momni.com/share/">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="script">Every mama you tell is a pin relit.</span>
+    <h1>Share Momni</h1>
+    <p>The Circle grows the way it always has — mother to mother. Here&rsquo;s everything you need to invite the first mamas back and welcome new moms in, in about thirty seconds.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <h2>One-tap share</h2>
+    <p class="lede">Send the relaunch straight to the moms who&rsquo;d love it.</p>
+    <div class="btns">
+      <button class="sbtn text" id="sh-text">💬 Text a mom</button>
+      <button class="sbtn email" id="sh-email">✉️ Send an email</button>
+      <button class="sbtn fb" id="sh-fb">Share on Facebook</button>
+      <button class="sbtn copy" id="sh-link">🔗 Copy the link</button>
+    </div>
+    <p class="note">The link you&rsquo;ll share: <strong>https://app.momni.com</strong> — where first mamas reactivate and new moms join the Circle.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--teal-soft)">
+  <div class="wrap">
+    <h2>Ready-to-post — copy &amp; paste</h2>
+    <p class="lede">Drop these into Instagram, Facebook, a TikTok caption, a group text, or your stories. Make them yours.</p>
+    <div class="posts" id="posts"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Make your &ldquo;Circle Up&rdquo; profile photo</h2>
+    <p class="lede">Add the Momni ring to your own photo and use it as your profile picture on Instagram, Facebook, or TikTok. Everything happens right here in your browser — your photo is never uploaded anywhere.</p>
+    <div class="ring-tool">
+      <div class="ring-stage">
+        <canvas id="ring-canvas" width="560" height="560"></canvas>
+      </div>
+      <div class="ring-controls">
+        <label for="photo">1 · Choose your photo</label>
+        <input type="file" id="photo" accept="image/*">
+        <label>2 · Pick your message</label>
+        <div class="opt" id="msg-opts">
+          <button data-msg="CIRCLE UP" class="on">Circle Up</button>
+          <button data-msg="LINK TOGETHER">Link Together</button>
+          <button data-msg="I'M A MOMNI">I&rsquo;m a Momni</button>
+          <button data-msg="">No text</button>
+        </div>
+        <label>3 · Ring color</label>
+        <div class="opt" id="color-opts">
+          <button data-c="#6D58A4" class="on">Purple</button>
+          <button data-c="#0D878F">Teal</button>
+          <button data-c="#92E2C1">Algae</button>
+        </div>
+        <button class="dl" id="download">⬇ Download my photo</button>
+        <p class="note">Tip: a square, centered headshot works best. 560×560px, perfect for any profile.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Sharing helps the Circle grow with zero ad spend — thank you, mama. 🐘<br>
+    momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation (momnifoundation.org) is a separate 501(c)(3). One brand, two entities, separate finances.
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  var APP = 'https://app.momni.com';
+  var MSG = 'Momni is back 💜 The mom-to-mom caresharing community I love is relaunching — first mamas can reactivate and new moms can join the Circle. Come find your people: ' + APP;
+
+  function toast(t){ var el=document.getElementById('toast'); el.textContent=t; el.classList.add('show'); setTimeout(function(){el.classList.remove('show');},1800); }
+  function copy(text, cb){ navigator.clipboard.writeText(text).then(cb).catch(function(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); cb&&cb(); }); }
+
+  document.getElementById('sh-text').onclick=function(){ location.href='sms:?&body='+encodeURIComponent(MSG); };
+  document.getElementById('sh-email').onclick=function(){ location.href='mailto:?subject='+encodeURIComponent('Momni is relaunching 💜')+'&body='+encodeURIComponent(MSG); };
+  document.getElementById('sh-fb').onclick=function(){ window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(APP),'_blank','noopener'); };
+  document.getElementById('sh-link').onclick=function(){ copy(APP, function(){ toast('Link copied!'); }); };
+
+  // Copy-and-paste posts
+  var POSTS = [
+    {tag:'For a first mama (1.0)', body:'Were you one of the original Momni mamas? 🐘 Momni is relaunching — and your pin is still on the map. Come light it up. Reactivate and find your Circle again: '+APP},
+    {tag:'For new moms', body:'Mom friends: Momni is a community where moms care for each other’s kids — date nights, a sick day, a hard week. No agency, no markup. Just mamas helping mamas. Join the Circle 💜 '+APP},
+    {tag:'Instagram / story', body:'I’m circling up with @momni 💜 Mom-to-mom caresharing is back. If you’ve ever needed a village — this is it. Link in bio / '+APP},
+    {tag:'The short one', body:'Momni is back 💜 Mom-to-mom care, no middleman. Come find your people: '+APP},
+  ];
+  document.getElementById('posts').innerHTML = POSTS.map(function(p,i){
+    return '<div class="post"><div class="tag">'+p.tag+'</div><div class="body">'+p.body.replace(/</g,'&lt;')+'</div><button class="copy-btn" data-i="'+i+'">Copy this post</button></div>';
+  }).join('');
+  document.getElementById('posts').addEventListener('click', function(e){
+    var b=e.target.closest('.copy-btn'); if(!b) return;
+    copy(POSTS[b.dataset.i].body, function(){ b.textContent='Copied! ✓'; b.classList.add('done'); toast('Post copied — go paste it!'); setTimeout(function(){b.textContent='Copy this post';b.classList.remove('done');},2200); });
+  });
+
+  // ---- Circle Up profile-ring generator (all client-side) ----
+  var canvas=document.getElementById('ring-canvas'), ctx=canvas.getContext('2d'), S=560;
+  var img=null, msg='CIRCLE UP', ringColor='#6D58A4';
+  function draw(){
+    ctx.clearRect(0,0,S,S);
+    ctx.fillStyle='#F5F0FE'; ctx.fillRect(0,0,S,S);
+    // photo clipped to a circle
+    ctx.save();
+    ctx.beginPath(); ctx.arc(S/2,S/2,S/2-34,0,Math.PI*2); ctx.closePath(); ctx.clip();
+    if(img){
+      var r=S-68; var scale=Math.max(r/img.width,r/img.height);
+      var w=img.width*scale,h=img.height*scale;
+      ctx.drawImage(img,(S-w)/2,(S-h)/2,w,h);
+    } else {
+      ctx.fillStyle='#E1D8F5'; ctx.fillRect(0,0,S,S);
+      ctx.fillStyle='#9B86CF'; ctx.font='600 22px Albert Sans, sans-serif'; ctx.textAlign='center';
+      ctx.fillText('Your photo here', S/2, S/2);
+    }
+    ctx.restore();
+    // ring
+    ctx.lineWidth=26; ctx.strokeStyle=ringColor;
+    ctx.beginPath(); ctx.arc(S/2,S/2,S/2-21,0,Math.PI*2); ctx.stroke();
+    // message badge along the bottom
+    if(msg){
+      var badgeW=Math.min(360, 90+msg.length*18), bx=S/2, by=S-44;
+      ctx.fillStyle=ringColor;
+      ctx.beginPath();
+      if(ctx.roundRect){ ctx.roundRect(bx-badgeW/2, by-26, badgeW, 52, 26); } else { ctx.rect(bx-badgeW/2,by-26,badgeW,52); }
+      ctx.fill();
+      ctx.fillStyle= ringColor==='#92E2C1' ? '#0B4A36' : '#fff';
+      ctx.font='800 24px Montserrat, sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(msg, bx, by);
+    }
+    ctx.textBaseline='alphabetic';
+  }
+  document.getElementById('photo').addEventListener('change', function(e){
+    var f=e.target.files[0]; if(!f) return;
+    var reader=new FileReader();
+    reader.onload=function(ev){ var i=new Image(); i.onload=function(){ img=i; draw(); }; i.src=ev.target.result; };
+    reader.readAsDataURL(f);
+  });
+  document.getElementById('msg-opts').addEventListener('click', function(e){ var b=e.target.closest('button'); if(!b) return;
+    this.querySelectorAll('button').forEach(function(x){x.classList.remove('on');}); b.classList.add('on'); msg=b.dataset.msg; draw(); });
+  document.getElementById('color-opts').addEventListener('click', function(e){ var b=e.target.closest('button'); if(!b) return;
+    this.querySelectorAll('button').forEach(function(x){x.classList.remove('on');}); b.classList.add('on'); ringColor=b.dataset.c; draw(); });
+  document.getElementById('download').addEventListener('click', function(){
+    if(!img){ toast('Choose a photo first, mama 💜'); return; }
+    var a=document.createElement('a'); a.download='my-circle-up-momni.png'; a.href=canvas.toDataURL('image/png'); a.click();
+    toast('Saved! Now set it as your profile photo.');
+  });
+  draw();
+})();
+</script>
+</body>
+</html>

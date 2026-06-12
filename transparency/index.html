@@ -1,102 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Transparency — how Momni really works | Momni</title>
-<meta name="description" content="How Momni really works: a community of mothers, not a childcare or checking service. No evaluation of members, no handling of care payments, no promises — you build your own trust, like meeting a neighbor.">
-<meta name="robots" content="index,follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --purple:#6D58A4; --purple-deep:#4A3880; --teal:#0D878F; --teal-deep:#0A6B72;
-  --algae:#92E2C1; --lavender:#F5F0FE; --teal-soft:#E1F7F2; --clay:#D9C0A3;
-  --ink:#2B2233; --muted:#6B6477; --white:#FFFFFF;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
-h1,h2,h3{font-family:'Montserrat',sans-serif}
-a{text-decoration:none;color:inherit}
-.script{font-family:'Caveat',cursive}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid #EEE9F9;z-index:50}
-.nav-inner{display:flex;align-items:center;gap:28px;height:68px}
-.logo{display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;color:var(--purple);letter-spacing:-0.02em}
-.logo-mark{width:40px;height:40px;border-radius:50%;background:var(--lavender);display:flex;align-items:center;justify-content:center;font-size:20px}
-.nav-links{display:flex;gap:24px;margin-left:auto;font-size:15px;font-weight:500;color:var(--ink)}
-.nav-links a:hover{color:var(--purple)}
-.cta-btn{background:var(--teal);color:white;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px;transition:background 0.15s}
-.cta-btn:hover{background:var(--teal-deep)}
-.draft-banner{background:#B33A3A;color:white;text-align:center;padding:14px 24px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.04em}
-.hero{background:linear-gradient(180deg,var(--lavender) 0%,#FFFFFF 100%);padding:64px 0 40px;text-align:center}
-.hero h1{font-size:44px;font-weight:800;letter-spacing:-0.03em;margin-bottom:12px}
-.hero p.sub{font-size:18px;color:var(--muted);max-width:620px;margin:0 auto}
-.legal-body{max-width:760px;margin:0 auto;padding:48px 24px 72px}
-.legal-body h2{font-size:24px;font-weight:800;letter-spacing:-0.01em;margin:40px 0 12px}
-.legal-body h2 .num{color:var(--purple)}
-.legal-body p, .legal-body li{font-size:16px;margin-bottom:14px;color:var(--ink)}
-.legal-body ul{margin:0 0 14px 22px}
-.legal-body li{margin-bottom:8px}
-.plain{background:var(--teal-soft);border-radius:14px;padding:16px 20px;font-size:15px;margin-bottom:14px}
-.plain strong{color:var(--teal-deep)}
-.placeholder{background:#FBF3E2;border:1.5px dashed var(--clay);border-radius:14px;padding:16px 20px;font-size:15px;color:#7A5B2E;margin-bottom:14px}
-.meta{font-size:14px;color:var(--muted);margin-bottom:24px}
-footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;font-size:14px}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.foot-grid h4{font-family:'Montserrat',sans-serif;color:white;font-size:14px;font-weight:700;margin-bottom:14px}
-.foot-grid a{display:block;margin-bottom:9px;color:rgba(255,255,255,0.7)}
-.foot-grid a:hover{color:var(--algae)}
-.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
-@media(max-width:820px){.hero h1{font-size:32px}.nav-links{display:none}.foot-grid{grid-template-columns:1fr 1fr}}
-</style>
-
-<!-- SEO -->
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://momni.com/terms/">
-<meta property="og:title" content="Terms of Service (Draft) | Momni">
-<meta property="og:description" content="Momni&#x27;s plain-language Terms of Service. Draft — pending attorney review.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://momni.com/terms/">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transparency — both things are true | Momni</title>
+<meta name="description" content="What Momni is and is not, gives and doesn't give — in plain English, side by side. A community of mothers with no promises and no illusions: parents alone decide, and mothers together are the solution.">
+<meta name="robots" content="index,follow"><link rel="canonical" href="https://momni.com/transparency/">
+<meta property="og:title" content="Transparency — both things are true | Momni">
+<meta property="og:description" content="The most honest page we know how to write: the hope Momni gives, the promises it will never make, and why your judgment is the only filter that matters.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://momni.com/transparency/">
 <meta property="og:image" content="https://momni.com/assets/photos/mama-lifting-toddler-sky.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Terms of Service (Draft) | Momni">
-<meta name="twitter:description" content="Momni&#x27;s plain-language Terms of Service. Draft — pending attorney review.">
-<meta name="twitter:image" content="https://momni.com/assets/photos/mama-lifting-toddler-sky.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Two-row header (option E — Ribbon Classic) */
-.mh{position:sticky;top:0;z-index:50}
-/* mh-fix: header spans full width; neutralize leftover generic nav{} rule on .mh-links */
-.mh .wrap{max-width:1120px}
-.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
-.mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}
-.mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}
-.mh-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500;position:static;background:none;border-bottom:0;backdrop-filter:none}
-.mh-burger{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;margin-left:auto}
-.mh-mobile{display:none}
-.mh-mobile.open{display:block;padding:14px 24px 20px}
-.mh-mobile a{display:block;padding:9px 0;color:#fff;font-size:16px;font-weight:500}
-.mh-mobile-div{border-top:1px solid rgba(255,255,255,0.25);margin:10px 0}
+:root{--purple:#6D58A4;--purple-deep:#4A3880;--teal:#0D878F;--teal-deep:#0A6B72;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--ink:#2B2233;--muted:#6B6477;--line:#E5E0F0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+h1,h2,h3{font-family:'Montserrat',sans-serif}a{text-decoration:none;color:inherit}.script{font-family:'Caveat',cursive}.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.legalband{background:#4A3880;color:#fff;text-align:center;padding:13px 24px;font-family:'Montserrat';font-weight:700;font-size:13.5px;letter-spacing:.03em}
+.legalband a{color:#92E2C1}
+.hero{background:linear-gradient(180deg,var(--lavender),#fff);padding:58px 0 30px;text-align:center}
+.hero .pre{font-family:'Caveat',cursive;color:var(--teal);font-size:30px;display:block}
+.hero h1{font-size:46px;font-weight:800;letter-spacing:-.03em;margin-bottom:14px}
+.hero p{color:var(--muted);max-width:640px;margin:0 auto;font-size:17.5px}
+.meta{text-align:center;font-size:13px;color:var(--muted);margin-top:14px}
+/* opening dialectic statement */
+.opening{max-width:760px;margin:34px auto 8px;padding:0 24px;text-align:center}
+.opening .big{font-family:'Montserrat';font-weight:800;font-size:24px;line-height:1.45}
+.opening .big em{font-style:normal;color:var(--teal)}
+.opening .big strong{color:var(--purple)}
+/* the duets */
+.duets{max-width:1040px;margin:40px auto;padding:0 24px}
+.duet{display:grid;grid-template-columns:1fr 56px 1fr;align-items:stretch;margin-bottom:26px;animation:rise .6s ease both;animation-delay:var(--d)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.d-card{border-radius:20px;padding:26px 28px}
+.d-yes{background:linear-gradient(160deg,var(--teal-soft),#fff);border:1.5px solid #BFE8E0}
+.d-no{background:linear-gradient(160deg,#F7F5FA,#fff);border:1.5px solid var(--line)}
+.d-k{font-family:'Montserrat';font-weight:800;font-size:11.5px;letter-spacing:.1em}
+.d-yes .d-k{color:var(--teal-deep)}.d-no .d-k{color:var(--purple-deep)}
+.d-card h3{font-size:20px;font-weight:800;margin:6px 0 8px;letter-spacing:-.01em}
+.d-card p{font-size:14.5px;color:#4d4458}
+.d-no h3{color:var(--ink)}
+.d-spine{display:flex;align-items:center;justify-content:center;position:relative}
+.d-spine::before{content:'';position:absolute;top:0;bottom:0;width:2px;background:linear-gradient(180deg,transparent,var(--line),transparent)}
+.d-spine span{width:34px;height:34px;border-radius:50%;background:#fff;border:2px solid var(--purple);z-index:1;display:flex;align-items:center;justify-content:center}
+.d-spine span::after{content:'&';font-family:'Caveat';font-size:20px;color:var(--purple);font-weight:700}
+/* the covenant — responsibility */
+.covenant{max-width:860px;margin:56px auto;padding:0 24px}
+.cov-box{background:linear-gradient(135deg,var(--purple-deep),var(--purple));border-radius:28px;padding:46px 42px;color:#fff;text-align:center;box-shadow:0 24px 60px rgba(74,56,128,.3)}
+.cov-box .scr{font-family:'Caveat';font-size:32px;color:var(--algae);display:block;margin-bottom:10px}
+.cov-box h2{font-size:28px;font-weight:800;margin-bottom:16px;letter-spacing:-.01em}
+.cov-box p{font-size:16.5px;color:rgba(255,255,255,.92);max-width:640px;margin:0 auto 14px;line-height:1.75}
+.cov-box .law{font-family:'Montserrat';font-weight:800;font-size:18px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);border-radius:16px;padding:18px 22px;max-width:620px;margin:22px auto;line-height:1.6}
+.cov-box .law em{font-style:normal;color:var(--algae)}
+/* your filter — practical steps */
+.filter{max-width:860px;margin:0 auto 30px;padding:0 24px;text-align:center}
+.filter h2{font-size:26px;font-weight:800}
+.filter .sub{color:var(--muted);font-size:15px;max-width:560px;margin:8px auto 24px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;text-align:left}
+.step{border:1.5px solid var(--line);border-radius:16px;padding:16px;background:#fff}
+.step .n{font-family:'Caveat';font-size:24px;color:var(--teal);font-weight:700}
+.step b{display:block;font-size:14px;margin:2px 0 4px}
+.step p{font-size:12.5px;color:var(--muted)}
+.filter .more{display:inline-block;margin-top:22px;background:var(--algae);color:#0B4A36;font-weight:700;border-radius:100px;padding:13px 30px;font-size:15px}
+/* closing dialectic */
+.closing{max-width:680px;margin:50px auto 70px;padding:0 24px;text-align:center}
+.closing .duetline{font-family:'Montserrat';font-weight:800;font-size:21px;line-height:1.65}
+.closing .duetline .y{color:var(--teal)}
+.closing .duetline .n{color:var(--muted)}
+.closing .scr{font-family:'Caveat';font-size:30px;color:var(--purple);display:block;margin-top:18px}
+.legalmeta{max-width:760px;margin:0 auto 60px;padding:0 24px;font-size:13.5px;color:var(--muted);text-align:center;line-height:1.8}
+.legalmeta a{color:var(--teal);font-weight:600}
+footer{background:var(--ink);color:rgba(255,255,255,.8);padding:56px 0 32px;font-size:14px}
+.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
+@media(max-width:820px){.hero h1{font-size:32px}.duet{grid-template-columns:1fr;gap:0}.d-spine{height:44px}.d-spine::before{width:auto;height:2px;left:0;right:0;top:50%;bottom:auto}.opening .big{font-size:19px}}
+@media (prefers-reduced-motion: reduce){.duet{animation:none}}
+.mh{position:sticky;top:0;z-index:50}.mh .wrap{max-width:1120px}.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
+.mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}.mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}
+.mh-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500}.mh-burger{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;margin-left:auto}
+.mh-mobile{display:none}.mh-mobile.open{display:block;padding:14px 24px 20px}.mh-mobile a{display:block;padding:9px 0;color:#fff;font-size:16px;font-weight:500}.mh-mobile-div{border-top:1px solid rgba(255,255,255,0.25);margin:10px 0}
 #momni-lang{border:none;border-radius:100px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
-@media(max-width:960px){
-  .mh-top-inner a,.mh-links,.mh-main-inner>.mh-cta,.mh-tag{display:none}
-  .mh-burger{display:block}
-  .mh-top-inner{justify-content:flex-end}
-}
-
-.mh-top{background:#4A3880}
-.mh-top-inner a{color:rgba(255,255,255,0.8)} .mh-top-inner a:hover{color:#fff}
-.mh-main{background:#6D58A4}
-.mh-links a{color:#fff} .mh-links a:hover{color:#92E2C1}
-.mh-cta{background:#92E2C1;color:#0B4A36;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px}
-.mh-cta:hover{filter:brightness(0.95)}
-.mh-mobile{background:#6D58A4}
-#momni-lang{background:rgba(255,255,255,0.12);color:#fff}
-#momni-lang option{color:#2B2233}
-</style>
-</head>
-<body>
-
+@media(max-width:960px){.mh-top-inner a,.mh-links,.mh-main-inner>.mh-cta,.mh-tag{display:none}.mh-burger{display:block}}
+.mh-top{background:#4A3880}.mh-top-inner a{color:rgba(255,255,255,0.8)}.mh-main{background:#6D58A4}.mh-links a{color:#fff}.mh-links a:hover{color:#92E2C1}
+.mh-cta{background:#92E2C1;color:#0B4A36;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px}.mh-mobile{background:#6D58A4}#momni-lang{background:rgba(255,255,255,0.12);color:#fff}#momni-lang option{color:#2B2233}
+</style></head><body>
 <header class="mh" id="mh">
   <div class="mh-top">
     <div class="wrap mh-top-inner">
@@ -114,7 +96,6 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
   <div class="mh-main">
     <div class="wrap mh-main-inner">
       <a href="../index.html" class="mh-logo"><img src="../assets/momni-logo-white-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
-      
       <nav class="mh-links">
         <a href="../find-care/index.html">Find Care</a>
         <a href="../become-a-momni/index.html">Become a Momni</a>
@@ -159,51 +140,75 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
 </script>
 
 
-<div class="draft-banner" style="background:#4A3880">PLAIN-LANGUAGE STATEMENT · Please read this before you use Momni. Our <a href="../terms/index.html" style="color:#92E2C1">Terms</a> and <a href="../privacy/index.html" style="color:#92E2C1">Privacy Policy</a> govern; legal terms are pending attorney review.</div>
+<div class="legalband">PLAIN-LANGUAGE STATEMENT · Please read before you use Momni. Our <a href="../terms/index.html">Terms</a> and <a href="../privacy/index.html">Privacy Policy</a> govern.</div>
 
-<header class="hero">
-  <div class="wrap">
-    <h1>Transparency</h1>
-    <p class="sub">Exactly what Momni is, what it isn’t, and what that means for you — in plain English, on purpose.</p>
-  </div>
-</header>
+<header class="hero"><div class="wrap">
+<span class="pre">the most honest page we know how to write —</span>
+<h1>Both things are true.</h1>
+<p>Momni is real hope: mothers linking together, circling up, carrying each other the way mothers always have. And Momni makes no promises: no checks, no assurances, no illusions of a perfect world. This page holds both truths side by side — on purpose, in plain English.</p>
+<div class="meta">Last updated June 2026 · Applies to momni.com and app.momni.com, operated by Momni, Inc.</div>
+</div></header>
 
-<main class="legal-body">
-  <p class="meta">Last updated June 11, 2026 · Applies to momni.com and app.momni.com, operated by Momni, Inc.</p>
+<div class="opening"><p class="big">We believe <strong>mothers are the solution</strong> to the childcare crisis.<br>
+We also believe <em>no platform can ever be the filter</em> between your child and the world.<br>
+Hold both. That's Momni.</p></div>
 
-  <div class="plain"><strong>The one thing to understand:</strong> Momni is a <strong>community of mothers</strong> — a way to widen your own neighborhood so you can meet more moms. It is <strong>not</strong> a childcare provider, an agency, or a checking service. Everything that happens between members is between members. Getting to know someone, deciding whether to trust her, and choosing what to arrange is <strong>your</strong> job — exactly as it would be with a new neighbor.</p>
+<section class="duets"><div class="duet" style="--d:0.0s">
+  <div class="d-card d-yes"><div class="d-k">MOMNI IS</div><h3>A community of mothers</h3><p>A place to widen your neighborhood — to find the mama four streets over you'd never have met, and to circle up the way mothers always have. The village, made findable again.</p></div>
+  <div class="d-spine"><span></span></div>
+  <div class="d-card d-no"><div class="d-k">MOMNI IS NOT</div><h3>A childcare agency</h3><p>Not a daycare, not a nanny service, not a referral company. Nobody on Momni works for Momni. Every mama here is a neighbor, not an employee — and a profile means one thing only: she signed up.</p></div>
+</div><div class="duet" style="--d:0.06s">
+  <div class="d-card d-yes"><div class="d-k">MOMNI BELIEVES</div><h3>Mothers are the solution</h3><p>Millions of mothers already know how to love, feed, comfort and protect little ones. We believe linking them together is the most powerful answer to the childcare crisis the world has ever had.</p></div>
+  <div class="d-spine"><span></span></div>
+  <div class="d-card d-no"><div class="d-k">MOMNI DOES NOT BELIEVE</div><h3>In a perfect world</h3><p>We make no promise of any kind, and we sell no illusion. No platform on earth can promise you a person. Anyone who says otherwise is selling something we refuse to sell.</p></div>
+</div><div class="duet" style="--d:0.12s">
+  <div class="d-card d-yes"><div class="d-k">MOMNI GIVES</div><h3>The meeting place and the tools</h3><p>Profiles in her own words. A map to find her. Messages to know her. Links to arrange care. Reviews where mamas speak to mamas. A Circle to belong to.</p></div>
+  <div class="d-spine"><span></span></div>
+  <div class="d-card d-no"><div class="d-k">MOMNI DOESN'T GIVE</div><h3>Approval, endorsement, or assurance</h3><p>We don't check anyone out, we don't pick anyone for you, and we never stand behind any member. We built it this way on purpose — because real trust can't be outsourced.</p></div>
+</div><div class="duet" style="--d:0.18s">
+  <div class="d-card d-yes"><div class="d-k">MOMNI SHOWS</div><h3>What members choose to share</h3><p>Reviews are mamas' own opinions of their own experiences. A background check on a profile is a report she purchased herself and chose to display — her content, shown her way.</p></div>
+  <div class="d-spine"><span></span></div>
+  <div class="d-card d-no"><div class="d-k">MOMNI DOESN'T CONFIRM</div><h3>Any of it</h3><p>We don't review, evaluate, or adopt what members share — not reviews, not references, not reports. Weigh it all the way you'd weigh a neighbor's word: with your own eyes and your own judgment.</p></div>
+</div><div class="duet" style="--d:0.24s">
+  <div class="d-card d-yes"><div class="d-k">MOMNI HANDLES</div><h3>Small platform fees, openly</h3><p>Memberships from $1. A dollar per booking Link. Priced on a public page, never hidden, never a surprise.</p></div>
+  <div class="d-spine"><span></span></div>
+  <div class="d-card d-no"><div class="d-k">MOMNI NEVER TOUCHES</div><h3>Care money</h3><p>What you pay a mama is between you and her — directly, fully, forever. No processing, no holding, no percentage, no commission. Her $8 an hour is $8 an hour.</p></div>
+</div><div class="duet" style="--d:0.3s">
+  <div class="d-card d-yes"><div class="d-k">MOMNI CAN</div><h3>Listen, and act on reports</h3><p>Every profile and Link has a report button that reaches a human. We can remove members and close accounts, and we always will when the Circle's wellbeing asks it.</p></div>
+  <div class="d-spine"><span></span></div>
+  <div class="d-card d-no"><div class="d-k">MOMNI CANNOT</div><h3>Be in the room</h3><p>We cannot supervise a visit, watch a home, or stand beside your child. In a real emergency or a possible crime, call 911 and your local authorities first — always — then tell us.</p></div>
+</div></section>
 
-  <h2><span class="num">1.</span> What Momni is — and isn't</h2>
-  <p>Momni is a <strong>community platform</strong>. We give mothers tools to find each other, get to know each other, and arrange care with each other directly. Momni is <strong>not</strong> a care provider, a daycare, a nanny agency, an employer of caregivers, or a referral service. We do not provide, supervise, direct, or control any care, and we make no representation about any member.</p>
-  <p>Think of Momni as the front porch and the neighborhood bulletin board — a bigger place to meet other moms. We do not stand between you and the mother you meet, and we are not part of any arrangement you make with her.</p>
+<section class="covenant"><div class="cov-box">
+<span class="scr">so whose job is it?</span>
+<h2>Yours, mama. Entirely, exclusively yours.</h2>
+<p>The decision of who comes near your children belongs to you and you alone — not to us, not to an algorithm, not to a star rating. We say this in big type because you deserve a platform that respects you enough to tell you the truth:</p>
+<div class="law">Momni provides <em>no checks, no approvals, no promises and no assurances</em> about any member, home, or arrangement. The responsibility for choosing care — and for keeping your children protected — rests <em>solely with parents.</em></div>
+<p>That isn't us stepping away from you. It's us refusing to pretend. Because the moment a platform claims it can stand between your child and every risk, it has already lied to you once.</p>
+</div></section>
 
-  <h2><span class="num">2.</span> We do not check, evaluate, or endorse anyone</h2>
-  <p>Every member is on Momni because she signed up — <strong>not</strong> because Momni chose, investigated, approved, or stands behind her. Momni does <strong>not</strong> run background checks, confirm identities, evaluate fitness, or pass judgment on any member. We make <strong>no promises and no assurances</strong> about any member's character, history, honesty, home, or how any arrangement will turn out.</p>
-  <div class="plain"><strong>In plain English:</strong> a mama appearing on Momni means she joined — nothing more. Knowing her is your job, just like with any new friend.</div>
+<section class="filter">
+<h2>You are the filter. The Circle is your toolbox.</h2>
+<p class="sub">What Momni can't do for you, mothers do for each other — in person, over time, with eyes wide open. This is how the Circle builds its own trust:</p>
+<div class="steps">
+<div class="step"><div class="n">1</div><b>Meet first</b><p>A park, a porch, a playdate where you stay. Always meet before you book.</p></div>
+<div class="step"><div class="n">2</div><b>Ask everything</b><p>Discipline, screens, pets, who else is home, naps, allergies. A good mama loves the questions.</p></div>
+<div class="step"><div class="n">3</div><b>Check references</b><p>Ask for them — then actually call them. Members can also share reports they purchased themselves; weigh them with your own judgment.</p></div>
+<div class="step"><div class="n">4</div><b>Read the reviews</b><p>Mamas speaking to mamas about their own experience — useful word-of-mouth, never our endorsement.</p></div>
+<div class="step"><div class="n">5</div><b>Start small</b><p>One hour nearby before a full day. Let the littles tell you how it feels.</p></div>
+<div class="step"><div class="n">6</div><b>Trust your gut</b><p>If anything feels off, it's a no — no explanation owed, ever.</p></div>
+</div>
+<a class="more" href="../conduct/index.html">The full Suggested Momni Conduct →</a>
+</section>
 
-  <h2><span class="num">3.</span> You build your own trust — like meeting a neighbor</h2>
-  <p>Trust on Momni is built the way it has always been built between mothers: in person, over time, with your own eyes and your own judgment. You are <strong>solely responsible</strong> for deciding whom to meet, whom to trust, and what to arrange. We strongly encourage you to take your time — meet first, ask questions, request and check references, start small, and <strong>trust your instincts</strong>. If something feels off, walk away. See our <a href="../conduct/index.html">Suggested Momni Conduct</a> for the practical steps we recommend.</p>
+<section class="closing">
+<p class="duetline"><span class="y">We give you the village.</span> <span class="n">You choose who holds your child.</span><br>
+<span class="y">We carry the hope.</span> <span class="n">You carry the keys.</span><br>
+<span class="y">Mothers are the solution —</span> <span class="n">and mothers decide.</span></p>
+<span class="scr">Circle up. Link together. Eyes open, hearts open. 💜</span>
+</section>
 
-  <h2><span class="num">4.</span> Reviews and ratings are opinions — not assurances</h2>
-  <p>Reviews, ratings, and stars on Momni are <strong>member opinions</strong>. They are written by moms, about their own personal experience, and they reflect <strong>only the views of the member who wrote them</strong>. Momni provides the tool to ask for and leave reviews, but Momni does <strong>not</strong> evaluate whether a review is accurate and does not adopt or endorse it. A glowing history is one person's experience — it is <strong>not</strong> a promise about what your experience will be.</p>
-  <div class="plain"><strong>In plain English:</strong> reviews are moms sharing opinions with moms. Useful — but they are not a stamp of approval from Momni, and they are not a promise about your situation.</div>
-
-  <h2><span class="num">5.</span> Background checks are member content</h2>
-  <p>If a member chooses to share a background check, she purchased it herself and chose to display it herself. Momni does <strong>not</strong> obtain it, confirm it, interpret it, or stand behind it. A shared report is information one member chose to show — it is not something Momni has reviewed or relies upon, and you should weigh it with your own judgment like any other information.</p>
-
-  <h2><span class="num">6.</span> Money is strictly between members</h2>
-  <p>All payments for care are made <strong>directly between members</strong>. Momni never processes, holds, transmits, or insures care payments, never sets care rates, and never takes any percentage or commission on care income. Any payment question or dispute is between the members involved. Momni's only charges are platform fees (membership, Links, Momni+) that are never connected to care payments.</p>
-
-  <h2><span class="num">7.</span> No promises, no assurances</h2>
-  <p>Momni makes <strong>no promise or assurance of any kind</strong> about members, arrangements, homes, or outcomes. We do not assure you that any member is trustworthy, that any home is suitable, or that any arrangement will go well. Using Momni means you understand and accept that the responsibility for your choices — and your children — is yours.</p>
-  <div class="plain" style="background:#FBF3E2"><strong>We strongly encourage every mama</strong> to use the same care she would when leaving her children with anyone new: meet first, ask hard questions, check references, go slow, and trust her gut. Please read our <a href="../conduct/index.html" style="color:var(--teal-deep);font-weight:700">Suggested Momni Conduct</a>.</div>
-
-  <h2><span class="num">8.</span> Two entities, one brand</h2>
-  <p>momni.com and app.momni.com are operated by <strong>Momni, Inc.</strong>, a for-profit company. The <strong>Momni Foundation</strong> (momnifoundation.org) is a separate 501(c)(3) nonprofit with separate finances and governance. One brand, two entities, separate wallets.</p>
-
-  <p class="meta" style="margin-top:40px">This page is a plain-language summary of how Momni works. Our <a href="../terms/index.html" style="color:var(--teal);font-weight:600">Terms of Service</a> and <a href="../privacy/index.html" style="color:var(--teal);font-weight:600">Privacy Policy</a> are the governing documents. Questions? Reach us on the <a href="../contact/index.html" style="color:var(--teal);font-weight:600">contact page</a>.</p>
-</main>
-
+<p class="legalmeta">If a child is in danger or a crime may have occurred, contact <strong>911 and your local authorities first</strong> — then report it to us in the app, where it reaches a human who can remove members and close accounts. This page is a plain-language summary; our <a href="../terms/index.html">Terms of Service</a> and <a href="../privacy/index.html">Privacy Policy</a> are the governing documents. momni.com and app.momni.com are operated by Momni, Inc.; the Momni Foundation (momnifoundation.org) is a separate 501(c)(3) — one brand, two entities, separate finances. Questions? <a href="../contact/index.html">We answer them</a>.</p>
 <footer>
   <div class="wrap">
     <div style="margin-bottom:32px"><img src="../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:40px;display:block;margin-bottom:10px;background:#fff;border-radius:8px;padding:4px 8px"><p>Mom-to-mom caresharing.<br>Circle up. Link together.</p></div>
@@ -245,12 +250,9 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
     <a href="../our-story/index.html">Our Story</a>
     <a href="../history/index.html">Momni History</a>
     <a href="../faq/index.html">FAQ</a>
-    <a href="../blog/index.html">Blog</a>
-    <a href="../newsletter/index.html">Newsletter</a>
     <a href="../press/index.html">Press</a>
     <a href="../shop/index.html">Shop</a>
     <a href="../contact/index.html">Contact</a>
-    <a href="../connect/index.html">Connect</a>
     <a href="../terms/index.html">Terms of Service</a>
     <a href="../transparency/index.html">Transparency</a>
     <a href="../conduct/index.html">Suggested Conduct</a>
@@ -266,8 +268,6 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
     </div>
   </div>
 </footer>
-
-
 <!-- momni-lang-picker -->
 <style>.goog-te-banner-frame,.skiptranslate{display:none!important}body{top:0!important}
 #momni-lang{border:1.5px solid #E5E0F0;border-radius:100px;padding:6px 12px;font:inherit;font-size:14px;color:inherit;background:#fff;cursor:pointer}</style>
@@ -345,3 +345,4 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 </body>
 </html>
+</body></html>

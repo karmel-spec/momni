@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Movement Map | Momni</title>
-<meta name="description" content="The Momni Movement Map — 17,011 first mamas placed from Momni 1.0 records across all 50 states. Now the Circle relights, and this time it's global. Put your pin on the map.">
+<meta name="description" content="The Momni Movement Map — 25,373 first mamas recovered from the original Momni 1.0 records — hosts in teal, guests in purple, and every returning 2.0 mama a tiny light. By night, watch the map light up. Put your pin on it.">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
@@ -30,6 +30,21 @@ nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px so
 .legend{position:absolute;bottom:18px;left:18px;z-index:1000;background:rgba(255,255,255,0.95);border:1px solid #EEE9F9;border-radius:14px;padding:14px 18px;font-size:13px;line-height:1.9;max-width:300px;box-shadow:0 4px 18px rgba(43,34,51,0.12)}
 .legend .dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:8px;vertical-align:middle}
 .legend em{display:block;color:var(--muted);font-style:normal;font-size:12px;margin-top:6px;line-height:1.5}
+/* Day/night map (Karmel's pick): daylight by day, a softened readable night map after dark */
+.night-tiles{filter:brightness(1.24) contrast(.95)}
+#themeToggle{position:absolute;top:16px;right:16px;z-index:1000;background:rgba(255,255,255,.95);border:1px solid #EEE9F9;border-radius:100px;padding:9px 18px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;box-shadow:0 4px 18px rgba(43,34,51,.12)}
+.map-shell.night .legend{background:rgba(22,18,30,.88);border-color:#3A3148;color:#EFEAF7}
+.map-shell.night .legend em{color:#B9B0C9}
+.map-shell.night #themeToggle{background:rgba(22,18,30,.88);border-color:#3A3148;color:#fff}
+.lit{position:relative;display:block}
+.lit .halo{position:absolute;inset:-12px;border-radius:50%;animation:lpulse 2.4s ease-in-out infinite}
+.lit .core{position:absolute;inset:3px;border-radius:50%}
+.lit.algae .halo{background:radial-gradient(circle,rgba(146,226,193,.6) 0%,rgba(146,226,193,0) 70%)}
+.lit.algae .core{background:radial-gradient(circle,#fff 0%,#92E2C1 50%,rgba(146,226,193,0) 78%)}
+.lit.gold .halo{inset:-15px;background:radial-gradient(circle,rgba(255,217,138,.65) 0%,rgba(255,217,138,0) 70%)}
+.lit.gold .core{background:radial-gradient(circle,#fff 0%,#FFD98A 48%,rgba(255,217,138,0) 78%)}
+@keyframes lpulse{0%,100%{transform:scale(.75);opacity:.75}50%{transform:scale(1.3);opacity:1}}
+@media (prefers-reduced-motion: reduce){.lit .halo{animation:none}}
 .section{padding:56px 0}
 .section h2{font-size:30px;font-weight:800;text-align:center;margin-bottom:30px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
@@ -49,13 +64,13 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://momni.com/map/">
 <meta property="og:title" content="The Movement Map | Momni">
-<meta property="og:description" content="17,011 first mamas placed from 1.0 records across all 50 states. Now the Circle relights — and this time it's global. Put your pin on the map.">
+<meta property="og:description" content="25,373 first mamas recovered from the original Momni 1.0 records — hosts in teal, guests in purple, and every returning 2.0 mama a tiny light. By night, watch the map light up. Put your pin on it.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://momni.com/map/">
 <meta property="og:image" content="https://momni.com/assets/photos/girl-red-balloon-beach.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Movement Map | Momni">
-<meta name="twitter:description" content="17,011 first mamas placed from 1.0 records across all 50 states. Now the Circle relights — and this time it's global. Put your pin on the map.">
+<meta name="twitter:description" content="25,373 first mamas recovered from the original Momni 1.0 records — hosts in teal, guests in purple, and every returning 2.0 mama a tiny light. By night, watch the map light up. Put your pin on it.">
 <meta name="twitter:image" content="https://momni.com/assets/photos/girl-red-balloon-beach.jpg">
 <style>
 /* Two-row header (option E — Ribbon Classic) */
@@ -159,20 +174,20 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
     <p>The first mamas of Momni 1.0 circled up in all 50 states — playgroups, night shifts, date nights, whole neighborhoods of mothers carrying each other. Now the Circle relights. And this time, it's global.</p>
     <div class="counters" style="align-items:center">
       <div class="counter">
-        <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C99F72;margin-bottom:4px">Momni 1.0 · The First Mamas</div>
-        <div class="num" style="color:#C99F72">17,011</div>
-        <div class="lbl">first mamas placed from 1.0 records — across all 50 states</div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6D58A4;margin-bottom:4px">Momni 1.0 · The First Mamas</div>
+        <div class="num" style="color:#6D58A4">25,373</div>
+        <div class="lbl">recovered from the original records — 16,586 pinned (hosts in teal, guests in purple), 8,787 still finding their way home</div>
       </div>
       <div style="font-family:'Caveat',cursive;font-size:54px;color:#6D58A4;line-height:1">+</div>
       <div class="counter">
         <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#0D878F;margin-bottom:4px">Momni 2.0 · Lit Up Again</div>
-        <div class="num" style="color:#0D878F">287</div>
-        <div class="lbl">and counting, growing every day</div>
+        <div class="num" style="color:#0D878F" id="ct-lit">—</div>
+        <div class="lbl">tiny lights, and counting — growing every day</div>
       </div>
       <div style="font-family:'Caveat',cursive;font-size:54px;color:#6D58A4;line-height:1">=</div>
       <div class="counter">
         <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6D58A4;margin-bottom:4px">One Circle</div>
-        <div class="num" style="color:#6D58A4">17,298</div>
+        <div class="num" style="color:#6D58A4" id="ct-total">25,373+</div>
         <div class="lbl">mamas strong — nobody starts over here</div>
       </div>
     </div>
@@ -180,12 +195,13 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
   </div>
 </header>
 
-<div class="map-shell">
+<div class="map-shell" id="map-shell">
   <div id="map"></div>
+  <button id="themeToggle" title="Switch day/night map" aria-label="Switch day/night map">🌙 Night</button>
   <div class="legend">
-    <div><span class="dot" style="background:var(--clay)"></span><strong>The First Mamas &mdash; Momni 1.0</strong><br><span style="margin-left:20px;color:var(--muted)">Each 1.0 pin is anonymous until re-claimed</span></div>
-    <div><span class="dot" style="background:var(--teal)"></span><strong>Circling Up Now</strong><br><span style="margin-left:20px;color:var(--muted)">Reactivated &amp; New Momnis for 2.0</span></div>
-    <em>Every dot is anonymous until a mama claims her own pin.</em>
+    <div><span class="lit algae" style="display:inline-block;position:relative;width:12px;height:12px;margin-right:7px;vertical-align:middle"><span class="halo"></span><span class="core"></span></span><strong>Circling Up Now — her light is on</strong><br><span style="margin-left:20px;color:var(--muted)">Reactivated &amp; New Momnis for 2.0</span></div>
+    <div><span class="dot" style="background:var(--teal)"></span><strong>1.0 host mama</strong> &nbsp;·&nbsp; <span class="dot" style="background:var(--purple);opacity:.6"></span><strong>1.0 guest mama</strong><br><span style="margin-left:20px;color:var(--muted)">Each 1.0 pin is anonymous until re-claimed</span></div>
+    <em>Every dot sits near the center of a real town — never an address, never a name. By day the map wakes; by night, the lights come on. 💡</em>
   </div>
 </div>
 
@@ -273,38 +289,89 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-var map = L.map('map', {worldCopyJump: true, minZoom: 2}).setView([25, 0], 2);
-L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  maxZoom: 18
-}).addTo(map);
+var map = L.map('map', {worldCopyJump: true, minZoom: 2}).setView([39.3, -96.5], 4);
 
-function radiusFor(count){ return 4 + Math.sqrt(count) * 0.9; }
+// ---- Day/night map (Karmel's pick): daylight 6am–7pm local, softened night map after dark ----
+var dayTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+  {attribution: '&copy; OpenStreetMap &copy; CARTO', subdomains: 'abcd', maxZoom: 19});
+var nightBase = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+  {attribution: 'Tiles © Esri', className: 'night-tiles', maxNativeZoom: 16, maxZoom: 19});
+var nightRef = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',
+  {className: 'night-tiles', maxNativeZoom: 16, maxZoom: 19});
 
-// Individual anonymous 1.0 pins — city-level only, jittered, no names ever
+var THEMES = {
+  day:   { lit: 'algae', litSize: 18, host: {color:'#0D878F', op:.72}, guest: {color:'#6D58A4', op:.40} },
+  night: { lit: 'gold',  litSize: 22, host: {color:'#2FA8B0', op:.60}, guest: {color:'#9B86CF', op:.35} }
+};
+function autoTheme(){ var h = new Date().getHours(); return (h >= 19 || h < 6) ? 'night' : 'day'; }
+var mapTheme = localStorage.getItem('momni-map-theme') || autoTheme();
+
+function litIcon(theme){
+  var s = THEMES[theme].litSize;
+  return L.divIcon({ className: '', iconSize: [s, s], iconAnchor: [s/2, s/2],
+    html: '<span class="lit ' + THEMES[theme].lit + '" style="width:' + s + 'px;height:' + s + 'px"><span class="halo"></span><span class="core"></span></span>' });
+}
+
+var litMarkers = [], legacyMarkers = [];
+function applyTheme(theme){
+  mapTheme = theme;
+  var t = THEMES[theme];
+  if (theme === 'night') { dayTiles.remove(); nightBase.addTo(map); nightRef.addTo(map); }
+  else { nightBase.remove(); nightRef.remove(); dayTiles.addTo(map); }
+  document.getElementById('map-shell').classList.toggle('night', theme === 'night');
+  document.getElementById('themeToggle').textContent = theme === 'night' ? '☀️ Day' : '🌙 Night';
+  litMarkers.forEach(function(m){ m.setIcon(litIcon(theme)); });
+  legacyMarkers.forEach(function(e){
+    var s = e.role === 'host' ? t.host : t.guest;
+    e.marker.setStyle({ color: s.color, fillColor: s.color, fillOpacity: s.op });
+  });
+}
+applyTheme(mapTheme);
+document.getElementById('themeToggle').addEventListener('click', function(){
+  var next = mapTheme === 'night' ? 'day' : 'night';
+  localStorage.setItem('momni-map-theme', next);
+  applyTheme(next);
+});
+
+// ---- The First Mamas: every pin a real recovered 1.0 mama, snapped to a real town, never a name ----
 var cv = L.canvas({padding: 0.5});
 var legacyPopup = L.popup();
 fetch('legacy-pins.json').then(function(r){ return r.json(); }).then(function(pins){
   var layer = L.layerGroup();
+  var t = THEMES[mapTheme];
   pins.forEach(function(p){
-    L.circleMarker([p.lat, p.lng], {
-      renderer: cv, radius: p.precision === 'zip' ? 3 : 2.5,
-      color: '#C99F72', fillColor: '#C99F72',
-      fillOpacity: 0.55, weight: 1
+    var s = p.role === 'host' ? t.host : t.guest;
+    var m = L.circleMarker([p.lat, p.lng], {
+      renderer: cv, radius: p.role === 'host' ? 3.4 : 2.5,
+      color: s.color, fillColor: s.color, fillOpacity: s.op, weight: 0
     }).on('click', function(e){
       legacyPopup.setLatLng(e.latlng)
-        .setContent('<strong>Momni 1.0 mama</strong> &mdash; anonymous until she reclaims her pin.<br>Share the reactivation link and new Momni link with moms you know.<br><a href="../share/index.html" style="display:inline-block;margin-top:8px;color:#0D878F;font-weight:700">Share &amp; invite moms →</a>')
+        .setContent('<strong>Momni 1.0 mama</strong>' + (p.role === 'host' ? ' &mdash; she hosted' : '') + ' &mdash; anonymous until she reclaims her pin.<br>Share the reactivation link and new Momni link with moms you know.<br><a href="../share/index.html" style="display:inline-block;margin-top:8px;color:#0D878F;font-weight:700">Share &amp; invite moms →</a>')
         .openOn(map);
     }).addTo(layer);
+    legacyMarkers.push({marker: m, role: p.role});
   });
   layer.addTo(map);
 });
 
-L.circleMarker([40.27, -111.68], {
-  radius: radiusFor(287),
-  color: '#0D878F', fillColor: '#0D878F',
-  fillOpacity: 0.65, weight: 2, opacity: 1
-}).addTo(map).bindPopup('<strong>Circled up now — Momni 2.0</strong><br>Utah County, the first relight.');
+// ---- The lights: live 2.0 mamas from the app (falls back to the first relights) ----
+var FALLBACK_LIGHTS = [[40.2969,-111.6946],[40.2338,-111.6585],[40.2483,-111.6448],[40.3128,-111.7186],[40.1652,-111.6107],[40.3916,-111.8508]];
+function addLight(lat, lng, label){
+  var m = L.marker([lat, lng], {icon: litIcon(mapTheme)}).addTo(map)
+    .bindPopup('<strong>She\'s back 💜</strong><br>' + (label || 'A 2.0 mama — her light is on.') + '<br><a href="https://app.momni.com" style="display:inline-block;margin-top:8px;color:#0D878F;font-weight:700">Join her in the Circle →</a>');
+  litMarkers.push(m);
+}
+fetch('https://app.momni.com/api/map').then(function(r){ return r.json(); }).then(function(data){
+  (data.hosts || []).forEach(function(h){ if (h.lat != null) addLight(h.lat, h.lng, 'A 2.0 mama in ' + (h.city || 'the Circle') + ' — her light is on.'); });
+  if (!litMarkers.length) FALLBACK_LIGHTS.forEach(function(ll){ addLight(ll[0], ll[1]); });
+  if (data.counters) {
+    document.getElementById('ct-lit').textContent = data.counters.lit_up.toLocaleString();
+    document.getElementById('ct-total').textContent = (25373 + data.counters.lit_up).toLocaleString();
+  }
+}).catch(function(){
+  FALLBACK_LIGHTS.forEach(function(ll){ addLight(ll[0], ll[1]); });
+  document.getElementById('ct-lit').textContent = '287';
+});
 </script>
 
 <!-- momni-beta-feedback -->

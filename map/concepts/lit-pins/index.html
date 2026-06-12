@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daytime lit pins — 4 options for Karmel</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#6D58A4;--purple-deep:#4A3880;--teal:#0D878F;--algae:#92E2C1;--lavender:#F5F0FE;--ink:#2B2233;--muted:#6B6477}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--lavender);line-height:1.6;padding-bottom:90px}
+h1,h2{font-family:'Montserrat',sans-serif}
+.head{text-align:center;padding:40px 24px 8px}
+.head .script{font-family:'Caveat',cursive;color:var(--teal);font-size:27px;display:block}
+.head h1{font-size:31px;font-weight:800;margin-bottom:8px}
+.head p{color:var(--muted);max-width:620px;margin:0 auto;font-size:15px}
+.grid{max-width:1080px;margin:26px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:26px}
+.opt{background:#fff;border:1.5px solid #E5E0F0;border-radius:20px;overflow:hidden;box-shadow:0 14px 40px rgba(43,34,51,.1)}
+.opt .label{display:flex;align-items:baseline;gap:10px;padding:16px 20px 4px;flex-wrap:wrap}
+.opt .tag{font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px;background:var(--teal);color:#fff;border-radius:100px;padding:3px 12px}
+.opt h2{font-size:19px;font-weight:800}
+.opt .script{font-family:'Caveat',cursive;color:var(--muted);font-size:18px}
+.opt p.story{font-size:13.5px;color:var(--muted);padding:0 20px 12px}
+.opt .mapbox{height:300px;position:relative}
+.opt .choose{padding:11px 20px;font-size:13px;color:var(--muted);border-top:1px solid #F1EDF7}
+.opt .choose b{color:var(--purple-deep)}
+@media(max-width:500px){.grid{grid-template-columns:1fr}}
+
+/* ============ THE FOUR DAYTIME LIGHT TREATMENTS ============ */
+.lit{position:relative;display:block}
+@keyframes lpulse{0%,100%{transform:scale(.78);opacity:.78}50%{transform:scale(1.28);opacity:1}}
+@keyframes ping{0%{transform:scale(.45);opacity:.85}80%,100%{transform:scale(1.9);opacity:0}}
+@keyframes raySpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes flicker{0%,100%{opacity:1}45%{opacity:.82}52%{opacity:.98}70%{opacity:.88}}
+
+/* Option 1 — True Bulb: an actual little lightbulb, switched on */
+.lit.bulb .halo{position:absolute;inset:-13px;border-radius:50%;background:radial-gradient(circle,rgba(255,214,120,.65) 0%,rgba(255,214,120,0) 68%);animation:lpulse 2.4s ease-in-out infinite}
+.lit.bulb .glass{position:absolute;left:50%;top:0;transform:translateX(-50%);width:62%;height:62%;border-radius:50%;background:radial-gradient(circle at 50% 38%,#FFFDF2 0%,#FFE9A0 55%,#F4B942 100%);box-shadow:0 0 10px rgba(255,200,80,.95),0 0 22px rgba(255,200,80,.5);animation:flicker 3.6s ease-in-out infinite}
+.lit.bulb .base{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);width:30%;height:22%;border-radius:2px 2px 4px 4px;background:linear-gradient(180deg,#9AA0A8,#6E747C);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6)}
+
+/* Option 2 — Sunburst: a tiny shining star with rays */
+.lit.burst .rays{position:absolute;inset:-9px;animation:raySpin 14s linear infinite;background:
+  conic-gradient(from 0deg, rgba(255,205,90,.85) 0 6deg, transparent 6deg 45deg, rgba(255,205,90,.85) 45deg 51deg, transparent 51deg 90deg,
+   rgba(255,205,90,.85) 90deg 96deg, transparent 96deg 135deg, rgba(255,205,90,.85) 135deg 141deg, transparent 141deg 180deg,
+   rgba(255,205,90,.85) 180deg 186deg, transparent 186deg 225deg, rgba(255,205,90,.85) 225deg 231deg, transparent 231deg 270deg,
+   rgba(255,205,90,.85) 270deg 276deg, transparent 276deg 315deg, rgba(255,205,90,.85) 315deg 321deg, transparent 321deg 360deg);
+  border-radius:50%;-webkit-mask:radial-gradient(circle,transparent 30%,#000 34%, #000 100%);mask:radial-gradient(circle,transparent 30%,#000 34%,#000 100%)}
+.lit.burst .core{position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle,#fff 0%,#FFE9A0 55%,rgba(255,214,120,0) 80%);box-shadow:0 0 12px rgba(255,205,90,.9);animation:lpulse 2.2s ease-in-out infinite}
+
+/* Option 3 — Golden Hour: the night map's warm gold glow, by day */
+.lit.gold .halo{position:absolute;inset:-14px;border-radius:50%;background:radial-gradient(circle,rgba(255,196,86,.62) 0%,rgba(255,196,86,0) 70%);animation:lpulse 2.4s ease-in-out infinite}
+.lit.gold .core{position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle,#FFFDF4 0%,#FFD071 52%,rgba(244,170,50,.35) 78%,rgba(244,170,50,0) 100%);box-shadow:0 0 9px rgba(255,190,70,.95)}
+
+/* Option 4 — Beacon: warm core + radiating ring pings (a light switching on, over and over) */
+.lit.beacon .ring,.lit.beacon .ring2{position:absolute;inset:-4px;border-radius:50%;border:2.5px solid rgba(255,196,86,.8);animation:ping 2.6s ease-out infinite}
+.lit.beacon .ring2{animation-delay:1.3s}
+.lit.beacon .core{position:absolute;inset:16%;border-radius:50%;background:radial-gradient(circle,#fff 0%,#FFE2A0 45%,#F4AA32 80%);box-shadow:0 0 10px rgba(255,196,86,.95),0 0 22px rgba(255,196,86,.45)}
+
+footer{position:fixed;bottom:0;left:0;right:0;background:var(--purple-deep);color:#fff;padding:13px 20px;text-align:center;font-size:14px;z-index:900}
+footer b{color:var(--algae)}
+.leaflet-container{font:inherit}
+</style>
+</head>
+<body>
+
+<div class="head">
+  <span class="script">"come light it up" deserves a real light —</span>
+  <h1>Daytime 2.0 pins · 4 lightbulb looks</h1>
+  <p>Same daylight map as the live site, zoomed to the first relights in Utah County. Each option keeps the pulse you love — the difference is how much "lightbulb" each one carries. (Night mode stays gold and glowing as shipped.)</p>
+</div>
+
+<div class="grid">
+  <div class="opt">
+    <div class="label"><span class="tag">OPTION 1</span><h2>True Bulb 💡</h2><span class="script">an actual tiny lightbulb</span></div>
+    <p class="story">A literal miniature bulb — warm glass, little metal base, soft flicker — wrapped in a golden halo. The most storytelling of the four: "her light is on" becomes exactly what you see.</p>
+    <div class="mapbox" id="map1"></div>
+    <div class="choose">To pick: tell Claude <b>"Option 1."</b></div>
+  </div>
+
+  <div class="opt">
+    <div class="label"><span class="tag">OPTION 2</span><h2>Sunburst ✨</h2><span class="script">a tiny shining star</span></div>
+    <p class="story">A white-hot core throwing eight golden rays that rotate slowly, like light catching a lens. Reads as "shining" even from across the map — the most eye-catching at a glance.</p>
+    <div class="mapbox" id="map2"></div>
+    <div class="choose">To pick: tell Claude <b>"Option 2."</b></div>
+  </div>
+
+  <div class="opt">
+    <div class="label"><span class="tag">OPTION 3</span><h2>Golden Hour 🌅</h2><span class="script">the night glow, by day</span></div>
+    <p class="story">The same warm gold light the night map uses, brought into daylight — bigger warm-white core, deep amber edge, generous halo. The most cohesive: one light, day and night.</p>
+    <div class="mapbox" id="map3"></div>
+    <div class="choose">To pick: tell Claude <b>"Option 3."</b></div>
+  </div>
+
+  <div class="opt">
+    <div class="label"><span class="tag">OPTION 4</span><h2>Beacon 📡</h2><span class="script">a light switching on, again and again</span></div>
+    <p class="story">A warm glowing core sending out expanding rings — like the moment a porch light flicks on, replaying forever. The most "something is happening here" energy; lovely when lights cluster.</p>
+    <div class="mapbox" id="map4"></div>
+    <div class="choose">To pick: tell Claude <b>"Option 4."</b></div>
+  </div>
+</div>
+
+<footer>Pick one (or mix: <b>"Option 1 but with Option 4's rings"</b>). The live day map updates everywhere, night stays gold. 💡</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var LIGHTS = [[40.2969,-111.6946],[40.2338,-111.6585],[40.2483,-111.6448],[40.3128,-111.7186],[40.1652,-111.6107],[40.3916,-111.8508]];
+var KINDS = {
+  map1: {cls:'bulb',   size:26, html:'<span class="halo"></span><span class="glass"></span><span class="base"></span>'},
+  map2: {cls:'burst',  size:30, html:'<span class="rays"></span><span class="core"></span>'},
+  map3: {cls:'gold',   size:22, html:'<span class="halo"></span><span class="core"></span>'},
+  map4: {cls:'beacon', size:24, html:'<span class="ring"></span><span class="ring2"></span><span class="core"></span>'}
+};
+fetch('../pins.json').then(function(r){ return r.json(); }).then(function(pins){
+  var utah = pins.filter(function(p){ return p.state === 'Utah'; });
+  Object.keys(KINDS).forEach(function(id){
+    var k = KINDS[id];
+    var m = L.map(id, {preferCanvas:true, scrollWheelZoom:false}).setView([40.28, -111.72], 10);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {attribution:'&copy; OSM &copy; CARTO', subdomains:'abcd', maxZoom:19}).addTo(m);
+    utah.forEach(function(p){
+      var host = p.role === 'host';
+      L.circleMarker([p.lat, p.lng], {radius: host ? 3.2 : 2.4, weight:0, fillColor: host ? '#0D878F' : '#6D58A4', fillOpacity: host ? .72 : .4}).addTo(m);
+    });
+    LIGHTS.forEach(function(ll){
+      L.marker(ll, {icon: L.divIcon({className:'', iconSize:[k.size,k.size], iconAnchor:[k.size/2,k.size/2],
+        html:'<span class="lit ' + k.cls + '" style="width:' + k.size + 'px;height:' + k.size + 'px">' + k.html + '</span>'})})
+        .addTo(m).bindPopup("<b>She's back 💜</b><br>Her light is on.");
+    });
+  });
+});
+</script>
+</body>
+</html>

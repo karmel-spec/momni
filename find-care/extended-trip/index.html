@@ -486,6 +486,24 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
     });
   </script>
 </div>
+<!-- momni-site-console -->
+<script>
+(function(){
+  var API = /^(localhost|127\.)/.test(location.hostname) ? 'http://localhost:3000' : 'https://app.momni.com';
+  fetch(API + '/api/site/announcement').then(function(r){ return r.json(); }).then(function(a){
+    if (!a || !a.on || !a.text) return;
+    var esc = function(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+    var b = document.createElement('div');
+    b.setAttribute('style','background:#0D878F;color:#fff;text-align:center;padding:10px 18px;font:600 14px \'Albert Sans\',sans-serif;position:relative;z-index:70');
+    b.innerHTML = a.href ? ('<a href="' + esc(a.href) + '" style="color:#fff;text-decoration:underline">' + esc(a.text) + ' <span style="color:#92E2C1">→</span></a>') : esc(a.text);
+    document.body.insertBefore(b, document.body.firstChild);
+  }).catch(function(){});
+  var tagged = document.querySelectorAll('[data-momni-stat]');
+  if (tagged.length) fetch(API + '/api/site/stats').then(function(r){ return r.json(); }).then(function(s){
+    tagged.forEach(function(el){ var k = el.getAttribute('data-momni-stat'); if (s && s[k] != null) el.textContent = s[k]; });
+  }).catch(function(){});
+})();
+</script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

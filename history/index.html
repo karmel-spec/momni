@@ -302,19 +302,21 @@ var EVENTS = [
   {date:'2017-05-01', tag:'Origin', title:'Momni gets its name', body:'Mom + omni — "a mom for all." The portmanteau sticks, and a movement has a name.'}
 ];
 
-(function(){
+function buildAll(ALL){
   var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   function md(e){ var p = e.date.split('-'); return {y:+p[0], m:+p[1], d:+p[2]}; }
+  function H(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
   // ---------- This Day strip: the whole year, ordered by month-day ----------
   var now = new Date();
   var todayM = now.getMonth()+1, todayD = now.getDate();
   document.getElementById('tdih-date').textContent = MONTHS[todayM-1] + ' ' + todayD + ' — what the Circle was doing on this day';
-  var yearOrdered = EVENTS.slice().sort(function(a,b){
+  var yearOrdered = ALL.slice().sort(function(a,b){
     var A = md(a), B = md(b);
     return (A.m*100+A.d) - (B.m*100+B.d) || A.y - B.y;
   });
   var strip = document.getElementById('strip');
+  strip.innerHTML = '';
   var todayKey = todayM*100 + todayD;
   var hasToday = yearOrdered.some(function(e){ var x = md(e); return x.m===todayM && x.d===todayD; });
   var anchorEl = null;
@@ -325,7 +327,7 @@ var EVENTS = [
     el.className = 'hcard' + (isToday ? ' todaycard' : '');
     el.innerHTML = (isToday ? '<span class="badge">TODAY 💜</span><br>' : '') +
       '<span class="hd">' + MONTHS[x.m-1] + ' ' + x.d + ' <span class="yr">· ' + x.y + '</span></span>' +
-      '<h3>' + e.title + '</h3><p>' + e.body.slice(0, 110) + (e.body.length > 110 ? '…' : '') + '</p>';
+      '<h3>' + H(e.title) + '</h3><p>' + H(e.body.slice(0, 110)) + (e.body.length > 110 ? '…' : '') + '</p>';
     strip.appendChild(el);
     var key = x.m*100 + x.d;
     if (!anchorEl && key >= todayKey) anchorEl = el;
@@ -347,8 +349,9 @@ var EVENTS = [
 
   // ---------- vertical timeline: newest first, March 2017 at the very bottom ----------
   var TAG_COLORS = {Relaunch:'#0D878F', 'The Pause':'#6B6477', Milestone:'#6D58A4', Press:'#C25B8C', 'The Book':'#D9A03A', Origin:'#3E9E6E', Foundation:'#4A8FD9'};
-  var newestFirst = EVENTS.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
+  var newestFirst = ALL.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
   var tl = document.getElementById('tl');
+  tl.innerHTML = '';
   var side = 'left', lastYear = null;
   newestFirst.forEach(function(e){
     var x = md(e);
@@ -365,12 +368,24 @@ var EVENTS = [
     ev.style.setProperty('--c', c);
     ev.innerHTML = '<span class="dot"></span><div class="card">' +
       '<span class="date">' + MONTHS[x.m-1] + ' ' + x.d + ', ' + x.y + '</span>' +
-      '<h3>' + e.title + '</h3><p>' + e.body + '</p>' +
-      (e.link ? '<p style="margin-top:6px"><a class="src" href="' + e.link + '"' + (e.link.indexOf('http')===0 ? ' target="_blank" rel="noopener"' : '') + '>' + (e.linkLabel || 'More') + ' →</a></p>' : '') +
+      '<h3>' + H(e.title) + '</h3><p>' + H(e.body) + '</p>' +
+      (e.link ? '<p style="margin-top:6px"><a class="src" href="' + e.link + '"' + (e.link.indexOf('http')===0 ? ' target="_blank" rel="noopener"' : '') + '>' + H(e.linkLabel || 'More') + ' →</a></p>' : '') +
       (e.img ? '<img src="' + e.img + '" alt="" loading="lazy">' : '') +
       '<span class="tag" style="background:' + c + '18;color:' + c + '">' + e.tag + '</span></div>';
     tl.appendChild(ev);
     side = side === 'left' ? 'right' : 'left';
+  });
+}
+
+// Moments Karmel adds from HQ's Site Console merge in live; built-ins always render even if the app is unreachable.
+(function(){
+  var API = /^(localhost|127\.)/.test(location.hostname) ? 'http://localhost:3000' : 'https://app.momni.com';
+  fetch(API + '/api/site/timeline').then(function(r){ return r.json(); }).catch(function(){ return []; }).then(function(extra){
+    var merged = EVENTS.concat((Array.isArray(extra) ? extra : []).map(function(e){
+      return { date: e.date, tag: e.tag || 'Milestone', title: e.title, body: e.body || '',
+               link: e.link || undefined, linkLabel: e.link ? 'More' : undefined, img: e.img || undefined };
+    }));
+    buildAll(merged);
   });
 })();
 </script>
@@ -419,6 +434,24 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
     });
   </script>
 </div>
+<!-- momni-site-console -->
+<script>
+(function(){
+  var API = /^(localhost|127\.)/.test(location.hostname) ? 'http://localhost:3000' : 'https://app.momni.com';
+  fetch(API + '/api/site/announcement').then(function(r){ return r.json(); }).then(function(a){
+    if (!a || !a.on || !a.text) return;
+    var esc = function(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+    var b = document.createElement('div');
+    b.setAttribute('style','background:#0D878F;color:#fff;text-align:center;padding:10px 18px;font:600 14px \'Albert Sans\',sans-serif;position:relative;z-index:70');
+    b.innerHTML = a.href ? ('<a href="' + esc(a.href) + '" style="color:#fff;text-decoration:underline">' + esc(a.text) + ' <span style="color:#92E2C1">→</span></a>') : esc(a.text);
+    document.body.insertBefore(b, document.body.firstChild);
+  }).catch(function(){});
+  var tagged = document.querySelectorAll('[data-momni-stat]');
+  if (tagged.length) fetch(API + '/api/site/stats').then(function(r){ return r.json(); }).then(function(s){
+    tagged.forEach(function(el){ var k = el.getAttribute('data-momni-stat'); if (s && s[k] != null) el.textContent = s[k]; });
+  }).catch(function(){});
+})();
+</script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

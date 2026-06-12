@@ -36,15 +36,20 @@ nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px so
 .map-shell.night .legend{background:rgba(22,18,30,.88);border-color:#3A3148;color:#EFEAF7}
 .map-shell.night .legend em{color:#B9B0C9}
 .map-shell.night #themeToggle{background:rgba(22,18,30,.88);border-color:#3A3148;color:#fff}
+/* Karmel's picks: True Bulb = reactivated/new 2.0 Momnis · Golden-Hour Beacon = available right now (Instant Booking) */
 .lit{position:relative;display:block}
 .lit .halo{position:absolute;inset:-12px;border-radius:50%;animation:lpulse 2.4s ease-in-out infinite}
-.lit .core{position:absolute;inset:3px;border-radius:50%}
-.lit.algae .halo{background:radial-gradient(circle,rgba(146,226,193,.6) 0%,rgba(146,226,193,0) 70%)}
-.lit.algae .core{background:radial-gradient(circle,#fff 0%,#92E2C1 50%,rgba(146,226,193,0) 78%)}
-.lit.gold .halo{inset:-15px;background:radial-gradient(circle,rgba(255,217,138,.65) 0%,rgba(255,217,138,0) 70%)}
-.lit.gold .core{background:radial-gradient(circle,#fff 0%,#FFD98A 48%,rgba(255,217,138,0) 78%)}
+.lit.bulb .halo{inset:-13px;background:radial-gradient(circle,rgba(255,214,120,.65) 0%,rgba(255,214,120,0) 68%)}
+.lit.bulb .glass{position:absolute;left:50%;top:0;transform:translateX(-50%);width:62%;height:62%;border-radius:50%;background:radial-gradient(circle at 50% 38%,#FFFDF2 0%,#FFE9A0 55%,#F4B942 100%);box-shadow:0 0 10px rgba(255,200,80,.95),0 0 22px rgba(255,200,80,.5);animation:flicker 3.6s ease-in-out infinite}
+.lit.bulb .base{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);width:30%;height:22%;border-radius:2px 2px 4px 4px;background:linear-gradient(180deg,#9AA0A8,#6E747C);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6)}
+.lit.gbeacon .halo{inset:-15px;background:radial-gradient(circle,rgba(255,196,86,.62) 0%,rgba(255,196,86,0) 70%)}
+.lit.gbeacon .core{position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle,#FFFDF4 0%,#FFD071 52%,rgba(244,170,50,.35) 78%,rgba(244,170,50,0) 100%);box-shadow:0 0 9px rgba(255,190,70,.95)}
+.lit.gbeacon .ring,.lit.gbeacon .ring2{position:absolute;inset:-4px;border-radius:50%;border:2.5px solid rgba(255,196,86,.8);animation:ping 2.6s ease-out infinite}
+.lit.gbeacon .ring2{animation-delay:1.3s}
+@keyframes ping{0%{transform:scale(.45);opacity:.85}80%,100%{transform:scale(1.9);opacity:0}}
+@keyframes flicker{0%,100%{opacity:1}45%{opacity:.82}60%{opacity:.96}}
 @keyframes lpulse{0%,100%{transform:scale(.75);opacity:.75}50%{transform:scale(1.3);opacity:1}}
-@media (prefers-reduced-motion: reduce){.lit .halo{animation:none}}
+@media (prefers-reduced-motion: reduce){.lit .halo,.lit .glass,.lit .ring,.lit .ring2{animation:none}}
 .section{padding:56px 0}
 .section h2{font-size:30px;font-weight:800;text-align:center;margin-bottom:30px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
@@ -228,7 +233,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
   <div id="map"></div>
   <button id="themeToggle" title="Switch day/night map" aria-label="Switch day/night map">🌙 Night</button>
   <div class="legend">
-    <div><span class="lit algae" style="display:inline-block;position:relative;width:12px;height:12px;margin-right:7px;vertical-align:middle"><span class="halo"></span><span class="core"></span></span><strong>Circling Up Now — her light is on</strong><br><span style="margin-left:20px;color:var(--muted)">Reactivated &amp; New Momnis for 2.0</span></div>
+    <div><span class="lit bulb" style="display:inline-block;position:relative;width:12px;height:12px;margin-right:7px;vertical-align:middle"><span class="halo"></span><span class="glass"></span><span class="base"></span></span><strong>Circling Up Now — her light is on</strong><br><span style="margin-left:20px;color:var(--muted)">Reactivated &amp; New Momnis for 2.0</span></div>
+    <div><span class="lit gbeacon" style="display:inline-block;position:relative;width:12px;height:12px;margin-right:7px;vertical-align:middle"><span class="halo"></span><span class="ring"></span><span class="ring2"></span><span class="core"></span></span><strong>Available Right Now</strong><br><span style="margin-left:20px;color:var(--muted)">Instant Booking — her beacon is on</span></div>
     <div><span class="dot" style="background:var(--teal)"></span><strong>1.0 host mama</strong> &nbsp;·&nbsp; <span class="dot" style="background:var(--purple);opacity:.6"></span><strong>1.0 guest mama</strong><br><span style="margin-left:20px;color:var(--muted)">Each 1.0 pin is anonymous until re-claimed</span></div>
     <em>Every dot sits near the center of a real town — never an address, never a name. By day the map wakes; by night, the lights come on. 💡</em>
   </div>
@@ -339,12 +345,13 @@ var THEMES = {
 function autoTheme(){ var h = new Date().getHours(); return (h >= 19 || h < 6) ? 'night' : 'day'; }
 var mapTheme = localStorage.getItem('momni-map-theme') || autoTheme();
 
-function litIcon(theme){
+function litIcon(theme, availableNow){
   var s = THEMES[theme].litSize;
+  if (availableNow) return L.divIcon({ className: '', iconSize: [s, s], iconAnchor: [s/2, s/2],
+    html: '<span class="lit gbeacon" style="width:' + s + 'px;height:' + s + 'px"><span class="halo"></span><span class="ring"></span><span class="ring2"></span><span class="core"></span></span>' });
   return L.divIcon({ className: '', iconSize: [s, s], iconAnchor: [s/2, s/2],
-    html: '<span class="lit ' + THEMES[theme].lit + '" style="width:' + s + 'px;height:' + s + 'px"><span class="halo"></span><span class="core"></span></span>' });
+    html: '<span class="lit bulb" style="width:' + s + 'px;height:' + s + 'px"><span class="halo"></span><span class="glass"></span><span class="base"></span></span>' });
 }
-
 var litMarkers = [], legacyMarkers = [];
 function applyTheme(theme){
   mapTheme = theme;
@@ -353,7 +360,7 @@ function applyTheme(theme){
   else { nightBase.remove(); nightRef.remove(); dayTiles.addTo(map); }
   document.getElementById('map-shell').classList.toggle('night', theme === 'night');
   document.getElementById('themeToggle').textContent = theme === 'night' ? '☀️ Day' : '🌙 Night';
-  litMarkers.forEach(function(m){ m.setIcon(litIcon(theme)); });
+  litMarkers.forEach(function(e){ e.marker.setIcon(litIcon(theme, e.avail)); });
   legacyMarkers.forEach(function(e){
     var s = e.role === 'host' ? t.host : t.guest;
     e.marker.setStyle({ color: s.color, fillColor: s.color, fillOpacity: s.op });
@@ -389,13 +396,13 @@ fetch('legacy-pins.json').then(function(r){ return r.json(); }).then(function(pi
 
 // ---- The lights: live 2.0 mamas from the app (falls back to the first relights) ----
 var FALLBACK_LIGHTS = [[40.2969,-111.6946],[40.2338,-111.6585],[40.2483,-111.6448],[40.3128,-111.7186],[40.1652,-111.6107],[40.3916,-111.8508]];
-function addLight(lat, lng, label){
-  var m = L.marker([lat, lng], {icon: litIcon(mapTheme)}).addTo(map)
-    .bindPopup('<strong>She\'s back 💜</strong><br>' + (label || 'A 2.0 mama — her light is on.') + '<br><a href="https://app.momni.com" style="display:inline-block;margin-top:8px;color:#0D878F;font-weight:700">Join her in the Circle →</a>');
-  litMarkers.push(m);
+function addLight(lat, lng, label, avail){
+  var m = L.marker([lat, lng], {icon: litIcon(mapTheme, avail)}).addTo(map)
+    .bindPopup('<strong>' + (avail ? 'Her beacon is on 🌟' : 'She\'s back 💜') + '</strong><br>' + (label || 'A 2.0 mama — her light is on.') + '<br><a href="https://app.momni.com" style="display:inline-block;margin-top:8px;color:#0D878F;font-weight:700">Join her in the Circle →</a>');
+  litMarkers.push({marker: m, avail: !!avail});
 }
 fetch('https://app.momni.com/api/map').then(function(r){ return r.json(); }).then(function(data){
-  (data.hosts || []).forEach(function(h){ if (h.lat != null) addLight(h.lat, h.lng, 'A 2.0 mama in ' + (h.city || 'the Circle') + ' — her light is on.'); });
+  (data.hosts || []).forEach(function(h){ if (h.lat != null) addLight(h.lat, h.lng, 'A 2.0 mama in ' + (h.city || 'the Circle') + (h.available_now ? ' — available right now for Instant Booking.' : ' — her light is on.'), h.available_now); });
   if (!litMarkers.length) FALLBACK_LIGHTS.forEach(function(ll){ addLight(ll[0], ll[1]); });
   if (data.counters) {
     document.getElementById('ct-lit').textContent = data.counters.lit_up.toLocaleString();

@@ -1,45 +1,62 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Circle — Momni's monthly newsletter | Momni</title>
-<meta name="description" content="The Circle is Momni's monthly letter home — read this month's full issue and every issue ever, kept readable forever in our living archive.">
-<meta name="robots" content="index,follow"><link rel="canonical" href="https://momni.com/newsletter/">
-<meta property="og:title" content="The Circle — Momni's monthly newsletter"><meta property="og:type" content="website">
-<meta property="og:image" content="https://momni.com/assets/photos/mama-lifting-toddler-sky.jpg">
+<title>Team Momni — the team is you, mama | Momni</title>
+<meta name="description" content="The story of Team Momni in three acts: the first builders who gave everything, the chrysalis years, and the rebirth — a movement of mothers and volunteers. We are Team Momni. Circle up and join us.">
+<meta name="robots" content="index,follow"><link rel="canonical" href="https://momni.com/team/">
+<meta property="og:title" content="Team Momni — the team is you, mama">
+<meta property="og:description" content="First came the builders. Then the chrysalis. Now the butterflies — a movement of mothers IS the team. Join us.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://momni.com/team/">
+<meta property="og:image" content="https://momni.com/assets/photos/momni-1-0-team.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--purple:#6D58A4;--purple-deep:#4A3880;--teal:#0D878F;--teal-deep:#0A6B72;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--gold:#D9A03A;--ink:#2B2233;--muted:#6B6477;--line:#E5E0F0}
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:#fff;line-height:1.7}
 h1,h2,h3{font-family:'Montserrat',sans-serif}a{text-decoration:none;color:inherit}.script{font-family:'Caveat',cursive}.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-.hero{background:linear-gradient(180deg,var(--lavender),#fff);padding:50px 0 22px;text-align:center}
-.hero .pre{font-family:'Caveat',cursive;color:var(--teal);font-size:28px;display:block}.hero h1{font-size:40px;font-weight:800;letter-spacing:-.03em;margin-bottom:8px}.hero p{color:var(--muted);max-width:580px;margin:0 auto;font-size:16px}
-/* current issue — full scroll, Concept A look */
-.issue{max-width:660px;margin:30px auto;background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:38px 44px 44px;box-shadow:0 18px 50px rgba(43,34,51,.08)}
-.mast{display:flex;gap:14px;align-items:center;border-bottom:2px solid var(--purple);padding-bottom:16px;margin-bottom:20px}
-.mast .kic{font-size:34px}.mast .t{font-family:'Montserrat';font-weight:800;font-size:30px;color:var(--purple-deep)}.mast .s{font-size:12.5px;color:var(--muted);letter-spacing:.04em}
-.curtag{display:inline-block;background:var(--algae);color:#0B4A36;font-weight:700;font-size:11px;border-radius:100px;padding:3px 12px;margin-bottom:14px}
-.letter{font-size:17px;font-style:italic;color:var(--ink);line-height:1.8;margin-bottom:26px}
-.sec-h{font-family:'Montserrat';color:var(--teal);font-size:13px;text-transform:uppercase;letter-spacing:.07em;margin:26px 0 12px}
-.tm{display:flex;gap:13px;margin-bottom:14px}.tm .e{font-size:24px;flex:none}.tm b{font-size:15.5px}.tm p{font-size:14px;color:var(--muted);margin-top:2px}
-.nums{display:flex;flex-wrap:wrap;gap:12px;background:var(--lavender);border-radius:14px;padding:18px;margin:22px 0}
-.nums div{flex:1;min-width:110px;text-align:center}.nums b{font-family:'Montserrat';font-weight:800;font-size:24px;color:var(--purple);display:block}.nums span{font-size:11.5px;color:var(--muted)}
-.story{border-left:3px solid var(--algae);padding:4px 0 4px 16px;margin:22px 0}.story .q{font-family:'Caveat';font-size:24px;color:var(--teal)}.story p{font-size:14.5px;color:var(--muted);margin-top:4px}
-.tip{background:var(--teal-soft);border-radius:14px;padding:16px 18px;font-size:14.5px;margin:22px 0}.tip b{color:var(--teal-deep)}
-.cta-wrap{text-align:center;margin-top:28px}.cta{display:inline-block;background:var(--algae);color:#0B4A36;font-weight:700;border-radius:100px;padding:14px 32px;font-size:15.5px}
-.signoff{font-family:'Caveat';font-size:24px;color:var(--purple);text-align:center;margin-top:20px}
-/* archive — the living library */
-.archive{max-width:900px;margin:50px auto;padding:0 24px}
-.archive h2{font-size:27px;font-weight:800;text-align:center}.archive .sub{text-align:center;color:var(--muted);font-size:14.5px;margin:6px auto 24px;max-width:520px}
-.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
-.iss{border:1.5px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;transition:transform .15s,box-shadow .15s}
-.iss.cur{border-color:var(--purple);box-shadow:0 10px 30px rgba(109,88,164,.16)}
-.iss:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(43,34,51,.12)}
-.iss .top{height:96px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-weight:800;color:#fff;font-size:15px;text-align:center;padding:10px}
-.iss .b{padding:14px 16px}.iss .no{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--teal);text-transform:uppercase}.iss h3{font-size:15px;font-weight:800;margin:3px 0 5px}.iss p{font-size:12.5px;color:var(--muted)}
-.iss .read{margin-top:8px;font-weight:700;font-size:13px;color:var(--purple)}
-.iss.soon{border-style:dashed;background:var(--lavender);text-align:center;display:flex;align-items:center;justify-content:center;min-height:170px;color:var(--muted);font-size:13px;padding:18px}
-.howto{max-width:660px;margin:30px auto 0;font-size:13px;color:var(--muted);text-align:center;line-height:1.7;border-top:1px solid var(--line);padding-top:20px}.howto a{color:var(--teal);font-weight:600}
-footer{background:var(--ink);color:rgba(255,255,255,.8);padding:56px 0 32px;font-size:14px}.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
-@media(max-width:760px){.hero h1{font-size:30px}.issue{padding:28px 24px}}
+.hero{background:linear-gradient(180deg,var(--lavender),#fff);padding:58px 0 34px;text-align:center}
+.hero .pre{font-family:'Caveat',cursive;color:var(--teal);font-size:30px;display:block}
+.hero h1{font-size:46px;font-weight:800;letter-spacing:-.03em;margin-bottom:14px}
+.hero p{color:var(--muted);max-width:620px;margin:0 auto;font-size:17px}
+.act{max-width:800px;margin:0 auto;padding:44px 24px 10px}
+.act .no{font-family:'Caveat';font-size:26px;color:var(--gold);display:block;text-align:center}
+.act h2{font-size:30px;font-weight:800;text-align:center;letter-spacing:-.02em;margin-bottom:18px}
+.act p{font-size:16.5px;margin-bottom:18px}
+.act .photo{width:100%;border-radius:20px;margin:8px 0 12px;display:block;box-shadow:0 16px 44px rgba(43,34,51,.14)}
+.act .cap{text-align:center;font-family:'Caveat';font-size:20px;color:var(--muted);margin-bottom:10px}
+.grat{background:var(--teal-soft);border-radius:20px;padding:26px 30px;margin:24px 0}
+.grat .scr{font-family:'Caveat';font-size:28px;color:var(--teal-deep);display:block;margin-bottom:8px}
+.grat p{font-size:15.5px;margin-bottom:10px}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.roles span{background:#fff;border:1.5px solid #BFE8E0;border-radius:100px;padding:6px 16px;font-size:13px;font-weight:600;color:var(--teal-deep)}
+/* chrysalis */
+.chry{background:#2B2233;color:#fff;margin:46px 0;padding:60px 24px;text-align:center;position:relative;overflow:hidden}
+.chry .stars span{position:absolute;background:#fff;border-radius:50%;opacity:.5}
+.chry .inner{max-width:640px;margin:0 auto;position:relative}
+.chry .no{font-family:'Caveat';font-size:26px;color:var(--gold)}
+.chry h2{font-size:30px;font-weight:800;margin:6px 0 16px}
+.chry p{font-size:16.5px;color:rgba(255,255,255,.85);margin-bottom:16px}
+.chry .coc{font-size:44px;margin:10px 0}
+.chry .whisper{font-family:'Caveat';font-size:26px;color:var(--algae)}
+/* butterflies */
+.fly{position:relative}
+.butterfly{position:absolute;font-size:22px;animation:flutter 9s ease-in-out infinite;opacity:.85;pointer-events:none}
+@keyframes flutter{0%,100%{transform:translate(0,0) rotate(-8deg)}25%{transform:translate(14px,-22px) rotate(8deg)}50%{transform:translate(-8px,-38px) rotate(-6deg)}75%{transform:translate(10px,-16px) rotate(10deg)}}
+.swarmgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:22px 0}
+.sg{border:1.5px solid var(--line);border-radius:16px;padding:18px;background:#fff}
+.sg .e{font-size:26px}
+.sg b{display:block;font-size:15px;margin:6px 0 4px}
+.sg p{font-size:13px;color:var(--muted);margin:0}
+/* finale */
+.finale{background:linear-gradient(135deg,var(--purple-deep),var(--purple));color:#fff;text-align:center;padding:70px 24px;margin-top:50px;position:relative;overflow:hidden}
+.finale .scr{font-family:'Caveat';font-size:34px;color:var(--algae);display:block;margin-bottom:8px}
+.finale h2{font-size:42px;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.finale p{font-size:17px;color:rgba(255,255,255,.9);max-width:560px;margin:0 auto 28px}
+.finale .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.finale a.b1{background:var(--algae);color:#0B4A36;font-weight:700;border-radius:100px;padding:15px 34px;font-size:16px}
+.finale a.b2{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.4);color:#fff;font-weight:700;border-radius:100px;padding:15px 34px;font-size:16px}
+footer{background:var(--ink);color:rgba(255,255,255,.8);padding:56px 0 32px;font-size:14px}
+.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
+@media(max-width:760px){.hero h1{font-size:32px}.finale h2{font-size:30px}}
+@media (prefers-reduced-motion: reduce){.butterfly{animation:none}}
 .mh{position:sticky;top:0;z-index:50}.mh .wrap{max-width:1120px}.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
 .mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}.mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}
 .mh-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500}.mh-burger{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;margin-left:auto}
@@ -48,7 +65,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.8);padding:56px 0 32px;font
 @media(max-width:960px){.mh-top-inner a,.mh-links,.mh-main-inner>.mh-cta,.mh-tag{display:none}.mh-burger{display:block}}
 .mh-top{background:#4A3880}.mh-top-inner a{color:rgba(255,255,255,0.8)}.mh-main{background:#6D58A4}.mh-links a{color:#fff}.mh-links a:hover{color:#92E2C1}
 .mh-cta{background:#92E2C1;color:#0B4A36;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px}.mh-mobile{background:#6D58A4}#momni-lang{background:rgba(255,255,255,0.12);color:#fff}#momni-lang option{color:#2B2233}
-</style></head><body id="top">
+</style></head><body>
 <header class="mh" id="mh">
   <div class="mh-top">
     <div class="wrap mh-top-inner">
@@ -111,32 +128,66 @@ footer{background:var(--ink);color:rgba(255,255,255,.8);padding:56px 0 32px;font
 </script>
 
 
-<header class="hero"><div class="wrap"><span class="pre">a letter home, every month —</span><h1>The Circle</h1>
-<p>Momni's monthly newsletter. Read this month's full issue below — and find every issue ever in the living archive, kept readable forever.</p></div></header>
+<header class="hero"><div class="wrap">
+<span class="pre">looking for the team page? look in the mirror —</span>
+<h1>WE are Team Momni.</h1>
+<p>Every movement has a team story. Ours has three acts: the builders who gave everything, the long quiet of the chrysalis, and the rebirth happening right now — in you.</p>
+</div></header>
 
-<article class="issue">
-  <div class="mast"><span class="kic">🐘</span><div><div class="t">The Circle</div><div class="s">Momni's Monthly · Issue 01 · June 2026</div></div></div>
-  <span class="curtag">✦ This month's issue</span>
-  <p class="letter">Six years ago we pressed pause. This month, we pressed play. The map lit up with 25,373 of you — every first mama, back on the map where she belongs. I cried at my desk more than once, watching the lights come on across all fifty states. This is the first issue of The Circle, our monthly letter home. It'll change a little each month — but it will always start the same way: with you. Welcome home, mama. 💜</p>
-  <div class="sec-h">This month in the Circle</div>
-  <div class="tm"><span class="e">🗺️</span><div><b>The Movement Map lit up</b><p>Every 1.0 mama is back on the map — hosts in teal, guests in purple, and every returning 2.0 mama a glowing, pulsing light. By day it's a soft constellation; after dark, the lights come on.</p></div></div><div class="tm"><span class="e">💜</span><div><b>We found all 25,373 of you</b><p>The entire original Momni community was recovered from our archives — names, cities, the homes you opened. Nobody starts over here.</p></div></div><div class="tm"><span class="e">📖</span><div><b>The blog came home</b><p>21 posts from the original Momni blog, 2017–2019, revived from the Internet Archive and readable forever at momni.com/blog.</p></div></div><div class="tm"><span class="e">✨</span><div><b>New rooms opened</b><p>A warm new FAQ, a full Momni History timeline, and the Campfire community forum — all live this month.</p></div></div>
-  <div class="sec-h">By the numbers</div>
-  <div class="nums"><div><b>25,373</b><span>first mamas, recovered</span></div><div><b>287</b><span>lights on & counting</span></div><div><b>50</b><span>states, still</span></div><div><b>21</b><span>blog posts revived</span></div></div>
-  <div class="sec-h">A mama story</div>
-  <div class="story"><div class="q">“My pin is still on the map.”</div><p>April from Kearns, Utah hosted some of the very first Momni littles back in 2018. This month she became one of the first to relight her pin in 2.0 — teal, because she's a host. Welcome back, April.</p></div>
-  <div class="sec-h">Mama tip of the month</div>
-  <div class="tip"><b>Meet first, always.</b> A park, a porch, a playdate where you stay — let the littles tell you how it feels before you ever book. The best Momni friendships start with a no-pressure hello.</div>
-  <div class="sec-h">From the Campfire 🔥</div>
-  <div class="tip" style="background:var(--lavender)">Top of the Campfire this month: <b>“A shared grocery-run care swap”</b> — 47 upvotes and climbing. Add your idea and vote on what we build next.</div>
-  <div class="cta-wrap"><a class="cta" href="https://app.momni.com">Come light up your pin →</a></div>
-  <div class="signoff">— Karmel &amp; the whole Circle 💜</div>
-</article>
+<section class="act">
+<span class="no">Act I · 2017–2020</span>
+<h2>The First Builders</h2>
+<img class="photo" src="../assets/photos/momni-1-0-team.jpg" alt="The original Momni team in purple momni shirts">
+<div class="cap">eighteen believers in purple — and so many more beside them</div>
+<p>Before there was a Circle, there was a kitchen table, a calling, and a handful of people reckless enough to believe a mother of eight could reorganize how the world cares for its children. Then there were more: engineers who stayed past midnight, designers who sketched trust itself, care advocates who answered every mama's message like it was the only one, interns who showed up for the mission long before there was prestige in it, advisors and board members who lent their names and their nights.</p>
+<p>They built the first app from scratch. They put Momni on the front page of the Deseret News and on televisions across the country. They grew a beta into 26,000 mamas in all fifty states and presented growth charts that made a board room laugh out loud with joy. They worked for paychecks, yes — but nobody works those hours for a paycheck. They worked for the vision.</p>
+<div class="grat"><span class="scr">To every one of you — thank you. 💜</span>
+<p>If you wore the purple shirt, debugged at midnight, drafted the deck, answered the support line, drove to the studio, set up chairs at the retreat, or simply believed early and out loud: <strong>this movement is your handwriting.</strong> The Circle of 2.0 stands on the foundation you poured, and we keep your light on the same way we keep every mama's pin on the map. Elephants never forget — and neither do we.</p>
+<div class="roles"><span>Engineers</span><span>Designers</span><span>Care Advocates</span><span>Marketers</span><span>Interns</span><span>Operations</span><span>Advisors</span><span>Board Members</span><span>Early Hosts</span><span>First Mamas</span></div>
+</div>
+</section>
 
-<section class="archive">
-  <h2>📚 The living archive</h2>
-  <p class="sub">Every issue of The Circle, kept readable forever. Newsletters never disappear here — they become part of our history.</p>
-  <div class="shelf"><a class="iss cur" href="#top"><div class="top" style="background:linear-gradient(135deg,#4A3880,#6D58A4)">The Circle<br>Issue 01</div><div class="b"><div class="no">June 2026 · Current</div><h3>The Lights Come On</h3><p>The map lights up, 25,373 mamas come home, and the blog returns.</p><div class="read">Read this issue ↑</div></div></a><div class="iss soon">📬 July 2026<br>Issue 02 — coming soon</div><div class="iss soon">📬 August 2026<br>Issue 03 — coming soon</div><div class="iss soon">🌱 Every issue lives here forever — the Circle's living library</div></div>
-  <p class="howto">New issues publish here each month and join the archive automatically — nothing is ever taken down. Want it in your inbox too? <a href="https://app.momni.com">Join the Circle</a> and you're on the list. Got a mama story for next month? <a href="mailto:developer@momni.com?subject=A%20story%20for%20The%20Circle%20newsletter">Send it in</a>.</p>
+<section class="chry">
+<div class="stars"><span style="left:12%;top:20%;width:2px;height:2px"></span><span style="left:28%;top:60%;width:1.5px;height:1.5px"></span><span style="left:70%;top:25%;width:2px;height:2px"></span><span style="left:85%;top:55%;width:1.5px;height:1.5px"></span><span style="left:50%;top:15%;width:1px;height:1px"></span></div>
+<div class="inner">
+<span class="no">Act II · 2020–2026</span>
+<h2>The Chrysalis</h2>
+<div class="coc">🐛 → 🛡️</div>
+<p>Then the world stopped. COVID closed the doors of in-home care almost overnight, and a company built on open doors had to go quiet. Desks emptied. The team scattered into new jobs, new cities, new chapters — carrying the mission with them like a seed in a coat pocket.</p>
+<p>From the outside it looked like an ending. It wasn't. A chrysalis looks perfectly still from the outside too — while inside, everything essential is being rearranged into something that can fly.</p>
+<span class="whisper">Movements don't die. They metamorphose.</span>
+</div>
+</section>
+
+<section class="act fly">
+<span class="butterfly" style="left:4%;top:8%">🦋</span>
+<span class="butterfly" style="right:6%;top:16%;animation-delay:-3s">🦋</span>
+<span class="butterfly" style="left:10%;top:70%;animation-delay:-6s">🦋</span>
+<span class="butterfly" style="right:12%;top:78%;animation-delay:-1.5s;font-size:17px">🦋</span>
+<span class="no">Act III · Now</span>
+<h2>The Butterfly Swarm</h2>
+<p>In 2026 the chrysalis opened — and what came out wasn't a company. It was a <em>movement of mothers.</em> No office. No payroll. No org chart. Instead: a swarm of mamas and volunteers stepping up to the front lines of the vision — hosting each other's littles, leading Circles, lighting pins on the map, answering each other at the Campfire, carrying the mission the way only mothers carry things: <strong>together, and without being asked twice.</strong></p>
+<p>This is the part of the story where the team page stops being a list of employees — because the team is no longer hired. <strong>The team is gathered.</strong> Today's Team Momni roster:</p>
+<div class="swarmgrid">
+<div class="sg"><span class="e">🏡</span><b>The Host Mamas</b><p>Open their homes and set their own rates — the beating heart of caresharing.</p></div>
+<div class="sg"><span class="e">⭕</span><b>The Circle Leaders</b><p>Gather their neighborhoods — playgroups, mama nights, welcome coffees.</p></div>
+<div class="sg"><span class="e">🔥</span><b>The Campfire Voices</b><p>Share ideas, vote on what we build, keep the conversation warm.</p></div>
+<div class="sg"><span class="e">📣</span><b>The Storytellers</b><p>Post, share, tag and invite — every share lights another pin.</p></div>
+<div class="sg"><span class="e">🤲</span><b>The Volunteers</b><p>Lend their gifts — translation, design, outreach, encouragement.</p></div>
+<div class="sg"><span class="e">🐘</span><b>The First Mamas</b><p>26,000 strong, coming home to relight their pins.</p></div>
+</div>
+<p style="text-align:center" class="cap">no salaries. no titles. just mothers — which is to say: the most reliable workforce on earth.</p>
+</section>
+
+<section class="finale">
+<span class="scr">so… when do you start?</span>
+<h2>The team is you, mama.</h2>
+<p>We are the mothers, the mamas, the mommies — WE are Team Momni. There's a seat in the Circle with your name on it, and the only job requirement is a heart that shows up.</p>
+<div class="btns">
+<a class="b1" href="../volunteer/index.html">Join the team — Volunteer 🦋</a>
+<a class="b2" href="https://app.momni.com">Circle up in the app</a>
+<a class="b2" href="../circles/index.html">Lead a Circle</a>
+</div>
 </section>
 <footer>
   <div class="wrap">

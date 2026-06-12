@@ -71,6 +71,7 @@ a{text-decoration:none;color:inherit}
 .ev .tag{display:inline-block;font-size:10.5px;font-weight:700;border-radius:100px;padding:2px 10px;margin-top:8px;background:var(--lavender);color:var(--purple-deep)}
 .ev a.src{color:var(--teal);font-weight:600;font-size:12.5px}
 .ev img{width:100%;border-radius:11px;margin-top:10px;display:block}
+.ev .motif{height:64px;border-radius:11px;margin-top:10px;display:flex;align-items:center;justify-content:center;font-size:32px;letter-spacing:8px;padding-left:8px}
 /* the origin — bottom anchor */
 .origin{position:relative;z-index:2;max-width:560px;margin:30px auto 0;text-align:center;background:linear-gradient(135deg,var(--purple-deep),var(--purple));color:#fff;border-radius:24px;padding:38px 32px;box-shadow:0 20px 50px rgba(74,56,128,.35)}
 .origin .scr{font-family:'Caveat',cursive;font-size:30px;color:var(--algae);display:block;margin-bottom:6px}
@@ -357,6 +358,7 @@ function buildAll(ALL){
   document.getElementById('strip-next').onclick = function(){ strip.scrollBy({left:540, behavior:'smooth'}); };
 
   // ---------- vertical timeline: newest first, March 2017 at the very bottom ----------
+  var MOTIFS = {Relaunch:'\ud83d\udca1\ud83d\udc18', 'The Pause':'\ud83d\udd4a\ufe0f', Milestone:'\u2b50\ud83d\udc9c', Press:'\ud83d\udcf0\u2728', 'The Book':'\ud83d\udcd6\ud83d\udc9c', Origin:'\ud83c\udf31\ud83d\udc18', Community:'\ud83d\udd25\ud83d\udc9c', Foundation:'\ud83d\udc9c\ud83e\udd32'};
   var TAG_COLORS = {Relaunch:'#0D878F', 'The Pause':'#6B6477', Milestone:'#6D58A4', Press:'#C25B8C', 'The Book':'#D9A03A', Origin:'#3E9E6E', Foundation:'#4A8FD9'};
   var newestFirst = ALL.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
   var tl = document.getElementById('tl');
@@ -379,7 +381,8 @@ function buildAll(ALL){
       '<span class="date">' + MONTHS[x.m-1] + ' ' + x.d + ', ' + x.y + '</span>' +
       '<h3>' + H(e.title) + '</h3><p>' + H(e.body) + '</p>' +
       (e.link ? '<p style="margin-top:6px"><a class="src" href="' + e.link + '"' + (e.link.indexOf('http')===0 ? ' target="_blank" rel="noopener"' : '') + '>' + H(e.linkLabel || 'More') + ' →</a></p>' : '') +
-      (e.img ? '<img src="' + e.img + '" alt="" loading="lazy">' : '') +
+      (e.img ? '<img src="' + e.img + '" alt="" loading="lazy">'
+             : '<div class="motif" aria-hidden="true" style="background:linear-gradient(135deg,' + c + '22, #F5F0FE)">' + (MOTIFS[e.tag] || '\ud83d\udc9c') + '</div>') +
       '<span class="tag" style="background:' + c + '18;color:' + c + '">' + e.tag + '</span></div>';
     tl.appendChild(ev);
     side = side === 'left' ? 'right' : 'left';

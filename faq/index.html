@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — every question, answered like a friend would | Momni</title>
+<meta name="description" content="Momni FAQ: what caresharing is, how Links and hosting work, where every penny goes, Circles, the Campfire, and honest answers about trust — in plain English, mama to mama.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://momni.com/faq/">
+<meta property="og:title" content="Momni FAQ — pull up a chair, mama">
+<meta property="og:description" content="Every question about Momni, answered the way a friend would answer — honestly, in plain English.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://momni.com/faq/">
+<meta property="og:image" content="https://momni.com/assets/photos/mama-lifting-toddler-sky.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#6D58A4; --purple-deep:#4A3880; --teal:#0D878F; --teal-deep:#0A6B72;
+  --algae:#92E2C1; --lavender:#F5F0FE; --teal-soft:#E1F7F2;
+  --ink:#2B2233; --muted:#6B6477; --white:#FFFFFF;
+  --gold:#D9A03A; --rose:#C25B8C; --leaf:#3E9E6E; --sky:#4A8FD9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(180deg,var(--lavender) 0%,#fff 100%);padding:58px 0 30px;text-align:center;position:relative;overflow:hidden}
+.hero .pre{font-family:'Caveat',cursive;color:var(--teal);font-size:30px;display:block;margin-bottom:4px}
+.hero h1{font-size:46px;font-weight:800;letter-spacing:-0.03em;max-width:760px;margin:0 auto 14px}
+.hero p.sub{font-size:18px;color:var(--muted);max-width:600px;margin:0 auto 30px}
+.hero .floaty{position:absolute;font-size:26px;opacity:.16;animation:drift 14s ease-in-out infinite;pointer-events:none}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-22px) rotate(7deg)}}
+
+/* search */
+.searchbox{max-width:620px;margin:0 auto;position:relative}
+.searchbox input{width:100%;padding:17px 56px 17px 26px;border:2px solid var(--purple);border-radius:100px;font-size:17px;font-family:inherit;background:#fff;color:var(--ink);box-shadow:0 10px 32px rgba(109,88,164,.14)}
+.searchbox input:focus{outline:none;border-color:var(--teal);box-shadow:0 10px 32px rgba(13,135,143,.18)}
+.searchbox .ic{position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:19px;pointer-events:none}
+.searchbox .kbd{position:absolute;right:54px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--muted);border:1px solid #DDD6EC;border-radius:6px;padding:1px 7px;background:var(--lavender)}
+.search-meta{font-size:14px;color:var(--muted);margin-top:12px;min-height:21px}
+.search-meta strong{color:var(--purple)}
+
+/* ---------- circle nav ---------- */
+.circles{padding:34px 0 8px}
+.circles-inner{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.cir{display:flex;flex-direction:column;align-items:center;gap:9px;width:118px;cursor:pointer;transition:transform .16s ease}
+.cir:hover{transform:translateY(-4px)}
+.cir .bubble{width:78px;height:78px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;background:var(--lavender);border:2.5px solid transparent;box-shadow:0 6px 18px rgba(43,34,51,.08);transition:border-color .16s}
+.cir:hover .bubble{border-color:var(--c,#6D58A4)}
+.cir .t{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;text-align:center;line-height:1.3}
+.cir .n{font-size:11px;color:var(--muted)}
+
+/* ---------- sections ---------- */
+.faq-body{max-width:820px;margin:0 auto;padding:26px 24px 60px}
+.sect{margin-top:54px;scroll-margin-top:140px}
+.sect-head{display:flex;align-items:center;gap:16px;margin-bottom:6px}
+.sect-head .badge{width:54px;height:54px;border-radius:50%;background:var(--c,#6D58A4);display:flex;align-items:center;justify-content:center;font-size:25px;flex:none;box-shadow:0 8px 22px rgba(43,34,51,.16)}
+.sect-head h2{font-size:27px;font-weight:800;letter-spacing:-0.02em}
+.sect-head .aside{font-family:'Caveat',cursive;color:var(--c,#6D58A4);font-size:22px;margin-left:auto;white-space:nowrap}
+.sect-intro{color:var(--muted);font-size:15.5px;margin:8px 0 20px;border-left:3px solid var(--c,#6D58A4);padding-left:14px}
+
+/* answer cards */
+details.q{background:#fff;border:1.5px solid #EAE5F4;border-radius:16px;margin-bottom:12px;overflow:hidden;transition:box-shadow .18s,border-color .18s;scroll-margin-top:150px}
+details.q:hover{border-color:var(--c,#6D58A4)}
+details.q[open]{box-shadow:0 14px 36px rgba(43,34,51,.09);border-color:var(--c,#6D58A4)}
+details.q summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:17px 20px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:16.5px;user-select:none}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary .pm{flex:none;width:28px;height:28px;border-radius:50%;background:var(--lavender);color:var(--c,#6D58A4);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;transition:transform .22s ease;margin-left:auto}
+details.q[open] summary .pm{transform:rotate(45deg);background:var(--c,#6D58A4);color:#fff}
+.ans{padding:2px 22px 16px;font-size:15.5px;animation:slidein .22s ease}
+@keyframes slidein{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.ans p{margin-bottom:12px}
+.ans ul{margin:0 0 12px 20px}
+.ans li{margin-bottom:6px}
+.ans a{color:var(--teal);font-weight:600;border-bottom:1.5px solid var(--teal-soft)}
+.ans .plain{background:var(--teal-soft);border-radius:12px;padding:12px 16px;font-size:14.5px;margin:6px 0 12px}
+.ans .plain strong{color:var(--teal-deep)}
+.ans .kfact{font-family:'Caveat',cursive;font-size:21px;color:var(--purple);margin:4px 0 10px}
+.ans mark{background:#FFE9A8;border-radius:3px;padding:0 2px}
+summary mark{background:#FFE9A8;border-radius:3px;padding:0 2px}
+
+/* price tiles */
+.pricegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:6px 0 14px}
+.ptile{border:1.5px solid #EAE5F4;border-radius:13px;padding:13px 14px;background:var(--lavender)}
+.ptile .pn{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px}
+.ptile .pp{color:var(--purple-deep);font-weight:700;font-size:13.5px;margin:2px 0}
+.ptile .pd{font-size:12.5px;color:var(--muted);line-height:1.45}
+.never{background:#FDECEC;border-radius:12px;padding:12px 16px;font-size:14.5px;margin:6px 0 12px}
+.never strong{color:#B4434E}
+
+/* card footer: helpful + link */
+.qfoot{display:flex;align-items:center;gap:14px;padding:0 22px 15px}
+.qfoot button{background:none;border:1.5px solid #EAE5F4;border-radius:100px;padding:5px 14px;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit;position:relative;transition:all .15s}
+.qfoot button:hover{border-color:var(--purple);color:var(--purple)}
+.qfoot button.loved{background:var(--purple);border-color:var(--purple);color:#fff}
+.heartburst{position:absolute;left:50%;top:-4px;pointer-events:none;font-size:13px;animation:burst .9s ease forwards}
+@keyframes burst{from{opacity:1;transform:translate(-50%,0) scale(.6)}to{opacity:0;transform:translate(-50%,-34px) scale(1.4)}}
+
+/* elephant walk divider */
+.eledivider{display:flex;align-items:flex-end;justify-content:center;gap:6px;margin:58px 0 -28px;opacity:.5}
+.eledivider svg{display:block}
+
+/* still wondering band */
+.wonder{background:linear-gradient(135deg,var(--purple-deep),var(--purple));border-radius:26px;padding:44px 36px;margin-top:64px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.wonder .script{font-size:32px;color:var(--algae);display:block;margin-bottom:6px}
+.wonder h2{font-size:26px;font-weight:800;margin-bottom:10px}
+.wonder p{color:rgba(255,255,255,.85);max-width:520px;margin:0 auto 24px;font-size:15.5px}
+.wonder .ways{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.wonder .way{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);border-radius:16px;padding:16px 22px;min-width:170px;transition:background .15s;cursor:pointer}
+.wonder .way:hover{background:rgba(255,255,255,.2)}
+.wonder .way .wi{font-size:25px;display:block;margin-bottom:5px}
+.wonder .way .wt{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14.5px}
+.wonder .way .wd{font-size:12.5px;color:rgba(255,255,255,.75)}
+
+/* no-results */
+.noresults{display:none;text-align:center;padding:50px 20px}
+.noresults .big{font-size:44px;margin-bottom:10px}
+.noresults h3{font-size:20px;margin-bottom:8px}
+.noresults p{color:var(--muted);max-width:440px;margin:0 auto 18px;font-size:15px}
+.noresults a{display:inline-block;background:var(--algae);color:#0B4A36;font-weight:700;border-radius:100px;padding:11px 26px;font-size:14.5px}
+
+footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;font-size:14px}
+.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
+
+@media(max-width:820px){
+  .hero h1{font-size:31px}
+  .sect-head .aside{display:none}
+  .circles-inner{gap:10px}
+  .cir{width:96px}
+  .cir .bubble{width:64px;height:64px;font-size:26px}
+}
+@media (prefers-reduced-motion: reduce){
+  .hero .floaty,.ans,.heartburst{animation:none}
+  .cir,.cir:hover{transform:none}
+}
+
+/* Two-row header (option E — Ribbon Classic) */
+.mh{position:sticky;top:0;z-index:50}
+.mh .wrap{max-width:1120px}
+.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
+.mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}
+.mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}
+.mh-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500;position:static;background:none;border-bottom:0;backdrop-filter:none}
+.mh-burger{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;margin-left:auto}
+.mh-mobile{display:none}
+.mh-mobile.open{display:block;padding:14px 24px 20px}
+.mh-mobile a{display:block;padding:9px 0;color:#fff;font-size:16px;font-weight:500}
+.mh-mobile-div{border-top:1px solid rgba(255,255,255,0.25);margin:10px 0}
+#momni-lang{border:none;border-radius:100px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
+@media(max-width:960px){
+  .mh-top-inner a,.mh-links,.mh-main-inner>.mh-cta,.mh-tag{display:none}
+  .mh-burger{display:block}
+  .mh-top-inner{justify-content:flex-end}
+}
+.mh-top{background:#4A3880}
+.mh-top-inner a{color:rgba(255,255,255,0.8)} .mh-top-inner a:hover{color:#fff}
+.mh-main{background:#6D58A4}
+.mh-links a{color:#fff} .mh-links a:hover{color:#92E2C1}
+.mh-cta{background:#92E2C1;color:#0B4A36;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px}
+.mh-cta:hover{filter:brightness(0.95)}
+.mh-mobile{background:#6D58A4}
+#momni-lang{background:rgba(255,255,255,0.12);color:#fff}
+#momni-lang option{color:#2B2233}
+</style>
+</head>
+<body>
+
+<header class="mh" id="mh">
+  <div class="mh-top">
+    <div class="wrap mh-top-inner">
+      <a href="../press/index.html">Press</a>
+      <a href="../partnerships/index.html">Partnerships</a>
+      <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+      <a href="../crisis/index.html">The Crisis</a>
+      <a href="../volunteer/index.html">Volunteer</a>
+      <a href="mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni">Beta feedback</a>
+      <select id="momni-lang" aria-label="Language" title="Language">
+        <option value="en">🌍 English</option><option value="es">Español</option><option value="pt">Português</option><option value="fr">Français</option><option value="ar">العربية</option><option value="hi">हिन्दी</option><option value="zh-CN">中文</option><option value="tl">Filipino</option><option value="vi">Tiếng Việt</option><option value="sw">Kiswahili</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="id">Bahasa Indonesia</option>
+      </select>
+    </div>
+  </div>
+  <div class="mh-main">
+    <div class="wrap mh-main-inner">
+      <a href="../index.html" class="mh-logo"><img src="../assets/momni-logo-white-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
+      <nav class="mh-links">
+        <a href="../find-care/index.html">Find Care</a>
+        <a href="../become-a-momni/index.html">Become a Momni</a>
+        <a href="../circles/index.html">Circles</a>
+        <a href="../shop/index.html">Shop</a>
+        <a href="../apps/index.html">Apps</a>
+        <a href="../map/index.html">Map</a>
+        <a href="../our-story/index.html">Our Story</a>
+        <a href="../stories/index.html">Stories</a>
+      </nav>
+      <a href="https://app.momni.com" class="mh-cta">Join the Circle</a>
+      <button class="mh-burger" id="mh-burger" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="mh-mobile" id="mh-mobile">
+    <a href="../find-care/index.html">Find Care</a>
+    <a href="../become-a-momni/index.html">Become a Momni</a>
+    <a href="../circles/index.html">Circles</a>
+    <a href="../shop/index.html">Shop</a>
+    <a href="../apps/index.html">Apps</a>
+    <a href="../map/index.html">Map</a>
+    <a href="../our-story/index.html">Our Story</a>
+    <a href="../stories/index.html">Stories</a>
+    <div class="mh-mobile-div"></div>
+    <a href="../press/index.html">Press</a>
+    <a href="../partnerships/index.html">Partnerships</a>
+    <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+    <a href="../crisis/index.html">The Crisis</a>
+    <a href="../volunteer/index.html">Volunteer</a>
+    <a href="mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni">Beta feedback</a>
+    <a href="https://app.momni.com" class="mh-cta" style="margin-top:10px;display:inline-block">Join the Circle</a>
+  </div>
+</header>
+<script>
+(function(){
+  var b=document.getElementById('mh-burger'),m=document.getElementById('mh-mobile');
+  b.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    b.setAttribute('aria-expanded',open);
+  });
+})();
+</script>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <span class="floaty" style="left:8%;top:30%">💜</span>
+  <span class="floaty" style="left:16%;top:64%;animation-delay:-4s">☕</span>
+  <span class="floaty" style="right:9%;top:26%;animation-delay:-7s">🐘</span>
+  <span class="floaty" style="right:17%;top:62%;animation-delay:-10s">🧸</span>
+  <div class="wrap">
+    <span class="pre">Pull up a chair, mama —</span>
+    <h1>Every question, answered like a friend would.</h1>
+    <p class="sub">No corporate non-answers here. Just the honest stuff, in plain English, the way you'd hear it over coffee while the littles play in the next room.</p>
+    <div class="searchbox">
+      <input type="search" id="faqsearch" placeholder="Is hosting really free?" aria-label="Search the FAQ" autocomplete="off">
+      <span class="kbd">/</span><span class="ic">🔍</span>
+    </div>
+    <div class="search-meta" id="searchmeta"></div>
+  </div>
+</section>
+
+<!-- ================= CIRCLE NAV ================= -->
+<nav class="circles" aria-label="FAQ categories">
+  <div class="wrap circles-inner" id="circlenav"></div>
+</nav>
+
+<main class="faq-body" id="faqmain">
+
+  <!-- ============ 1 · NEW HERE ============ -->
+  <section class="sect" id="new" style="--c:var(--teal)">
+    <div class="sect-head"><span class="badge">🌱</span><h2>New here?</h2><span class="aside">start with this one</span></div>
+    <p class="sect-intro">If you only read one section, read this — it's the whole heart of Momni in five questions.</p>
+
+    <details class="q" id="what-is-momni">
+      <summary>What exactly <em>is</em> Momni?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p class="kfact">Momni is moms helping moms — that's the whole secret.</p>
+        <p>Momni is a <strong>caresharing community</strong>: a place where mothers find each other, get to know each other, and share care for one another's children — hosted in real homes, arranged mom-to-mom. Think of it as the neighborhood you wish you had, made findable.</p>
+        <p>It started in 2017 when Karmel, a mama of five in Utah, opened her own home to other moms' littles — and discovered thousands of mothers wanted the very same thing, in both directions. That grew into a movement of <strong>26,000+ mamas in all 50 states</strong>. Read the whole story on <a href="../our-story/index.html">Our Story</a>.</p>
+        <div class="plain"><strong>What Momni is not:</strong> a daycare, an agency, or a babysitting service. Nobody works for Momni but Momni. The mamas here are neighbors, not employees.</div>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="what-is-caresharing">
+      <summary>What does "caresharing" actually mean?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>It's the word we use for something mothers have always done: <strong>sharing the care of each other's children</strong>. One mama hosts littles in her home; another gets the hours she needs — for work, a night out, a night shift, or just a breath. Often the same mama does both at different seasons of her life.</p>
+        <p>Daycare is a building. Babysitting is a transaction. Caresharing is a <strong>relationship between two moms</strong> — that's why everything on Momni starts with getting to know each other.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="how-do-i-join">
+      <summary>How do I join the Circle?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Three minutes, truly:</p>
+        <ul>
+          <li><strong>1.</strong> Go to <a href="https://app.momni.com">app.momni.com</a> and create your free account.</li>
+          <li><strong>2.</strong> Tell the Circle about yourself and your littles — write it like you'd introduce yourself to a new friend.</li>
+          <li><strong>3.</strong> Put your pin on the map so mamas near you can find you (your exact address is never shown).</li>
+        </ul>
+        <p>That's it. Browse the <a href="../map/index.html">Movement Map</a>, join a <a href="../circles/index.html">Circle</a> near you, or send your first Link.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="is-momni-free">
+      <summary>Is Momni free?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p><strong>Yes — joining is free, browsing is free, and hosting is free forever.</strong> The free tier includes your profile, the map, Circles, and a couple of Links a month to get you started.</p>
+        <p>If you want more, memberships start at <strong>$1 a month</strong> — and they're listed openly in the <a href="#money">money section</a> below, because we'd rather over-explain than surprise you.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="agency-or-daycare">
+      <summary>So it's like a babysitting agency? A daycare?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>No — and the difference matters. An agency picks people for you and stands behind them. <strong>Momni doesn't pick anyone.</strong> Every mama here is here because she signed up — that's all it means. We never select, investigate, approve, or stand behind any member.</p>
+        <p>Getting to know a mama, deciding whether to trust her, and choosing what to arrange is <strong>your</strong> job — exactly as it would be with a new neighbor. We say this loudly and often, because your littles deserve a mama who's heard it. The whole honest picture is on our <a href="../transparency/index.html">Transparency page</a>.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+  </section>
+
+  <!-- ============ 2 · BOOKING ============ -->
+  <section class="sect" id="booking" style="--c:var(--sky)">
+    <div class="sect-head"><span class="badge">🔗</span><h2>Booking care</h2><span class="aside">we call them Links</span></div>
+    <p class="sect-intro">On Momni a booking is a <strong>Link</strong> — because you're not ordering a service, you're linking arms with another mother.</p>
+
+    <details class="q" id="what-is-a-link">
+      <summary>What's a Link?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>A Link is a care arrangement between two mamas. You send a request, she confirms, and you get a shared space with the visit details, a message thread, and a drop-off / pick-up timeline you both can see. After the visit, you each leave a review.</p>
+        <p>Free accounts include a couple of Links each month; more are $1 each in bundles (that dollar goes to keeping the lights on — <a href="#money">never</a> a cut of care money).</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="kinds-of-care">
+      <summary>What kinds of care can I book?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Four ways, built around real mom-life:</p>
+        <ul>
+          <li><strong>⚡ Available Now</strong> — instant booking with mamas who are open <em>right now</em>. The sitter-cancelled, meeting-moved, life-happened button.</li>
+          <li><strong>🌙 Night Out</strong> — an evening for you (and whoever makes you smile).</li>
+          <li><strong>🔄 Recurring</strong> — the same mama, the same days, every week. Your regular.</li>
+          <li><strong>🌜 Overnight</strong> — night-shift mamas, weekend getaways, longer trips. She's got the night watch.</li>
+        </ul>
+        <p>And if what you really need is licensed group care, <strong>Find a Daycare</strong> helps you search that too — Momni is for moms, whatever the answer turns out to be.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="how-do-i-pay">
+      <summary>How do I pay the mama who hosts my littles?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p class="kfact">Directly. Always. Momni never touches care money.</p>
+        <p>You pay her the way friends pay each other — cash, Venmo, whatever you two agree. Her rate is hers to set and <strong>100% hers to keep</strong>. Momni never processes the payment, never holds it, and never takes a percentage. Not now, not ever — it's a founding promise.</p>
+        <div class="plain"><strong>Why it matters:</strong> the moment a platform takes a cut, it has a reason to push prices up. We never want to be paid more because a mama charged a mama more.</div>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="meet-first">
+      <summary>Can I meet her before I book?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p><strong>Please do — we'd be worried if you didn't.</strong> Message through the app, then meet somewhere easy: a park, her porch, a playdate where you stay. Bring your littles and watch how everyone gets along. Ask anything; a good host mama loves the questions, because she's asking them right back.</p>
+        <p>We keep a whole page of meet-first wisdom from the community in our <a href="../conduct/index.html">Suggested Momni Conduct</a>.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="cancel">
+      <summary>What if plans change and I have to cancel?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Tell her the moment you know — the same courtesy you'd give a friend. There's no Momni cancellation fee because there's no Momni middleman; the arrangement is between you two. Mamas who communicate early and kindly are the mamas everyone wants to Link with again.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+  </section>
+
+  <!-- ============ 3 · HOSTING ============ -->
+  <section class="sect" id="hosting" style="--c:var(--purple)">
+    <div class="sect-head"><span class="badge">🏡</span><h2>Hosting</h2><span class="aside">your home, your rules</span></div>
+    <p class="sect-intro">Hosting is how this whole movement started — one mama, one open door. Here's how it works when the open door is yours.</p>
+
+    <details class="q" id="hosting-cost">
+      <summary>What does it cost to become a host?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p class="kfact">Nothing. Hosting is free — always has been, always will be.</p>
+        <p>No listing fee, no membership requirement, no commission on what you earn. This was Karmel's promise in 2017 and it survives every pricing decision we ever make: <strong>the mama doing the caring never pays to care.</strong></p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="who-sets-rate">
+      <summary>Who sets my rate — and how much of it do I keep?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p><strong>You set it. You keep every penny.</strong> Your profile says what you charge in your own words ("$8/hr, paid directly to me"), the booking mama pays you directly, and Momni's share is zero — forever. Many hosts ask around their Circle to feel out what's normal nearby; it's your call entirely.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="license">
+      <summary>Do I need a license to host?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>It depends on where you live. <strong>Every state — and sometimes every county — has its own rules</strong> about caring for children in your home: how many kiddos, how many hours, which situations need a family-childcare license. Informal, occasional care between friends is often treated differently than running a daycare — but the lines are local.</p>
+        <p><strong>Knowing and following your local childcare laws is your responsibility as a host.</strong> A 10-minute search for "<em>your state</em> family child care license exempt" or a call to your state's child-care licensing office usually settles it. When in doubt, ask — your littles' friends deserve a host who did.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="host-schedule">
+      <summary>Can I host around my own family's schedule?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>That's the design. You choose which kinds of care you offer (Available Now, Night Out, Recurring, Overnight), set a weekly availability grid (mornings, afternoons, evenings, overnights), and flip "available now" on only when you mean it. School-morning hosts, night-owl hosts, weekend-only hosts — all real, all welcome.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="background-checks">
+      <summary>What about background checks?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Here's the honest version: <strong>Momni doesn't run background checks on anyone.</strong> What some mamas choose to do is purchase their own background check and share it on their profile — like showing a new friend your references.</p>
+        <p>A shared report is <strong>that member's content</strong>: she bought it, she chose to display it, and Momni hasn't obtained, reviewed, or confirmed it. Weigh it the way you'd weigh anything a new friend showed you — with your own eyes and your own judgment, alongside meeting her, asking questions, and trusting your gut.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+  </section>
+
+  <!-- ============ 4 · MONEY ============ -->
+  <section class="sect" id="money" style="--c:var(--leaf)">
+    <div class="sect-head"><span class="badge">💛</span><h2>The money</h2><span class="aside">every penny, explained</span></div>
+    <p class="sect-intro">Most platforms bury this page. We put it in the FAQ on purpose — radical honesty is cheaper than fine print.</p>
+
+    <details class="q" id="how-momni-makes-money">
+      <summary>Okay, honestly — how does Momni make money?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Small, flat, optional things. All of them together:</p>
+        <div class="pricegrid">
+          <div class="ptile"><div class="pn">Free</div><div class="pp">$0</div><div class="pd">Profile, map, Circles, starter Links. Forever fine to stay here.</div></div>
+          <div class="ptile"><div class="pn">Circle Up</div><div class="pp">$1/mo · billed $12/yr</div><div class="pd">The "I'm in" membership that keeps the lights on.</div></div>
+          <div class="ptile"><div class="pn">Link Together</div><div class="pp">$1 per booking</div><div class="pd">Extra Links beyond the free ones, in little bundles.</div></div>
+          <div class="ptile"><div class="pn">Momni+</div><div class="pp">$4.99/mo or $49/yr</div><div class="pd">Everything included, for the mamas who live here.</div></div>
+          <div class="ptile"><div class="pn">Momni Gives</div><div class="pp">$1 · voluntary</div><div class="pd">An optional toggle that goes to the Momni Foundation.</div></div>
+          <div class="ptile"><div class="pn">The Shop</div><div class="pp">books &amp; goods</div><div class="pd">Circle Up (the book!), downloads, and Momni things.</div></div>
+        </div>
+        <div class="never"><strong>What we never charge:</strong> a percentage of care payments, a hosting fee, or your data. Care money moves mama-to-mama and Momni never touches it.</div>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="no-cut">
+      <summary>Does Momni take a cut of what hosts earn?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p class="kfact">Never. Zero percent. It's a founding promise.</p>
+        <p>Care payments are made directly between members. Momni never processes them, never holds them, never sets rates, and never takes a commission. Our only revenue is the flat platform pricing above — which is why a host's $8/hour is $8/hour.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="circle-up-vs-plus">
+      <summary>Circle Up vs. Momni+ — which one is for me?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p><strong>Circle Up ($1/mo, billed $12/yr)</strong> is the heartbeat membership — you're saying "count me in" and helping keep Momni running, with member perks as we grow. Named after Karmel's book, because that's where the movement's story lives.</p>
+        <p><strong>Momni+ ($4.99/mo or $49/yr)</strong> is all-in: everything Momni offers, included, for mamas who book or host all the time.</p>
+        <p>Start free, upgrade if Momni earns it. That's the order we want.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="momni-gives">
+      <summary>What's the Momni Gives toggle?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>A voluntary $1 you can switch on, which goes to the <strong>Momni Foundation</strong> — the separate 501(c)(3) nonprofit that helps fund care for mamas who can't afford it. Off by default, on if your heart says so, off again anytime. Every dollar is disclosed as a donation to the Foundation, not revenue for the company.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="two-entities">
+      <summary>What's the difference between Momni, Inc. and the Momni Foundation?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>One brand, two entities, <strong>separate wallets</strong>:</p>
+        <ul>
+          <li><strong>Momni, Inc.</strong> runs momni.com and app.momni.com — the community platform. A company.</li>
+          <li><strong>The Momni Foundation</strong> (momnifoundation.org) is an independent 501(c)(3) nonprofit with its own finances and governance, helping mamas in crisis afford care.</li>
+        </ul>
+        <p>Money never quietly crosses between them. When you give through Momni Gives, it's a donation to the Foundation, full stop.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+  </section>
+
+  <!-- ============ 5 · COMMUNITY ============ -->
+  <section class="sect" id="community" style="--c:var(--rose)">
+    <div class="sect-head"><span class="badge">🔥</span><h2>The community</h2><span class="aside">where the magic lives</span></div>
+    <p class="sect-intro">Care is the doorway, but community is the house. Circles, the Campfire, badges — here's the life of the place.</p>
+
+    <details class="q" id="what-is-a-circle">
+      <summary>What's a Circle?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>A Circle is a local group of mamas who actually gather — park playgroups, moms' nights out, welcome coffees for new faces. Find one near you on the <a href="../circles/index.html">Circles page</a> or in the app, join in one tap, and show up. The mamas you meet at Circle gatherings are usually the mamas you end up Linking with.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="circle-leader">
+      <summary>How do I become a Circle Leader?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Start a Circle in the app, and you're its leader — with a real toolkit: a member roster, a gathering planner (weekly and monthly), one-tap email reminders to your members, and a grow kit of ready-to-post invites for your neighborhood groups.</p>
+        <p>Circle Leaders are the backbone of this movement. If you've ever been the mom who organizes the group chat — you're already one of us.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="campfire">
+      <summary>What's the Campfire?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>The community forum inside the app — where mamas share ideas, ask questions, celebrate wins, and vote on what Momni should build next. The most-loved ideas rise to the top, and you can watch them move from <em>open</em> → <em>planned</em> → <em>building</em> → <em>shipped</em>. Karmel reads everything. This FAQ? Half of it came from Campfire questions.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="badges">
+      <summary>What are the badges on profiles?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Little 💜s of recognition the community earns: <strong>1.0 Founding Mama</strong> (she was here at the beginning), <strong>Super Host</strong> (many completed cares and warmly reviewed by fellow members), <strong>Campfire Spark / Flame / Keeper</strong> (she shows up for the conversation), <strong>Foundation Giver</strong>, and more.</p>
+        <div class="plain"><strong>Plain English:</strong> badges reflect a mama's activity and what other members said about her. They're community recognition — not an evaluation or endorsement by Momni.</div>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+  </section>
+
+  <!-- elephant walk -->
+  <div class="eledivider" aria-hidden="true">
+    <svg width="64" height="40" viewBox="0 0 64 40" fill="none"><path d="M10 36c-2-8 0-18 8-22 6-3 14-3 20 0 4 2 7 6 8 10l8 2c2 1 2 4-1 4l-7-1c0 3-2 6-5 7H17c-4 0-6-3-7-6z" fill="#6D58A4" opacity=".55"/><circle cx="44" cy="18" r="1.6" fill="#fff"/></svg>
+    <svg width="44" height="30" viewBox="0 0 64 40" fill="none"><path d="M10 36c-2-8 0-18 8-22 6-3 14-3 20 0 4 2 7 6 8 10l8 2c2 1 2 4-1 4l-7-1c0 3-2 6-5 7H17c-4 0-6-3-7-6z" fill="#0D878F" opacity=".5"/><circle cx="44" cy="18" r="1.6" fill="#fff"/></svg>
+    <svg width="30" height="22" viewBox="0 0 64 40" fill="none"><path d="M10 36c-2-8 0-18 8-22 6-3 14-3 20 0 4 2 7 6 8 10l8 2c2 1 2 4-1 4l-7-1c0 3-2 6-5 7H17c-4 0-6-3-7-6z" fill="#92E2C1" opacity=".75"/><circle cx="44" cy="18" r="1.6" fill="#fff"/></svg>
+  </div>
+
+  <!-- ============ 6 · MOMNI 1.0 ============ -->
+  <section class="sect" id="legacy" style="--c:var(--gold)">
+    <div class="sect-head"><span class="badge">🐘</span><h2>Were you a Momni in 1.0?</h2><span class="aside">elephants never forget</span></div>
+    <p class="sect-intro">26,000+ mamas built the first Momni. If you were one of them — this section is a love letter to you.</p>
+
+    <details class="q" id="what-happened-to-momni">
+      <summary>What happened to the original Momni?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>From 2017 to 2020, Momni grew from Karmel's living room to <strong>26,000+ mamas and hosts in all 50 states</strong>. Then COVID arrived, in-home care paused almost overnight, and Momni went quiet with it.</p>
+        <p>But movements don't die — they rest. Momni 2.0 is the relaunch: community-led, lighter on its feet, built to last this time. Same heart, same promise, stronger bones. The full story is on <a href="../our-story/index.html">Our Story</a>.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="pin-still-on-map">
+      <summary>Is my old pin really still on the map?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p class="kfact">Yes, mama. We kept your light on.</p>
+        <p>Every 1.0 mama appears on the <a href="../map/index.html">Movement Map</a> as a soft clay-colored dot — anonymous, city-level only, no names — a constellation of the first 26,000. When you come back and reclaim yours, it turns bright teal and becomes <em>you</em> again.</p>
+        <p><strong>Your pin is still on the map. Come light it up.</strong></p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="reclaim-pin">
+      <summary>How do I reclaim my pin?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Join at <a href="https://app.momni.com">app.momni.com</a> — if you can, use the same email you used back then, and tell us you're a 1.0 mama. You'll wear the <strong>1.0 Founding Mama badge</strong> from day one, and your dot on the map becomes a bright pin with your name on it (well — the name you choose to show).</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="why-elephants">
+      <summary>Why elephants?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Because elephant mothers do what we do. They raise their young <strong>together</strong> — every calf has a circle of mothers and aunties watching over it. When a little one is threatened, the mothers close the circle around it. And elephants never forget — not a face, not a kindness, not one of their own.</p>
+        <p class="kfact">26,000 mamas. We remember every one. 🐘💜</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+  </section>
+
+  <!-- ============ 7 · THE HONEST STUFF ============ -->
+  <section class="sect" id="honest" style="--c:var(--teal-deep)">
+    <div class="sect-head"><span class="badge">🤲</span><h2>The honest stuff</h2><span class="aside">we'd rather over-tell you</span></div>
+    <p class="sect-intro">The questions some platforms hope you won't ask. We'd rather answer them in big type.</p>
+
+    <details class="q" id="does-momni-check">
+      <summary>Does Momni check people out before they join?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p><strong>No — and we won't pretend otherwise.</strong> Momni doesn't investigate, evaluate, approve, or stand behind any member. A profile on Momni means one thing: she signed up.</p>
+        <p>We built it this way on purpose, and we say it everywhere: trust on Momni is built the way mothers have always built it — <strong>in person, over time, with your own eyes</strong>. Meet first. Ask everything. Start small. Trust your gut. The complete picture is on our <a href="../transparency/index.html">Transparency page</a>, and the practical steps are in <a href="../conduct/index.html">Suggested Momni Conduct</a>.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="reviews-mean">
+      <summary>What do reviews actually tell me?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Reviews are <strong>moms sharing opinions with moms</strong> — one mama's honest experience, in her own words. They're genuinely useful, the way a neighbor's recommendation is useful. But they're opinions, not assurances: Momni doesn't evaluate or endorse them, and a glowing history is not a promise about your experience. Read them, weigh them, and still do your own meeting and asking.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="before-first-visit">
+      <summary>What should I do before the first visit?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>The community's short list, earned the long way:</p>
+        <ul>
+          <li><strong>Meet first</strong> — somewhere easy, littles along, no rush.</li>
+          <li><strong>Ask the hard questions</strong> — discipline, screens, food, pets, who else is home, naps, allergies.</li>
+          <li><strong>Ask for references</strong> — and actually call them.</li>
+          <li><strong>See the space</strong> where your littles will play and sleep.</li>
+          <li><strong>Start small</strong> — an hour while you get coffee nearby before you book a full day.</li>
+          <li><strong>Trust your instincts</strong> — if anything feels off, it's allowed to be a no. No explanation owed.</li>
+        </ul>
+        <p>The full version lives at <a href="../conduct/index.html">Suggested Momni Conduct</a>.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="something-wrong">
+      <summary>What if something goes wrong — or I see something concerning?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p><strong>If a child is in danger or a crime may have occurred: call 911 / your local authorities first.</strong> Always. Momni is a community platform, not an emergency service or an investigator — real emergencies belong with the people equipped for them.</p>
+        <p>Then tell us. Every profile and Link has a report option, and reports go straight to a human. We can remove members and close accounts; what happened between members may also be a matter for local authorities, and we'll always tell you to go to them first.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+
+    <details class="q" id="privacy">
+      <summary>Who can see my information?<span class="pm">＋</span></summary>
+      <div class="ans">
+        <p>Your profile shows what you choose to share — your exact address is <strong>never</strong> shown publicly, and your map pin sits at neighborhood level, not on your doorstep. We don't sell your data; we'd rather charge a dollar honestly than sell you quietly. Details in the <a href="../privacy/index.html">Privacy Policy</a>.</p>
+      </div>
+      <div class="qfoot"><button class="lovebtn" type="button">💜 This helped</button><button class="copybtn" type="button">🔗 Copy link</button></div>
+    </details>
+  </section>
+
+  <!-- no results -->
+  <div class="noresults" id="noresults">
+    <div class="big">🤔💭</div>
+    <h3>The Circle hasn't been asked that one yet</h3>
+    <p>Which honestly makes it a great question. Ask it directly and a real human (often Karmel) will answer you — and your question might earn a spot on this page.</p>
+    <a id="asklink" href="mailto:developer@momni.com?subject=A%20question%20for%20the%20Momni%20FAQ">Ask your question 💜</a>
+  </div>
+
+  <!-- still wondering -->
+  <section class="wonder">
+    <span class="script">Still wondering about something?</span>
+    <h2>Real questions get real humans.</h2>
+    <p>No bots pretending to care. Ask us anything — the awkward questions are usually the best ones.</p>
+    <div class="ways">
+      <a class="way" href="mailto:developer@momni.com?subject=Question%20for%20Momni">
+        <span class="wi">✉️</span><span class="wt">Email us</span><br><span class="wd">developer@momni.com</span>
+      </a>
+      <a class="way" href="#" id="chatway">
+        <span class="wi">💬</span><span class="wt">Chat with us</span><br><span class="wd">the bubble in the corner</span>
+      </a>
+      <a class="way" href="https://app.momni.com/campfire.html">
+        <span class="wi">🔥</span><span class="wt">Ask at the Campfire</span><br><span class="wd">the whole Circle answers</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="margin-bottom:32px"><img src="../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:40px;display:block;margin-bottom:10px;background:#fff;border-radius:8px;padding:4px 8px"><p>Mom-to-mom caresharing.<br>Circle up. Link together.</p></div>
+<!-- momni-footer-index -->
+<div class="mfi">
+<style>.mfi{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px;font-size:13px}.mfi h4{font-family:'Montserrat',sans-serif;color:#fff;font-size:13px;font-weight:700;margin-bottom:12px}.mfi a{display:block;margin-bottom:8px;color:rgba(255,255,255,0.55);text-decoration:none}.mfi a:hover{color:#92E2C1}@media(max-width:680px){.mfi{grid-template-columns:1fr 1fr}}</style>
+  <div>
+    <h4>Find care</h4>
+    <a href="../find-care/index.html">Find Care overview</a>
+    <a href="../find-care/right-now/index.html">Right Now</a>
+    <a href="../find-care/date-night/index.html">Date Night</a>
+    <a href="../find-care/my-regulars/index.html">My Regulars</a>
+    <a href="../find-care/night-shift/index.html">Night Shift</a>
+    <a href="../find-care/weekend-getaway/index.html">Weekend Getaway</a>
+    <a href="../find-care/extended-trip/index.html">Extended Trip</a>
+    <a href="../find-care/find-a-daycare/index.html">Find a Daycare</a>
+  </div>
+  <div>
+    <h4>Community</h4>
+    <a href="../become-a-momni/index.html">Become a Momni</a>
+    <a href="../circles/index.html">Circles</a>
+    <a href="../volunteer/index.html">Volunteer</a>
+    <a href="../partnerships/index.html">Partnerships</a>
+    <a href="../map/index.html">Map</a>
+    <a href="../apps/index.html">Apps by Momni</a>
+    <a href="https://app.momni.com">Join the Circle</a>
+  </div>
+  <div>
+    <h4>Stories</h4>
+    <a href="../stories/index.html">Stories</a>
+    <a href="../stories/karmels-desk/index.html">Karmel&rsquo;s Desk</a>
+    <a href="../stories/circle-stories/index.html">Circle Stories</a>
+    <a href="../stories/crisis-watch/index.html">Crisis Watch</a>
+    <a href="../podcast/index.html">Podcast</a>
+    <a href="../crisis/index.html">The Crisis</a>
+  </div>
+  <div>
+    <h4>About</h4>
+    <a href="../our-story/index.html">Our Story</a>
+    <a href="../faq/index.html">FAQ</a>
+    <a href="../press/index.html">Press</a>
+    <a href="../shop/index.html">Shop</a>
+    <a href="../contact/index.html">Contact</a>
+    <a href="../terms/index.html">Terms of Service</a>
+    <a href="../transparency/index.html">Transparency</a>
+    <a href="../conduct/index.html">Suggested Conduct</a>
+    <a href="../privacy/index.html">Privacy</a>
+    <a href="../community-guidelines/index.html">Community Guidelines</a>
+    <a href="../board/index.html">Board Brief &#128274;</a>
+    <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+  </div>
+</div>
+<div class="disclosure">
+      Momni is a community platform. Momni does not employ, supervise, or make any representation about any member. Each member is solely responsible for choosing care arrangements, exactly as they would when finding a friend in the neighborhood. Care payments are made directly between members; Momni never processes care payments.<br><br>
+      momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation (momnifoundation.org) is a separate 501(c)(3) nonprofit organization. One brand, two entities, separate finances.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- category circle nav (built from sections) ---------- */
+  var SECTS = [
+    {id:'new',     icon:'🌱', t:'New here?',     c:'var(--teal)'},
+    {id:'booking', icon:'🔗', t:'Booking care',  c:'var(--sky)'},
+    {id:'hosting', icon:'🏡', t:'Hosting',       c:'var(--purple)'},
+    {id:'money',   icon:'💛', t:'The money',     c:'var(--leaf)'},
+    {id:'community',icon:'🔥',t:'Community',     c:'var(--rose)'},
+    {id:'legacy',  icon:'🐘', t:'Momni 1.0',     c:'var(--gold)'},
+    {id:'honest',  icon:'🤲', t:'Honest stuff',  c:'var(--teal-deep)'}
+  ];
+  var nav = document.getElementById('circlenav');
+  SECTS.forEach(function(s){
+    var n = document.querySelectorAll('#' + s.id + ' details.q').length;
+    var el = document.createElement('a');
+    el.className = 'cir'; el.href = '#' + s.id; el.style.setProperty('--c', s.c);
+    el.innerHTML = '<span class="bubble">' + s.icon + '</span><span class="t">' + s.t + '</span><span class="n">' + n + ' answers</span>';
+    el.addEventListener('click', function(e){ e.preventDefault(); document.getElementById(s.id).scrollIntoView({behavior:'smooth'}); history.replaceState(null,'','#'+s.id); });
+    nav.appendChild(el);
+  });
+
+  var all = Array.prototype.slice.call(document.querySelectorAll('details.q'));
+  var meta = document.getElementById('searchmeta');
+  var total = all.length;
+  meta.textContent = total + ' honest answers · 7 circles of questions · 0 corporate non-answers';
+
+  /* ---------- search ---------- */
+  var input = document.getElementById('faqsearch');
+  var PLACEHOLDERS = [
+    'Is hosting really free?', 'Does Momni take a cut?', 'What happened to Momni 1.0?',
+    'Do I need a license to host?', 'What’s a Link?', 'Why elephants?', 'How do reviews work?'
+  ];
+  var pi = 0;
+  setInterval(function(){ if (document.activeElement !== input && !input.value) { pi = (pi+1) % PLACEHOLDERS.length; input.placeholder = PLACEHOLDERS[pi]; } }, 3400);
+  document.addEventListener('keydown', function(e){
+    if (e.key === '/' && document.activeElement !== input && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); input.focus(); }
+    if (e.key === 'Escape' && document.activeElement === input) { input.value=''; filter(''); input.blur(); }
+  });
+
+  function unmark(el){
+    el.querySelectorAll('mark').forEach(function(m){ m.replaceWith(document.createTextNode(m.textContent)); });
+    el.normalize();
+  }
+  function markIn(el, q){
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    var nodes = []; var n;
+    while ((n = walker.nextNode())) if (n.nodeValue.toLowerCase().indexOf(q) !== -1) nodes.push(n);
+    nodes.forEach(function(node){
+      var idx = node.nodeValue.toLowerCase().indexOf(q);
+      var m = document.createElement('mark');
+      var after = node.splitText(idx); after.splitText(q.length);
+      m.textContent = after.nodeValue; after.replaceWith(m);
+    });
+  }
+  var debounce;
+  function filter(qRaw){
+    var q = qRaw.trim().toLowerCase();
+    var shown = 0;
+    all.forEach(function(d){
+      unmark(d.querySelector('summary')); unmark(d.querySelector('.ans'));
+      if (!q) { d.style.display=''; d.open = false; return; }
+      var hit = d.textContent.toLowerCase().indexOf(q) !== -1;
+      d.style.display = hit ? '' : 'none';
+      d.open = hit;
+      if (hit && q.length > 1) { markIn(d.querySelector('summary'), q); markIn(d.querySelector('.ans'), q); shown++; }
+      else if (hit) shown++;
+    });
+    document.querySelectorAll('.sect').forEach(function(s){
+      var any = Array.prototype.some.call(s.querySelectorAll('details.q'), function(d){ return d.style.display !== 'none'; });
+      s.style.display = (!q || any) ? '' : 'none';
+    });
+    document.getElementById('noresults').style.display = (q && shown === 0) ? 'block' : 'none';
+    if (q && shown === 0) document.getElementById('asklink').href = 'mailto:developer@momni.com?subject=' + encodeURIComponent('A question for the Momni FAQ') + '&body=' + encodeURIComponent('My question: ' + qRaw + '\n\n');
+    meta.innerHTML = q ? ('<strong>' + shown + '</strong> answer' + (shown===1?'':'s') + ' for “' + qRaw.replace(/[<>&]/g,'') + '”') : (total + ' honest answers · 7 circles of questions · 0 corporate non-answers');
+    document.querySelector('.circles').style.display = q ? 'none' : '';
+  }
+  input.addEventListener('input', function(){ clearTimeout(debounce); debounce = setTimeout(function(){ filter(input.value); }, 160); });
+
+  /* ---------- helpful hearts + copy links ---------- */
+  var loved = {};
+  try { loved = JSON.parse(localStorage.getItem('momni-faq-loved') || '{}'); } catch(e){}
+  all.forEach(function(d){
+    var love = d.querySelector('.lovebtn'), copy = d.querySelector('.copybtn');
+    if (loved[d.id]) { love.classList.add('loved'); love.textContent = '💜 Thanks, mama'; }
+    love.addEventListener('click', function(){
+      if (love.classList.contains('loved')) return;
+      love.classList.add('loved'); love.textContent = '💜 Thanks, mama';
+      loved[d.id] = 1; try { localStorage.setItem('momni-faq-loved', JSON.stringify(loved)); } catch(e){}
+      for (var i=0;i<3;i++){ var h=document.createElement('span'); h.className='heartburst'; h.textContent='💜'; h.style.animationDelay=(i*0.12)+'s'; h.style.marginLeft=(i*14-14)+'px'; love.appendChild(h); setTimeout(function(x){return function(){x.remove()};}(h), 1100); }
+    });
+    copy.addEventListener('click', function(){
+      var url = location.origin + location.pathname + '#' + d.id;
+      (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function(){ copy.textContent='✓ Copied!'; }, function(){ copy.textContent = url; });
+      setTimeout(function(){ copy.textContent='🔗 Copy link'; }, 1800);
+    });
+  });
+
+  /* ---------- deep links open their card ---------- */
+  function openHash(){
+    var id = location.hash.slice(1);
+    if (!id) return;
+    var d = document.getElementById(id);
+    if (d && d.tagName === 'DETAILS') { d.open = true; setTimeout(function(){ d.scrollIntoView({behavior:'smooth', block:'center'}); }, 60); }
+  }
+  window.addEventListener('hashchange', openHash); openHash();
+
+  /* ---------- chat way opens tawk if present ---------- */
+  document.getElementById('chatway').addEventListener('click', function(e){
+    e.preventDefault();
+    if (window.Tawk_API && Tawk_API.maximize) Tawk_API.maximize();
+    else alert('The chat bubble lives in the bottom corner of the page — give it one tap. 💬');
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What exactly is Momni?","acceptedAnswer":{"@type":"Answer","text":"Momni is a caresharing community: a place where mothers find each other, get to know each other, and share care for one another's children — hosted in real homes, arranged mom-to-mom. It is not a daycare, an agency, or a babysitting service."}},
+    {"@type":"Question","name":"Is Momni free?","acceptedAnswer":{"@type":"Answer","text":"Joining is free, browsing is free, and hosting is free forever. Optional memberships start at $1/month (Circle Up, billed $12/yr); Momni+ is $4.99/month or $49/year."}},
+    {"@type":"Question","name":"How do I pay the mama who hosts my children?","acceptedAnswer":{"@type":"Answer","text":"Directly — cash, Venmo, whatever you two agree. Her rate is hers to set and 100% hers to keep. Momni never processes care payments and never takes a percentage."}},
+    {"@type":"Question","name":"What does it cost to become a host?","acceptedAnswer":{"@type":"Answer","text":"Nothing. Hosting is free — no listing fee, no membership requirement, no commission on what you earn."}},
+    {"@type":"Question","name":"Do I need a license to host?","acceptedAnswer":{"@type":"Answer","text":"It depends on where you live. Every state and sometimes every county has its own rules about caring for children in your home. Knowing and following your local childcare laws is your responsibility as a host."}},
+    {"@type":"Question","name":"Does Momni run background checks?","acceptedAnswer":{"@type":"Answer","text":"No. Momni does not investigate, evaluate, approve, or stand behind any member. Some members choose to purchase their own background check and share it on their profile; a shared report is that member's content, not something Momni has reviewed."}},
+    {"@type":"Question","name":"Does Momni take a cut of what hosts earn?","acceptedAnswer":{"@type":"Answer","text":"Never. Care payments are made directly between members. Momni's only revenue is flat platform pricing — never a percentage of care money."}},
+    {"@type":"Question","name":"What happened to the original Momni?","acceptedAnswer":{"@type":"Answer","text":"From 2017 to 2020 Momni grew to 26,000+ mamas and hosts in all 50 states, then paused during COVID. Momni 2.0 is the community-led relaunch — same heart, stronger bones."}},
+    {"@type":"Question","name":"What is a Circle?","acceptedAnswer":{"@type":"Answer","text":"A local group of mamas who gather — playgroups, moms' nights, welcome coffees. Circles are led by member Circle Leaders and are where most Momni friendships begin."}},
+    {"@type":"Question","name":"What should I do before the first visit?","acceptedAnswer":{"@type":"Answer","text":"Meet first, ask the hard questions, ask for references and call them, see the space, start small, and trust your instincts. Momni members build their own trust, like meeting a neighbor."}}
+  ]
+}
+</script>
+
+<!-- momni-lang-picker -->
+<style>.goog-te-banner-frame,.skiptranslate{display:none!important}body{top:0!important}
+#momni-lang{border:1.5px solid #E5E0F0;border-radius:100px;padding:6px 12px;font:inherit;font-size:14px;color:inherit;background:#fff;cursor:pointer}</style>
+<div id="google_translate_element" style="display:none"></div>
+<script>
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element')}
+(function(){
+  var sel=document.getElementById('momni-lang');
+  if(!sel)return;
+  var m=document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
+  if(m)sel.value=decodeURIComponent(m[1]);
+  sel.addEventListener('change',function(){
+    var code=sel.value,host=location.hostname;
+    if(code==='en'){
+      document.cookie='googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie='googtrans=;path=/;domain='+host+';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie='googtrans=;path=/;domain=.'+host+';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    }else{
+      document.cookie='googtrans=/en/'+code+';path=/';
+      document.cookie='googtrans=/en/'+code+';path=/;domain='+host;
+      document.cookie='googtrans=/en/'+code+';path=/;domain=.'+host;
+    }
+    location.reload();
+  });
+})();
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- momni-beta-feedback -->
+<div id="momni-beta-feedback">
+  <style>
+    #momni-beta-feedback{position:fixed;top:122px;right:16px;z-index:60;font-family:'Albert Sans',sans-serif;}
+    #momni-beta-feedback .mbf-btn{display:inline-block;background:#92E2C1;color:#0B4A36;border:none;border-radius:100px;padding:8px 16px;font-family:'Albert Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(43,34,51,.12);}
+    #momni-beta-feedback .mbf-tip{display:none;position:absolute;top:calc(100% + 8px);right:0;max-width:260px;width:max-content;background:#fff;border:1.5px solid #E5E0F0;border-radius:14px;padding:12px 14px;font-size:13px;color:#2B2233;line-height:1.45;box-shadow:0 6px 18px rgba(43,34,51,.10);}
+    #momni-beta-feedback:hover .mbf-tip,#momni-beta-feedback .mbf-btn:focus + .mbf-tip{display:block;}
+  </style>
+  <button type="button" class="mbf-btn" aria-describedby="mbf-tip">💬 Beta feedback</button>
+  <div class="mbf-tip" id="mbf-tip" role="tooltip">This is our 2.0 re-launch beta... please share what you love, what you might recommend changing. The Momni community and technology is being refined by each of YOU prior to the official launch. Your feedback is invaluable!! 💜</div>
+  <script>
+    document.querySelector('#momni-beta-feedback .mbf-btn').addEventListener('click',function(){
+      window.location.href='mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni&body=What%20I%20was%20doing%3A%0A%0AWhat%20I%20loved%3A%0A%0AWhat%20bugged%20me%3A%0A%0AWhat%20I%27d%20change%3A%0A%0A(page%3A%20'+encodeURIComponent(location.href)+')';
+    });
+  </script>
+</div>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a2a1a1d6829161c2c3db588/1jqq7c0va';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

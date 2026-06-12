@@ -71,7 +71,8 @@ a{text-decoration:none;color:inherit}
 .ev .tag{display:inline-block;font-size:10.5px;font-weight:700;border-radius:100px;padding:2px 10px;margin-top:8px;background:var(--lavender);color:var(--purple-deep)}
 .ev a.src{color:var(--teal);font-weight:600;font-size:12.5px}
 .ev img{width:100%;border-radius:11px;margin-top:10px;display:block}
-.ev .motif{height:64px;border-radius:11px;margin-top:10px;display:flex;align-items:center;justify-content:center;font-size:32px;letter-spacing:8px;padding-left:8px}
+.ev .motif{height:96px;border-radius:11px;margin-top:10px;overflow:hidden}
+.ev .motif svg{width:100%;height:100%;display:block}
 /* the origin — bottom anchor */
 .origin{position:relative;z-index:2;max-width:560px;margin:30px auto 0;text-align:center;background:linear-gradient(135deg,var(--purple-deep),var(--purple));color:#fff;border-radius:24px;padding:38px 32px;box-shadow:0 20px 50px rgba(74,56,128,.35)}
 .origin .scr{font-family:'Caveat',cursive;font-size:30px;color:var(--algae);display:block;margin-bottom:6px}
@@ -358,7 +359,22 @@ function buildAll(ALL){
   document.getElementById('strip-next').onclick = function(){ strip.scrollBy({left:540, behavior:'smooth'}); };
 
   // ---------- vertical timeline: newest first, March 2017 at the very bottom ----------
-  var MOTIFS = {Relaunch:'\ud83d\udca1\ud83d\udc18', 'The Pause':'\ud83d\udd4a\ufe0f', Milestone:'\u2b50\ud83d\udc9c', Press:'\ud83d\udcf0\u2728', 'The Book':'\ud83d\udcd6\ud83d\udc9c', Origin:'\ud83c\udf31\ud83d\udc18', Community:'\ud83d\udd25\ud83d\udc9c', Foundation:'\ud83d\udc9c\ud83e\udd32'};
+  // Designed SVG scene per era (created artwork, Momni palette) \u2014 used where no sourced photo exists.
+  var ELE = 'M44 70c-3-12 0-27 12-33 9-5 21-5 30 0 6 3 11 9 12 15l12 3c3 1 3 6-2 6l-10-1c0 5-3 9-8 11H55c-6 0-9-5-11-9z';
+  function svgMotif(tag, c) {
+    var bg = '<rect width="300" height="96" fill="#F5F0FE"/>';
+    var scenes = {
+      'Relaunch': '<defs><radialGradient id="g"><stop offset="0%" stop-color="#fff"/><stop offset="45%" stop-color="#92E2C1"/><stop offset="100%" stop-color="#92E2C1" stop-opacity="0"/></radialGradient></defs>'+bg+'<g stroke="#92E2C1" stroke-width="3" stroke-linecap="round" opacity=".8"><line x1="150" y1="14" x2="150" y2="2"/><line x1="120" y1="22" x2="112" y2="12"/><line x1="180" y1="22" x2="188" y2="12"/><line x1="104" y1="46" x2="92" y2="44"/><line x1="196" y1="46" x2="208" y2="44"/></g><circle cx="150" cy="46" r="34" fill="url(#g)"/><circle cx="150" cy="44" r="15" fill="#fff" stroke="#0D878F" stroke-width="2"/><rect x="144" y="58" width="12" height="9" rx="2" fill="#0D878F"/>',
+      'The Pause': '<rect width="300" height="96" fill="#2B2233"/><g fill="#fff"><circle cx="70" cy="26" r="1.6"/><circle cx="120" cy="18" r="1.2"/><circle cx="210" cy="30" r="1.6"/><circle cx="250" cy="20" r="1.2"/><circle cx="40" cy="50" r="1.2"/></g><path d="M170 22a26 26 0 1 0 0 52 22 22 0 1 1 0-52z" fill="#C9C2D8"/>',
+      'Milestone': bg+'<path d="M40 80 L110 30 L150 58 L210 18 L260 80 Z" fill="'+c+'" opacity=".22"/><path d="M150 58 L210 18 L260 80 Z" fill="'+c+'" opacity=".4"/><path d="M150 16l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z" fill="#D9A03A"/>',
+      'Press': bg+'<rect x="96" y="22" width="78" height="56" rx="4" fill="#fff" stroke="'+c+'" stroke-width="2.5"/><line x1="106" y1="34" x2="164" y2="34" stroke="'+c+'" stroke-width="4"/><line x1="106" y1="46" x2="150" y2="46" stroke="#cfc7da" stroke-width="3"/><line x1="106" y1="56" x2="164" y2="56" stroke="#cfc7da" stroke-width="3"/><line x1="106" y1="66" x2="140" y2="66" stroke="#cfc7da" stroke-width="3"/><path d="M182 40l22-12v40l-22-12z" fill="'+c+'"/>',
+      'The Book': bg+'<path d="M150 30c-14-9-34-9-44-4v44c10-5 30-5 44 4 14-9 34-9 44-4V26c-10-5-30-5-44 4z" fill="#fff" stroke="'+c+'" stroke-width="2.5"/><line x1="150" y1="30" x2="150" y2="74" stroke="'+c+'" stroke-width="2.5"/><g stroke="#D9A03A" stroke-width="2" opacity=".5"><line x1="116" y1="40" x2="140" y2="38"/><line x1="116" y1="50" x2="140" y2="48"/><line x1="160" y1="38" x2="184" y2="40"/><line x1="160" y1="48" x2="184" y2="50"/></g>',
+      'Origin': bg+'<path d="'+ELE+'" fill="'+c+'" opacity=".5" transform="translate(150,2) scale(.9)"/><circle cx="240" cy="22" r="1.8" fill="#fff" transform="translate(150,2) scale(.9)"/><path d="M70 80c0-16 6-26 18-30-8 8-10 18-8 30z" fill="#3E9E6E"/><path d="M70 80c0-14-6-22-16-25 7 7 9 15 8 25z" fill="#3E9E6E" opacity=".7"/><line x1="70" y1="80" x2="70" y2="58" stroke="#3E9E6E" stroke-width="3"/>',
+      'Community': bg+'<g stroke="'+c+'" stroke-width="2.5" fill="none" opacity=".4"><circle cx="150" cy="48" r="38"/><circle cx="150" cy="48" r="24"/></g><path d="M150 64c-8-6-12-12-12-18 0 0 4 2 6 6 1-8 6-12 6-12s5 4 6 12c2-4 6-6 6-6 0 6-4 12-12 18z" fill="#D9A03A"/><path d="M150 64c-5-4-8-8-8-12 0 0 3 1 4 4 1-5 4-8 4-8s3 3 4 8c1-3 4-4 4-4 0 4-3 8-12 12z" fill="#C25B8C"/>',
+      'Foundation': bg+'<path d="M150 70c-18-12-30-22-30-34a16 16 0 0 1 30-7 16 16 0 0 1 30 7c0 12-12 22-30 34z" fill="'+c+'"/><path d="M150 64c-12-8-21-16-21-24a11 11 0 0 1 21-5 11 11 0 0 1 21 5c0 8-9 16-21 24z" fill="#fff" opacity=".25"/>'
+    };
+    return '<svg viewBox="0 0 300 96" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img">'+(scenes[tag]||scenes.Foundation)+'</svg>';
+  }
   var TAG_COLORS = {Relaunch:'#0D878F', 'The Pause':'#6B6477', Milestone:'#6D58A4', Press:'#C25B8C', 'The Book':'#D9A03A', Origin:'#3E9E6E', Foundation:'#4A8FD9'};
   var newestFirst = ALL.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
   var tl = document.getElementById('tl');
@@ -382,7 +398,7 @@ function buildAll(ALL){
       '<h3>' + H(e.title) + '</h3><p>' + H(e.body) + '</p>' +
       (e.link ? '<p style="margin-top:6px"><a class="src" href="' + e.link + '"' + (e.link.indexOf('http')===0 ? ' target="_blank" rel="noopener"' : '') + '>' + H(e.linkLabel || 'More') + ' →</a></p>' : '') +
       (e.img ? '<img src="' + e.img + '" alt="" loading="lazy">'
-             : '<div class="motif" aria-hidden="true" style="background:linear-gradient(135deg,' + c + '22, #F5F0FE)">' + (MOTIFS[e.tag] || '\ud83d\udc9c') + '</div>') +
+             : '<div class="motif" aria-hidden="true">' + svgMotif(e.tag, c) + '</div>') +
       '<span class="tag" style="background:' + c + '18;color:' + c + '">' + e.tag + '</span></div>';
     tl.appendChild(ev);
     side = side === 'left' ? 'right' : 'left';

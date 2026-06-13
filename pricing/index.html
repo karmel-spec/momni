@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — free, $1 Circle Up, Momni+ | Momni</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#6D58A4;--teal:#0D878F;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--ink:#2B2233;--muted:#6B6477}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);line-height:1.7}
+h1,h3{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px solid #EEE9F9;z-index:50}
+.nav-inner{display:flex;align-items:center;height:68px;max-width:1120px;margin:0 auto;padding:0 24px}
+.cta-btn{background:var(--teal);color:white;font-weight:600;padding:10px 22px;border-radius:100px;font-size:15px;margin-left:auto}
+.hero{background:linear-gradient(180deg,var(--lavender),#fff);padding:64px 0 40px;text-align:center}
+h1{font-size:38px;font-weight:800}
+.hero .script{font-size:26px;color:var(--teal);display:block;margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:40px 0}
+.card{background:var(--teal-soft);border-radius:16px;padding:24px}
+.card.purple{background:var(--lavender)}
+.card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.card p{font-size:14px;color:var(--muted)}
+.card a{color:var(--teal);font-weight:600;font-size:14px}
+form{background:white;border:1.5px solid #EEE9F9;border-radius:18px;padding:28px;margin-bottom:56px}
+label{font-size:14px;font-weight:600;display:block;margin:14px 0 6px}
+input,textarea{width:100%;padding:11px 14px;border:1.5px solid #E5E0F0;border-radius:10px;font-family:inherit;font-size:15px}
+button{background:var(--purple);color:white;font-weight:600;border:none;padding:13px 30px;border-radius:100px;font-size:16px;margin-top:18px;cursor:pointer}
+footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-size:13px;line-height:1.7}
+</style>
+
+<!-- SEO -->
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://momni.com/pricing/">
+<meta property="og:title" content="Pricing | Momni">
+<meta property="og:description" content="Momni is free to use and free to host. Circle Up is $1/mo, Momni+ is $4.99/mo — and care payments always go directly between Momnis, never a percentage.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://momni.com/pricing/">
+<meta property="og:image" content="https://momni.com/assets/photos/mama-lifting-toddler-sky.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing | Momni">
+<meta name="twitter:description" content="Momni is free to use and free to host. Circle Up is $1/mo, Momni+ is $4.99/mo — and care payments always go directly between Momnis, never a percentage.">
+<meta name="twitter:image" content="https://momni.com/assets/photos/mama-lifting-toddler-sky.jpg">
+<style>
+/* Two-row header (option E — Ribbon Classic) */
+.mh{position:sticky;top:0;z-index:50}
+/* mh-fix: header spans full width; neutralize leftover generic nav{} rule on .mh-links */
+.mh .wrap{max-width:1120px}
+.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
+.mh .wrap{max-width:1120px}
+.mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}
+.mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}
+.mh-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500;position:static;background:none;border-bottom:0;backdrop-filter:none}
+.mh-burger{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;margin-left:auto}
+.mh-mobile{display:none}
+.mh-mobile.open{display:block;padding:14px 24px 20px}
+.mh-mobile a{display:block;padding:9px 0;color:#fff;font-size:16px;font-weight:500}
+.mh-mobile-div{border-top:1px solid rgba(255,255,255,0.25);margin:10px 0}
+#momni-lang{border:none;border-radius:100px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
+@media(max-width:960px){
+  .mh-top-inner a,.mh-links,.mh-main-inner>.mh-cta,.mh-tag{display:none}
+  .mh-burger{display:block}
+  .mh-top-inner{justify-content:flex-end}
+}
+
+.mh-top{background:#4A3880}
+.mh-top-inner a{color:rgba(255,255,255,0.8)} .mh-top-inner a:hover{color:#fff}
+.mh-main{background:#6D58A4}
+.mh-links a{color:#fff} .mh-links a:hover{color:#92E2C1}
+.mh-cta{background:#92E2C1;color:#0B4A36;font-weight:600;padding:7px 16px;border-radius:100px;font-size:13.5px}
+.mh-cta:hover{filter:brightness(0.95)}
+.mh-mobile{background:#6D58A4}
+#momni-lang{background:rgba(255,255,255,0.12);color:#fff}
+#momni-lang option{color:#2B2233}
+</style>
+<!-- momni-gate -->
+<script>
+(function(){
+  var KEY='momni-gate-v1', HASH='4c30e1ff68b60101f624cca4f7d6b1136575700e3d63e5f78f0734d76e4a1c72';
+  try{ if(localStorage.getItem(KEY)===HASH) return; }catch(e){ return; }
+  document.documentElement.style.visibility='hidden';
+  function show(){
+    document.documentElement.style.visibility='';
+    var d=document.createElement('div');
+    d.id='mgate';
+    d.innerHTML='<style>#mgate{position:fixed;inset:0;background:linear-gradient(180deg,#F5F0FE,#fff);z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;font-family:\'Albert Sans\',Helvetica,sans-serif}#mgate img{height:64px}#mgate .nm{font-family:\'Montserrat\',Helvetica,sans-serif;font-weight:800;font-size:34px;color:#4A3880;letter-spacing:-0.02em}#mgate form{display:flex;gap:8px}#mgate input{border:2px solid #6D58A4;border-radius:100px;padding:12px 22px;font-size:16px;width:210px;outline:none;text-align:center;font-family:inherit}#mgate button{border:none;border-radius:100px;background:#92E2C1;color:#0B4A36;font-weight:700;font-size:17px;padding:12px 24px;cursor:pointer;font-family:inherit}#mgate.no input{border-color:#C94B4B;animation:mgs .3s}@keyframes mgs{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}</style>'
+      + '<img src="/assets/momni-logo-color-horizontal.png" alt="Momni">'
+      + '<form><input type="password" autocomplete="off" aria-label="Password"><button aria-label="Enter">\u2192</button></form>';
+    document.body.appendChild(d);
+    var f=d.querySelector('form'), inp=d.querySelector('input');
+    setTimeout(function(){ inp.focus(); }, 50);
+    f.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      crypto.subtle.digest('SHA-256', new TextEncoder().encode(inp.value)).then(function(buf){
+        var h=Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
+        if(h===HASH){ try{localStorage.setItem(KEY,h);}catch(e){} d.remove(); }
+        else { d.classList.add('no'); inp.value=''; setTimeout(function(){d.classList.remove('no');},400); }
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', show); else show();
+})();
+</script>
+</head>
+<body>
+
+<header class="mh" id="mh">
+  <div class="mh-top">
+    <div class="wrap mh-top-inner">
+      <a href="../press/index.html">Press</a>
+      <a href="../partnerships/index.html">Partnerships</a>
+      <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+      <a href="../crisis/index.html">The Crisis</a>
+      <a href="../volunteer/index.html">Volunteer</a>
+      <a href="mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni">Beta feedback</a>
+      <select id="momni-lang" aria-label="Language" title="Language">
+        <option value="en">🌍 English</option><option value="es">Español</option><option value="pt">Português</option><option value="fr">Français</option><option value="ar">العربية</option><option value="hi">हिन्दी</option><option value="zh-CN">中文</option><option value="tl">Filipino</option><option value="vi">Tiếng Việt</option><option value="sw">Kiswahili</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="id">Bahasa Indonesia</option>
+      </select>
+    </div>
+  </div>
+  <div class="mh-main">
+    <div class="wrap mh-main-inner">
+      <a href="../index.html" class="mh-logo"><img src="../assets/momni-logo-white-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
+      
+      <nav class="mh-links">
+        <a href="../find-care/index.html">Find Care</a>
+        <a href="../become-a-momni/index.html">Become a Momni</a>
+        <a href="../circles/index.html">Circles</a>
+        <a href="../shop/index.html">Shop</a>
+        <a href="../apps/index.html">Apps</a>
+        <a href="../map/index.html">Map</a>
+        <a href="../our-story/index.html">Our Story</a>
+    <a href="../team/index.html">Team Momni</a>
+        <a href="../stories/index.html">Stories</a>
+      </nav>
+      <a href="https://app.momni.com" class="mh-cta">Join the Circle</a>
+      <button class="mh-burger" id="mh-burger" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="mh-mobile" id="mh-mobile">
+    <a href="../find-care/index.html">Find Care</a>
+    <a href="../become-a-momni/index.html">Become a Momni</a>
+    <a href="../circles/index.html">Circles</a>
+    <a href="../shop/index.html">Shop</a>
+    <a href="../apps/index.html">Apps</a>
+    <a href="../map/index.html">Map</a>
+    <a href="../our-story/index.html">Our Story</a>
+    <a href="../stories/index.html">Stories</a>
+    <div class="mh-mobile-div"></div>
+    <a href="../press/index.html">Press</a>
+    <a href="../partnerships/index.html">Partnerships</a>
+    <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+    <a href="../crisis/index.html">The Crisis</a>
+    <a href="../volunteer/index.html">Volunteer</a>
+    <a href="mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni">Beta feedback</a>
+    <a href="https://app.momni.com" class="mh-cta" style="margin-top:10px;display:inline-block">Join the Circle</a>
+  </div>
+</header>
+<style>
+.pr-hero{background:linear-gradient(180deg,var(--lavender,#F5F0FE),#fff);padding:54px 0 30px;text-align:center}
+.pr-hero h1{font-size:38px;font-weight:800;letter-spacing:-.02em}
+.pr-hero .script{font-size:26px;color:var(--teal,#0D878F);display:block;margin-bottom:8px}
+.pr-hero p{font-size:17px;color:var(--muted,#6B6477);max-width:600px;margin:8px auto 0}
+.pr-promise{max-width:680px;margin:18px auto 0;background:#fff;border:1.5px solid #E5E0F0;border-radius:14px;padding:14px 20px;font-size:14.5px;color:var(--ink,#2B2233)}
+.pr-promise b{color:var(--purple-deep,#4A3880)}
+.tiers{max-width:1080px;margin:0 auto;padding:40px 24px 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:860px){.tiers{grid-template-columns:1fr;max-width:440px}}
+.tier{background:#fff;border:1.5px solid #E5E0F0;border-radius:22px;padding:28px 24px;display:flex;flex-direction:column}
+.tier.feat{border:2px solid var(--purple,#6D58A4);box-shadow:0 18px 44px rgba(109,88,164,.16);position:relative}
+.tier.feat::before{content:"Most loved";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:.05em;border-radius:100px;padding:4px 14px}
+.tier .nm{font-family:'Montserrat',sans-serif;font-weight:800;font-size:21px}
+.tier .tag{font-size:13px;color:var(--muted);margin-top:2px;min-height:34px}
+.tier .price{margin:14px 0 4px}
+.tier .price .amt{font-family:'Montserrat',sans-serif;font-weight:800;font-size:38px;color:var(--ink)}
+.tier .price .per{font-size:14px;color:var(--muted)}
+.tier .yr{font-size:12.5px;color:var(--teal,#0D878F);font-weight:600;min-height:18px}
+.tier ul{list-style:none;margin:18px 0 0;padding:0;flex:1}
+.tier li{font-size:14px;padding:7px 0 7px 26px;position:relative;line-height:1.45;border-top:1px solid #F1EDF7}
+.tier li:first-child{border-top:0}
+.tier li::before{content:"✓";position:absolute;left:0;top:7px;color:var(--teal,#0D878F);font-weight:800}
+.tier li.no::before{content:"—";color:#C9C3D6}
+.tier .cta{display:block;text-align:center;margin-top:22px;border-radius:100px;padding:13px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;text-decoration:none}
+.tier .cta.ghost{background:var(--lavender,#F5F0FE);color:var(--purple-deep,#4A3880)}
+.tier .cta.solid{background:var(--algae,#92E2C1);color:#0B4A36}
+.tier .cta.pur{background:var(--purple,#6D58A4);color:#fff}
+.pr-band{max-width:1080px;margin:30px auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+@media(max-width:860px){.pr-band{grid-template-columns:1fr;max-width:440px}}
+.pr-card{background:var(--lavender,#F5F0FE);border-radius:18px;padding:22px}
+.pr-card h3{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;margin-bottom:6px}
+.pr-card p{font-size:14px;color:var(--muted)}
+.pr-card .big{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--purple);font-size:15px}
+.pr-truth{max-width:760px;margin:18px auto 50px;padding:0 24px;text-align:center;font-size:14px;color:var(--muted);line-height:1.7}
+.pr-truth b{color:var(--ink)}
+</style>
+
+<header class="pr-hero"><div class="wrap">
+  <span class="script">one dollar, never a percentage —</span>
+  <h1>Simple, honest pricing</h1>
+  <p>Momni is free to use and free to host. When you want more, it's a dollar — never a cut of your care.</p>
+  <div class="pr-promise"><b>Momni runs on $1 memberships, not on selling your attention.</b> Care payments always go directly between Momnis — we never touch them and never take a percentage.</div>
+</div></header>
+
+<div class="tiers">
+
+  <div class="tier">
+    <div class="nm">Free</div>
+    <div class="tag">Everything you need to circle up. Forever.</div>
+    <div class="price"><span class="amt">$0</span></div>
+    <div class="yr">Always free · hosting is always free</div>
+    <ul>
+      <li>Find care &amp; open your own door</li>
+      <li>The Movement Map &amp; Search</li>
+      <li>Circles &amp; the Campfire community</li>
+      <li>Message, meet, and arrange care directly</li>
+      <li>$1 per Link when you book (the only care charge)</li>
+      <li class="no">Occasional hand-picked local Circle Sponsor</li>
+    </ul>
+    <a class="cta ghost" href="https://app.momni.com">Join the Circle — free</a>
+  </div>
+
+  <div class="tier feat">
+    <div class="nm">Circle Up</div>
+    <div class="tag">Belong — and keep your Circle clean.</div>
+    <div class="price"><span class="amt">$1</span><span class="per">/mo</span></div>
+    <div class="yr">or $12/year</div>
+    <ul>
+      <li>Everything in Free</li>
+      <li><b>Ad-free &amp; sponsor-free</b>, always</li>
+      <li>Link bundles — 10 Links for $10</li>
+      <li>Member pricing on the Momni Boards ($1/mo each)</li>
+      <li>Your Circle Up supporter badge</li>
+      <li>You keep Momni independent — funded by Momnis</li>
+    </ul>
+    <a class="cta pur" href="https://app.momni.com">Circle Up — $1/mo</a>
+  </div>
+
+  <div class="tier">
+    <div class="nm">Momni+</div>
+    <div class="tag">Everything Momni, all in one.</div>
+    <div class="price"><span class="amt">$4.99</span><span class="per">/mo</span></div>
+    <div class="yr">or $49/year</div>
+    <ul>
+      <li>Everything in Circle Up</li>
+      <li><b>Unlimited Links</b> — no per-booking dollar</li>
+      <li><b>Every Momni Board included</b> (ChoreBoard, Motherboard &amp; the whole family)</li>
+      <li>Profile Boost — rise in search</li>
+      <li>Sponsor-free + priority support</li>
+    </ul>
+    <a class="cta solid" href="https://app.momni.com">Go Momni+</a>
+  </div>
+
+</div>
+
+<div class="pr-band">
+  <div class="pr-card"><h3>What's a Link?</h3><p>A Link is a single booking with a Momni — <span class="big">$1, every time.</span> That dollar is the only thing Momni ever charges for care. The care itself you pay your Momni directly, and they keep every penny. <b>Momni+ includes unlimited Links.</b></p></div>
+  <div class="pr-card"><h3>Hosting is always free</h3><p>Open your door for free, forever. Set your own rate, your own hours — and keep every dollar of what you earn. Momni never takes a percentage of care.</p></div>
+  <div class="pr-card"><h3>Momni Gives 🙌</h3><p>An optional toggle adds <span class="big">$1</span> to the Momni Foundation — a separate 501(c)(3) — to fund care for families with no options at all. 100% goes to the Foundation; flip it on or off anytime.</p></div>
+</div>
+
+<div class="pr-truth">
+  <b>One brand, two wallets, fully disclosed.</b> Momni, Inc. runs the app; the Momni Foundation is a separate 501(c)(3). Momni is a community platform, not an agency — we don't vet, screen, or endorse anyone, and your care payments are always yours, Momni to Momni.
+</div>
+<footer><div class="wrap">
+<!-- momni-footer-index -->
+<div class="mfi">
+<style>.mfi{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px;font-size:13px}.mfi h4{font-family:'Montserrat',sans-serif;color:#fff;font-size:13px;font-weight:700;margin-bottom:12px}.mfi a{display:block;margin-bottom:8px;color:rgba(255,255,255,0.55);text-decoration:none}.mfi a:hover{color:#92E2C1}@media(max-width:680px){.mfi{grid-template-columns:1fr 1fr}}</style>
+  <div>
+    <h4>Find care</h4>
+    <a href="../find-care/index.html">Find Care overview</a>
+    <a href="../find-care/right-now/index.html">Right Now</a>
+    <a href="../find-care/date-night/index.html">Date Night</a>
+    <a href="../find-care/my-regulars/index.html">My Regulars</a>
+    <a href="../find-care/night-shift/index.html">Night Shift</a>
+    <a href="../find-care/weekend-getaway/index.html">Weekend Getaway</a>
+    <a href="../find-care/extended-trip/index.html">Extended Trip</a>
+    <a href="../find-care/find-a-daycare/index.html">Find a Daycare</a>
+  </div>
+  <div>
+    <h4>Community</h4>
+    <a href="../become-a-momni/index.html">Become a Momni</a>
+    <a href="../circles/index.html">Circles</a>
+    <a href="../volunteer/index.html">Volunteer</a>
+    <a href="../partnerships/index.html">Partnerships</a>
+    <a href="../map/index.html">Map</a>
+    <a href="../apps/index.html">Apps by Momni</a>
+    <a href="https://app.momni.com">Join the Circle</a>
+  </div>
+  <div>
+    <h4>Stories</h4>
+    <a href="../stories/index.html">Stories</a>
+    <a href="../stories/karmels-desk/index.html">Karmel&rsquo;s Desk</a>
+    <a href="../stories/circle-stories/index.html">Circle Stories</a>
+    <a href="../stories/crisis-watch/index.html">Crisis Watch</a>
+    <a href="../podcast/index.html">Podcast</a>
+    <a href="../crisis/index.html">The Crisis</a>
+  </div>
+  <div>
+    <h4>About</h4>
+    <a href="../our-story/index.html">Our Story</a>
+    <a href="../history/index.html">Momni History</a>
+    <a href="../faq/index.html">FAQ</a>
+    <a href="../blog/index.html">Blog</a>
+    <a href="../newsletter/index.html">Newsletter</a>
+    <a href="../press/index.html">Press</a>
+    <a href="../shop/index.html">Shop</a>
+    <a href="../contact/index.html">Contact</a>
+    <a href="../connect/index.html">Connect</a>
+    <a href="../terms/index.html">Terms of Service</a>
+    <a href="../transparency/index.html">Transparency</a>
+    <a href="../conduct/index.html">Suggested Conduct</a>
+    <a href="../privacy/index.html">Privacy</a>
+    <a href="../community-guidelines/index.html">Community Guidelines</a>
+    <a href="../board/index.html">Board Brief &#128274;</a>
+    <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+  </div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.15);padding-top:24px">Momni is a community platform. Members make their own care decisions. momni.com and app.momni.com are operated by Momni, Inc.; the Momni Foundation is a separate 501(c)(3). One brand, two entities, separate finances.</div></div></footer>
+
+<!-- momni-lang-picker -->
+<style>.goog-te-banner-frame,.skiptranslate{display:none!important}body{top:0!important}
+#momni-lang{border:1.5px solid rgba(255,255,255,.35);border-radius:100px;padding:6px 12px;font:inherit;font-size:14px;color:#fff;background:#6D58A4;cursor:pointer}#momni-lang option{color:#2B2233;background:#fff}</style>
+<div id="google_translate_element" style="display:none"></div>
+<script>
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element')}
+(function(){
+  var sel=document.getElementById('momni-lang');
+  if(!sel)return;
+  var m=document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
+  if(m)sel.value=decodeURIComponent(m[1]);
+  sel.addEventListener('change',function(){
+    var code=sel.value,host=location.hostname;
+    if(code==='en'){
+      document.cookie='googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie='googtrans=;path=/;domain='+host+';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie='googtrans=;path=/;domain=.'+host+';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    }else{
+      document.cookie='googtrans=/en/'+code+';path=/';
+      document.cookie='googtrans=/en/'+code+';path=/;domain='+host;
+      document.cookie='googtrans=/en/'+code+';path=/;domain=.'+host;
+    }
+    location.reload();
+  });
+})();
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- momni-beta-feedback -->
+<div id="momni-beta-feedback">
+  <style>
+    #momni-beta-feedback{position:fixed;top:122px;right:16px;z-index:60;font-family:'Albert Sans',sans-serif;}
+    #momni-beta-feedback .mbf-btn{display:inline-block;background:#6D58A4;color:#fff;border:none;border-radius:100px;padding:8px 16px;font-family:'Albert Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(43,34,51,.12);}
+    #momni-beta-feedback .mbf-tip{display:none;position:absolute;top:calc(100% + 8px);right:0;max-width:260px;width:max-content;background:#fff;border:1.5px solid #E5E0F0;border-radius:14px;padding:12px 14px;font-size:13px;color:#2B2233;line-height:1.45;box-shadow:0 6px 18px rgba(43,34,51,.10);}
+    #momni-beta-feedback:hover .mbf-tip,#momni-beta-feedback .mbf-btn:focus + .mbf-tip{display:block;}
+  </style>
+  <button type="button" class="mbf-btn" aria-describedby="mbf-tip">💬 Beta feedback</button>
+  <div class="mbf-tip" id="mbf-tip" role="tooltip">This is our 2.0 re-launch beta... please share what you love, what you might recommend changing. The Momni community and technology is being refined by each of YOU prior to the official launch. Your feedback is invaluable!! 💜</div>
+  <script>
+    document.querySelector('#momni-beta-feedback .mbf-btn').addEventListener('click',function(){
+      window.location.href='mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni&body=What%20I%20was%20doing%3A%0A%0AWhat%20I%20loved%3A%0A%0AWhat%20bugged%20me%3A%0A%0AWhat%20I%27d%20change%3A%0A%0A(page%3A%20'+encodeURIComponent(location.href)+')';
+    });
+  </script>
+</div>
+<!-- momni-site-console -->
+<script>
+(function(){
+  var API = /^(localhost|127\.)/.test(location.hostname) ? 'http://localhost:3000' : 'https://app.momni.com';
+  fetch(API + '/api/site/announcement').then(function(r){ return r.json(); }).then(function(a){
+    if (!a || !a.on || !a.text) return;
+    var esc = function(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+    var b = document.createElement('div');
+    b.setAttribute('style','background:#0D878F;color:#fff;text-align:center;padding:10px 18px;font:600 14px \'Albert Sans\',sans-serif;position:relative;z-index:70');
+    b.innerHTML = a.href ? ('<a href="' + esc(a.href) + '" style="color:#fff;text-decoration:underline">' + esc(a.text) + ' <span style="color:#92E2C1">→</span></a>') : esc(a.text);
+    document.body.insertBefore(b, document.body.firstChild);
+  }).catch(function(){});
+  var tagged = document.querySelectorAll('[data-momni-stat]');
+  if (tagged.length) fetch(API + '/api/site/stats').then(function(r){ return r.json(); }).then(function(s){
+    tagged.forEach(function(el){ var k = el.getAttribute('data-momni-stat'); if (s && s[k] != null) el.textContent = s[k]; });
+  }).catch(function(){});
+})();
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a2a1a1d6829161c2c3db588/1jqq7c0va';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

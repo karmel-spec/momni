@@ -102,7 +102,7 @@ footer b{color:var(--algae)}
 <div class="grid">
   <div class="opt">
     <div class="label"><span class="tag">OPTION 1</span><h2>True Bulb 💡</h2><span class="script">an actual tiny lightbulb</span></div>
-    <p class="story">A literal miniature bulb — warm glass, little metal base, soft flicker — wrapped in a golden halo. The most storytelling of the four: "her light is on" becomes exactly what you see.</p>
+    <p class="story">A literal miniature bulb — warm glass, little metal base, soft flicker — wrapped in a golden halo. The most storytelling of the four: "their light is on" becomes exactly what you see.</p>
     <div class="mapbox" id="map1"></div>
     <div class="choose">To pick: tell Claude <b>"Option 1."</b></div>
   </div>
@@ -153,7 +153,7 @@ fetch('../pins.json').then(function(r){ return r.json(); }).then(function(pins){
     LIGHTS.forEach(function(ll){
       L.marker(ll, {icon: L.divIcon({className:'', iconSize:[k.size,k.size], iconAnchor:[k.size/2,k.size/2],
         html:'<span class="lit ' + k.cls + '" style="width:' + k.size + 'px;height:' + k.size + 'px">' + k.html + '</span>'})})
-        .addTo(m).bindPopup("<b>She's back 💜</b><br>Her light is on.");
+        .addTo(m).bindPopup("<b>They're back 💜</b><br>Their light is on.");
     });
   });
 });

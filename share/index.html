@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Share Momni — invite the moms you know | Momni</title>
-<meta name="description" content="Help relight the Circle. Copy-and-paste posts, ready-to-send texts and emails, and a Circle Up profile frame to spread the word about the Momni relaunch to first mamas and new moms alike.">
+<title>Share Momni — invite the parents you know | Momni</title>
+<meta name="description" content="Help relight the Circle. Copy-and-paste posts, ready-to-send texts and emails, and a Circle Up profile frame to spread the word about the Momni relaunch to first Momnis and new parents alike.">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{--purple:#6D58A4;--purple-deep:#4A3880;--teal:#0D878F;--teal-deep:#0A6B72;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--ink:#2B2233;--muted:#6B6477;--clay:#D9C0A3}
@@ -54,7 +54,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 </style>
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://momni.com/share/">
-<meta property="og:title" content="Share Momni — invite the moms you know">
+<meta property="og:title" content="Share Momni — invite the parents you know">
 <meta property="og:description" content="Copy-and-paste posts, ready texts and emails, and a Circle Up profile frame to help relight the Circle.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://momni.com/share/">
@@ -91,23 +91,23 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 
 <header class="hero">
   <div class="wrap">
-    <span class="script">Every mama you tell is a pin relit.</span>
+    <span class="script">Every Momni you tell is a pin relit.</span>
     <h1>Share Momni</h1>
-    <p>The Circle grows the way it always has — mother to mother. Here&rsquo;s everything you need to invite the first mamas back and welcome new moms in, in about thirty seconds.</p>
+    <p>The Circle grows the way it always has — Momni to Momni. Here&rsquo;s everything you need to invite the first Momnis back and welcome new parents in, in about thirty seconds.</p>
   </div>
 </header>
 
 <section class="section">
   <div class="wrap">
     <h2>One-tap share</h2>
-    <p class="lede">Send the relaunch straight to the moms who&rsquo;d love it.</p>
+    <p class="lede">Send the relaunch straight to the parents who&rsquo;d love it.</p>
     <div class="btns">
-      <button class="sbtn text" id="sh-text">💬 Text a mom</button>
+      <button class="sbtn text" id="sh-text">💬 Text a parent</button>
       <button class="sbtn email" id="sh-email">✉️ Send an email</button>
       <button class="sbtn fb" id="sh-fb">Share on Facebook</button>
       <button class="sbtn copy" id="sh-link">🔗 Copy the link</button>
     </div>
-    <p class="note">The link you&rsquo;ll share: <strong>https://app.momni.com</strong> — where first mamas reactivate and new moms join the Circle.</p>
+    <p class="note">The link you&rsquo;ll share: <strong>https://app.momni.com</strong> — where first Momnis reactivate and new parents join the Circle.</p>
   </div>
 </section>
 
@@ -152,7 +152,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 
 <footer>
   <div class="wrap">
-    Sharing helps the Circle grow with zero ad spend — thank you, mama. 🐘<br>
+    Sharing helps the Circle grow with zero ad spend — thank you, Momni. 🐘<br>
     momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation (momnifoundation.org) is a separate 501(c)(3). One brand, two entities, separate finances.
   </div>
 </footer>
@@ -162,7 +162,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 <script>
 (function(){
   var APP = 'https://app.momni.com';
-  var MSG = 'Momni is back 💜 The mom-to-mom caresharing community I love is relaunching — first mamas can reactivate and new moms can join the Circle. Come find your people: ' + APP;
+  var MSG = 'Momni is back 💜 The mom-to-mom caresharing community I love is relaunching — first Momnis can reactivate and new parents can join the Circle. Come find your people: ' + APP;
 
   function toast(t){ var el=document.getElementById('toast'); el.textContent=t; el.classList.add('show'); setTimeout(function(){el.classList.remove('show');},1800); }
   function copy(text, cb){ navigator.clipboard.writeText(text).then(cb).catch(function(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); cb&&cb(); }); }
@@ -174,8 +174,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 
   // Copy-and-paste posts
   var POSTS = [
-    {tag:'For a first mama (1.0)', body:'Were you one of the original Momni mamas? 🐘 Momni is relaunching — and your pin is still on the map. Come light it up. Reactivate and find your Circle again: '+APP},
-    {tag:'For new moms', body:'Mom friends: Momni is a community where moms care for each other’s kids — date nights, a sick day, a hard week. No agency, no markup. Just mamas helping mamas. Join the Circle 💜 '+APP},
+    {tag:'For a first Momni (1.0)', body:'Were you one of the original Momnis? 🐘 Momni is relaunching — and your pin is still on the map. Come light it up. Reactivate and find your Circle again: '+APP},
+    {tag:'For new parents', body:'Parent friends: Momni is a community where Momnis care for each other’s kids — date nights, a sick day, a hard week. No agency, no markup. Just Momnis helping Momnis. Join the Circle 💜 '+APP},
     {tag:'Instagram / story', body:'I’m circling up with @momni 💜 Mom-to-mom caresharing is back. If you’ve ever needed a village — this is it. Link in bio / '+APP},
     {tag:'The short one', body:'Momni is back 💜 Mom-to-mom care, no middleman. Come find your people: '+APP},
   ];
@@ -233,7 +233,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
   document.getElementById('color-opts').addEventListener('click', function(e){ var b=e.target.closest('button'); if(!b) return;
     this.querySelectorAll('button').forEach(function(x){x.classList.remove('on');}); b.classList.add('on'); ringColor=b.dataset.c; draw(); });
   document.getElementById('download').addEventListener('click', function(){
-    if(!img){ toast('Choose a photo first, mama 💜'); return; }
+    if(!img){ toast('Choose a photo first, Momni 💜'); return; }
     var a=document.createElement('a'); a.download='my-circle-up-momni.png'; a.href=canvas.toDataURL('image/png'); a.click();
     toast('Saved! Now set it as your profile photo.');
   });

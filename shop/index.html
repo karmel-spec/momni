@@ -26,16 +26,99 @@ nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px so
 .promise{background:var(--purple);color:white;text-align:center;padding:18px;font-size:16px;font-weight:600}
 .promise .script{color:var(--algae);font-size:22px;margin-right:8px}
 .section{padding:56px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.product{border:1.5px solid #EEE9F9;border-radius:18px;overflow:hidden;transition:all .18s}
+.drop-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:24px}
+.drop-head h2{font-size:30px;font-weight:800;letter-spacing:-0.01em;margin-bottom:6px}
+.drop-head p{color:var(--muted);max-width:620px}
+.drop-note{display:inline-flex;align-items:center;gap:8px;background:var(--lavender);color:var(--purple-deep);border:1.5px solid #E7DFF6;border-radius:100px;padding:9px 14px;font-size:13px;font-weight:700;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.product{border:1.5px solid #EEE9F9;border-radius:8px;overflow:hidden;transition:all .18s;background:#fff;box-shadow:0 1px 0 rgba(43,34,51,0.03)}
 .product:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 12px 28px rgba(109,88,164,0.12)}
-.swatch{height:180px;display:flex;align-items:center;justify-content:center}
-.swatch img{height:80px;object-fit:contain}
+.mock{min-height:228px;display:flex;align-items:center;justify-content:center;padding:28px;position:relative;overflow:hidden}
+.mock:before{content:"";position:absolute;inset:auto -15% -42% -15%;height:72%;background:rgba(255,255,255,.38);border-radius:50% 50% 0 0}
+.tee,.hoodie,.onesie{width:150px;height:138px;position:relative;z-index:1;filter:drop-shadow(0 14px 24px rgba(43,34,51,.16))}
+.tee:before,.tee:after,.hoodie:before,.hoodie:after,.onesie:before,.onesie:after{content:"";position:absolute;background:inherit}
+.tee{background:#fff;border-radius:24px 24px 12px 12px}
+.tee:before{width:52px;height:62px;left:-34px;top:8px;transform:rotate(25deg);border-radius:18px 8px 18px 12px}
+.tee:after{width:52px;height:62px;right:-34px;top:8px;transform:rotate(-25deg);border-radius:8px 18px 12px 18px}
+.hoodie{background:var(--purple-deep);border-radius:28px 28px 16px 16px}
+.hoodie:before{width:68px;height:48px;left:41px;top:-22px;border-radius:45px 45px 10px 10px;border:12px solid var(--purple-deep);background:transparent}
+.hoodie:after{width:52px;height:80px;right:-33px;top:20px;transform:rotate(-18deg);border-radius:22px}
+.hoodie .sleeve{position:absolute;width:52px;height:80px;left:-33px;top:20px;transform:rotate(18deg);border-radius:22px;background:var(--purple-deep)}
+.onesie{background:#fff;border-radius:26px 26px 34px 34px}
+.onesie:before{width:50px;height:54px;left:-30px;top:8px;transform:rotate(26deg);border-radius:18px}
+.onesie:after{width:50px;height:54px;right:-30px;top:8px;transform:rotate(-26deg);border-radius:18px}
+.onesie .snaps{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
+.onesie .snaps i{width:5px;height:5px;border-radius:50%;background:#D8CFF0}
+.mark{position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--purple);font-family:'Montserrat',sans-serif;font-weight:800;line-height:1.05}
+.mark img{width:44px;height:44px;object-fit:contain;margin-bottom:6px}
+.mark span{display:block;font-size:13px;letter-spacing:.02em}
+.hoodie .mark{color:#fff;top:58%}.hoodie .mark span{color:#92E2C1}
+.tote{width:142px;height:146px;background:#F8F1E6;border:5px solid #E5D4BE;border-radius:10px;position:relative;z-index:1;box-shadow:0 16px 24px rgba(43,34,51,.12)}
+.tote:before{content:"";position:absolute;top:-38px;left:34px;width:66px;height:50px;border:8px solid #E5D4BE;border-bottom:0;border-radius:48px 48px 0 0}
+.mug{width:128px;height:112px;background:#fff;border-radius:12px 12px 22px 22px;position:relative;z-index:1;box-shadow:0 16px 24px rgba(43,34,51,.12)}
+.mug:after{content:"";position:absolute;right:-42px;top:30px;width:48px;height:44px;border:12px solid #fff;border-left:0;border-radius:0 28px 28px 0}
+.cap{width:158px;height:86px;background:var(--teal);border-radius:86px 86px 18px 18px;position:relative;z-index:1;box-shadow:0 16px 24px rgba(43,34,51,.12)}
+.cap:before{content:"";position:absolute;right:-54px;bottom:0;width:76px;height:24px;background:var(--teal-deep);border-radius:0 28px 18px 0}
+.journal{width:112px;height:152px;background:linear-gradient(135deg,#6D58A4,#4A3880);border-radius:8px;position:relative;z-index:1;box-shadow:12px 18px 26px rgba(43,34,51,.16);border-left:9px solid rgba(0,0,0,.16)}
+.journal:after{content:"";position:absolute;inset:14px;border:1.5px solid rgba(255,255,255,.42);border-radius:5px}
+.stickers{position:relative;width:180px;height:150px;z-index:1}
+.sticker{position:absolute;background:#fff;border:3px solid #fff;border-radius:18px;padding:13px 14px;box-shadow:0 14px 24px rgba(43,34,51,.13);font-family:'Montserrat',sans-serif;font-weight:800;color:var(--purple)}
+.sticker.one{left:4px;top:20px;transform:rotate(-8deg)}
+.sticker.two{right:8px;top:8px;transform:rotate(10deg);color:var(--teal)}
+.sticker.three{left:42px;bottom:4px;transform:rotate(3deg);background:var(--algae);color:#0B4A36}
 .pbody{padding:18px}
-.pbody h3{font-size:17px;font-weight:700;margin-bottom:4px}
-.pbody p{font-size:14px;color:var(--muted);margin-bottom:10px}
+.pbody h3{font-size:17px;font-weight:800;margin-bottom:4px}
+.pbody p{font-size:14px;color:var(--muted);margin-bottom:12px}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .price{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--teal)}
 .soon{display:inline-block;background:var(--teal-soft);color:var(--teal-deep);font-size:12px;font-weight:700;padding:3px 12px;border-radius:100px;margin-left:8px}
+.buy-now{display:inline-block;background:var(--purple);color:#fff;font-size:12px;font-weight:800;padding:7px 13px;border-radius:100px;margin-left:8px}
+.buy-now:hover{background:var(--purple-deep)}
+.palette{display:flex;gap:6px;margin-top:12px}
+.dot{width:15px;height:15px;border-radius:50%;border:1px solid rgba(43,34,51,.14)}
+.book-cover{width:118px;height:168px;position:relative;z-index:1;border-radius:6px;background:linear-gradient(150deg,#6D58A4,#4A3880 58%,#0D878F);box-shadow:12px 18px 26px rgba(43,34,51,.18);overflow:hidden}
+.book-cover:before{content:"";position:absolute;inset:12px;border:1.5px solid rgba(255,255,255,.36);border-radius:4px}
+.book-cover:after{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:rgba(0,0,0,.16)}
+.book-cover .script{position:absolute;top:44px;left:0;right:0;text-align:center;color:#fff;font-size:38px;line-height:.9}
+.book-cover small{position:absolute;left:18px;right:18px;bottom:24px;text-align:center;color:#92E2C1;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;line-height:1.25}
+.next-drop{margin-top:46px}
+.blanket{width:154px;height:118px;position:relative;z-index:1;border-radius:14px;background:repeating-linear-gradient(135deg,#6D58A4 0 18px,#4A3880 18px 36px,#92E2C1 36px 54px);box-shadow:0 16px 24px rgba(43,34,51,.14);overflow:hidden}
+.blanket:after{content:"";position:absolute;left:0;right:0;bottom:0;height:18px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.75) 0 4px,transparent 4px 10px)}
+.bottle{width:70px;height:158px;position:relative;z-index:1;background:linear-gradient(180deg,#fff,#E1F7F2);border-radius:22px 22px 18px 18px;box-shadow:0 16px 24px rgba(43,34,51,.14);border:4px solid rgba(255,255,255,.9)}
+.bottle:before{content:"";position:absolute;top:-18px;left:18px;width:28px;height:22px;background:var(--teal);border-radius:8px 8px 2px 2px}
+.bottle .mark{top:52%}
+.pin{width:116px;height:116px;position:relative;z-index:1;border-radius:50%;background:linear-gradient(135deg,#92E2C1,#0D878F);box-shadow:0 16px 24px rgba(43,34,51,.16);border:8px solid #fff}
+.pin .mark{color:#fff;top:52%}
+.apron{width:132px;height:150px;position:relative;z-index:1;background:#F8F1E6;border-radius:16px 16px 22px 22px;clip-path:polygon(24% 0,76% 0,94% 100%,6% 100%);box-shadow:0 16px 24px rgba(43,34,51,.14)}
+.apron:before{content:"";position:absolute;top:-20px;left:38px;width:56px;height:44px;border:7px solid #E5D4BE;border-bottom:0;border-radius:44px 44px 0 0}
+.cards{position:relative;width:168px;height:142px;z-index:1}
+.care-card{position:absolute;width:112px;height:78px;background:#fff;border-radius:8px;box-shadow:0 14px 24px rgba(43,34,51,.12);padding:14px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--purple)}
+.care-card.one{left:8px;top:14px;transform:rotate(-8deg)}
+.care-card.two{right:10px;bottom:12px;transform:rotate(8deg);color:var(--teal)}
+.kit{width:148px;height:118px;position:relative;z-index:1;background:#fff;border:4px solid #E7DFF6;border-radius:14px;box-shadow:0 16px 24px rgba(43,34,51,.14)}
+.kit:before{content:"";position:absolute;top:-28px;left:44px;width:52px;height:34px;border:7px solid #E7DFF6;border-bottom:0;border-radius:36px 36px 0 0}
+.phonecase{width:82px;height:158px;position:relative;z-index:1;background:linear-gradient(160deg,#4A3880,#6D58A4);border-radius:24px;box-shadow:0 16px 24px rgba(43,34,51,.16);border:6px solid #2B2233}
+.phonecase:before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:30px;height:5px;border-radius:10px;background:rgba(255,255,255,.35)}
+.kidtee{width:126px;height:112px;position:relative;z-index:1;background:#E1F7F2;border-radius:22px 22px 12px 12px;filter:drop-shadow(0 14px 24px rgba(43,34,51,.14))}
+.kidtee:before,.kidtee:after{content:"";position:absolute;background:inherit;width:44px;height:52px;top:6px}
+.kidtee:before{left:-28px;transform:rotate(24deg);border-radius:16px}
+.kidtee:after{right:-28px;transform:rotate(-24deg);border-radius:16px}
+.kidtee .mark{top:57%}
+.digital-shelf{margin-top:48px;background:linear-gradient(180deg,#F5F0FE,#fff);border:1.5px solid #EEE9F9;border-radius:8px;padding:30px}
+.digital-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:22px}
+.download-card{background:#fff;border:1.5px solid #EEE9F9;border-radius:8px;padding:18px;display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:start;transition:all .18s}
+.download-card:hover{border-color:var(--purple);box-shadow:0 12px 26px rgba(109,88,164,.10);transform:translateY(-2px)}
+.file-mock{width:72px;height:92px;border-radius:8px;background:linear-gradient(150deg,#6D58A4,#4A3880);position:relative;box-shadow:0 10px 18px rgba(43,34,51,.12);overflow:hidden;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;line-height:1.1;padding:10px}
+.file-mock:before{content:"";position:absolute;right:0;top:0;border-style:solid;border-width:0 22px 22px 0;border-color:transparent rgba(255,255,255,.42) transparent transparent}
+.file-mock.teal{background:linear-gradient(150deg,#0D878F,#92E2C1);color:#083F43}
+.file-mock.light{background:linear-gradient(150deg,#fff,#E1F7F2);color:var(--purple);border:1.5px solid #D8CFF0}
+.file-mock.cream{background:linear-gradient(150deg,#FFF8EE,#F5F0FE);color:var(--teal)}
+.download-card h3{font-size:16px;margin-bottom:5px}
+.download-card p{font-size:13.5px;color:var(--muted);line-height:1.45;margin-bottom:10px}
+.download-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.download-meta .price{font-size:14px}
+.download-tag{background:var(--teal-soft);color:var(--teal-deep);font-size:11px;font-weight:800;padding:3px 9px;border-radius:100px}
+.digital-note{font-size:14px;color:var(--muted);margin-top:18px}
 .how{background:var(--lavender);border-radius:24px;padding:36px;margin-top:48px}
 .how h2{font-size:24px;font-weight:800;margin-bottom:12px}
 .how p{font-size:16px;margin-bottom:10px}
@@ -43,7 +126,7 @@ nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px so
 .notify h3{font-size:18px;margin-bottom:8px}
 .notify a{display:inline-block;background:var(--algae);color:#0B4A36;font-weight:600;padding:13px 30px;border-radius:100px;margin-top:10px}
 footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-size:13px;line-height:1.7;margin-top:56px}
-@media(max-width:820px){.hero h1{font-size:32px}.nav-links{display:none}}
+@media(max-width:820px){.hero h1{font-size:32px}.nav-links{display:none}.drop-head{display:block}.drop-note{margin-top:14px}.mock{min-height:210px}.digital-shelf{padding:22px}.download-card{grid-template-columns:62px 1fr}.file-mock{width:62px;height:80px}}
 </style>
 
 <!-- SEO -->
@@ -92,7 +175,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 <!-- momni-gate -->
 <script>
 (function(){
-  var KEY='momni-gate-v1', HASH='4c30e1ff68b60101f624cca4f7d6b1136575700e3d63e5f78f0734d76e4a1c72';
+  var KEY='momni-gate-v1', HASH='249860f3013e936aa8e4d1d525b55bfb6b6023d13e6463d605f2f6712c34efa9';
   try{ if(localStorage.getItem(KEY)===HASH) return; }catch(e){ return; }
   document.documentElement.style.visibility='hidden';
   function show(){
@@ -194,19 +277,215 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 
 <section class="section">
   <div class="wrap">
+    <div class="drop-head">
+      <div>
+        <h2>First Circle Collection</h2>
+        <p>Merch concepts for the Momnis lighting up the 2.0 beta: soft everyday pieces, practical parent gear, and small gifts that help spread the movement.</p>
+      </div>
+      <div class="drop-note">Concept drop · ready for supplier setup</div>
+    </div>
     <div class="grid">
-      <div class="product"><div class="swatch" style="background:var(--lavender)"><img src="../assets/momni-icon-color.png" alt="Momni elephant tee"></div>
-        <div class="pbody"><h3>The Circle Up Tee</h3><p>Soft unisex tee, the original elephant over the heart.</p><span class="price">$28</span><span class="soon">Coming soon</span></div></div>
-      <div class="product"><div class="swatch" style="background:var(--teal-soft)"><img src="../assets/momni-icon-color.png" alt="Momni mug"></div>
-        <div class="pbody"><h3>The 5am Mug</h3><p>For the night-shift Momnis and the early risers. 15oz.</p><span class="price">$18</span><span class="soon">Coming soon</span></div></div>
-      <div class="product"><div class="swatch" style="background:#F6F0E7"><img src="../assets/momni-icon-color.png" alt="Momni tote"></div>
-        <div class="pbody"><h3>The Everything Tote</h3><p>Snacks, wipes, one shoe, and the whole Circle. Canvas.</p><span class="price">$24</span><span class="soon">Coming soon</span></div></div>
-      <div class="product"><div class="swatch" style="background:var(--lavender)"><img src="../assets/momni-icon-color.png" alt="Momni hat"></div>
-        <div class="pbody"><h3>The Momni Cap</h3><p>Embroidered elephant, messy-bun approved.</p><span class="price">$26</span><span class="soon">Coming soon</span></div></div>
-      <div class="product"><div class="swatch" style="background:var(--teal-soft)"><img src="../assets/momni-icon-color.png" alt="Momni hoodie"></div>
-        <div class="pbody"><h3>The Carpool Hoodie</h3><p>Heavyweight comfort for sideline Saturdays.</p><span class="price">$48</span><span class="soon">Coming soon</span></div></div>
-      <div class="product"><div class="swatch" style="background:#F6F0E7"><img src="../assets/momni-icon-color.png" alt="Momni onesie"></div>
-        <div class="pbody"><h3>The Littlest Circle Onesie</h3><p>For the calves at the center of it all.</p><span class="price">$22</span><span class="soon">Coming soon</span></div></div>
+      <div class="product">
+        <div class="mock" style="background:linear-gradient(135deg,#F5F0FE,#92E2C1)">
+          <div class="book-cover"><span class="script">Circle Up</span><small>Karmel · The Story of Momni</small></div>
+        </div>
+        <div class="pbody">
+          <h3>Circle Up: The Story of Momni</h3>
+          <p>Karmel's #1 bestselling origin story of Momni, the mother-to-mother movement, and the call to help solve the global childcare crisis.</p>
+          <div class="meta"><span><span class="price">Amazon</span><a class="buy-now" href="https://www.amazon.com/Circle-Up-Transformation-Beating-Changing/dp/1513655752" target="_blank" rel="noopener">Buy the book</a></span></div>
+          <div class="palette"><i class="dot" style="background:#6D58A4"></i><i class="dot" style="background:#4A3880"></i><i class="dot" style="background:#92E2C1"></i></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="mock" style="background:linear-gradient(135deg,#F5F0FE,#E1F7F2)">
+          <div class="tee">
+            <div class="mark"><div><img src="../assets/momni-icon-color.png" alt=""><span>Circle Up</span></div></div>
+          </div>
+        </div>
+        <div class="pbody">
+          <h3>The Circle Up Tee</h3>
+          <p>Soft unisex tee with the elephant over the heart and a tiny movement line beneath it.</p>
+          <div class="meta"><span><span class="price">$28</span><span class="soon">Coming soon</span></span></div>
+          <div class="palette"><i class="dot" style="background:#fff"></i><i class="dot" style="background:#F5F0FE"></i><i class="dot" style="background:#2B2233"></i></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="mock" style="background:linear-gradient(135deg,#EFE8FF,#6D58A4)">
+          <div class="hoodie"><div class="sleeve"></div><div class="mark"><div><span>momni</span><span style="font-family:'Caveat',cursive;font-size:20px;font-weight:600">The circle protects the circle.</span></div></div></div>
+        </div>
+        <div class="pbody">
+          <h3>The Carpool Hoodie</h3>
+          <p>Cozy heavyweight hoodie for school runs, sideline Saturdays, and late-night pickups.</p>
+          <div class="meta"><span><span class="price">$52</span><span class="soon">Coming soon</span></span></div>
+          <div class="palette"><i class="dot" style="background:#4A3880"></i><i class="dot" style="background:#6D58A4"></i><i class="dot" style="background:#0D878F"></i></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="mock" style="background:linear-gradient(135deg,#FFF8EE,#E1F7F2)">
+          <div class="tote"><div class="mark"><div><img src="../assets/momni-icon-color.png" alt=""><span>Mom bag. Movement bag.</span></div></div></div>
+        </div>
+        <div class="pbody">
+          <h3>The Everything Tote</h3>
+          <p>Canvas carryall for snacks, wipes, library books, and the whole Circle.</p>
+          <div class="meta"><span><span class="price">$24</span><span class="soon">Coming soon</span></span></div>
+          <div class="palette"><i class="dot" style="background:#F8F1E6"></i><i class="dot" style="background:#E1F7F2"></i><i class="dot" style="background:#F5F0FE"></i></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="mock" style="background:linear-gradient(135deg,#E1F7F2,#92E2C1)">
+          <div class="mug"><div class="mark"><div><span style="font-family:'Caveat',cursive;font-size:22px;color:#0D878F">5am Momni</span></div></div></div>
+        </div>
+        <div class="pbody">
+          <h3>The 5am Mug</h3>
+          <p>For the night-shift Momnis, early risers, and anyone parenting before sunrise.</p>
+          <div class="meta"><span><span class="price">$18</span><span class="soon">Coming soon</span></span></div>
+          <div class="palette"><i class="dot" style="background:#fff"></i><i class="dot" style="background:#92E2C1"></i><i class="dot" style="background:#6D58A4"></i></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="mock" style="background:linear-gradient(135deg,#F5F0FE,#FFFFFF)">
+          <div class="cap"><div class="mark" style="top:52%;color:#fff"><div><img src="../assets/momni-logo-white-horizontal.png" alt="" style="width:72px;height:auto"></div></div></div>
+        </div>
+        <div class="pbody">
+          <h3>The Momni Cap</h3>
+          <p>Low-profile embroidered cap for park days, errands, and messy-hair mornings.</p>
+          <div class="meta"><span><span class="price">$26</span><span class="soon">Coming soon</span></span></div>
+          <div class="palette"><i class="dot" style="background:#0D878F"></i><i class="dot" style="background:#4A3880"></i><i class="dot" style="background:#2B2233"></i></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="mock" style="background:linear-gradient(135deg,#FFF8EE,#F5F0FE)">
+          <div class="onesie"><div class="mark"><div><img src="../assets/momni-icon-color.png" alt=""><span>Littlest Circle</span></div></div><div class="snaps"><i></i><i></i><i></i></div></div>
+        </div>
+        <div class="pbody">
+          <h3>The Littlest Circle Onesie</h3>
+          <p>Baby-soft bodysuit for the little ones at the center of everything Momni protects.</p>
+          <div class="meta"><span><span class="price">$22</span><span class="soon">Coming soon</span></span></div>
+          <div class="palette"><i class="dot" style="background:#fff"></i><i class="dot" style="background:#F5F0FE"></i><i class="dot" style="background:#E1F7F2"></i></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="mock" style="background:linear-gradient(135deg,#F5F0FE,#E1F7F2)">
+          <div class="stickers"><div class="sticker one">Circle Up</div><div class="sticker two">Momni</div><div class="sticker three">Care wins</div></div>
+        </div>
+        <div class="pbody">
+          <h3>The Circle Sticker Pack</h3>
+          <p>Three durable stickers for laptops, water bottles, journals, and beta welcome kits.</p>
+          <div class="meta"><span><span class="price">$9</span><span class="soon">Coming soon</span></span></div>
+          <div class="palette"><i class="dot" style="background:#6D58A4"></i><i class="dot" style="background:#0D878F"></i><i class="dot" style="background:#92E2C1"></i></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="mock" style="background:linear-gradient(135deg,#6D58A4,#E1F7F2)">
+          <div class="journal"><div class="mark" style="top:50%;color:#fff"><div><span style="font-family:'Caveat',cursive;font-size:24px;font-weight:600">Circle Notes</span><span style="font-size:10px;color:#92E2C1">for the movement builders</span></div></div></div>
+        </div>
+        <div class="pbody">
+          <h3>The Circle Notes Journal</h3>
+          <p>Soft-touch notebook for ideas, prayers, childcare plans, and partner meeting notes.</p>
+          <div class="meta"><span><span class="price">$16</span><span class="soon">Coming soon</span></span></div>
+          <div class="palette"><i class="dot" style="background:#6D58A4"></i><i class="dot" style="background:#4A3880"></i><i class="dot" style="background:#92E2C1"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="next-drop">
+      <div class="drop-head">
+        <div>
+          <h2>Next Drop Ideas</h2>
+          <p>More Momni merch ideas for circles, host gifts, beta welcome kits, and everyday reminders that care works better when mothers are linked together.</p>
+        </div>
+        <div class="drop-note">Idea shelf · prioritize by demand</div>
+      </div>
+      <div class="grid">
+        <div class="product">
+          <div class="mock" style="background:linear-gradient(135deg,#F5F0FE,#E1F7F2)">
+            <div class="bottle"><div class="mark"><div><img src="../assets/momni-icon-color.png" alt=""><span>Hydrate the Circle</span></div></div></div>
+          </div>
+          <div class="pbody">
+            <h3>The Circle Bottle</h3>
+            <p>Insulated water bottle for park meetups, stroller walks, and long Circle days.</p>
+            <div class="meta"><span><span class="price">$32</span><span class="soon">Idea</span></span></div>
+            <div class="palette"><i class="dot" style="background:#fff"></i><i class="dot" style="background:#0D878F"></i><i class="dot" style="background:#6D58A4"></i></div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="mock" style="background:linear-gradient(135deg,#EFE8FF,#FFFFFF)">
+            <div class="blanket"><div class="mark" style="color:#fff;top:47%"><div><span style="font-family:'Caveat',cursive;font-size:24px">Circle Up</span></div></div></div>
+          </div>
+          <div class="pbody">
+            <h3>The Circle Blanket</h3>
+            <p>Soft throw blanket for reading time, movie night, and new-mom care packages.</p>
+            <div class="meta"><span><span class="price">$44</span><span class="soon">Idea</span></span></div>
+            <div class="palette"><i class="dot" style="background:#6D58A4"></i><i class="dot" style="background:#4A3880"></i><i class="dot" style="background:#92E2C1"></i></div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="mock" style="background:linear-gradient(135deg,#E1F7F2,#92E2C1)">
+            <div class="pin"><div class="mark"><div><img src="../assets/momni-logo-white-horizontal.png" alt="" style="width:68px;height:auto"><span>Founding Momni</span></div></div></div>
+          </div>
+          <div class="pbody">
+            <h3>Founding Momni Pin</h3>
+            <p>Enamel-style pin for beta members, hosts, volunteers, and Circle leaders.</p>
+            <div class="meta"><span><span class="price">$12</span><span class="soon">Idea</span></span></div>
+            <div class="palette"><i class="dot" style="background:#92E2C1"></i><i class="dot" style="background:#0D878F"></i><i class="dot" style="background:#fff"></i></div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="mock" style="background:linear-gradient(135deg,#FFF8EE,#F5F0FE)">
+            <div class="apron"><div class="mark"><div><img src="../assets/momni-icon-color.png" alt=""><span>Snack Captain</span></div></div></div>
+          </div>
+          <div class="pbody">
+            <h3>The Snack Captain Apron</h3>
+            <p>Host apron for baking days, circle snacks, craft tables, and childcare chaos.</p>
+            <div class="meta"><span><span class="price">$30</span><span class="soon">Idea</span></span></div>
+            <div class="palette"><i class="dot" style="background:#F8F1E6"></i><i class="dot" style="background:#6D58A4"></i><i class="dot" style="background:#0D878F"></i></div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="mock" style="background:linear-gradient(135deg,#F5F0FE,#E1F7F2)">
+            <div class="cards"><div class="care-card one">Meet first, always.</div><div class="care-card two">Circle questions</div></div>
+          </div>
+          <div class="pbody">
+            <h3>Circle Conversation Cards</h3>
+            <p>A small deck of prompts for meetups, first host visits, and Circle gatherings.</p>
+            <div class="meta"><span><span class="price">$14</span><span class="soon">Idea</span></span></div>
+            <div class="palette"><i class="dot" style="background:#fff"></i><i class="dot" style="background:#F5F0FE"></i><i class="dot" style="background:#E1F7F2"></i></div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="mock" style="background:linear-gradient(135deg,#6D58A4,#F5F0FE)">
+            <div class="kit"><div class="mark"><div><img src="../assets/momni-icon-color.png" alt=""><span>Host Kit</span></div></div></div>
+          </div>
+          <div class="pbody">
+            <h3>The Host Welcome Kit</h3>
+            <p>A starter bundle with stickers, a pin, mini cards, and a welcome note from Momni.</p>
+            <div class="meta"><span><span class="price">$36</span><span class="soon">Idea</span></span></div>
+            <div class="palette"><i class="dot" style="background:#fff"></i><i class="dot" style="background:#6D58A4"></i><i class="dot" style="background:#92E2C1"></i></div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="mock" style="background:linear-gradient(135deg,#E1F7F2,#4A3880)">
+            <div class="phonecase"><div class="mark" style="color:#fff"><div><img src="../assets/momni-logo-white-horizontal.png" alt="" style="width:56px;height:auto"><span style="color:#92E2C1">linked</span></div></div></div>
+          </div>
+          <div class="pbody">
+            <h3>The Linked Phone Case</h3>
+            <p>A daily-reminder phone case with the Momni mark and a simple linked message.</p>
+            <div class="meta"><span><span class="price">$24</span><span class="soon">Idea</span></span></div>
+            <div class="palette"><i class="dot" style="background:#4A3880"></i><i class="dot" style="background:#6D58A4"></i><i class="dot" style="background:#0D878F"></i></div>
+          </div>
+        </div>
+        <div class="product">
+          <div class="mock" style="background:linear-gradient(135deg,#FFF8EE,#E1F7F2)">
+            <div class="kidtee"><div class="mark"><div><img src="../assets/momni-icon-color.png" alt=""><span>Circle Kid</span></div></div></div>
+          </div>
+          <div class="pbody">
+            <h3>The Circle Kid Tee</h3>
+            <p>A playful kids shirt for the little people who make the whole mission matter.</p>
+            <div class="meta"><span><span class="price">$20</span><span class="soon">Idea</span></span></div>
+            <div class="palette"><i class="dot" style="background:#E1F7F2"></i><i class="dot" style="background:#F5F0FE"></i><i class="dot" style="background:#fff"></i></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="how">
@@ -218,7 +497,92 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
     <div class="notify" style="background:var(--teal-soft);border-color:var(--teal-soft)">
       <h3>📥 Digital downloads — available now</h3>
       <p style="color:var(--muted);font-size:15px">Printable planners, guides, and the <em>Circle Up</em> ebook — instant downloads, no shipping. Profit supports the Foundation, same as the merch.</p>
-      <a href="https://app.momni.com/downloads.html">Shop digital downloads →</a>
+      <a href="#digital-downloads">Shop digital downloads →</a>
+    </div>
+
+    <div class="digital-shelf" id="digital-downloads">
+      <div class="drop-head" style="margin-bottom:0">
+        <div>
+          <h2>Digital Downloads</h2>
+          <p>Instant Momni tools, printables, ebooks, and social kits for mothers, hosts, Circle leaders, and movement builders.</p>
+        </div>
+        <div class="drop-note">No shipping · instant delivery ideas</div>
+      </div>
+      <div class="digital-grid">
+        <div class="download-card">
+          <div class="file-mock"><span>Circle<br>Up<br>eBook</span></div>
+          <div>
+            <h3>Circle Up Digital Book</h3>
+            <p>The digital download edition of Karmel's Momni origin story, for Momnis who want to read and share the heart of the movement instantly.</p>
+            <div class="download-meta"><span class="price">$9</span><span class="download-tag">eBook</span><a class="buy-now" href="https://www.amazon.com/Circle-Up-Transformation-Beating-Changing/dp/1513655752" target="_blank" rel="noopener">View options</a></div>
+          </div>
+        </div>
+        <div class="download-card">
+          <div class="file-mock teal"><span>Host<br>Starter<br>PDF</span></div>
+          <div>
+            <h3>Momni Host Starter Guide</h3>
+            <p>A printable guide for new hosts: profile prompts, home-readiness checklist, first-meet questions, and care-day rhythm.</p>
+            <div class="download-meta"><span class="price">$7</span><span class="download-tag">Printable PDF</span></div>
+          </div>
+        </div>
+        <div class="download-card">
+          <div class="file-mock light"><span>Meet<br>First<br>Cards</span></div>
+          <div>
+            <h3>Meet First Question Cards</h3>
+            <p>Printable conversation cards to help parents and hosts get comfortable before a first booking.</p>
+            <div class="download-meta"><span class="price">$5</span><span class="download-tag">Card deck</span></div>
+          </div>
+        </div>
+        <div class="download-card">
+          <div class="file-mock cream"><span>Circle<br>Leader<br>Kit</span></div>
+          <div>
+            <h3>Start a Circle Toolkit</h3>
+            <p>Invitations, a simple agenda, welcome script, signup sheet, and follow-up text templates for local Circle gatherings.</p>
+            <div class="download-meta"><span class="price">$12</span><span class="download-tag">Toolkit</span></div>
+          </div>
+        </div>
+        <div class="download-card">
+          <div class="file-mock"><span>Care<br>Binder</span></div>
+          <div>
+            <h3>Family Care Binder</h3>
+            <p>Emergency contacts, allergies, routines, favorite foods, nap notes, pickup rules, and parent preferences in one printable pack.</p>
+            <div class="download-meta"><span class="price">$8</span><span class="download-tag">Planner</span></div>
+          </div>
+        </div>
+        <div class="download-card">
+          <div class="file-mock teal"><span>Social<br>Share<br>Pack</span></div>
+          <div>
+            <h3>Momni Social Share Kit</h3>
+            <p>Story graphics, captions, profile badges, and printable QR cards for Momnis inviting friends into the beta.</p>
+            <div class="download-meta"><span class="price">$4</span><span class="download-tag">Graphics</span></div>
+          </div>
+        </div>
+        <div class="download-card">
+          <div class="file-mock light"><span>Kids<br>Kindness<br>Prints</span></div>
+          <div>
+            <h3>Circle Kids Activity Pack</h3>
+            <p>Coloring pages, kindness prompts, quiet-time sheets, and mini activities for hosts to print before care days.</p>
+            <div class="download-meta"><span class="price">$6</span><span class="download-tag">Kids pack</span></div>
+          </div>
+        </div>
+        <div class="download-card">
+          <div class="file-mock cream"><span>Crisis<br>Mini<br>Brief</span></div>
+          <div>
+            <h3>Global Childcare Crisis Mini Brief</h3>
+            <p>A short printable explainer with key facts, Momni's thesis, and shareable language for partners, volunteers, and donors.</p>
+            <div class="download-meta"><span class="price">$3</span><span class="download-tag">Impact brief</span></div>
+          </div>
+        </div>
+        <div class="download-card">
+          <div class="file-mock"><span>Circle<br>Notes<br>Pages</span></div>
+          <div>
+            <h3>Circle Notes Printable Journal</h3>
+            <p>Downloadable journal pages for prayers, care ideas, partner notes, child routines, and movement-building plans.</p>
+            <div class="download-meta"><span class="price">$6</span><span class="download-tag">Journal pages</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="digital-note">These are product concepts staged for the shop. Final purchase buttons can be connected to the app, Stripe, Shopify, Gumroad, or Amazon/Kindle once the actual files and checkout destination are ready.</p>
     </div>
 
     <div class="notify">

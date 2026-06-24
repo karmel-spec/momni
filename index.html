@@ -36,6 +36,12 @@ nav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur
 .hero h1 em{font-style:normal;color:var(--purple)}
 .hero p.sub{font-size:20px;color:var(--muted);max-width:640px;margin:0 auto 14px}
 .hero .script{font-size:28px;color:var(--teal);margin-bottom:32px;display:block}
+.beta-pill{display:inline-flex;align-items:center;max-width:min(360px,100%);height:42px;margin:0 auto 24px;overflow:hidden;border:1.5px solid rgba(109,88,164,0.24);border-radius:100px;background:white;color:var(--purple-deep);box-shadow:0 10px 28px rgba(109,88,164,0.12);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase}
+.beta-pill:hover{border-color:var(--purple);box-shadow:0 14px 32px rgba(109,88,164,0.18)}
+.beta-pill-track{display:flex;width:max-content;animation:beta-ticker 12s linear infinite}
+.beta-pill span{display:inline-flex;align-items:center;padding:0 20px;white-space:nowrap}
+.beta-pill span:after{content:"";width:6px;height:6px;border-radius:50%;background:var(--algae);margin-left:20px}
+@keyframes beta-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn-primary{background:var(--purple);color:white;font-weight:600;padding:15px 34px;border-radius:100px;font-size:17px;transition:all 0.15s}
 .btn-primary:hover{background:var(--purple-deep)}
@@ -84,6 +90,32 @@ nav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur
 .pcard.purple{background:var(--lavender)}
 .pcard.purple h3{color:var(--purple-deep)}
 
+/* Press marquee */
+.press-marquee{background:var(--purple);color:white;overflow:hidden;padding:28px 0;border-top:1px solid rgba(255,255,255,0.18)}
+.press-marquee .wrap{max-width:100%;padding:0}
+.press-marquee-label{font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.74);text-align:center;margin-bottom:18px}
+.press-marquee-window{position:relative;overflow:hidden}
+.press-marquee-window:before,.press-marquee-window:after{content:"";position:absolute;top:0;bottom:0;width:96px;z-index:2;pointer-events:none}
+.press-marquee-window:before{left:0;background:linear-gradient(90deg,var(--purple),rgba(109,88,164,0))}
+.press-marquee-window:after{right:0;background:linear-gradient(270deg,var(--purple),rgba(109,88,164,0))}
+.press-marquee-track{display:flex;width:max-content;gap:54px;align-items:center;animation:press-scroll 34s linear infinite}
+.press-logo{display:inline-flex;align-items:center;justify-content:center;min-width:184px;height:58px;color:white;opacity:0.9}
+.press-logo svg{display:block;width:100%;height:100%;overflow:visible;fill:currentColor}
+.press-logo.wide{min-width:238px}
+.press-logo.extra-wide{min-width:286px}
+@keyframes press-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:700px){
+  .press-marquee{padding:24px 0}
+  .press-marquee-track{gap:34px;animation-duration:28s}
+  .press-logo{min-width:148px;height:48px}
+  .press-logo.wide{min-width:196px}
+  .press-logo.extra-wide{min-width:238px}
+}
+@media(prefers-reduced-motion:reduce){
+  .press-marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;padding:0 24px}
+  .press-marquee-window:before,.press-marquee-window:after{display:none}
+}
+
 /* Footer */
 footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;font-size:14px}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
@@ -94,6 +126,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
 
 @media(max-width:820px){
   .hero h1{font-size:36px}
+  .beta-pill{height:auto;min-height:42px;font-size:11px}
   .nav-links{display:none}
   .story-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr 1fr}
@@ -249,6 +282,14 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
 
 <header class="hero">
   <div class="wrap">
+    <a class="beta-pill" href="join/index.html" aria-label="Momni 2.0 now in beta. Start here.">
+      <span class="beta-pill-track" aria-hidden="true">
+        <span>MOMNI 2.0 NOW IN BETA - START HERE</span>
+        <span>MOMNI 2.0 NOW IN BETA - START HERE</span>
+        <span>MOMNI 2.0 NOW IN BETA - START HERE</span>
+        <span>MOMNI 2.0 NOW IN BETA - START HERE</span>
+      </span>
+    </a>
     <h1>Childcare from a Momni <em>just like you</em>, right around the corner.</h1>
     <p class="sub">Momni is a community of Momnis, sharing care (caresharing), mom to mom — for right now, an evening out, twice a week mornings, night shifts or extended care for a get away.</p>
     <span class="script">Circle up. Link together.</span>
@@ -381,6 +422,32 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
       <div class="pcard purple">
         <h3>Hour for hour</h3>
         <p>Through the Momni Foundation, the Circle helps fund an hour of care for a Momni in need — mom to mom, around the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="press-marquee" aria-label="Momni press mentions">
+  <div class="wrap">
+    <div class="press-marquee-label">as seen in</div>
+    <div class="press-marquee-window">
+      <div class="press-marquee-track" aria-hidden="true">
+        <span class="press-logo"><svg viewBox="0 0 210 64" role="img" aria-label="Dr. Phil"><text x="10" y="45" font-family="Georgia, serif" font-size="40" font-style="italic" font-weight="700">Dr. Phil</text></svg></span>
+        <span class="press-logo wide"><svg viewBox="0 0 260 64" role="img" aria-label="Deseret News"><text x="6" y="37" font-family="Georgia, serif" font-size="31" font-weight="700">Deseret</text><text x="128" y="37" font-family="Georgia, serif" font-size="31" font-style="italic">News</text><path d="M8 47H252V50H8z"/></svg></span>
+        <span class="press-logo"><svg viewBox="0 0 210 64" role="img" aria-label="FOX 13"><path d="M8 12H115V52H8z" fill="none" stroke="currentColor" stroke-width="5"/><text x="22" y="42" font-family="Arial Black, Montserrat, sans-serif" font-size="30" font-weight="900">FOX</text><text x="128" y="44" font-family="Arial Black, Montserrat, sans-serif" font-size="38" font-weight="900">13</text></svg></span>
+        <span class="press-logo wide"><svg viewBox="0 0 260 64" role="img" aria-label="PR Newswire"><circle cx="28" cy="32" r="17" fill="none" stroke="currentColor" stroke-width="6"/><path d="M28 16V48M12 32H44" stroke="currentColor" stroke-width="5"/><text x="58" y="29" font-family="Montserrat, Arial, sans-serif" font-size="24" font-weight="800">PR</text><text x="58" y="50" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="600">Newswire</text></svg></span>
+        <span class="press-logo"><svg viewBox="0 0 210 64" role="img" aria-label="Techweek"><text x="8" y="43" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="800">tech</text><text x="86" y="43" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="500">week</text></svg></span>
+        <span class="press-logo wide"><svg viewBox="0 0 260 64" role="img" aria-label="Pulse 2.0"><path d="M10 34H34L44 18L58 48L72 24L83 34H104" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="116" y="42" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="800">Pulse</text><text x="216" y="42" font-family="Montserrat, Arial, sans-serif" font-size="22" font-weight="600">2.0</text></svg></span>
+        <span class="press-logo wide"><svg viewBox="0 0 260 64" role="img" aria-label="CB Insights"><path d="M12 16H52V52H12z" fill="none" stroke="currentColor" stroke-width="5"/><text x="21" y="42" font-family="Arial Black, Montserrat, sans-serif" font-size="24" font-weight="900">CB</text><text x="70" y="42" font-family="Montserrat, Arial, sans-serif" font-size="30" font-weight="800">Insights</text></svg></span>
+        <span class="press-logo extra-wide"><svg viewBox="0 0 320 64" role="img" aria-label="Utah Governor's Office"><circle cx="30" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="4"/><path d="M19 37L30 15L41 37H19zM18 42H42" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><text x="64" y="30" font-family="Montserrat, Arial, sans-serif" font-size="23" font-weight="800">UTAH</text><text x="64" y="51" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="600">Governor's Office</text></svg></span>
+        <span class="press-logo"><svg viewBox="0 0 210 64" role="img" aria-label="Dr. Phil"><text x="10" y="45" font-family="Georgia, serif" font-size="40" font-style="italic" font-weight="700">Dr. Phil</text></svg></span>
+        <span class="press-logo wide"><svg viewBox="0 0 260 64" role="img" aria-label="Deseret News"><text x="6" y="37" font-family="Georgia, serif" font-size="31" font-weight="700">Deseret</text><text x="128" y="37" font-family="Georgia, serif" font-size="31" font-style="italic">News</text><path d="M8 47H252V50H8z"/></svg></span>
+        <span class="press-logo"><svg viewBox="0 0 210 64" role="img" aria-label="FOX 13"><path d="M8 12H115V52H8z" fill="none" stroke="currentColor" stroke-width="5"/><text x="22" y="42" font-family="Arial Black, Montserrat, sans-serif" font-size="30" font-weight="900">FOX</text><text x="128" y="44" font-family="Arial Black, Montserrat, sans-serif" font-size="38" font-weight="900">13</text></svg></span>
+        <span class="press-logo wide"><svg viewBox="0 0 260 64" role="img" aria-label="PR Newswire"><circle cx="28" cy="32" r="17" fill="none" stroke="currentColor" stroke-width="6"/><path d="M28 16V48M12 32H44" stroke="currentColor" stroke-width="5"/><text x="58" y="29" font-family="Montserrat, Arial, sans-serif" font-size="24" font-weight="800">PR</text><text x="58" y="50" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="600">Newswire</text></svg></span>
+        <span class="press-logo"><svg viewBox="0 0 210 64" role="img" aria-label="Techweek"><text x="8" y="43" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="800">tech</text><text x="86" y="43" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="500">week</text></svg></span>
+        <span class="press-logo wide"><svg viewBox="0 0 260 64" role="img" aria-label="Pulse 2.0"><path d="M10 34H34L44 18L58 48L72 24L83 34H104" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="116" y="42" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="800">Pulse</text><text x="216" y="42" font-family="Montserrat, Arial, sans-serif" font-size="22" font-weight="600">2.0</text></svg></span>
+        <span class="press-logo wide"><svg viewBox="0 0 260 64" role="img" aria-label="CB Insights"><path d="M12 16H52V52H12z" fill="none" stroke="currentColor" stroke-width="5"/><text x="21" y="42" font-family="Arial Black, Montserrat, sans-serif" font-size="24" font-weight="900">CB</text><text x="70" y="42" font-family="Montserrat, Arial, sans-serif" font-size="30" font-weight="800">Insights</text></svg></span>
+        <span class="press-logo extra-wide"><svg viewBox="0 0 320 64" role="img" aria-label="Utah Governor's Office"><circle cx="30" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="4"/><path d="M19 37L30 15L41 37H19zM18 42H42" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><text x="64" y="30" font-family="Montserrat, Arial, sans-serif" font-size="23" font-weight="800">UTAH</text><text x="64" y="51" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="600">Governor's Office</text></svg></span>
       </div>
     </div>
   </div>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Momni Movement | Momni</title>
+<meta name="description" content="Start here during Momni 2.0 beta: become a host, search for care, volunteer, start a Circle, buy merch, donate, learn about the childcare crisis, or share Momni.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#6D58A4; --purple-deep:#4A3880; --teal:#0D878F; --teal-deep:#0A6B72;
+  --algae:#92E2C1; --lavender:#F5F0FE; --teal-soft:#E1F7F2; --clay:#D9C0A3;
+  --ink:#2B2233; --muted:#6B6477; --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+.script{font-family:'Caveat',cursive}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.mh{position:sticky;top:0;z-index:50}
+.mh .wrap{max-width:1120px}
+.mh nav.mh-links{position:static;background:none;border-bottom:0;backdrop-filter:none;box-shadow:none}
+.mh-top-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px;height:36px;font-size:13px}
+.mh-main-inner{display:flex;align-items:center;gap:24px;height:68px}
+.mh-links{display:flex;gap:22px;margin-left:auto;font-size:15px;font-weight:500}
+.mh-burger{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;margin-left:auto}
+.mh-mobile{display:none}
+.mh-mobile.open{display:block;padding:14px 24px 20px}
+.mh-mobile a{display:block;padding:9px 0;color:#fff;font-size:16px;font-weight:500}
+.mh-mobile-div{border-top:1px solid rgba(255,255,255,0.25);margin:10px 0}
+.mh-top{background:#4A3880}
+.mh-top-inner a{color:rgba(255,255,255,0.8)} .mh-top-inner a:hover{color:#fff}
+.mh-main{background:#6D58A4}
+.mh-links a{color:#fff} .mh-links a:hover{color:#92E2C1}
+.mh-cta{background:#92E2C1;color:#0B4A36;font-weight:600;padding:7px 16px;border-radius:100px;font-size:13.5px}
+.mh-mobile{background:#6D58A4}
+#momni-lang{border:1.5px solid rgba(255,255,255,.35);border-radius:100px;padding:6px 12px;font:inherit;font-size:14px;color:#fff;background:#6D58A4;cursor:pointer}
+#momni-lang option{color:#2B2233;background:#fff}
+.hero{background:linear-gradient(180deg,var(--lavender),#fff);padding:72px 0 48px;text-align:center}
+.beta-kicker{display:inline-flex;align-items:center;gap:10px;background:white;border:1.5px solid rgba(109,88,164,0.22);border-radius:100px;padding:9px 18px;margin-bottom:22px;color:var(--purple-deep);font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;box-shadow:0 10px 26px rgba(109,88,164,0.1)}
+.beta-kicker:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--algae)}
+.hero h1{font-size:52px;font-weight:800;letter-spacing:-0.03em;line-height:1.08;max-width:820px;margin:0 auto 18px}
+.hero h1 em{font-style:normal;color:var(--purple)}
+.hero p{font-size:20px;color:var(--muted);max-width:720px;margin:0 auto}
+.hero .script{display:block;color:var(--teal);font-size:30px;margin-bottom:10px}
+.section{padding:64px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.section-label{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.section h2{font-size:34px;font-weight:800;letter-spacing:-0.02em}
+.section-head p{max-width:420px;color:var(--muted)}
+.join-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.join-card{display:flex;flex-direction:column;min-height:250px;border:1.5px solid #EEE9F9;border-radius:18px;padding:26px;background:white;transition:transform .18s,box-shadow .18s,border-color .18s}
+.join-card:hover{transform:translateY(-3px);border-color:var(--purple);box-shadow:0 14px 30px rgba(109,88,164,0.12)}
+.join-card.featured{background:var(--purple);color:white;border-color:var(--purple)}
+.join-card.soft{background:var(--teal-soft)}
+.join-card.lav{background:var(--lavender)}
+.join-icon{width:48px;height:48px;border-radius:14px;background:rgba(109,88,164,0.12);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.join-card.featured .join-icon{background:rgba(255,255,255,0.16)}
+.join-card h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.join-card p{font-size:15px;color:var(--muted);margin-bottom:18px}
+.join-card.featured p{color:rgba(255,255,255,0.84)}
+.join-card .go{margin-top:auto;font-size:14px;font-weight:800;color:var(--teal)}
+.join-card.featured .go{color:var(--algae)}
+.share-band{background:var(--purple);color:white;padding:54px 0;text-align:center}
+.share-band h2{font-size:34px;font-weight:800;margin-bottom:10px}
+.share-band p{max-width:620px;margin:0 auto 22px;color:rgba(255,255,255,0.84);font-size:18px}
+.share-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.share-actions a{display:inline-flex;align-items:center;justify-content:center;background:white;color:var(--purple-deep);font-weight:800;border-radius:100px;padding:12px 22px}
+.share-actions a.alt{background:var(--algae);color:#0B4A36}
+footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:48px 0 30px;font-size:14px}
+.mfi{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px;font-size:13px}
+.mfi h4{font-family:'Montserrat',sans-serif;color:#fff;font-size:13px;font-weight:700;margin-bottom:12px}
+.mfi a{display:block;margin-bottom:8px;color:rgba(255,255,255,0.55)}
+.mfi a:hover{color:#92E2C1}
+.disclosure{border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7}
+@media(max-width:960px){
+  .mh-top-inner a,.mh-links,.mh-main-inner>.mh-cta{display:none}
+  .mh-burger{display:block}
+  .mh-top-inner{justify-content:flex-end}
+}
+@media(max-width:760px){
+  .hero h1{font-size:36px}
+  .hero p{font-size:18px}
+  .section-head{display:block}
+  .mfi{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="mh" id="mh">
+  <div class="mh-top">
+    <div class="wrap mh-top-inner">
+      <a href="../press/index.html">Press</a>
+      <a href="../partnerships/index.html">Partnerships</a>
+      <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+      <a href="../crisis/index.html">The Crisis</a>
+      <a href="../volunteer/index.html">Volunteer</a>
+      <a href="mailto:developer@momni.com?subject=Beta%20feedback%20-%20Momni">Beta feedback</a>
+      <select id="momni-lang" aria-label="Language" title="Language">
+        <option value="en">English</option><option value="es">Espanol</option><option value="pt">Portugues</option><option value="fr">Francais</option>
+      </select>
+    </div>
+  </div>
+  <div class="mh-main">
+    <div class="wrap mh-main-inner">
+      <a href="../index.html" class="mh-logo"><img src="../assets/momni-logo-white-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
+      <nav class="mh-links">
+        <a href="../find-care/index.html">Find Care</a>
+        <a href="../become-a-momni/index.html">Become a Momni</a>
+        <a href="../circles/index.html">Circles</a>
+        <a href="../shop/index.html">Shop</a>
+        <a href="../apps/index.html">Apps</a>
+        <a href="../map/index.html">Map</a>
+        <a href="../our-story/index.html">Our Story</a>
+        <a href="../stories/index.html">Stories</a>
+      </nav>
+      <a href="https://app.momni.com" class="mh-cta">Join the Circle</a>
+      <button class="mh-burger" id="mh-burger" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="mh-mobile" id="mh-mobile">
+    <a href="../find-care/index.html">Find Care</a>
+    <a href="../become-a-momni/index.html">Become a Momni</a>
+    <a href="../circles/index.html">Circles</a>
+    <a href="../shop/index.html">Shop</a>
+    <a href="../apps/index.html">Apps</a>
+    <a href="../map/index.html">Map</a>
+    <a href="../our-story/index.html">Our Story</a>
+    <a href="../stories/index.html">Stories</a>
+    <div class="mh-mobile-div"></div>
+    <a href="../press/index.html">Press</a>
+    <a href="../partnerships/index.html">Partnerships</a>
+    <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+    <a href="../crisis/index.html">The Crisis</a>
+    <a href="../volunteer/index.html">Volunteer</a>
+    <a href="https://app.momni.com" class="mh-cta" style="margin-top:10px;display:inline-block">Join the Circle</a>
+  </div>
+</header>
+<script>
+(function(){
+  var b=document.getElementById('mh-burger'),m=document.getElementById('mh-mobile');
+  b.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    b.setAttribute('aria-expanded',open);
+  });
+})();
+</script>
+
+<main>
+  <header class="hero">
+    <div class="wrap">
+      <div class="beta-kicker">Momni 2.0 now in beta</div>
+      <span class="script">Start where your heart is already tugging.</span>
+      <h1>Join the <em>Momni Movement</em></h1>
+      <p>Whether you need care, can offer care, want to lead a Circle, give an hour, buy the shirt, or tell another Momni she is not alone, this is the front door.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Choose your first step</div>
+          <h2>How do you want to circle up?</h2>
+        </div>
+        <p>Every path helps relaunch Momni 2.0: more hosts, more guests, more Circles, more stories, more care.</p>
+      </div>
+      <div class="join-grid">
+        <a class="join-card featured" href="../become-a-momni/index.html">
+          <div class="join-icon">🏡</div>
+          <h3>Become a host</h3>
+          <p>Open your home on your terms. Set your own rhythm, your own rates, and keep every penny of care income.</p>
+          <span class="go">Start hosting →</span>
+        </a>
+        <a class="join-card soft" href="https://app.momni.com">
+          <div class="join-icon">🔎</div>
+          <h3>Create a guest profile</h3>
+          <p>Join the app, tell nearby Momnis what kind of care you need, and start searching for hosts in your area.</p>
+          <span class="go">Find care →</span>
+        </a>
+        <a class="join-card lav" href="../volunteer/index.html">
+          <div class="join-icon">💜</div>
+          <h3>Volunteer</h3>
+          <p>Help welcome new Momnis, collect stories, test the beta, support the Foundation, or bring the Circle to life locally.</p>
+          <span class="go">Raise your hand →</span>
+        </a>
+        <a class="join-card" href="../circles/index.html">
+          <div class="join-icon">🤝</div>
+          <h3>Start a Circle</h3>
+          <p>Gather the Momnis in your neighborhood for playgroups, support, shared care, and the first local spark.</p>
+          <span class="go">Lead a Circle →</span>
+        </a>
+        <a class="join-card lav" href="../shop/index.html">
+          <div class="join-icon">🛍</div>
+          <h3>Buy merch</h3>
+          <p>Wear the movement, gift the book, download Circle tools, and help people ask, "What is Momni?"</p>
+          <span class="go">Visit the shop →</span>
+        </a>
+        <a class="join-card soft" href="https://momnifoundation-878.netlify.app">
+          <div class="join-icon">🌍</div>
+          <h3>Donate to the Foundation</h3>
+          <p>Support hour-for-hour care for Momnis in need through the separate Momni Foundation.</p>
+          <span class="go">Give care →</span>
+        </a>
+        <a class="join-card" href="../crisis/index.html">
+          <div class="join-icon">📚</div>
+          <h3>Learn the crisis</h3>
+          <p>Understand why childcare is breaking families globally, and why mothers linked together can change the answer.</p>
+          <span class="go">Read why it matters →</span>
+        </a>
+        <a class="join-card featured" href="../share/index.html">
+          <div class="join-icon">📣</div>
+          <h3>Share Momni</h3>
+          <p>Post, text, invite, and tell one more Momni: your pin is still on the map, and the Circle is lighting up again.</p>
+          <span class="go">Share the movement →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="share-band">
+    <div class="wrap">
+      <h2>One Momni can light a neighborhood.</h2>
+      <p>Start with the step that feels easiest today. The movement grows when one mother tells one more mother where to find the Circle.</p>
+      <div class="share-actions">
+        <a class="alt" href="https://app.momni.com">Join the app</a>
+        <a href="../share/index.html">Share Momni</a>
+        <a href="mailto:support@momni.com?subject=I%20want%20to%20join%20the%20Momni%20Movement">Email Momni</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="margin-bottom:32px"><img src="../assets/momni-logo-color-horizontal.png" alt="Momni" style="height:40px;display:block;margin-bottom:10px;background:#fff;border-radius:8px;padding:4px 8px"><p>Mom-to-mom caresharing.<br>Circle up. Link together.</p></div>
+    <div class="mfi">
+      <div>
+        <h4>Find care</h4>
+        <a href="../find-care/index.html">Find Care overview</a>
+        <a href="../find-care/right-now/index.html">Right Now</a>
+        <a href="../find-care/date-night/index.html">Date Night</a>
+        <a href="../find-care/my-regulars/index.html">My Regulars</a>
+        <a href="../find-care/night-shift/index.html">Night Shift</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="../become-a-momni/index.html">Become a Momni</a>
+        <a href="../circles/index.html">Circles</a>
+        <a href="../volunteer/index.html">Volunteer</a>
+        <a href="../partnerships/index.html">Partnerships</a>
+        <a href="https://app.momni.com">Join the Circle</a>
+      </div>
+      <div>
+        <h4>Stories</h4>
+        <a href="../stories/index.html">Stories</a>
+        <a href="../stories/karmels-desk/index.html">Karmel's Desk</a>
+        <a href="../stories/crisis-watch/index.html">Crisis Watch</a>
+        <a href="../podcast/index.html">Podcast</a>
+        <a href="../crisis/index.html">The Crisis</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="../our-story/index.html">Our Story</a>
+        <a href="../history/index.html">Momni History</a>
+        <a href="../press/index.html">Press</a>
+        <a href="../shop/index.html">Shop</a>
+        <a href="../contact/index.html">Contact</a>
+        <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+      </div>
+    </div>
+    <div class="disclosure">
+      Momni is a community platform. Momni does not employ, supervise, or make any representation about any member. Each member is solely responsible for choosing care arrangements. Care payments are made directly between members.<br><br>
+      momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation is a separate 501(c)(3). One brand, two entities, separate finances.
+    </div>
+  </div>
+</footer>
+</body>
+</html>

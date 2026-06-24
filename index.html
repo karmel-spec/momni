@@ -11,10 +11,10 @@
 :root{
   --purple:#6D58A4; --purple-deep:#4A3880; --teal:#0D878F; --teal-deep:#0A6B72;
   --algae:#92E2C1; --lavender:#F5F0FE; --teal-soft:#E1F7F2; --clay:#D9C0A3;
-  --ink:#2B2233; --muted:#6B6477; --white:#FFFFFF;
+  --ink:#2B2233; --muted:#6B6477; --white:#FFFFFF; --press-bar-height:104px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+body{font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;padding-bottom:calc(var(--press-bar-height) + env(safe-area-inset-bottom))}
 h1,h2,h3,.display{font-family:'Montserrat',sans-serif}
 a{text-decoration:none;color:inherit}
 .script{font-family:'Caveat',cursive}
@@ -92,24 +92,28 @@ nav{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur
 
 /* Press marquee */
 .press-marquee{background:var(--purple);color:white;overflow:hidden;padding:28px 0;border-top:1px solid rgba(255,255,255,0.18)}
+.press-marquee:not(.press-marquee-fixed){display:none}
+.press-marquee-fixed{position:fixed;left:0;right:0;bottom:0;z-index:70;min-height:var(--press-bar-height);padding:12px 0 calc(12px + env(safe-area-inset-bottom));box-shadow:0 -12px 32px rgba(43,34,51,0.18)}
 .press-marquee .wrap{max-width:100%;padding:0}
-.press-marquee-label{font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.74);text-align:center;margin-bottom:18px}
+.press-marquee-label{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.74);text-align:center;margin-bottom:8px}
 .press-marquee-window{position:relative;overflow:hidden}
 .press-marquee-window:before,.press-marquee-window:after{content:"";position:absolute;top:0;bottom:0;width:96px;z-index:2;pointer-events:none}
 .press-marquee-window:before{left:0;background:linear-gradient(90deg,var(--purple),rgba(109,88,164,0))}
 .press-marquee-window:after{right:0;background:linear-gradient(270deg,var(--purple),rgba(109,88,164,0))}
 .press-marquee-track{display:flex;width:max-content;gap:54px;align-items:center;animation:press-scroll 34s linear infinite}
-.press-logo{display:inline-flex;align-items:center;justify-content:center;min-width:184px;height:58px;color:white;opacity:0.9}
+.press-logo{display:inline-flex;align-items:center;justify-content:center;min-width:184px;height:52px;color:white;opacity:0.9}
 .press-logo svg{display:block;width:100%;height:100%;overflow:visible;fill:currentColor}
 .press-logo.wide{min-width:238px}
 .press-logo.extra-wide{min-width:286px}
 @keyframes press-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:700px){
-  .press-marquee{padding:24px 0}
+  :root{--press-bar-height:88px}
+  .press-marquee-fixed{padding:10px 0 calc(10px + env(safe-area-inset-bottom))}
   .press-marquee-track{gap:34px;animation-duration:28s}
-  .press-logo{min-width:148px;height:48px}
+  .press-logo{min-width:148px;height:42px}
   .press-logo.wide{min-width:196px}
   .press-logo.extra-wide{min-width:238px}
+  .press-marquee-label{font-size:10px;margin-bottom:6px}
 }
 @media(prefers-reduced-motion:reduce){
   .press-marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;padding:0 24px}
@@ -301,7 +305,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
   </div>
 </header>
 
-<section class="press-marquee" aria-label="Momni press mentions">
+<section class="press-marquee press-marquee-fixed" aria-label="Momni press mentions">
   <div class="wrap">
     <div class="press-marquee-label">as seen in</div>
     <div class="press-marquee-window">
@@ -411,7 +415,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
     <div class="elephant-card">
       <img src="assets/momni-icon-color.png" alt="The Momni elephant" style="width:140px;height:auto;display:block;margin:0 auto">
       <span class="script">"The circle protects the circle."</span>
-      <p style="font-size:14px;color:var(--muted);margin-top:12px">From <em>Circle Up</em>, the #1 bestselling book by founder Karmel</p>
+      <p style="font-size:14px;color:var(--muted);margin-top:12px">From <a href="shop/index.html" style="color:inherit;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px"><em>Circle Up</em></a>, the #1 bestselling book by founder Karmel</p>
     </div>
   </div>
 </section>
@@ -532,7 +536,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.8);padding:56px 0 32px;fon
     <a href="conduct/index.html">Suggested Conduct</a>
     <a href="privacy/index.html">Privacy</a>
     <a href="community-guidelines/index.html">Community Guidelines</a>
-    <a href="board/index.html">Board Brief &#128274;</a>
+    <a href="board/index.html">Founder Brief &#128274;</a>
     <a href="https://momnifoundation-878.netlify.app">Foundation</a>
   </div>
 </div>

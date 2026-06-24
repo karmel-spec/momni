@@ -28,6 +28,17 @@ nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px so
 .timeline-link h3{font-size:16px;font-weight:700;margin-bottom:2px}
 .timeline-link p{font-size:14px;color:var(--muted)}
 .timeline-link .go{margin-left:auto;white-space:nowrap;background:var(--ember-deep);color:#fff;font-weight:600;font-size:14px;padding:9px 20px;border-radius:100px}
+.brief{background:var(--ink);color:white;border-radius:20px;padding:28px;margin:30px 0}
+.brief .eyebrow{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--algae);margin-bottom:8px}
+.brief h2{font-size:26px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px}
+.brief p{color:rgba(255,255,255,0.82);font-size:16px}
+.brief a{color:var(--algae);font-weight:700;text-decoration:underline}
+.signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 28px}
+.signal{border:1.5px solid #EEE9F9;border-radius:16px;padding:20px;background:white}
+.signal .date{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ember-deep);margin-bottom:6px}
+.signal h3{font-size:18px;font-weight:800;line-height:1.25;margin-bottom:8px}
+.signal p{font-size:14.5px;color:var(--muted)}
+.signal a{display:inline-block;margin-top:10px;color:var(--teal-deep);font-weight:700;font-size:14px}
 .editions{padding:14px 0 30px}
 .editions h2{font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid #EEE9F9;padding-bottom:10px;margin-bottom:6px}
 .edition{display:flex;gap:22px;align-items:baseline;padding:22px 0;border-bottom:1px solid #F2EEF8}
@@ -42,7 +53,7 @@ nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px so
 .note .script{font-size:24px;color:var(--purple);display:block;margin-bottom:4px}
 footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-size:13px;line-height:1.7;margin-top:50px}
 footer .wrap{max-width:1120px}
-@media(max-width:680px){.hero h1{font-size:30px}.edition{flex-direction:column;gap:4px}.timeline-link{flex-wrap:wrap}.timeline-link .go{margin-left:0}}
+@media(max-width:680px){.hero h1{font-size:30px}.edition{flex-direction:column;gap:4px}.timeline-link{flex-wrap:wrap}.timeline-link .go{margin-left:0}.signal-grid{grid-template-columns:1fr}}
 </style>
 
 <!-- SEO -->
@@ -191,6 +202,27 @@ footer .wrap{max-width:1120px}
     <p class="tagline">The weekly state of the global childcare crisis. What happened, why it matters at your kitchen table, and where the source is — ending, always, with hope.</p>
   </header>
 
+  <section class="brief">
+    <div class="eyebrow">Current watch · May and June 2026</div>
+    <h2>The crisis is moving on two maps now.</h2>
+    <p>One map shows where care is missing. Another shows where climate is closing schools. Together they tell the same story: parents are being asked to work inside systems that still have no reliable plan for who holds the children.</p>
+  </section>
+
+  <section class="signal-grid" aria-label="Recent childcare crisis signals">
+    <div class="signal">
+      <div class="date">May 2026</div>
+      <h3>The childcare desert map returns.</h3>
+      <p>Post-pandemic reporting shows 46% of American families with young children live in areas with too few licensed care slots. Missouri and Kansas are now testing very different state responses.</p>
+      <a href="../../crisis/index.html">See the May timeline entry →</a>
+    </div>
+    <div class="signal">
+      <div class="date">June 2026</div>
+      <h3>Heat becomes a care crisis.</h3>
+      <p>Extreme heat closed schools across Delhi and many Indian states from mid-May into late June, pushing mothers out of work and into fragile backup-care arrangements.</p>
+      <a href="../crisis-watch-2/index.html">Read Week 2 →</a>
+    </div>
+  </section>
+
   <a class="timeline-link" href="../../crisis/index.html">
     <span class="ico">🕯️</span>
     <div>
@@ -203,6 +235,14 @@ footer .wrap{max-width:1120px}
   <section class="editions">
     <h2>All editions</h2>
 
+    <a class="edition" href="../crisis-watch-2/index.html">
+      <span class="date">June 24, 2026</span>
+      <div>
+        <h3>Heat, deserts, and waitlists: this is what care looks like now<span class="num">Week 2</span></h3>
+        <p>India's heat closures, the post-pandemic childcare desert map, Missouri and Kansas — and why every global crisis still lands locally.</p>
+      </div>
+    </a>
+
     <a class="edition" href="../crisis-watch-1/index.html">
       <span class="date">June 2026</span>
       <div>
@@ -214,7 +254,7 @@ footer .wrap{max-width:1120px}
     <div class="edition soon">
       <span class="date">Next week</span>
       <div>
-        <h3>Edition two<span class="num">Week 2</span></h3>
+        <h3>Edition three<span class="num">Week 3</span></h3>
         <p>Karmel will be back next week with the next dispatch. Same time, same place.</p>
       </div>
     </div>

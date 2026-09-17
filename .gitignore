@@ -2,3 +2,6 @@
 
 # macOS folder icon files
 Icon\r
+
+# local Claude Code session files
+.claude/

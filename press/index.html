@@ -30,11 +30,28 @@ nav{position:sticky;top:0;background:rgba(255,255,255,0.96);border-bottom:1px so
 .m .year{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--teal);font-size:14px}
 .m h3{font-size:17px;font-weight:700;margin:6px 0}
 .m p{font-size:14px;color:var(--muted)}
+a.m{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s,border-color .18s}
+a.m:hover{transform:translateY(-3px);border-color:var(--purple);box-shadow:0 14px 34px rgba(109,88,164,.14)}
+.m .more{margin-top:auto;padding-top:14px;font-size:13px;font-weight:700;color:var(--teal)}
+@media(min-width:1000px){.milestones a.m:last-child{grid-column:span 2;background:var(--lavender);border-color:#DDD3F3}}
 .wave{background:var(--purple);color:white;border-radius:24px;padding:44px;margin-top:36px}
 .wave h2{color:white}
-.outlets{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
-.outlet{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:100px;padding:8px 20px;font-size:14px;font-weight:600}
-.stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:28px}
+.wave .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--algae);margin:26px 0 12px}
+/* Press logo wall. To use a real logo: add assets/press/<slug>.svg and put <img src="../assets/press/<slug>.svg" alt="…" onload="this.classList.add('ok')"> as the first child of that tile — the wordmark hides automatically. */
+.press-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:760px){.press-wall{grid-template-columns:repeat(2,1fr)}}
+.press-tile{position:relative;display:flex;align-items:center;justify-content:center;min-height:92px;padding:18px 16px 16px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);transition:background .2s,transform .2s,border-color .2s}
+.press-tile:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.32);transform:translateY(-2px)}
+.press-tile img{display:none;max-height:36px;max-width:78%;filter:brightness(0) invert(1);opacity:.96}
+.press-tile img.ok{display:block}.press-tile img.ok+.wm{display:none}
+.press-tile .wm{font-family:'Montserrat',sans-serif;font-weight:800;color:#fff;letter-spacing:-.01em;font-size:21px;line-height:1;text-align:center;white-space:nowrap}
+.press-tile .wm small{display:block;font-family:'Albert Sans',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.68);margin-top:7px;white-space:normal}
+.press-tile .tag{position:absolute;top:-9px;left:14px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B4A36;background:var(--algae);border-radius:100px;padding:3px 9px}
+.press-tile .seal{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.75);font-size:12px;letter-spacing:.04em;margin-right:10px;vertical-align:middle}
+.wave .foot{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:30px;border-top:1px solid rgba(255,255,255,.18);padding-top:26px}
+.stat{padding:0 18px;border-left:1px solid rgba(255,255,255,.18)}.stat:first-child{border-left:0;padding-left:0}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr);row-gap:22px}.stat:nth-child(3){border-left:0;padding-left:0}}
 .stat .n{font-family:'Montserrat',sans-serif;font-size:38px;font-weight:800;color:var(--algae)}
 .stat .l{font-size:13px;color:rgba(255,255,255,0.8)}
 .kit{background:var(--lavender)}
@@ -205,17 +222,19 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
     <div class="section-label">The First Wave</div>
     <h2>Momni 1.0 made headlines coast to coast.</h2>
     <div class="wave">
-      <p style="font-size:17px;color:rgba(255,255,255,0.92)">Before the pandemic pause, Momni's caresharing story was covered by national television, front pages, and the startup press:</p>
-      <div class="outlets">
-        <span class="outlet">Dr. Phil</span>
-        <span class="outlet">Deseret News — front page</span>
-        <span class="outlet">FOX 13 Salt Lake City</span>
-        <span class="outlet">PR Newswire</span>
-        <span class="outlet">Techweek</span>
-        <span class="outlet">Pulse 2.0</span>
-        <span class="outlet">CB Insights</span>
-        <span class="outlet">Utah Governor's Office</span>
+      <p style="font-size:17px;color:rgba(255,255,255,0.92);max-width:640px">Before the pandemic pause, Momni’s caresharing story was covered by national television, front pages, and the startup press.</p>
+      <div class="kicker">As seen in</div>
+      <div class="press-wall">
+        <div class="press-tile"><span class="tag">National TV</span><span class="wm" style="font-size:25px;letter-spacing:.01em">Dr.&thinsp;Phil<small>CBS Television Distribution</small></span></div>
+        <div class="press-tile"><span class="tag">Front page</span><span class="wm" style="font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:23px;letter-spacing:-.01em">Deseret News<small>Salt Lake City · since 1850</small></span></div>
+        <div class="press-tile"><span class="tag">Local TV</span><span class="wm" style="font-size:27px;letter-spacing:-.03em">FOX<span style="color:var(--algae)">13</span><small>Salt Lake City</small></span></div>
+        <div class="press-tile"><span class="wm" style="font-size:19px"><span style="letter-spacing:.02em">PR</span> Newswire<small>National wire</small></span></div>
+        <div class="press-tile"><span class="wm" style="font-size:23px;letter-spacing:-.035em;text-transform:lowercase">techweek<small>Startup press</small></span></div>
+        <div class="press-tile"><span class="wm" style="font-size:23px">Pulse <span style="color:var(--algae)">2.0</span><small>Tech &amp; business</small></span></div>
+        <div class="press-tile"><span class="wm" style="font-size:18px;letter-spacing:.07em">CB<span style="font-weight:500"> INSIGHTS</span><small>Market intelligence</small></span></div>
+        <div class="press-tile"><span class="wm" style="font-size:15px;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;flex-direction:column"><span><span class="seal">UT</span>Governor’s Office</span><small>State of Utah</small></span></div>
       </div>
+      <p class="foot">Coverage 2017–2019. Logos and names belong to their respective outlets.</p>
       <div class="stats">
         <div class="stat"><div class="n">26,000+</div><div class="l">Momnis joined Momni 1.0</div></div>
         <div class="stat"><div class="n">50</div><div class="l">states with Momni hosts</div></div>
@@ -224,11 +243,11 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
       </div>
     </div>
     <div class="milestones">
-      <div class="m"><div class="year">MARCH 16, 2017</div><h3>The founding moment</h3><p>Karmel learns of the global childcare crisis and sees the answer in the elephant matriarchy: mothers circling up.</p></div>
-      <div class="m"><div class="year">2018</div><h3>Apps launch · Dr. Phil</h3><p>iOS and Android apps go live. Momni appears on Dr. Phil and the front page of the Deseret News.</p></div>
-      <div class="m"><div class="year">2019</div><h3>Growth · 50 states</h3><p>Hosts active in all 50 states; dense communities in Utah County, Houston, Dallas, and Atlanta.</p></div>
-      <div class="m"><div class="year">2020</div><h3>The chrysalis</h3><p>COVID closes the world's doors. Momni pauses rather than pivot away from its mission.</p></div>
-      <div class="m"><div class="year">2026</div><h3>Momni 2.0 — the relaunch</h3><p>Community-led, founder-run, AI-operated, no investors, no take-rate. Care payments go mom to mom; Momni never takes a cut.</p></div>
+      <a class="m" href="../our-story/index.html"><div class="year">MARCH 16, 2017</div><h3>The founding moment</h3><p>Karmel learns of the global childcare crisis and sees the answer in the elephant matriarchy: mothers circling up.</p><span class="more">Read our story →</span></a>
+      <a class="m" href="../blog/2018/momnibeta-goes-live-today-join-the-caresharing-movement/index.html"><div class="year">2018</div><h3>Apps launch · Dr. Phil</h3><p>iOS and Android apps go live. Momni appears on Dr. Phil and the front page of the Deseret News.</p><span class="more">Read the launch post →</span></a>
+      <a class="m" href="../map/index.html"><div class="year">2019</div><h3>Growth · 50 states</h3><p>Hosts active in all 50 states; dense communities in Utah County, Houston, Dallas, and Atlanta.</p><span class="more">See the Movement Map →</span></a>
+      <a class="m" href="../history/index.html"><div class="year">2020</div><h3>The chrysalis</h3><p>COVID closes the world's doors. Momni pauses rather than pivot away from its mission.</p><span class="more">Read the full history →</span></a>
+      <a class="m" href="../stories/karmels-desk/index.html"><div class="year">2026</div><h3>Momni 2.0 — the relaunch</h3><p>Community-led, founder-run, AI-operated, no investors, no take-rate. Care payments go mom to mom; Momni never takes a cut.</p><span class="more">Letters from Karmel →</span></a>
     </div>
   </div>
 </section>

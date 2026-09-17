@@ -22,3 +22,10 @@
   from = "/join"
   to = "/waitlist/"
   status = 301
+
+# Canonical host: the raw Netlify subdomain must never be indexed or bookmarked.
+[[redirects]]
+  from = "https://momni-2.netlify.app/*"
+  to = "https://momni.com/:splat"
+  status = 301
+  force = true

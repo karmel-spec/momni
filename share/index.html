@@ -51,6 +51,9 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 22px;border-radius:100px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:99}
 .toast.show{opacity:1}
 @media(max-width:720px){.ring-tool{grid-template-columns:1fr}.hero h1{font-size:30px}}
+
+/* site footer (same as every other page) */
+footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-size:13px;line-height:1.7}
 </style>
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://momni.com/share/">
@@ -150,12 +153,62 @@ footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:36px 0;font-si
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    Sharing helps the Circle grow with zero ad spend — thank you, Momni. 🐘<br>
-    momni.com and app.momni.com are operated by Momni, Inc. The Momni Foundation (momnifoundation.org) is a separate 501(c)(3). One brand, two entities, separate finances.
+<footer><div class="wrap">
+<!-- momni-footer-index -->
+<div class="mfi">
+<style>.mfi{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px;font-size:13px}.mfi h4{font-family:'Montserrat',sans-serif;color:#fff;font-size:13px;font-weight:700;margin-bottom:12px}.mfi a{display:block;margin-bottom:8px;color:rgba(255,255,255,0.55);text-decoration:none}.mfi a:hover{color:#92E2C1}@media(max-width:680px){.mfi{grid-template-columns:1fr 1fr}}</style>
+  <div>
+    <h4>Find care</h4>
+    <a href="../find-care/index.html">Find Care overview</a>
+    <a href="../find-care/right-now/index.html">Right Now</a>
+    <a href="../find-care/date-night/index.html">Date Night</a>
+    <a href="../find-care/my-regulars/index.html">My Regulars</a>
+    <a href="../find-care/night-shift/index.html">Night Shift</a>
+    <a href="../find-care/weekend-getaway/index.html">Weekend Getaway</a>
+    <a href="../find-care/extended-trip/index.html">Extended Trip</a>
+    <a href="../find-care/find-a-daycare/index.html">Find a Daycare</a>
   </div>
-</footer>
+  <div>
+    <h4>Community</h4>
+    <a href="../become-a-momni/index.html">Become a Momni</a>
+    <a href="../circles/index.html">Circles</a>
+    <a href="../volunteer/index.html">Volunteer</a>
+    <a href="../partnerships/index.html">Partnerships</a>
+    <a href="../map/index.html">Map</a>
+    <a href="../apps/index.html">Apps by Momni</a>
+    <a href="https://app.momni.com">Join the Circle</a>
+  </div>
+  <div>
+    <h4>Stories</h4>
+    <a href="../stories/index.html">Stories</a>
+    <a href="../stories/karmels-desk/index.html">Karmel&rsquo;s Desk</a>
+    <a href="../stories/circle-stories/index.html">Circle Stories</a>
+    <a href="../stories/crisis-watch/index.html">Crisis Watch</a>
+    <a href="../podcast/index.html">Podcast</a>
+    <a href="../crisis/index.html">The Crisis</a>
+  </div>
+  <div>
+    <h4>About</h4>
+    <a href="/pricing/">Pricing</a>
+    <a href="../our-story/index.html">Our Story</a>
+    <a href="../history/index.html">Momni History</a>
+    <a href="../faq/index.html">FAQ</a>
+    <a href="../blog/index.html">Blog</a>
+    <a href="../newsletter/index.html">Newsletter</a>
+    <a href="../press/index.html">Press</a>
+    <a href="../shop/index.html">Shop</a>
+    <a href="../contact/index.html">Contact</a>
+    <a href="../connect/index.html">Connect</a>
+    <a href="../terms/index.html">Terms of Service</a>
+    <a href="../transparency/index.html">Transparency</a>
+    <a href="../conduct/index.html">Suggested Conduct</a>
+    <a href="../privacy/index.html">Privacy</a>
+    <a href="../community-guidelines/index.html">Community Guidelines</a>
+    <a href="../board/index.html">Founder Brief &#128274;</a>
+    <a href="https://momnifoundation-878.netlify.app">Foundation</a>
+  </div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.15);padding-top:24px">Momni is a community platform. Members make their own care decisions. momni.com and app.momni.com are operated by Momni, Inc.; the Momni Foundation is a separate 501(c)(3). One brand, two entities, separate finances.</div></div></footer>
 
 <div class="toast" id="toast"></div>
 

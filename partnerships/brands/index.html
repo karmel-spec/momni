@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partner with Momni — influencers, brands, employers &amp; communities | Momni</title>
-<meta name="description" content="Partner with the Momni movement: founding voices for parent creators, Circle Kit sponsorships for brands, care benefits for employers, and turnkey Circles for community organizations.">
+<title>How brand partnerships work | Momni</title>
+<meta name="description" content="Four ways a brand partners with Momni — the Circle Kit, a city launch, a co-branded Shop drop, and funded care hours — and how each one works, step by step.">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Albert+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{--purple:#6D58A4;--purple-deep:#4A3880;--teal:#0D878F;--teal-deep:#0A6B72;--algae:#92E2C1;--lavender:#F5F0FE;--teal-soft:#E1F7F2;--ink:#2B2233;--muted:#6B6477}
@@ -47,18 +47,42 @@ a.c{display:flex;flex-direction:column;color:inherit;text-decoration:none;cursor
 a.c:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(109,88,164,.14);border-color:var(--purple)}
 a.c .go{margin-top:auto;padding-top:14px;font-size:14px;font-weight:700;color:var(--teal-deep)}
 a.c:hover .go{color:var(--purple-deep)}
+
+/* brands one-pager */
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:8px}
+.pr{background:white;border:1.5px solid #EEE9F9;border-radius:16px;padding:20px}
+.pr b{display:block;font-family:'Montserrat',sans-serif;font-size:15px;margin-bottom:4px}.pr p{font-size:14px;color:var(--muted)}
+.program{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:start;background:white;border:1.5px solid #EEE9F9;border-radius:22px;padding:30px;margin-top:18px}
+@media(max-width:760px){.program{grid-template-columns:1fr;padding:22px}}
+.program .icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:12px}
+.program h3{font-size:22px;font-weight:800;letter-spacing:-0.01em;margin-bottom:8px}
+.program .pitch{font-size:15.5px;color:var(--muted);line-height:1.6}
+.program dl{display:grid;grid-template-columns:118px 1fr;gap:10px 14px;font-size:14px;margin:0}
+.program dt{font-weight:700;color:var(--ink)}.program dd{margin:0;color:var(--muted)}
+.program dd.talk{color:var(--teal-deep);font-weight:600}
+.program .cta{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid #EEE9F9;padding-top:16px}
+.btn{display:inline-block;background:var(--purple);color:white;font-weight:700;border-radius:100px;padding:12px 22px;text-decoration:none}
+.btn:hover{background:var(--purple-deep)}
+.btn.ghost{background:var(--algae);color:#0B4A36}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;counter-reset:s}
+.step{background:white;border:1.5px solid #EEE9F9;border-radius:16px;padding:20px 20px 18px;position:relative}
+.step:before{counter-increment:s;content:counter(s);display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--purple);color:white;align-items:center;justify-content:center;font-weight:800;font-family:'Montserrat',sans-serif;margin-bottom:10px}
+.step b{display:block;font-size:15px;margin-bottom:4px}.step p{font-size:13.5px;color:var(--muted)}
+.faq details{background:white;border:1.5px solid #EEE9F9;border-radius:14px;padding:14px 18px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;font-size:15px}.faq p{font-size:14px;color:var(--muted);margin-top:8px}
+.talk{color:var(--teal-deep);font-weight:600}
 </style>
 
 <!-- SEO -->
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://momni.com/partnerships/">
-<meta property="og:title" content="Partner with Momni — influencers, brands, employers &amp; communities | Momni">
+<link rel="canonical" href="https://momni.com/partnerships/brands/">
+<meta property="og:title" content="How brand partnerships work with Momni">
 <meta property="og:description" content="Partner with the Momni movement: founding voices for parent creators, Circle Kit sponsorships for brands, care benefits for employers, and turnkey Circles for community organizations.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://momni.com/partnerships/">
+<meta property="og:url" content="https://momni.com/partnerships/brands/">
 <meta property="og:image" content="https://momni.com/assets/photos/mama-lifting-toddler-sky.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Partner with Momni — influencers, brands, employers &amp; communities | Momni">
+<meta name="twitter:title" content="How brand partnerships work with Momni">
 <meta name="twitter:description" content="Partner with the Momni movement: founding voices for parent creators, Circle Kit sponsorships for brands, care benefits for employers, and turnkey Circles for community organizations.">
 <meta name="twitter:image" content="https://momni.com/assets/photos/mama-lifting-toddler-sky.jpg">
 <style>
@@ -126,11 +150,11 @@ a.c:hover .go{color:var(--purple-deep)}
 <header class="mh" id="mh">
   <div class="mh-top">
     <div class="wrap mh-top-inner">
-      <a href="../press/index.html">Press</a>
-      <a href="../partnerships/index.html">Partnerships</a>
+      <a href="../../press/index.html">Press</a>
+      <a href="../../partnerships/index.html">Partnerships</a>
       <a href="https://momnifoundation-878.netlify.app">Foundation</a>
-      <a href="../crisis/index.html">The Crisis</a>
-      <a href="../volunteer/index.html">Volunteer</a>
+      <a href="../../crisis/index.html">The Crisis</a>
+      <a href="../../volunteer/index.html">Volunteer</a>
       <a href="mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni">Beta feedback</a>
       <select id="momni-lang" aria-label="Language" title="Language">
         <option value="en">🌍 English</option><option value="es">Español</option><option value="pt">Português</option><option value="fr">Français</option><option value="ar">العربية</option><option value="hi">हिन्दी</option><option value="zh-CN">中文</option><option value="tl">Filipino</option><option value="vi">Tiếng Việt</option><option value="sw">Kiswahili</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ru">Русский</option><option value="id">Bahasa Indonesia</option>
@@ -139,38 +163,38 @@ a.c:hover .go{color:var(--purple-deep)}
   </div>
   <div class="mh-main">
     <div class="wrap mh-main-inner">
-      <a href="../index.html" class="mh-logo"><img src="../assets/momni-logo-white-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
+      <a href="../../index.html" class="mh-logo"><img src="../../assets/momni-logo-white-horizontal.png" alt="Momni" style="height:44px;display:block"></a>
       
       <nav class="mh-links">
-        <a href="../find-care/index.html">Find Care</a>
-        <a href="../become-a-momni/index.html">Become a Momni</a>
-        <a href="../circles/index.html">Circles</a>
-        <a href="../shop/index.html">Shop</a>
-        <a href="../apps/index.html">Apps</a>
-        <a href="../map/index.html">Map</a>
-        <a href="../our-story/index.html">Our Story</a>
-    <a href="../team/index.html">Team Momni</a>
-        <a href="../stories/index.html">Stories</a>
+        <a href="../../find-care/index.html">Find Care</a>
+        <a href="../../become-a-momni/index.html">Become a Momni</a>
+        <a href="../../circles/index.html">Circles</a>
+        <a href="../../shop/index.html">Shop</a>
+        <a href="../../apps/index.html">Apps</a>
+        <a href="../../map/index.html">Map</a>
+        <a href="../../our-story/index.html">Our Story</a>
+    <a href="../../team/index.html">Team Momni</a>
+        <a href="../../stories/index.html">Stories</a>
       <a href="/pricing/">Pricing</a></nav>
       <a href="https://app.momni.com" class="mh-cta">Join the Circle</a>
       <button class="mh-burger" id="mh-burger" aria-label="Menu" aria-expanded="false">☰</button>
     </div>
   </div>
   <div class="mh-mobile" id="mh-mobile">
-    <a href="../find-care/index.html">Find Care</a>
-    <a href="../become-a-momni/index.html">Become a Momni</a>
-    <a href="../circles/index.html">Circles</a>
-    <a href="../shop/index.html">Shop</a>
-    <a href="../apps/index.html">Apps</a>
-    <a href="../map/index.html">Map</a>
-    <a href="../our-story/index.html">Our Story</a>
-    <a href="../stories/index.html">Stories</a>
+    <a href="../../find-care/index.html">Find Care</a>
+    <a href="../../become-a-momni/index.html">Become a Momni</a>
+    <a href="../../circles/index.html">Circles</a>
+    <a href="../../shop/index.html">Shop</a>
+    <a href="../../apps/index.html">Apps</a>
+    <a href="../../map/index.html">Map</a>
+    <a href="../../our-story/index.html">Our Story</a>
+    <a href="../../stories/index.html">Stories</a>
     <div class="mh-mobile-div"></div>
-    <a href="../press/index.html">Press</a>
-    <a href="../partnerships/index.html">Partnerships</a>
+    <a href="../../press/index.html">Press</a>
+    <a href="../../partnerships/index.html">Partnerships</a>
     <a href="https://momnifoundation-878.netlify.app">Foundation</a>
-    <a href="../crisis/index.html">The Crisis</a>
-    <a href="../volunteer/index.html">Volunteer</a>
+    <a href="../../crisis/index.html">The Crisis</a>
+    <a href="../../volunteer/index.html">Volunteer</a>
     <a href="mailto:developer@momni.com?subject=Beta%20feedback%20—%20Momni">Beta feedback</a>
     <a href="https://app.momni.com" class="mh-cta" style="margin-top:10px;display:inline-block">Join the Circle</a>
   </div>
@@ -187,111 +211,133 @@ a.c:hover .go{color:var(--purple-deep)}
 
 <header class="hero">
   <div class="wrap">
-    <span class="script">The Circle grows by linking arms.</span>
-    <h1>Partner with Momni</h1>
-    <p>Momni reaches the hardest audience to earn and the easiest to love: Momnis, at the moment they need each other most. We partner with people and brands who genuinely serve Momnis — and we build win-wins where the mission is the marketing.</p>
+    <span class="script">Welcomed, not skipped.</span>
+    <h1>How brand partnerships work with Momni</h1>
+    <p>Four ways to show up inside real moments of care — and exactly what happens after you say hello. Numbers are set together, in a conversation, not on a rate card.</p>
   </div>
 </header>
 
 <section class="section">
   <div class="wrap">
-    <div class="section-label">For creators &amp; parent influencers</div>
-    <h2>Become a Founding Voice of the Circle</h2>
-    <p class="lede">Not a discount code — a legacy. The relaunch of a movement is a story your audience will remember you for telling first.</p>
-    <div class="cards">
-      <div class="c"><div class="icon" style="background:var(--lavender)">📍</div>
-        <h3>Your name lights up the map</h3>
-        <p>Your personal invite link starts a real Circle in your city — your community, visible on the movement map, growing pin by pin because of you.</p>
-        <span class="win">Win: a community, not a campaign</span></div>
-      <div class="c"><div class="icon" style="background:var(--teal-soft)">💜</div>
-        <h3>Every signup gives an hour</h3>
-        <p>Each Momni who joins through your link helps fund an hour of care for a Momni in need — counted publicly, in your name, through the Momni Foundation.</p>
-        <span class="win">Win: content that is mission, not merch</span></div>
-      <div class="c"><div class="icon" style="background:var(--lavender)">🎁</div>
-        <h3>Real things to give away</h3>
-        <p>Momni+ memberships, Link bundles, and first-drop Momni Shop merch for your audience — plus early access to every feature before the public.</p>
-        <span class="win">Win: generosity your followers feel</span></div>
-      <div class="c"><div class="icon" style="background:var(--teal-soft)">🎙️</div>
-        <h3>A founder story to share</h3>
-        <p>The Momni founding story gives partners a Dr. Phil-to-chrysalis-to-relaunch arc to reference in podcasts, lives, stories, and community content.</p>
-        <span class="win">Win: the story does the work</span></div>
+    <div class="section-label">Three things that don’t change</div>
+    <h2>The ground rules</h2>
+    <div class="principles">
+      <div class="pr"><b>Inside the care, never in a feed</b><p>Your brand appears where Momnis already are — a starter kit, a city launch, a shirt, a funded hour. Nothing interrupts anyone.</p></div>
+      <div class="pr"><b>Care payments stay mom-to-mom</b><p>Momni never takes a cut of care. Partnerships fund the platform and the Foundation, never the babysitting.</p></div>
+      <div class="pr"><b>Receipts, always</b><p>Every program comes with something you can point to: a counter on the map, a press story, a Foundation impact report.</p></div>
     </div>
   </div>
 </section>
 
 <section class="section" style="background:var(--lavender)">
   <div class="wrap">
-    <div class="section-label">For brands</div>
-    <h2>Reach Momnis by actually helping them</h2>
-    <p class="lede">We build partnerships where your brand shows up inside real moments of care — welcomed, not skipped. <a href="brands/index.html" style="color:var(--teal-deep);font-weight:700;text-decoration:underline;white-space:nowrap">How brand partnerships work →</a></p>
-    <div class="cards">
-      <a class="c" href="#partner-form" data-type="Brand" data-idea="We’re a brand interested in sponsoring the Circle Kit — putting our product in the starter kit every new Circle leader receives."><div class="icon" style="background:var(--lavender)">🧺</div>
+    <div class="section-label">The four programs</div>
+    <h2>Pick the one that fits</h2>
+    <p class="lede">Each one is a real thing Momni does anyway. Your brand makes it bigger.</p>
+    <div class="program" id="sponsor-the-circle-kit">
+      <div>
+        <div class="icon" style="background:var(--lavender)">🧺</div>
         <h3>Sponsor the Circle Kit</h3>
-        <p>Every new Circle leader gets a starter kit — snacks, crafts, first-meetup supplies. Your product inside is a gift at a playgroup, not an ad in a feed.</p>
-        <span class="win">Win: sampling with warmth</span><span class="go">Sponsor the kit →</span></a>
-      <a class="c" href="#partner-form" data-type="Brand" data-idea="We’re a brand interested in sponsoring a city launch — “Momni comes to [city], with us.”"><div class="icon" style="background:var(--teal-soft)">🌆</div>
+        <p class="pitch">Every new Circle leader gets a starter kit — snacks, crafts, first-meetup supplies. Your product goes in the box, handed to a mom who just raised her hand to lead. It arrives as a gift at a playgroup, not an ad.</p>
+      </div>
+      <dl>
+        <dt>You get</dt><dd>Product in every kit for a season · your name on the kit card and the Circle leader welcome email · a short “brought to you by” on the Circles page · photos from real first meetups you can reuse.</dd>
+        <dt>Investment</dt><dd class="talk">Let’s talk — sized to the brand and the season.</dd>
+        <dt>We need</dt><dd>Product (or product cost) for the season’s kits, a logo file, and one line about why you care about moms.</dd>
+        <dt>Timeline</dt><dd>Kits ship as Circles launch. First kits go out within a few weeks of signing.</dd>
+      </dl>
+      <div class="cta"><a class="btn" href="../index.html#partner-form" data-prefill="We’re a brand interested in sponsoring the Circle Kit — putting our product in the starter kit every new Circle leader receives.">Sponsor the kit →</a><span style="font-size:13px;color:var(--muted)">Opens the partnership form with this program filled in.</span></div>
+    </div>
+    <div class="program" id="light-up-a-city">
+      <div>
+        <div class="icon" style="background:var(--teal-soft)">🌆</div>
         <h3>Light up a city</h3>
-        <p>Sponsor a city launch — "Momni comes to Boise, with [you]" — with the live scoreboard on the movement map and the local press story that comes with it.</p>
-        <span class="win">Win: a hometown headline</span><span class="go">Sponsor a city launch →</span></a>
-      <a class="c" href="#partner-form" data-type="Brand" data-idea="We’re a brand interested in a co-branded Momni Shop collection, with profits to the Foundation."><div class="icon" style="background:var(--lavender)">🐘</div>
+        <p class="pitch">“Momni comes to Boise, with [you].” A city launch is a real event: local Momnis reactivated, hosts recruited, a Circle seeded, local press invited — and the Movement Map lights up block by block with your name on the scoreboard.</p>
+      </div>
+      <dl>
+        <dt>You get</dt><dd>Your name on the city’s launch — map scoreboard, launch page, local press outreach, launch-week email to every Momni in the metro · a launch event you can attend · a case study when the city hits its first milestones.</dd>
+        <dt>Investment</dt><dd class="talk">Let’s talk — sized to the brand and the season.</dd>
+        <dt>We need</dt><dd>A city you care about (HQ, a big store, a plant, hometown roots all work), a launch budget, and a local face if you have one.</dd>
+        <dt>Timeline</dt><dd>Roughly 6–8 weeks from yes to launch day, depending on the city.</dd>
+      </dl>
+      <div class="cta"><a class="btn" href="../index.html#partner-form" data-prefill="We’re a brand interested in sponsoring a city launch — “Momni comes to [city], with us.”">Sponsor a city launch →</a><span style="font-size:13px;color:var(--muted)">Opens the partnership form with this program filled in.</span></div>
+    </div>
+    <div class="program" id="co-branded-shop-drops">
+      <div>
+        <div class="icon" style="background:var(--lavender)">🐘</div>
         <h3>Co-branded Shop drops</h3>
-        <p>A limited Momni Shop collection with your brand — and 100% of profits still go to the Momni Foundation. Cause merch with receipts.</p>
-        <span class="win">Win: CSR people can wear</span><span class="go">Plan a Shop drop →</span></a>
-      <a class="c" href="#partner-form" data-type="Brand" data-idea="We’re a brand interested in underwriting care hours through the Momni Foundation with a public impact counter."><div class="icon" style="background:var(--teal-soft)">⏱️</div>
+        <p class="pitch">A limited Momni Shop collection with your brand on it — and 100% of profits still go to the Momni Foundation. Cause merch with receipts: a public number of hours funded by the drop.</p>
+      </div>
+      <dl>
+        <dt>You get</dt><dd>A co-designed, limited-run collection in the Momni Shop · launch to the Momni list and socials · a Foundation receipt showing hours funded by your drop · pieces you can gift or sell on your side.</dd>
+        <dt>Investment</dt><dd class="talk">Let’s talk — sized to the brand and the season.</dd>
+        <dt>We need</dt><dd>Brand assets and sign-off on designs, a minimum order or a sales guarantee, and a launch window.</dd>
+        <dt>Timeline</dt><dd>Design to launch in about 4–6 weeks with a print-on-demand partner.</dd>
+      </dl>
+      <div class="cta"><a class="btn" href="../index.html#partner-form" data-prefill="We’re a brand interested in a co-branded Momni Shop collection, with profits to the Foundation.">Plan a Shop drop →</a><span style="font-size:13px;color:var(--muted)">Opens the partnership form with this program filled in.</span></div>
+    </div>
+    <div class="program" id="fund-hours-count-hours">
+      <div>
+        <div class="icon" style="background:var(--teal-soft)">⏱️</div>
         <h3>Fund hours, count hours</h3>
-        <p>Underwrite care hours through the Foundation and get a public impact counter — "12,000 hours funded with [you]" — renewed annually.</p>
-        <span class="win">Win: measurable good</span><span class="go">Fund care hours →</span></a>
+        <p class="pitch">Underwrite care hours through the Momni Foundation and get a public impact counter — “12,000 hours funded with [you]” — on the map, on the Foundation site, and in the annual report. Renewed annually.</p>
+      </div>
+      <dl>
+        <dt>You get</dt><dd>A live impact counter with your name · a Foundation impact report you can publish · first right to renew · the story of the families those hours reached, told with their permission.</dd>
+        <dt>Investment</dt><dd class="talk">Let’s talk — sized to the brand and the season.</dd>
+        <dt>We need</dt><dd>A gift to the Foundation (a 501(c)(3), so it’s a charitable contribution) and a logo. That’s it.</dd>
+        <dt>Timeline</dt><dd>Counter goes live the week the gift lands. Reports quarterly.</dd>
+      </dl>
+      <div class="cta"><a class="btn" href="../index.html#partner-form" data-prefill="We’re a brand interested in underwriting care hours through the Momni Foundation with a public impact counter.">Fund care hours →</a><span style="font-size:13px;color:var(--muted)">Opens the partnership form with this program filled in.</span></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="section-label">For employers, hospitals &amp; organizations</div>
-    <h2>Care for the people who care for everyone else</h2>
-    <div class="cards">
-      <a class="c" href="#partner-form" data-type="Hospital / employer" data-idea="We’re a hospital / night-shift employer. We’d like to explore Momni as a benefit for our nurses and night staff."><div class="icon" style="background:var(--teal-soft)">🏥</div>
-        <h3>Hospitals &amp; night-shift employers</h3>
-        <p>Your nurses and night staff face the worst childcare gap in America. Offer Momni memberships as a benefit and connect your night-shift Momnis to hosts who keep nurses' hours.</p>
-        <span class="win">Win: retention that costs less than turnover</span><span class="go">Bring Momni to your staff →</span></a>
-      <a class="c" href="#partner-form" data-type="Church / PTA / community organization" data-idea="We’d like to start a Circle program for the Momnis in our community — tell us about the leader kit."><div class="icon" style="background:var(--lavender)">⛪</div>
-        <h3>Churches, PTAs &amp; MOPS groups</h3>
-        <p>You already have the Momnis — Momni brings the structure. A turnkey Circle program: leader kit, meetup templates, and the app that keeps it going between Sundays.</p>
-        <span class="win">Win: ministry that meets a real need</span><span class="go">Start a Circle program →</span></a>
-      <a class="c" href="#partner-form" data-type="Hospital / employer" data-idea="We employ parents and want to offer Momni+ as a backup-care benefit."><div class="icon" style="background:var(--teal-soft)">🏢</div>
-        <h3>Any employer of parents</h3>
-        <p>Momni+ as a benefit: a few dollars per family per month, for backup care that actually exists at 6am when daycare falls through.</p>
-        <span class="win">Win: the benefit parents brag about</span><span class="go">Offer Momni+ as a benefit →</span></a>
+    <div class="section-label">What happens next</div>
+    <h2>From hello to launch</h2>
+    <div class="steps">
+      <div class="step"><b>Start the conversation</b><p>Use the button on any program above. It opens the partnership form with the program filled in — add a line about your brand and send.</p></div>
+      <div class="step"><b>A call with Karmel</b><p>Momni is founder-run. You’ll hear back from Karmel Larson within a couple of business days to set up a 30-minute call.</p></div>
+      <div class="step"><b>A one-page agreement</b><p>Scope, investment, timeline, and what each side delivers — on one page, in plain English. No 40-page contract.</p></div>
+      <div class="step"><b>Launch, then receipts</b><p>We build it, launch it, and report on it: counters, photos, press, and a Foundation impact summary you can share.</p></div>
     </div>
-
-    <div class="band">
-      <span class="script">Why partners say yes</span>
-      <h2 style="font-size:24px">The mission is the marketing.</h2>
-      <p>Momni 1.0 reached 26,000 Momnis in all 50 states with national press from Dr. Phil to the Deseret News front page. Momni 2.0 is the rare partner whose story improves yours: no investors, no take-rate, Momnis keeping every penny, and every partnership tied to funded care hours through the Momni Foundation. When you link arms with the Circle, you get the audience <em>and</em> the halo — and the Momnis get something real.</p>
-    </div>
-
-    <h2 style="text-align:center;margin-bottom:18px">Let's build a win-win</h2>
-    <form id="partner-form" name="partnerships" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="../waitlist/thanks.html">
-      <input type="hidden" name="form-name" value="partnerships">
-      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
-      <label>Your name</label><input type="text" name="name" required>
-      <label>Email</label><input type="email" name="email" required>
-      <label>I am a…</label>
-      <select name="partner_type" required>
-        <option value="">Choose one</option>
-        <option>Creator / parent influencer</option>
-        <option>Brand</option>
-        <option>Hospital / employer</option>
-        <option>Church / PTA / community organization</option>
-        <option>Something else wonderful</option>
-      </select>
-      <label>Tell us your idea (or just say hi)</label>
-      <textarea name="idea" rows="4" placeholder="What could we build together, Momni-style?"></textarea>
-      <button type="submit">Start the conversation</button>
-    </form>
-    <p style="text-align:center;font-size:14px;color:var(--muted);margin-top:14px">Or email <a href="mailto:support@momni.com?subject=Partnership%20—%20Momni" style="color:var(--teal);font-weight:600">support@momni.com</a> · Press inquiries: see the <a href="../press/index.html" style="color:var(--teal);font-weight:600">Press page</a></p>
   </div>
 </section>
+
+<section class="section" style="background:var(--lavender)">
+  <div class="wrap faq">
+    <div class="section-label">Good questions</div>
+    <h2>Before you ask</h2>
+    <details><summary>What does it cost?</summary><p><span class="talk">Let’s talk.</span> Every program is sized to the brand and the season — a regional grocer and a national baby brand shouldn’t pay the same for a city launch. We’ll give you a clear number on the first call.</p></details>
+    <details><summary>Can we be the only brand in our category?</summary><p>Usually yes, per program and per season. <span class="talk">Let’s talk</span> about the category and the term.</p></details>
+    <details><summary>Where does the money go?</summary><p>Program costs fund the platform (Momni, Inc.). Anything routed through the Foundation — funded hours, Shop drop profits — goes to the Momni Foundation, a separate 501(c)(3), and is reported as such.</p></details>
+    <details><summary>Will you put our logo in the app?</summary><p>Only inside the program you sponsored: the kit card, the city scoreboard, the drop, the counter. Momni doesn’t run banner ads, and we won’t start for you.</p></details>
+    <details><summary>Can a small brand do this?</summary><p>Yes. The Circle Kit and funded hours start small on purpose. <span class="talk">Let’s talk.</span></p></details>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="band" style="text-align:center">
+      <span class="script">The mission is the marketing.</span>
+      <h2 style="font-size:26px">Say hello and tell us which program.</h2>
+      <p style="margin:10px auto 18px;max-width:560px;color:rgba(255,255,255,.9)">One form, one call, one page. That’s the whole process.</p>
+      <a class="btn ghost" href="../index.html#partner-form" data-prefill="We’re a brand and we’d like to talk about partnering with Momni.">Start the conversation →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+// Buttons carry the program text to the partnership form as a query param; the form page pre-fills from it.
+document.querySelectorAll('a[data-prefill]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    location.href = '../index.html?type=Brand&idea=' + encodeURIComponent(a.dataset.prefill) + '#partner-form';
+  });
+});
+</script>
 
 <footer>
   <div class="wrap">
@@ -300,52 +346,52 @@ a.c:hover .go{color:var(--purple-deep)}
 <style>.mfi{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:32px;font-size:13px}.mfi h4{font-family:'Montserrat',sans-serif;color:#fff;font-size:13px;font-weight:700;margin-bottom:12px}.mfi a{display:block;margin-bottom:8px;color:rgba(255,255,255,0.55);text-decoration:none}.mfi a:hover{color:#92E2C1}@media(max-width:680px){.mfi{grid-template-columns:1fr 1fr}}</style>
   <div>
     <h4>Find care</h4>
-    <a href="../find-care/index.html">Find Care overview</a>
-    <a href="../find-care/right-now/index.html">Right Now</a>
-    <a href="../find-care/date-night/index.html">Date Night</a>
-    <a href="../find-care/my-regulars/index.html">My Regulars</a>
-    <a href="../find-care/night-shift/index.html">Night Shift</a>
-    <a href="../find-care/weekend-getaway/index.html">Weekend Getaway</a>
-    <a href="../find-care/extended-trip/index.html">Extended Trip</a>
-    <a href="../find-care/find-a-daycare/index.html">Find a Daycare</a>
+    <a href="../../find-care/index.html">Find Care overview</a>
+    <a href="../../find-care/right-now/index.html">Right Now</a>
+    <a href="../../find-care/date-night/index.html">Date Night</a>
+    <a href="../../find-care/my-regulars/index.html">My Regulars</a>
+    <a href="../../find-care/night-shift/index.html">Night Shift</a>
+    <a href="../../find-care/weekend-getaway/index.html">Weekend Getaway</a>
+    <a href="../../find-care/extended-trip/index.html">Extended Trip</a>
+    <a href="../../find-care/find-a-daycare/index.html">Find a Daycare</a>
   </div>
   <div>
     <h4>Community</h4>
-    <a href="../become-a-momni/index.html">Become a Momni</a>
-    <a href="../circles/index.html">Circles</a>
-    <a href="../volunteer/index.html">Volunteer</a>
-    <a href="../partnerships/index.html">Partnerships</a>
-    <a href="../map/index.html">Map</a>
-    <a href="../apps/index.html">Apps by Momni</a>
+    <a href="../../become-a-momni/index.html">Become a Momni</a>
+    <a href="../../circles/index.html">Circles</a>
+    <a href="../../volunteer/index.html">Volunteer</a>
+    <a href="../../partnerships/index.html">Partnerships</a>
+    <a href="../../map/index.html">Map</a>
+    <a href="../../apps/index.html">Apps by Momni</a>
     <a href="https://app.momni.com">Join the Circle</a>
   </div>
   <div>
     <h4>Stories</h4>
-    <a href="../stories/index.html">Stories</a>
-    <a href="../stories/karmels-desk/index.html">Karmel&rsquo;s Desk</a>
-    <a href="../stories/circle-stories/index.html">Circle Stories</a>
-    <a href="../stories/crisis-watch/index.html">Crisis Watch</a>
-    <a href="../podcast/index.html">Podcast</a>
-    <a href="../crisis/index.html">The Crisis</a>
+    <a href="../../stories/index.html">Stories</a>
+    <a href="../../stories/karmels-desk/index.html">Karmel&rsquo;s Desk</a>
+    <a href="../../stories/circle-stories/index.html">Circle Stories</a>
+    <a href="../../stories/crisis-watch/index.html">Crisis Watch</a>
+    <a href="../../podcast/index.html">Podcast</a>
+    <a href="../../crisis/index.html">The Crisis</a>
   </div>
   <div>
     <h4>About</h4>
     <a href="/pricing/">Pricing</a>
-    <a href="../our-story/index.html">Our Story</a>
-    <a href="../history/index.html">Momni History</a>
-    <a href="../faq/index.html">FAQ</a>
-    <a href="../blog/index.html">Blog</a>
-    <a href="../newsletter/index.html">Newsletter</a>
-    <a href="../press/index.html">Press</a>
-    <a href="../shop/index.html">Shop</a>
-    <a href="../contact/index.html">Contact</a>
-    <a href="../connect/index.html">Connect</a>
-    <a href="../terms/index.html">Terms of Service</a>
-    <a href="../transparency/index.html">Transparency</a>
-    <a href="../conduct/index.html">Suggested Conduct</a>
-    <a href="../privacy/index.html">Privacy</a>
-    <a href="../community-guidelines/index.html">Community Guidelines</a>
-    <a href="../board/index.html">Founder Brief &#128274;</a>
+    <a href="../../our-story/index.html">Our Story</a>
+    <a href="../../history/index.html">Momni History</a>
+    <a href="../../faq/index.html">FAQ</a>
+    <a href="../../blog/index.html">Blog</a>
+    <a href="../../newsletter/index.html">Newsletter</a>
+    <a href="../../press/index.html">Press</a>
+    <a href="../../shop/index.html">Shop</a>
+    <a href="../../contact/index.html">Contact</a>
+    <a href="../../connect/index.html">Connect</a>
+    <a href="../../terms/index.html">Terms of Service</a>
+    <a href="../../transparency/index.html">Transparency</a>
+    <a href="../../conduct/index.html">Suggested Conduct</a>
+    <a href="../../privacy/index.html">Privacy</a>
+    <a href="../../community-guidelines/index.html">Community Guidelines</a>
+    <a href="../../board/index.html">Founder Brief &#128274;</a>
     <a href="https://momnifoundation-878.netlify.app">Foundation</a>
   </div>
 </div>
@@ -420,14 +466,6 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 <script src="/assets/momni-chat.js" data-api="https://app.momni.com" defer></script>
 <script>
 // Partner cards → the form, with "I am a…" and the idea box pre-filled for that kind of partner.
-(function(){   // arrive from partnerships/brands/ with the program pre-filled
-  var q = new URLSearchParams(location.search); if (!q.get('idea') && !q.get('type')) return;
-  var f = document.getElementById('partner-form'), sel = f.querySelector('select[name=partner_type]'), ta = f.querySelector('textarea[name=idea]');
-  if (q.get('type')) [].forEach.call(sel.options, function(o){ if (o.text === q.get('type')) sel.value = o.value || o.text; });
-  if (q.get('idea') && !ta.value.trim()) ta.value = q.get('idea');
-  history.replaceState(null, '', location.pathname + '#partner-form');
-  setTimeout(function(){ f.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
-})();
 document.querySelectorAll('a.c[data-type]').forEach(function(a){
   a.addEventListener('click', function(e){
     e.preventDefault();
